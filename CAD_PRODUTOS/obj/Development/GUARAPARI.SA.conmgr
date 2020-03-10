@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="GUARAPARI.SA"
+  DTS:DTSID="{8F5989F4-10C4-4737-848A-FD0A0B492217}"
+  DTS:CreationName="ODBC">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=SA;Dsn=GUARAPARI;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAADF2tyClIK9xSnSxpxGqu4SAAAAAASAAACgAAAAEAAAAHQ5UUPLexdkEHD5azsYSeBwAAAAG6B4axdj0PcI44l/AQysONQuaXI8QlGeiExsyc/7QCXhaaktx9AShgnHvriUeynlZxIqFEGnzVXRQ+hHRVg3nAhus1E3VyA9Lu75pvOofO4Wk5w11ZS+xNySgjy+cm+w53cOq3s0HbTT30qK9eqJjBQAAACstQ4kwJSXtGTJLTsxLB5LJ+Fjyw==</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

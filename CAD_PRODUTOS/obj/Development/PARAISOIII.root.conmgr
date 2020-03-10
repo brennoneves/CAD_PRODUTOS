@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="PARAISOIII.root"
+  DTS:DTSID="{C4876621-B826-41AB-819D-C2B8F8FAE37D}"
+  DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=root;Dsn=PARAISOIII;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAABON7CJKB58soa89vbxBUCMAAAAAASAAACgAAAAEAAAAGIde+YJr8N2Hsh+8EEhBaRwAAAAC258wKPDcacEEdmeC2xFHeB5ZwEPnrtc5hxaT9nDmKIpIjOfbbiU3c9f5NJvRJf7wgm+Pvcdo56JCxoTdBDAnjEYh+r3js5xLaMY8CFeshRDLfc5KkgerhWgllXnGymR0CsTLGJdFw5ZsbIa0kFQfxQAAADSdJhRh0/62vgCjTYkjp3tk2VbEA==</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

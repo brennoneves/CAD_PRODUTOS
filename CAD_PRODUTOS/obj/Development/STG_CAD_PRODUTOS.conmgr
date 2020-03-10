@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="STG_CAD_PRODUTOS"
+  DTS:DTSID="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=GUARAPARI\SQLEXPRESS;User ID=SA;Initial Catalog=STG_CAD_PRODUTOS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAADYGt5OZ9EH0ItTE/yHJFGbAAAAAASAAACgAAAAEAAAAIDsAtHVjjLxa3WnFJkQE/lwAAAAHazo/dk5EOvgj8ooMF/sc+W8asakLpq7Uekj2deiBolWD6h47+unvb47by/z5z1G2J74+dIWXzPFK3mnEx460DTvbqCe0jNACqC33Mfg/tZ5bHtwxfuTc9YybJwlGxapb7RMwKngXVGZAzhEKTKGShQAAABiQPZdlzFMvwuV/X/Uy6o/AOFynQ==</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
