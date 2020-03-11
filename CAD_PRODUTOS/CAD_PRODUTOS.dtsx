@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="72"
-  DTS:VersionGUID="{8C740B2A-5AD2-49F9-8050-A94EC1FC89A7}">
+  DTS:VersionBuild="73"
+  DTS:VersionGUID="{3D71F736-74C1-414F-B8A3-BDE3133D7B6D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2120,9 +2120,9 @@ p.fabricante as marca,LTRIM(RTRIM(UPPER(p.lista))) as lista_pnu,p.generico produ
 LTRIM(RTRIM(UPPER(p.tipo_item))) as grupo_contabil,p.classe as classe_produto,LTRIM(RTRIM(UPPER(p.tipo_unidade_medida))) as pf_unidade_farmacotecnica,ltrim(rtrim((CONCAT((SUBSTRING(p.ncm,1,4)),'.',(SUBSTRING(p.ncm,5,2)),'.',(SUBSTRING(p.ncm,7,2)))))) as ncm,
 p.secao as sub_grupo_produto,ltrim(rtrim((CONCAT((SUBSTRING(p.cest,1,2)),'.',(SUBSTRING(p.cest,3,3)),'.',(SUBSTRING(p.cest,6,2)))))) as cest,ltrim(rtrim(e.cod_barra)) as cod_barra,e.embalagem,g.controlado as retencao_receita,g.controlado as venda_controlado,LTRIM(RTRIM(UPPER(g.receita))) as tipo_receita,ltrim(rtrim(g.lista_controlado)) as lista_controlado,
 LTRIM(RTRIM(UPPER(g.tipo_classe_terapeutica))) as classe_terapeutica,p.pmc
-FROM PARAISOIII.PRODUTO AS P 
-join PARAISOIII.produto_cod_barra as e on e.produto=p.codigo
-left join PARAISOIII.generico as g on g.codigo=p.generico</property>
+FROM PHARMAGESTAO.PRODUTO AS P 
+join PHARMAGESTAO.produto_cod_barra as e on e.produto=p.codigo
+left join PHARMAGESTAO.generico as g on g.codigo=p.generico</property>
                 <property
                   dataType="System.Int32"
                   description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
@@ -2150,7 +2150,7 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
                 <connection
                   refId="Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Connections[IDbConnection]"
                   connectionManagerID="{C4876621-B826-41AB-819D-C2B8F8FAE37D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[PARAISOIII.root]"
+                  connectionManagerRefId="Project.ConnectionManagers[PHARMAGESTAO]"
                   description="Managed connection manager"
                   name="IDbConnection" />
               </connections>
