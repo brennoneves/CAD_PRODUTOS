@@ -7,12 +7,12 @@
   DTS:CreatorName="PHARMAGESTAO\suporte"
   DTS:DTSID="{77683B5B-5B6B-42B3-9C6A-355C921925A1}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="69"
-  DTS:VersionGUID="{AA1F8DFE-D55E-4660-BF38-FED8384693B6}">
+  DTS:VersionBuild="72"
+  DTS:VersionGUID="{8C740B2A-5AD2-49F9-8050-A94EC1FC89A7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -840,13 +840,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Expressão de Coluna Derivada"
-                          name="Expression">(DT_NUMERIC,10,0)(#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_pnu]} == "INALTERADA" ? "3" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_pnu]} == "POSITIVA" ? "1" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_pnu]} == "NEGATIVA" ? "2" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_pnu]} == "" ? "0" : #{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_pnu]}))))</property>
+                          name="Expression">(DT_NUMERIC,10,0)(#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_pnu]} == "INALTERADA" ? "3" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_pnu]} == "POSITIVA" ? "1" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_pnu]} == "NEGATIVA" ? "2" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_pnu]} == "" ? "0" : "0"))))</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Expressão Amigável de Coluna Derivada"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_NUMERIC,10,0)(lista_pnu == "INALTERADA" ? "3" : (lista_pnu == "POSITIVA" ? "1" : (lista_pnu == "NEGATIVA" ? "2" : (lista_pnu == "" ? "0" : lista_pnu))))</property>
+                          name="FriendlyExpression">(DT_NUMERIC,10,0)(lista_pnu == "INALTERADA" ? "3" : (lista_pnu == "POSITIVA" ? "1" : (lista_pnu == "NEGATIVA" ? "2" : (lista_pnu == "" ? "0" : "0"))))</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -863,13 +863,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Expressão de Coluna Derivada"
-                          name="Expression">(DT_NUMERIC,15,0)(#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[grupo_contabil]} == "07-MATERIAL DE USO E CONSUMO" ? "45" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[grupo_contabil]} == "00-MERCADORIA PARA REVENDA" ? "118" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[grupo_contabil]} == "99-OUTRAS" ? "72" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[grupo_contabil]} == "02-EMBALAGEM" ? "46" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[grupo_contabil]} == "08-ATIVO IMOBILIZADO" ? "45" : #{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[grupo_contabil]})))))</property>
+                          name="Expression">(DT_NUMERIC,15,0)(#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[grupo_contabil]} == "07-MATERIAL DE USO E CONSUMO" ? "45" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[grupo_contabil]} == "00-MERCADORIA PARA REVENDA" ? "118" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[grupo_contabil]} == "99-OUTRAS" ? "72" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[grupo_contabil]} == "02-EMBALAGEM" ? "46" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[grupo_contabil]} == "08-ATIVO IMOBILIZADO" ? "45" : "1")))))</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Expressão Amigável de Coluna Derivada"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_NUMERIC,15,0)(grupo_contabil == "07-MATERIAL DE USO E CONSUMO" ? "45" : (grupo_contabil == "00-MERCADORIA PARA REVENDA" ? "118" : (grupo_contabil == "99-OUTRAS" ? "72" : (grupo_contabil == "02-EMBALAGEM" ? "46" : (grupo_contabil == "08-ATIVO IMOBILIZADO" ? "45" : grupo_contabil)))))</property>
+                          name="FriendlyExpression">(DT_NUMERIC,15,0)(grupo_contabil == "07-MATERIAL DE USO E CONSUMO" ? "45" : (grupo_contabil == "00-MERCADORIA PARA REVENDA" ? "118" : (grupo_contabil == "99-OUTRAS" ? "72" : (grupo_contabil == "02-EMBALAGEM" ? "46" : (grupo_contabil == "08-ATIVO IMOBILIZADO" ? "45" : "1")))))</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -887,13 +887,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Expressão de Coluna Derivada"
-                          name="Expression">(DT_STR,4,1252)(#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[pf_unidade_farmacotecnica]} == "1-CAIXAS" ? "CX" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[pf_unidade_farmacotecnica]} == "2-FRASCOS" ? "FR" : #{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[pf_unidade_farmacotecnica]}))</property>
+                          name="Expression">(DT_STR,4,1252)(#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[pf_unidade_farmacotecnica]} == "1-CAIXAS" ? "CX" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[pf_unidade_farmacotecnica]} == "2-FRASCOS" ? "FR" : (#{Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[pf_unidade_farmacotecnica]} == "" ? "CX" : "CX")))</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Expressão Amigável de Coluna Derivada"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_STR,4,1252)(pf_unidade_farmacotecnica == "1-CAIXAS" ? "CX" : (pf_unidade_farmacotecnica == "2-FRASCOS" ? "FR" : pf_unidade_farmacotecnica))</property>
+                          name="FriendlyExpression">(DT_STR,4,1252)(pf_unidade_farmacotecnica == "1-CAIXAS" ? "CX" : (pf_unidade_farmacotecnica == "2-FRASCOS" ? "FR" : (pf_unidade_farmacotecnica == "" ? "CX" : "CX")))</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2871,11 +2871,11 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="228,42"
+          Size="276,42"
           Id="Package\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO"
           TopLeft="30,39" />
         <NodeLayout
-          Size="159,42"
+          Size="188,42"
           Id="Package\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS"
           TopLeft="380,458" />
         <NodeLayout
@@ -2926,9 +2926,9 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="136.5,95"
+              EndConnector="151,95"
               Start="0,0"
-              End="136.5,87.5">
+              End="151,87.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2939,13 +2939,13 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
                     Point2="0,47.5"
                     Point3="4,47.5" />
                   <mssgle:LineSegment
-                    End="132.5,47.5" />
+                    End="147,47.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="132.5,47.5"
-                    Point2="136.5,47.5"
-                    Point3="136.5,51.5" />
+                    Point1="147,47.5"
+                    Point2="151,47.5"
+                    Point3="151,51.5" />
                   <mssgle:LineSegment
-                    End="136.5,87.5" />
+                    End="151,87.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2956,13 +2956,13 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CAD_PRODUTOS_PROCFIT.Paths[ADO NET Source Output]"
-          TopLeft="144,81">
+          TopLeft="168,81">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="57,109"
+              EndConnector="33,109"
               Start="0,0"
-              End="57,101.5">
+              End="33,101.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2973,13 +2973,13 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
                     Point2="0,54.5"
                     Point3="4,54.5" />
                   <mssgle:LineSegment
-                    End="53,54.5" />
+                    End="29,54.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="53,54.5"
-                    Point2="57,54.5"
-                    Point3="57,58.5" />
+                    Point1="29,54.5"
+                    Point2="33,54.5"
+                    Point3="33,58.5" />
                   <mssgle:LineSegment
-                    End="57,101.5" />
+                    End="33,101.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
