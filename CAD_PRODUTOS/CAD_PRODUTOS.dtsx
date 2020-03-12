@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="82"
-  DTS:VersionGUID="{5B4D397C-633F-4FD5-AF60-75B8A1784C9E}">
+  DTS:VersionBuild="84"
+  DTS:VersionGUID="{8A8FFFDA-D5F3-4B29-884E-793EA4B6BC39}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -213,13 +213,13 @@
                           externalMetadataColumnId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[EMBALAGEM]"
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EMBALAGEM]" />
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[RETENCAO_RECEITA]"
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[RETENCAO_RECEITA_TF]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
-                          cachedName="RETENCAO_RECEITA"
+                          cachedName="RETENCAO_RECEITA_TF"
                           externalMetadataColumnId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[RETENCAO_RECEITA]"
-                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[RETENCAO_RECEITA]" />
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[RETENCAO_RECEITA_TF]" />
                         <inputColumn
                           refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[MARCA]"
                           cachedDataType="numeric"
@@ -258,8 +258,9 @@
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[TIPO_RECEITA]" />
                         <inputColumn
                           refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[TIPO_PRECO]"
-                          cachedDataType="i4"
+                          cachedDataType="numeric"
                           cachedName="TIPO_PRECO"
+                          cachedPrecision="10"
                           externalMetadataColumnId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[TIPO_PRECO]"
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[TIPO_PRECO]" />
                         <inputColumn
@@ -419,13 +420,13 @@
                           externalMetadataColumnId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[CLASSE_TERAPEUTICA]"
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[CLASSE_TERAPEUTICA]" />
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[VENDA_CONTROLADA]"
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[VENDA_CONTROLADA_TF]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
-                          cachedName="VENDA_CONTROLADA"
+                          cachedName="VENDA_CONTROLADA_TF"
                           externalMetadataColumnId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[VENDA_CONTROLADA]"
-                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[VENDA_CONTROLADA]" />
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[VENDA_CONTROLADA_TF]" />
                         <inputColumn
                           refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[CODIGO_CEST]"
                           cachedCodepage="1252"
@@ -824,6 +825,20 @@
                           cachedLength="13"
                           cachedName="NCM_TF"
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[NCM_TF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Inputs[Entrada de Coluna Derivada].Columns[RETENCAO_RECEITA_TF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="RETENCAO_RECEITA_TF"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[RETENCAO_RECEITA_TF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Inputs[Entrada de Coluna Derivada].Columns[VENDA_CONTROLADA_TF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="VENDA_CONTROLADA_TF"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[VENDA_CONTROLADA_TF]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -931,24 +946,25 @@
                         </outputColumn>
                         <outputColumn
                           refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[TIPO_PRECO]"
-                          dataType="i4"
+                          dataType="numeric"
                           errorOrTruncationOperation="Computação"
                           errorRowDisposition="FailComponent"
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[TIPO_PRECO]"
                           name="TIPO_PRECO"
+                          precision="10"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expressão de Coluna Derivada"
-                              name="Expression">(DT_NUMERIC,10,0)#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[pmc]} &gt; 0 ? 2 : 1</property>
+                              name="Expression">(DT_NUMERIC,10,0)(#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[pmc]} &gt; 0 ? 2 : ([ISNULL](#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[pmc]}) ? 0 : #{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[pmc]}))</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expressão Amigável de Coluna Derivada"
                               expressionType="Notify"
-                              name="FriendlyExpression">(DT_NUMERIC,10,0)pmc &gt; 0 ? 2 : 1</property>
+                              name="FriendlyExpression">(DT_NUMERIC,10,0)(pmc &gt; 0 ? 2 : (ISNULL(pmc) ? 0 : pmc))</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -1481,13 +1497,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Expressão de Coluna Derivada"
-                              name="Expression">(DT_STR,65,1252)#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[classe_terapeutica]}</property>
+                              name="Expression">(DT_STR,65,1252)([ISNULL](#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[classe_terapeutica]}) ? "0" : #{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[classe_terapeutica]})</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expressão Amigável de Coluna Derivada"
                               expressionType="Notify"
-                              name="FriendlyExpression">(DT_STR,65,1252)classe_terapeutica</property>
+                              name="FriendlyExpression">(DT_STR,65,1252)(ISNULL(classe_terapeutica) ? "0" : classe_terapeutica)</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -1536,6 +1552,52 @@
                               description="Expressão Amigável de Coluna Derivada"
                               expressionType="Notify"
                               name="FriendlyExpression">(DT_STR,15,1252)NCM_TF</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[VENDA_CONTROLADA]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="1"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[VENDA_CONTROLADA]"
+                          name="VENDA_CONTROLADA"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">[ISNULL](#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[VENDA_CONTROLADA_TF]}) ? "0" : #{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[VENDA_CONTROLADA_TF]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(VENDA_CONTROLADA_TF) ? "0" : VENDA_CONTROLADA_TF</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[RETENCAO_RECEITA]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="1"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[RETENCAO_RECEITA]"
+                          name="RETENCAO_RECEITA"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">[ISNULL](#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[RETENCAO_RECEITA_TF]}) ? "0" : #{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[RETENCAO_RECEITA_TF]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(RETENCAO_RECEITA_TF) ? "0" : RETENCAO_RECEITA_TF</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -2020,14 +2082,14 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[RETENCAO_RECEITA]"
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[RETENCAO_RECEITA_TF]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
                           length="1"
-                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[RETENCAO_RECEITA]"
-                          name="RETENCAO_RECEITA"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[RETENCAO_RECEITA_TF]"
+                          name="RETENCAO_RECEITA_TF"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -2042,14 +2104,14 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[VENDA_CONTROLADA]"
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[VENDA_CONTROLADA_TF]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
                           length="1"
-                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[VENDA_CONTROLADA]"
-                          name="VENDA_CONTROLADA"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[VENDA_CONTROLADA_TF]"
+                          name="VENDA_CONTROLADA_TF"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -2820,13 +2882,13 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="187,42"
-          Id="Package\Contêiner da Sequência\LIMPAR CARGA STAGE"
-          TopLeft="11,0" />
-        <NodeLayout
           Size="207,42"
           Id="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT"
           TopLeft="53.5,95" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Contêiner da Sequência\LIMPAR CARGA STAGE"
+          TopLeft="11,0" />
         <EdgeLayout
           Id="Package\Contêiner da Sequência.PrecedenceConstraints[Restrição]"
           TopLeft="104.5,42">
