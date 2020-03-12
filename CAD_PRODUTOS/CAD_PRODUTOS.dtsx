@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="74"
-  DTS:VersionGUID="{C5560C42-2838-4F86-AAA2-3FD094DDEDBA}">
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{F0A13CD9-A8B6-470F-B1DC-6B3317DFBE81}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2792,7 +2792,8 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
       DTS:From="Package\LIMPAR CARGA STAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição"
-      DTS:To="Package\CAD_PRODUTOS_PROCFIT" />
+      DTS:To="Package\CAD_PRODUTOS_PROCFIT"
+      DTS:Value="2" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
@@ -2805,11 +2806,11 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="207,42"
           Id="Package\CAD_PRODUTOS_PROCFIT"
-          TopLeft="48,136" />
+          TopLeft="47,135" />
         <NodeLayout
           Size="187,42"
           Id="Package\LIMPAR CARGA STAGE"
@@ -2820,48 +2821,36 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="17,72"
+              EndConnector="16,71"
               Start="0,0"
-              End="17,64.5">
+              End="16,63.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32" />
+                    End="0,31.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,32"
-                    Point2="0,36"
-                    Point3="4,36" />
+                    Point1="0,31.5"
+                    Point2="0,35.5"
+                    Point3="4,35.5" />
                   <mssgle:LineSegment
-                    End="13,36" />
+                    End="12,35.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="13,36"
-                    Point2="17,36"
-                    Point3="17,40" />
+                    Point1="12,35.5"
+                    Point2="16,35.5"
+                    Point3="16,39.5" />
                   <mssgle:LineSegment
-                    End="17,64.5" />
+                    End="16,63.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-15.01955078125,40.5,46.0391015625,10.1201171875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <AnnotationLayout
-          Text="CRIAR A STAGE AREA DOS DADOS DE CADASTRO"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="294,40"
-          Id="20b6bc27-5211-4529-b4d7-ca23ceca9ece"
-          TopLeft="262,139" />
-        <AnnotationLayout
-          Text="LIMPAR A STAGE AREA PARA PUXAR OS DADOS ATUALIZADOS. RODAR DE MADRUGADA"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="508,40"
-          Id="a625589d-56d4-4901-9c7f-845e638bb39a"
-          TopLeft="231,15" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
