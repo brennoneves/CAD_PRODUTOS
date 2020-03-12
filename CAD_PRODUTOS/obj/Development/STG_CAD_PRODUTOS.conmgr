@@ -5,10 +5,10 @@
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=GUARAPARI\SQLEXPRESS;User ID=SA;Initial Catalog=STG_CAD_PRODUTOS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      DTS:ConnectionString="Data Source=RIONOVO;User ID=SA;Initial Catalog=STG_CAD_PRODUTOS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAABrXJzy2YVoO5lJ+YVSXLuPAAAAAASAAACgAAAAEAAAAFVDfNTw++ELCrrNfY9cIPpwAAAAN5J27Os2GVDlTf+z19TX+VAAnWF2CYrM31I+zNwK4r5OCYOsPKDwq0mxEifwwVM2lKt4Wbt8CHsl3usUgJ6cuktFM8h5fCYcUGAWk/kB/Ol3szo+1G7zMzmsriCxBa2oJxpU3FA9gXDH/hDl1atJOhQAAADWjoOvWaxjodwxWdveaXrOgLhG+w==</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAACw26gAJxLZRpt5TD9pAlXWAAAAAASAAACgAAAAEAAAAPjZELJNXgokroelFpFPXNFwAAAA9FyrWlMqJjxPR74nd3jbI9h3dlOZro9Zjwf3R/gmvRA23G85HSL7bxLL9sEkJ84QdZ4LYheFk4zdj3eTMwPx/n82j5ILDKhjU0m2WzNUFAV1NhsLxamta7TK6VWv3L5SXY0fGSKZQnE+yphhxvmDuBQAAADZThn+417dzeSbd+ecCv+L6N/HWw==</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

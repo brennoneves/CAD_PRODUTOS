@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="PHARMAGESTAO"
+  DTS:DTSID="{C4876621-B826-41AB-819D-C2B8F8FAE37D}"
+  DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=root;Dsn=STG_CAD_PRODUTOS;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAACpWhpHcPlyHrl0PBMQruanAAAAAASAAACgAAAAEAAAAJEnaXAV0Av2KvKYlyc/r3hwAAAAgmJXlqJV+GA4wiaDRT7wWM2D5/vsBqkbGIqgeqOYjg2q6xoAev4uMW+lE6AiSZVoeLRSFJhFUeZ3r/y43RWBFZevngA2I5A97o2oSXDnMZbodAhjx3j8FkS9JgwTk3AUFOq3GmsLq8U9Ki4N2jSJ0BQAAAAwy5JIpRjQzavOAYODwkmQOCeHWA==</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

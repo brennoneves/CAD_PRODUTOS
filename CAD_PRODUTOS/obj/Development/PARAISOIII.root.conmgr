@@ -8,7 +8,7 @@
       DTS:ConnectionString="uid=root;Dsn=PARAISOIII;">
       <DTS:Password
         DTS:Name="pwd"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAABpmy0nbd8i5pE/TgNStWN2AAAAAASAAACgAAAAEAAAAJXKatUJ2MVxhSxcBG85x19wAAAAi5aGFKlvwt65s0x8cfoS6c9nY/I9jajk4kO+i96vPBfkVOLf7oVQpTVS19adWh2eUtveoO7qCrZTnr5fR8DhBFd+6OdOnrTrwsdhTxgpN9njkzYvNT7CWRt7Zbhlyu5mzPbaL1YLSVJ2diKVdFhU1xQAAADaZc7IytI6mz4SnpLEdmUb0QHsxg==</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAAAL+356hLRGjhjHZEJfPnbKAAAAAASAAACgAAAAEAAAAG729ttlsomFdnZAGJx6welwAAAArkfWGYpo+phEELuMqelsSWCDLG/5Y2zV8MBUCdEa8X1Cj/0c7u4fgugHiEVcXE4b20l328uoAg3aEUKio08MkfXFkYnmoVWd7jTFfbpMNBXCAecvMPhWkGVoESpBeTVh6aXRMwm/boEEEsg5lTBrnBQAAADeQSH93mCqWYzqwbOYy+zsY5Zb3w==</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
