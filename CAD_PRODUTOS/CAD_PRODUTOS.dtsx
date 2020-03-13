@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="118"
-  DTS:VersionGUID="{426A9B06-E30F-4DA5-A273-619AC4B97800}">
+  DTS:VersionBuild="119"
+  DTS:VersionGUID="{AB293B02-37F8-4C29-8A61-0B51EC0B9AFD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -459,6 +459,12 @@
                           cachedName="UNIDADE_MEDIDA_FATOR"
                           externalMetadataColumnId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[UNIDADE_MEDIDA_FATOR]"
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[UNIDADE_MEDIDA_FATOR]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[dcb]"
+                          cachedDataType="i4"
+                          cachedName="dcb"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DCB]"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[dcb]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -722,6 +728,11 @@
                           dataType="str"
                           length="3"
                           name="UNIDADE_MEDIDA_FATOR" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DCB]"
+                          dataType="numeric"
+                          name="DCB"
+                          precision="15" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1649,13 +1660,13 @@
                           refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[produto]"
                           cachedDataType="i4"
                           cachedName="produto"
+                          cachedSortKeyPosition="1"
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[produto]" />
                         <inputColumn
                           refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[descricao]"
                           cachedDataType="wstr"
                           cachedLength="120"
                           cachedName="descricao"
-                          cachedSortKeyPosition="1"
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[descricao]" />
                         <inputColumn
                           refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[secao_produto]"
@@ -2196,10 +2207,10 @@
 p.fabricante as marca,LTRIM(RTRIM(UPPER(p.lista))) as lista_pnu,p.generico produtos_Farmacia,p.lucro as mark_up,ltrim(RTRIM(p.registro_ms)) as registro_ms,p.venda as preco_maximo,p.venda as preco_venda,
 LTRIM(RTRIM(UPPER(p.tipo_item))) as grupo_contabil,p.classe as classe_produto,LTRIM(RTRIM(UPPER(p.tipo_unidade_medida))) as pf_unidade_farmacotecnica,ltrim(rtrim((CONCAT((SUBSTRING(p.ncm,1,4)),'.',(SUBSTRING(p.ncm,5,2)),'.',(SUBSTRING(p.ncm,7,2)))))) as ncm,
 p.secao as sub_grupo_produto,ltrim(rtrim((CONCAT((SUBSTRING(p.cest,1,2)),'.',(SUBSTRING(p.cest,3,3)),'.',(SUBSTRING(p.cest,6,2)))))) as cest,ltrim(rtrim(e.cod_barra)) as cod_barra,e.embalagem,g.controlado as retencao_receita,g.controlado as venda_controlado,LTRIM(RTRIM(UPPER(g.receita))) as tipo_receita,ltrim(rtrim(g.lista_controlado)) as lista_controlado,
-LTRIM(RTRIM(UPPER(g.tipo_classe_terapeutica))) as classe_terapeutica,p.pmc
+LTRIM(RTRIM(UPPER(g.tipo_classe_terapeutica))) as classe_terapeutica,p.pmc , g.dcb
 FROM PARAISOIII.PRODUTO AS P 
 join PARAISOIII.produto_cod_barra as e on e.produto=p.codigo
-left join PARAISOIII.generico as g on g.codigo=p.generico</property>
+left join PARAISOIII.generico as g on g.codigo=p.generico order by p.codigo</property>
                     <property
                       dataType="System.Int32"
                       description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
@@ -2245,6 +2256,7 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
                           externalMetadataColumnId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].ExternalColumns[produto]"
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[produto]"
                           name="produto"
+                          sortKeyPosition="1"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[descricao]"
@@ -2255,7 +2267,6 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
                           length="120"
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[descricao]"
                           name="descricao"
-                          sortKeyPosition="1"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[secao_produto]"
@@ -2505,6 +2516,15 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
                           precision="11"
                           scale="2"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[dcb]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].ExternalColumns[dcb]"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[dcb]"
+                          name="dcb"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2640,6 +2660,10 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
                           name="pmc"
                           precision="11"
                           scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].ExternalColumns[dcb]"
+                          dataType="i4"
+                          name="dcb" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2806,6 +2830,11 @@ left join PARAISOIII.generico as g on g.codigo=p.generico</property>
                           name="pmc"
                           precision="11"
                           scale="2" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Error Output].Columns[dcb]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Error Output].Columns[dcb]"
+                          name="dcb" />
                         <outputColumn
                           refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
