@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="104"
-  DTS:VersionGUID="{2EFEC208-0388-4406-B234-EBE76228C5AF}">
+  DTS:VersionBuild="105"
+  DTS:VersionGUID="{75CBB4D5-B663-4C28-BD2E-2A5AC454FFB0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1476,13 +1476,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Expressão de Coluna Derivada"
-                              name="Expression">(DT_STR,5,1252)#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_controlado]}</property>
+                              name="Expression">(DT_STR,5,1252)(#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_controlado]} == "" ? "0" : #{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_controlado]})</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expressão Amigável de Coluna Derivada"
                               expressionType="Notify"
-                              name="FriendlyExpression">(DT_STR,5,1252)lista_controlado</property>
+                              name="FriendlyExpression">(DT_STR,5,1252)(lista_controlado == "" ? "0" : lista_controlado)</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -15786,7 +15786,7 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
     design-time-name="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="176,42"
           Id="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados"
@@ -15834,9 +15834,7 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="67.5,52.5,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

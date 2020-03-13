@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="104"
-  DTS:VersionGUID="{2EFEC208-0388-4406-B234-EBE76228C5AF}">
+  DTS:VersionBuild="114"
+  DTS:VersionGUID="{A1688F02-1FC0-48FE-B29A-5525F71DC239}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1476,13 +1476,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Expressão de Coluna Derivada"
-                              name="Expression">(DT_STR,5,1252)#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_controlado]}</property>
+                              name="Expression">(DT_STR,5,1252)(#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_controlado]} == "" ? "0" : #{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[lista_controlado]})</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expressão Amigável de Coluna Derivada"
                               expressionType="Notify"
-                              name="FriendlyExpression">(DT_STR,5,1252)lista_controlado</property>
+                              name="FriendlyExpression">(DT_STR,5,1252)(lista_controlado == "" ? "0" : lista_controlado)</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -8043,7 +8043,7 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                       dataType="System.String"
                       description="O comando SQL a ser executado."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO, RETENCAO_RECEITA, VENDA_CONTROLADA, TIPO_RECEITA, CLASSE_TERAPEUTICA,REGISTRO_MS FROM STG_CAD_PRODUTOS.DBO.CAD_PRODUTOS WHERE VENDA_CONTROLADA=1 ORDER BY PRODUTO</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO, RETENCAO_RECEITA, VENDA_CONTROLADA, TIPO_RECEITA, CLASSE_TERAPEUTICA, REGISTRO_MS, LISTA_CONTROLADO, UNIDADE_FARMACOTECNICA FROM STG_CAD_PRODUTOS.DBO.CAD_PRODUTOS WHERE VENDA_CONTROLADA=1 ORDER BY PRODUTO</property>
                     <property
                       dataType="System.String"
                       description="A variável que contém o comando SQL a ser executado."
@@ -8115,11 +8115,12 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[TIPO_RECEITA]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO_RECEITA]"
-                          length="35"
+                          length="70"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[TIPO_RECEITA]"
                           name="TIPO_RECEITA"
                           truncationRowDisposition="FailComponent" />
@@ -8145,6 +8146,28 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS]"
                           name="REGISTRO_MS"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[LISTA_CONTROLADO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[LISTA_CONTROLADO]"
+                          length="5"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[LISTA_CONTROLADO]"
+                          name="LISTA_CONTROLADO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[UNIDADE_FARMACOTECNICA]"
+                          length="4"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA]"
+                          name="UNIDADE_FARMACOTECNICA"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -8167,8 +8190,9 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           name="VENDA_CONTROLADA" />
                         <externalMetadataColumn
                           refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO_RECEITA]"
-                          dataType="wstr"
-                          length="35"
+                          codePage="1252"
+                          dataType="str"
+                          length="70"
                           name="TIPO_RECEITA" />
                         <externalMetadataColumn
                           refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA]"
@@ -8182,6 +8206,18 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           dataType="str"
                           length="15"
                           name="REGISTRO_MS" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[LISTA_CONTROLADO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="LISTA_CONTROLADO" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[UNIDADE_FARMACOTECNICA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          name="UNIDADE_FARMACOTECNICA" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -8189,6 +8225,18 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                       isErrorOut="true"
                       name="Saída de Erro de Origem OLE DB">
                       <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
                         <outputColumn
                           refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO]"
                           dataType="numeric"
@@ -8211,8 +8259,9 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           name="VENDA_CONTROLADA" />
                         <outputColumn
                           refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO_RECEITA]"
-                          dataType="wstr"
-                          length="35"
+                          codePage="1252"
+                          dataType="str"
+                          length="70"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO_RECEITA]"
                           name="TIPO_RECEITA" />
                         <outputColumn
@@ -8223,6 +8272,13 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA]"
                           name="CLASSE_TERAPEUTICA" />
                         <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA]"
+                          name="UNIDADE_FARMACOTECNICA" />
+                        <outputColumn
                           refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[REGISTRO_MS]"
                           codePage="1252"
                           dataType="str"
@@ -8230,15 +8286,248 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[REGISTRO_MS]"
                           name="REGISTRO_MS" />
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[LISTA_CONTROLADO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[LISTA_CONTROLADO]"
+                          name="LISTA_CONTROLADO" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="INSERT PRODUTOS_FARMACIA"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[TBL_PF]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Connections[OleDbConnection]"
+                      connectionManagerID="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[STG_CAD_PRODUTOS]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].Columns[PRODUTO]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO_PF]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].Columns[TIPO_FINAL]"
+                          cachedDataType="numeric"
+                          cachedName="TIPO_FINAL"
+                          cachedPrecision="5"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[TIPO_PF]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_FINAL]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].Columns[VENDA_CONTROLADA_TF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="VENDA_CONTROLADA_TF"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[VENDA_CONTROLADA_PF]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[VENDA_CONTROLADA_TF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].Columns[REGISTRO_MS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="REGISTRO_MS"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[REGISTRO_MS_PF]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].Columns[TIPO_RECEITA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="70"
+                          cachedName="TIPO_RECEITA"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[TIPO_RECEITA_PF]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].Columns[CLASSE_TERAPEUTICA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="65"
+                          cachedName="CLASSE_TERAPEUTICA"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF1]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].Columns[UNIDADE_FARMACOTECNICA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="UNIDADE_FARMACOTECNICA"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[UNIDADE_FARMACOTECNICA_PF]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].Columns[MUDAR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="MUDAR"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[ATUALIZAR]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].Columns[CLASSE_TERAPEUTICA_TF]"
+                          cachedDataType="numeric"
+                          cachedName="CLASSE_TERAPEUTICA_TF"
+                          cachedPrecision="5"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF2]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[CLASSE_TERAPEUTICA_TF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].Columns[RETENCAO_RECEITA_TF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="RETENCAO_RECEITA_TF"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[RETENCAO_RECEITA_PF]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[RETENCAO_RECEITA_TF]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO_PF]"
+                          dataType="numeric"
+                          name="PRODUTO_PF"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[RETENCAO_RECEITA_PF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="RETENCAO_RECEITA_PF" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[VENDA_CONTROLADA_PF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="VENDA_CONTROLADA_PF" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[REGISTRO_MS_PF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="REGISTRO_MS_PF" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[TIPO_PF]"
+                          dataType="numeric"
+                          name="TIPO_PF"
+                          precision="5" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[TIPO_RECEITA_PF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="70"
+                          name="TIPO_RECEITA_PF" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="65"
+                          name="CLASSE_TERAPEUTICA_PF1" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF2]"
+                          dataType="numeric"
+                          name="CLASSE_TERAPEUTICA_PF2"
+                          precision="5" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[UNIDADE_FARMACOTECNICA_PF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="UNIDADE_FARMACOTECNICA_PF" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="ATUALIZAR" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -8247,18 +8536,150 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN"
+                  refId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Divisão Condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Encaminha colunas de dados para saídas diferentes, dependendo do conteúdo dos dados. Use condições (expressões do SSIS) para especificar quais linhas são encaminhadas. Por exemplo, separe os registros que precisam ser limpos daqueles que estão prontos para serem carregados ou encaminhe somente um subconjunto de registros."
+                  name="ISNERT OU UPDATE"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Inputs[Entrada de Divisão Condicional]"
+                      description="Entrada para a Transformação Divisão Condicional"
+                      name="Entrada de Divisão Condicional">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[PRODUTO]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[PRODUTO_PF]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_PF"
+                          cachedPrecision="15"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[MUDAR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="MUDAR"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Outputs[INSERT]"
+                      description="Saída 1 da Transformação Divisão Condicional"
+                      errorOrTruncationOperation="Computação"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="INSERT"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Inputs[Entrada de Divisão Condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
+                          name="Expression">![ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]}) &amp;&amp; #{Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "N"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
+                          expressionType="Notify"
+                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_PF) &amp;&amp; MUDAR == "N"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Outputs[UPDATE]"
+                      description="Saída 2 da Transformação Divisão Condicional"
+                      errorOrTruncationOperation="Computação"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="UPDATE"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Inputs[Entrada de Divisão Condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
+                          name="Expression">![ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]}) &amp;&amp; #{Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
+                          expressionType="Notify"
+                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_PF) &amp;&amp; MUDAR == "S"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
+                          name="EvaluationOrder">1</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Outputs[Saída Padrão de Divisão Condicional]"
+                      description="Saída Padrão da Transformação Divisão Condicional"
+                      exclusionGroup="1"
+                      name="Saída Padrão de Divisão Condicional"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Inputs[Entrada de Divisão Condicional]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional]"
+                      description="Saída de Erro da Transformação Divisão Condicional"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Divisão Condicional"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Inputs[Entrada de Divisão Condicional]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem"
                   componentClassID="Microsoft.MergeJoin"
                   contactInfo="Junção de Mesclagem;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
                   description="Combina dois fluxos de dados classificados em um usando a junção FULL, LEFT ou INNER. Essa transformação é recomendável quando os fluxos de dados podem ser classificados em suas fontes."
-                  name="LEFT JOIN"
+                  name="Junção de Mesclagem"
                   version="1">
                   <properties>
                     <property
                       dataType="System.Int32"
                       description="Especifica o tipo de junção a ser executada."
                       name="JoinType"
-                      typeConverter="JoinType">1</property>
+                      typeConverter="JoinType">2</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica o número de colunas na chave de ordenação."
@@ -8274,120 +8695,156 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                   </properties>
                   <inputs>
                     <input
-                      refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem]"
+                      refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem]"
                       hasSideEffects="true"
                       name="Entrada Esquerda da Junção de Mesclagem">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[PRODUTO]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[PRODUTO]"
                           cachedDataType="numeric"
                           cachedName="PRODUTO"
                           cachedPrecision="15"
                           cachedSortKeyPosition="1"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[PRODUTO]" />
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[RETENCAO_RECEITA]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[RETENCAO_RECEITA]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
                           cachedName="RETENCAO_RECEITA"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[RETENCAO_RECEITA]" />
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[VENDA_CONTROLADA]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[VENDA_CONTROLADA]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
                           cachedName="VENDA_CONTROLADA"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[VENDA_CONTROLADA]" />
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[TIPO_RECEITA]"
-                          cachedDataType="wstr"
-                          cachedLength="35"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[TIPO_RECEITA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="70"
                           cachedName="TIPO_RECEITA"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[TIPO_RECEITA]" />
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="65"
                           cachedName="CLASSE_TERAPEUTICA"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA]" />
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[REGISTRO_MS]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[REGISTRO_MS]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="15"
                           cachedName="REGISTRO_MS"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[LISTA_CONTROLADO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="LISTA_CONTROLADO"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[LISTA_CONTROLADO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="UNIDADE_FARMACOTECNICA"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                     <input
-                      refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem]"
+                      refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem]"
                       hasSideEffects="true"
                       name="Entrada Direita da Junção de Mesclagem">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[PRODUTO_PF]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[PRODUTO_PF]"
                           cachedDataType="numeric"
                           cachedName="PRODUTO_PF"
                           cachedPrecision="15"
                           cachedSortKeyPosition="1"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_PF]" />
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
                           cachedName="RETENCAO_RECEITA_PF"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[RETENCAO_RECEITA_PF]" />
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
                           cachedName="VENDA_CONTROLADA_PF"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[VENDA_CONTROLADA_PF]" />
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[TIPO_PF]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[TIPO_PF]"
                           cachedDataType="numeric"
                           cachedName="TIPO_PF"
                           cachedPrecision="5"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[TIPO_PF]" />
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF]"
-                          cachedDataType="numeric"
-                          cachedName="CLASSE_TERAPEUTICA_PF"
-                          cachedPrecision="5"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF]" />
-                        <inputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[REGISTRO_MS_PF]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[REGISTRO_MS_PF]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="20"
                           cachedName="REGISTRO_MS_PF"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS_PF]" />
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ATUALIZAR]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ATUALIZAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="3"
                           cachedName="ATUALIZAR"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA_PF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="UNIDADE_FARMACOTECNICA_PF"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[TIPO_RECEITA_PF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="70"
+                          cachedName="TIPO_RECEITA_PF"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[TIPO_RECEITA_PF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF1]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="65"
+                          cachedName="CLASSE_TERAPEUTICA_PF1"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF2]"
+                          cachedDataType="numeric"
+                          cachedName="CLASSE_TERAPEUTICA_PF2"
+                          cachedPrecision="5"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem]"
+                      refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem]"
                       isSorted="true"
                       name="Saída da Junção de Mesclagem">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]"
                           dataType="numeric"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]"
                           name="PRODUTO"
                           precision="15"
                           sortKeyPosition="1">
@@ -8396,131 +8853,148 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                               containsID="true"
                               dataType="System.Int32"
                               description="A coluna de entrada associada a esta coluna de saída"
-                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[PRODUTO]}</property>
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[PRODUTO]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA]"
                           codePage="1252"
                           dataType="str"
                           length="1"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA]"
                           name="RETENCAO_RECEITA">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="A coluna de entrada associada a esta coluna de saída"
-                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[RETENCAO_RECEITA]}</property>
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[RETENCAO_RECEITA]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA]"
                           codePage="1252"
                           dataType="str"
                           length="1"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA]"
                           name="VENDA_CONTROLADA">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="A coluna de entrada associada a esta coluna de saída"
-                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[VENDA_CONTROLADA]}</property>
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[VENDA_CONTROLADA]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]"
-                          dataType="wstr"
-                          length="35"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="70"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]"
                           name="TIPO_RECEITA">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="A coluna de entrada associada a esta coluna de saída"
-                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[TIPO_RECEITA]}</property>
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[TIPO_RECEITA]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]"
                           codePage="1252"
                           dataType="str"
                           length="65"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]"
                           name="CLASSE_TERAPEUTICA">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="A coluna de entrada associada a esta coluna de saída"
-                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]}</property>
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]"
                           codePage="1252"
                           dataType="str"
                           length="15"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]"
                           name="REGISTRO_MS">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="A coluna de entrada associada a esta coluna de saída"
-                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[REGISTRO_MS]}</property>
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[REGISTRO_MS]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]"
-                          dataType="numeric"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]"
-                          name="PRODUTO_PF"
-                          precision="15">
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[LISTA_CONTROLADO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[LISTA_CONTROLADO]"
+                          name="LISTA_CONTROLADO">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="A coluna de entrada associada a esta coluna de saída"
-                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[PRODUTO_PF]}</property>
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[LISTA_CONTROLADO]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA]"
+                          name="UNIDADE_FARMACOTECNICA">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]"
                           codePage="1252"
                           dataType="str"
                           length="1"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]"
                           name="RETENCAO_RECEITA_PF">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="A coluna de entrada associada a esta coluna de saída"
-                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]}</property>
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]"
                           codePage="1252"
                           dataType="str"
                           length="1"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]"
                           name="VENDA_CONTROLADA_PF">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="A coluna de entrada associada a esta coluna de saída"
-                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]}</property>
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_PF]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_PF]"
                           dataType="numeric"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_PF]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_PF]"
                           name="TIPO_PF"
                           precision="5">
                           <properties>
@@ -8528,51 +9002,110 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                               containsID="true"
                               dataType="System.Int32"
                               description="A coluna de entrada associada a esta coluna de saída"
-                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[TIPO_PF]}</property>
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[TIPO_PF]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF]"
-                          dataType="numeric"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF]"
-                          name="CLASSE_TERAPEUTICA_PF"
-                          precision="5">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="A coluna de entrada associada a esta coluna de saída"
-                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_PF]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_PF]"
                           codePage="1252"
                           dataType="str"
                           length="20"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_PF]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_PF]"
                           name="REGISTRO_MS_PF">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="A coluna de entrada associada a esta coluna de saída"
-                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[REGISTRO_MS_PF]}</property>
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[REGISTRO_MS_PF]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]"
                           codePage="1252"
                           dataType="str"
                           length="3"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]"
                           name="ATUALIZAR">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="A coluna de entrada associada a esta coluna de saída"
-                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ATUALIZAR]}</property>
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ATUALIZAR]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA_PF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA_PF]"
+                          name="UNIDADE_FARMACOTECNICA_PF">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA_PF]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA_PF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="70"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA_PF]"
+                          name="TIPO_RECEITA_PF">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[TIPO_RECEITA_PF]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="65"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF1]"
+                          name="CLASSE_TERAPEUTICA_PF1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF1]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF2]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF2]"
+                          name="CLASSE_TERAPEUTICA_PF2"
+                          precision="5">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF2]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]"
+                          name="PRODUTO_PF"
+                          precision="15">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[PRODUTO_PF]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -8581,47 +9114,195 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Contêiner da Sequência\TBL_PF\MUDAR E LIMPAR OS NULL"
+                  refId="Package\Contêiner da Sequência\TBL_PF\MUDAR"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Coluna Derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
                   description="Cria novos valores de coluna aplicando expressões a colunas de entrada da transformação. Crie novas colunas ou substitua as existentes. Por exemplo, concatene os valores das colunas 'first name' e 'last name' para formar uma coluna 'full name'."
-                  name="MUDAR E LIMPAR OS NULL"
+                  name="MUDAR"
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Contêiner da Sequência\TBL_PF\MUDAR E LIMPAR OS NULL.Inputs[Entrada de Coluna Derivada]"
+                      refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada]"
                       description="Entrada para a Transformação Coluna Derivada"
                       name="Entrada de Coluna Derivada">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[LISTA_CONTROLADO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="LISTA_CONTROLADO"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[LISTA_CONTROLADO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[TIPO_TF]"
+                          cachedDataType="numeric"
+                          cachedName="TIPO_TF"
+                          cachedPrecision="5"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_TF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[RETENCAO_RECEITA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="RETENCAO_RECEITA"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[VENDA_CONTROLADA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="VENDA_CONTROLADA"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[TIPO_RECEITA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="70"
+                          cachedName="TIPO_RECEITA"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[CLASSE_TERAPEUTICA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="65"
+                          cachedName="CLASSE_TERAPEUTICA"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[REGISTRO_MS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="REGISTRO_MS"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[UNIDADE_FARMACOTECNICA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="UNIDADE_FARMACOTECNICA"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[RETENCAO_RECEITA_PF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="RETENCAO_RECEITA_PF"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[VENDA_CONTROLADA_PF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="VENDA_CONTROLADA_PF"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[REGISTRO_MS_PF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="REGISTRO_MS_PF"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_PF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[UNIDADE_FARMACOTECNICA_PF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="3"
+                          cachedName="UNIDADE_FARMACOTECNICA_PF"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA_PF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[TIPO_RECEITA_PF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="70"
+                          cachedName="TIPO_RECEITA_PF"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA_PF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[CLASSE_TERAPEUTICA_PF1]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="65"
+                          cachedName="CLASSE_TERAPEUTICA_PF1"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF1]" />
+                      </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Contêiner da Sequência\TBL_PF\MUDAR E LIMPAR OS NULL.Outputs[Saída de Coluna Derivada]"
+                      refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada]"
                       description="Saída Padrão da Transformação Coluna Derivada"
                       exclusionGroup="1"
                       name="Saída de Coluna Derivada"
-                      synchronousInputId="Package\Contêiner da Sequência\TBL_PF\MUDAR E LIMPAR OS NULL.Inputs[Entrada de Coluna Derivada]">
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_FINAL]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_FINAL]"
+                          name="TIPO_FINAL"
+                          precision="5"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_NUMERIC,5,0)(DT_NUMERIC,5,0)((#{Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_TF]} == 1 &amp;&amp; #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[LISTA_CONTROLADO]} == "C1") ? 1 : ((#{Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_TF]} == 1 &amp;&amp; #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[LISTA_CONTROLADO]} == "C2") ? 2 : ((#{Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_TF]} == 1 &amp;&amp; #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[LISTA_CONTROLADO]} == "C4") ? 13 : ((#{Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_TF]} == 1 &amp;&amp; #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[LISTA_CONTROLADO]} == "C5") ? 3 : ((#{Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_TF]} == 6 &amp;&amp; #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[LISTA_CONTROLADO]} == "B2") ? 6 : ((#{Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_TF]} == 6 &amp;&amp; #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[LISTA_CONTROLADO]} == "B1") ? 9 : ((#{Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_TF]} == 12 ? 12 : 0))))))))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_NUMERIC,5,0)(DT_NUMERIC,5,0)((TIPO_TF == 1 &amp;&amp; LISTA_CONTROLADO == "C1") ? 1 : ((TIPO_TF == 1 &amp;&amp; LISTA_CONTROLADO == "C2") ? 2 : ((TIPO_TF == 1 &amp;&amp; LISTA_CONTROLADO == "C4") ? 13 : ((TIPO_TF == 1 &amp;&amp; LISTA_CONTROLADO == "C5") ? 3 : ((TIPO_TF == 6 &amp;&amp; LISTA_CONTROLADO == "B2") ? 6 : ((TIPO_TF == 6 &amp;&amp; LISTA_CONTROLADO == "B1") ? 9 : ((TIPO_TF == 12 ? 12 : 0))))))))</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]"
+                          name="MUDAR"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,1,1252)(#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]} == #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_PF]} ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA]} == #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]} ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA]} == #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]} ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]} == #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA_PF]} ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]} == #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF1]} ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA]} == #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA_PF]} ? "N" : "S"))))))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,1,1252)(REGISTRO_MS == REGISTRO_MS_PF ? "N" : (RETENCAO_RECEITA == RETENCAO_RECEITA_PF ? "N" : (VENDA_CONTROLADA == VENDA_CONTROLADA_PF ? "N" : (TIPO_RECEITA == TIPO_RECEITA_PF ? "N" : (CLASSE_TERAPEUTICA == CLASSE_TERAPEUTICA_PF1 ? "N" : (UNIDADE_FARMACOTECNICA == UNIDADE_FARMACOTECNICA_PF ? "N" : "S"))))))</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Contêiner da Sequência\TBL_PF\MUDAR E LIMPAR OS NULL.Outputs[Saída de Erro de Coluna Derivada]"
+                      refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Erro de Coluna Derivada]"
                       description="Saída de Erro da Transformação Coluna Derivada"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Saída de Erro de Coluna Derivada"
-                      synchronousInputId="Package\Contêiner da Sequência\TBL_PF\MUDAR E LIMPAR OS NULL.Inputs[Entrada de Coluna Derivada]">
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR E LIMPAR OS NULL.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\MUDAR E LIMPAR OS NULL.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR E LIMPAR OS NULL.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\MUDAR E LIMPAR OS NULL.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -8654,7 +9335,7 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                       dataType="System.String"
                       description="O comando SQL a ser executado."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO_PF, RETENCAO_RECEITA_PF, VENDA_CONTROLADA_PF, TIPO_PF, CLASSE_TERAPEUTICA_PF,REGISTRO_MS_PF, ATUALIZAR FROM STG_CAD_PRODUTOS.DBO.TBL_PF ORDER BY PRODUTO_PF</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO_PF, RETENCAO_RECEITA_PF, VENDA_CONTROLADA_PF, TIPO_PF, CLASSE_TERAPEUTICA_PF1, CLASSE_TERAPEUTICA_PF2 ,REGISTRO_MS_PF, ATUALIZAR, UNIDADE_FARMACOTECNICA_PF, TIPO_RECEITA_PF FROM STG_CAD_PRODUTOS.DBO.TBL_PF ORDER BY PRODUTO_PF</property>
                     <property
                       dataType="System.String"
                       description="A variável que contém o comando SQL a ser executado."
@@ -8735,16 +9416,6 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           precision="5"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversão"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF]"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF]"
-                          name="CLASSE_TERAPEUTICA_PF"
-                          precision="5"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS_PF]"
                           codePage="1252"
                           dataType="str"
@@ -8765,6 +9436,49 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           length="3"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]"
                           name="ATUALIZAR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[UNIDADE_FARMACOTECNICA_PF]"
+                          length="3"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]"
+                          name="UNIDADE_FARMACOTECNICA_PF"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[TIPO_RECEITA_PF]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO_RECEITA_PF]"
+                          length="70"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[TIPO_RECEITA_PF]"
+                          name="TIPO_RECEITA_PF"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF1]"
+                          length="65"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]"
+                          name="CLASSE_TERAPEUTICA_PF1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF2]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]"
+                          name="CLASSE_TERAPEUTICA_PF2"
+                          precision="5"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -8792,11 +9506,6 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           name="TIPO_PF"
                           precision="5" />
                         <externalMetadataColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF]"
-                          dataType="numeric"
-                          name="CLASSE_TERAPEUTICA_PF"
-                          precision="5" />
-                        <externalMetadataColumn
                           refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[REGISTRO_MS_PF]"
                           codePage="1252"
                           dataType="str"
@@ -8806,8 +9515,31 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[ATUALIZAR]"
                           codePage="1252"
                           dataType="str"
-                          length="3"
+                          length="1"
                           name="ATUALIZAR" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[UNIDADE_FARMACOTECNICA_PF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="UNIDADE_FARMACOTECNICA_PF" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO_RECEITA_PF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="70"
+                          name="TIPO_RECEITA_PF" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="65"
+                          name="CLASSE_TERAPEUTICA_PF1" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF2]"
+                          dataType="numeric"
+                          name="CLASSE_TERAPEUTICA_PF2"
+                          precision="5" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -8842,10 +9574,17 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           name="TIPO_PF"
                           precision="5" />
                         <outputColumn
-                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF]"
+                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="65"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]"
+                          name="CLASSE_TERAPEUTICA_PF1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]"
                           dataType="numeric"
-                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF]"
-                          name="CLASSE_TERAPEUTICA_PF"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]"
+                          name="CLASSE_TERAPEUTICA_PF2"
                           precision="5" />
                         <outputColumn
                           refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[REGISTRO_MS_PF]"
@@ -8858,9 +9597,23 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[ATUALIZAR]"
                           codePage="1252"
                           dataType="str"
-                          length="3"
+                          length="1"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[ATUALIZAR]"
                           name="ATUALIZAR" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]"
+                          name="UNIDADE_FARMACOTECNICA_PF" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO_RECEITA_PF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="70"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO_RECEITA_PF]"
+                          name="TIPO_RECEITA_PF" />
                         <outputColumn
                           refId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
                           dataType="i4"
@@ -8878,23 +9631,502 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Coluna Derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Cria novos valores de coluna aplicando expressões a colunas de entrada da transformação. Crie novas colunas ou substitua as existentes. Por exemplo, concatene os valores das colunas 'first name' e 'last name' para formar uma coluna 'full name'."
+                  name="TRANSFORMAR"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Inputs[Entrada de Coluna Derivada]"
+                      description="Entrada para a Transformação Coluna Derivada"
+                      name="Entrada de Coluna Derivada">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Inputs[Entrada de Coluna Derivada].Columns[RETENCAO_RECEITA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="RETENCAO_RECEITA"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Inputs[Entrada de Coluna Derivada].Columns[VENDA_CONTROLADA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="VENDA_CONTROLADA"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Inputs[Entrada de Coluna Derivada].Columns[TIPO_RECEITA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="70"
+                          cachedName="TIPO_RECEITA"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Inputs[Entrada de Coluna Derivada].Columns[CLASSE_TERAPEUTICA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="65"
+                          cachedName="CLASSE_TERAPEUTICA"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada]"
+                      description="Saída Padrão da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      name="Saída de Coluna Derivada"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[RETENCAO_RECEITA_TF]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[RETENCAO_RECEITA_TF]"
+                          name="RETENCAO_RECEITA_TF"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,1,1252)(#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA]} == "1" ? "S" : "N")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,1,1252)(RETENCAO_RECEITA == "1" ? "S" : "N")</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[VENDA_CONTROLADA_TF]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[VENDA_CONTROLADA_TF]"
+                          name="VENDA_CONTROLADA_TF"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,1,1252)(#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA]} == "1" ? "S" : "N")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,1,1252)(VENDA_CONTROLADA == "1" ? "S" : "N")</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_TF]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_TF]"
+                          name="TIPO_TF"
+                          precision="5"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_NUMERIC,5,0)(([SUBSTRING](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]},1,1)) == "5" ? 12 : (([SUBSTRING](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]},1,1)) == "2" ? 6 : (([SUBSTRING](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]},1,1)) == "1" ? 1 : 0)))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_NUMERIC,5,0)((SUBSTRING(TIPO_RECEITA,1,1)) == "5" ? 12 : ((SUBSTRING(TIPO_RECEITA,1,1)) == "2" ? 6 : ((SUBSTRING(TIPO_RECEITA,1,1)) == "1" ? 1 : 0)))</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[CLASSE_TERAPEUTICA_TF]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[CLASSE_TERAPEUTICA_TF]"
+                          name="CLASSE_TERAPEUTICA_TF"
+                          precision="5"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_NUMERIC,5,0)(([SUBSTRING](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]},1,1)) == "1" ? 1 : (([SUBSTRING](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]},1,1)) == "2" ? 2 : 440))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_NUMERIC,5,0)((SUBSTRING(CLASSE_TERAPEUTICA,1,1)) == "1" ? 1 : ((SUBSTRING(CLASSE_TERAPEUTICA,1,1)) == "2" ? 2 : 440))</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Erro de Coluna Derivada]"
+                      description="Saída de Erro da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Coluna Derivada"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="Comando OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;2"
+                  description="Executa uma instrução SQL para cada linha em um fluxo de dados. Por exemplo, chame um procedimento armazenado 'new employee setup' para cada linha da tabela 'new employees'. Observação: a execução de uma instrução SQL para cada linha de um fluxo de dados grande pode demorar."
+                  name="UPDATE PRODUTOS_FARMACIA"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE STG_CAD_PRODUTOS.DBO.TBL_PF SET RETENCAO_RECEITA_PF = ? , VENDA_CONTROLADA_PF = ? , TIPO_RECEITA_PF = ? , CLASSE_TERAPEUTICA_PF2 = ? , 
+CLASSE_TERAPEUTICA_PF1 = ? , ATUALIZAR = ? , REGISTRO_MS_PF = ? , TIPO_PF =? , UNIDADE_FARMACOTECNICA_PF = ?  WHERE PRODUTO_PF= ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Connections[OleDbConnection]"
+                      connectionManagerID="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[STG_CAD_PRODUTOS]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB]"
+                      errorOrTruncationOperation="Execução de Comando"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Comando OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].Columns[RETENCAO_RECEITA_TF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="RETENCAO_RECEITA_TF"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[RETENCAO_RECEITA_TF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].Columns[VENDA_CONTROLADA_TF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="VENDA_CONTROLADA_TF"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[VENDA_CONTROLADA_TF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].Columns[TIPO_RECEITA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="70"
+                          cachedName="TIPO_RECEITA"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].Columns[CLASSE_TERAPEUTICA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="65"
+                          cachedName="CLASSE_TERAPEUTICA"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_4]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].Columns[MUDAR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="MUDAR"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_5]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].Columns[REGISTRO_MS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="REGISTRO_MS"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_6]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].Columns[CLASSE_TERAPEUTICA_TF]"
+                          cachedDataType="numeric"
+                          cachedName="CLASSE_TERAPEUTICA_TF"
+                          cachedPrecision="5"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_3]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[CLASSE_TERAPEUTICA_TF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].Columns[TIPO_FINAL]"
+                          cachedDataType="numeric"
+                          cachedName="TIPO_FINAL"
+                          cachedPrecision="5"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_7]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[TIPO_FINAL]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].Columns[UNIDADE_FARMACOTECNICA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="UNIDADE_FARMACOTECNICA"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_8]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].Columns[PRODUTO]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_9]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="70"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_3]"
+                          dataType="numeric"
+                          name="Param_3"
+                          precision="5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="65"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_5]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_6]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_7]"
+                          dataType="numeric"
+                          name="Param_7"
+                          precision="5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_8]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="Param_8">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_9]"
+                          dataType="numeric"
+                          name="Param_9"
+                          precision="15">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Outputs[Saída de Comando OLE DB]"
+                      exclusionGroup="1"
+                      name="Saída de Comando OLE DB"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Outputs[Saída de Erro de Comando OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Comando OLE DB"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
+                  refId="Package\Contêiner da Sequência\TBL_PF.Paths[INSERT]"
+                  endId="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB]"
+                  name="INSERT"
+                  startId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Outputs[INSERT]" />
+                <path
                   refId="Package\Contêiner da Sequência\TBL_PF.Paths[Saída da Junção de Mesclagem]"
-                  endId="Package\Contêiner da Sequência\TBL_PF\MUDAR E LIMPAR OS NULL.Inputs[Entrada de Coluna Derivada]"
+                  endId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Inputs[Entrada de Coluna Derivada]"
                   name="Saída da Junção de Mesclagem"
-                  startId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Outputs[Saída da Junção de Mesclagem]" />
+                  startId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem]" />
+                <path
+                  refId="Package\Contêiner da Sequência\TBL_PF.Paths[Saída de Coluna Derivada]"
+                  endId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada]"
+                  name="Saída de Coluna Derivada"
+                  startId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada]" />
+                <path
+                  refId="Package\Contêiner da Sequência\TBL_PF.Paths[Saída de Coluna Derivada1]"
+                  endId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Inputs[Entrada de Divisão Condicional]"
+                  name="Saída de Coluna Derivada"
+                  startId="Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada]" />
+                <path
+                  refId="Package\Contêiner da Sequência\TBL_PF.Paths[Saída de Origem OLE DB]"
+                  endId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Esquerda da Junção de Mesclagem]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB]" />
                 <path
                   refId="Package\Contêiner da Sequência\TBL_PF.Paths[Saída de Origem OLE DB1]"
-                  endId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem]"
+                  endId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem]"
                   name="Saída de Origem OLE DB"
                   startId="Package\Contêiner da Sequência\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB]" />
                 <path
-                  refId="Package\Contêiner da Sequência\TBL_PF.Paths[Saída de Origem OLE DB]"
-                  endId="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem]"
-                  name="Saída de Origem OLE DB"
-                  startId="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB]" />
+                  refId="Package\Contêiner da Sequência\TBL_PF.Paths[UPDATE]"
+                  endId="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA.Inputs[Entrada de Comando OLE DB]"
+                  name="UPDATE"
+                  startId="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE.Outputs[UPDATE]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -15786,7 +17018,7 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
     design-time-name="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="176,42"
           Id="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados"
@@ -15834,9 +17066,7 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="67.5,52.5,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16474,7 +17704,7 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
     design-time-name="Package\Contêiner da Sequência\TBL_PF">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Contêiner da Sequência\TBL_PF\CAD_PRODUTOS"
@@ -16484,35 +17714,77 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
           Id="Package\Contêiner da Sequência\TBL_PF\TBL_PV"
           TopLeft="330,10" />
         <NodeLayout
-          Size="134,42"
-          Id="Package\Contêiner da Sequência\TBL_PF\LEFT JOIN"
-          TopLeft="159,139" />
+          Size="164,42"
+          Id="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR"
+          TopLeft="125,250" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\Contêiner da Sequência\TBL_PF\MUDAR"
+          TopLeft="129,379" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\TBL_PF.Paths[Saída de Coluna Derivada]"
+          TopLeft="207,292">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18.5,87"
+              Start="0,0"
+              End="-18.5,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.5"
+                    Point2="0,43.5"
+                    Point3="-4,43.5" />
+                  <mssgle:LineSegment
+                    End="-14.5,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.5,43.5"
+                    Point2="-18.5,43.5"
+                    Point3="-18.5,47.5" />
+                  <mssgle:LineSegment
+                    End="-18.5,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem"
+          TopLeft="242,124" />
         <EdgeLayout
           Id="Package\Contêiner da Sequência\TBL_PF.Paths[Saída de Origem OLE DB]"
           TopLeft="114.5,58">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="90.5,81"
+              EndConnector="222,66"
               Start="0,0"
-              End="90.5,73.5">
+              End="222,58.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.0265486725664" />
+                    End="0,29" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,44.0265486725664"
-                    Point2="0,48.0265486725664"
-                    Point3="4,48.0265486725664" />
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="4,33" />
                   <mssgle:LineSegment
-                    End="86.5,48.0265486725664" />
+                    End="218,33" />
                   <mssgle:CubicBezierSegment
-                    Point1="86.5,48.0265486725664"
-                    Point2="90.5,48.0265486725664"
-                    Point3="90.5,52.0265486725664" />
+                    Point1="218,33"
+                    Point2="222,33"
+                    Point3="222,37" />
                   <mssgle:LineSegment
-                    End="90.5,73.5" />
+                    End="222,58.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16527,26 +17799,60 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-143,87"
+              EndConnector="-23.3333333333334,72"
               Start="0,0"
-              End="-143,79.5">
+              End="-23.3333333333334,64.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5840707964602" />
+                    End="0,38.8373557187828" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47.5840707964602"
-                    Point2="0,51.5840707964602"
-                    Point3="-4,51.5840707964602" />
+                    Point1="0,38.8373557187828"
+                    Point2="0,42.8373557187828"
+                    Point3="-4,42.8373557187828" />
                   <mssgle:LineSegment
-                    End="-139,51.5840707964602" />
+                    End="-19.3333333333334,42.8373557187828" />
                   <mssgle:CubicBezierSegment
-                    Point1="-139,51.5840707964602"
-                    Point2="-143,51.5840707964602"
-                    Point3="-143,55.5840707964602" />
+                    Point1="-19.3333333333334,42.8373557187828"
+                    Point2="-23.3333333333334,42.8373557187828"
+                    Point3="-23.3333333333334,46.8373557187828" />
                   <mssgle:LineSegment
-                    End="-143,79.5" />
+                    End="-23.3333333333334,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\TBL_PF.Paths[Saída da Junção de Mesclagem]"
+          TopLeft="336.5,166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-129.5,84"
+              Start="0,0"
+              End="-129.5,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38"
+                    Point2="0,42"
+                    Point3="-4,42" />
+                  <mssgle:LineSegment
+                    End="-125.5,42" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-125.5,42"
+                    Point2="-129.5,42"
+                    Point3="-129.5,46" />
+                  <mssgle:LineSegment
+                    End="-129.5,76.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16556,41 +17862,121 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="223,42"
-          Id="Package\Contêiner da Sequência\TBL_PF\MUDAR E LIMPAR OS NULL"
-          TopLeft="125,250" />
+          Size="186,42"
+          Id="Package\Contêiner da Sequência\TBL_PF\ISNERT OU UPDATE"
+          TopLeft="124,515" />
         <EdgeLayout
-          Id="Package\Contêiner da Sequência\TBL_PF.Paths[Saída da Junção de Mesclagem]"
-          TopLeft="226,181">
+          Id="Package\Contêiner da Sequência\TBL_PF.Paths[Saída de Coluna Derivada1]"
+          TopLeft="188.5,421">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.5,69"
+              EndConnector="28.5,94"
               Start="0,0"
-              End="10.5,61.5">
+              End="28.5,86.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,43" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.5"
-                    Point2="0,34.5"
-                    Point3="4,34.5" />
+                    Point1="0,43"
+                    Point2="0,47"
+                    Point3="4,47" />
                   <mssgle:LineSegment
-                    End="6.5,34.5" />
+                    End="24.5,47" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.5,34.5"
-                    Point2="10.5,34.5"
-                    Point3="10.5,38.5" />
+                    Point1="24.5,47"
+                    Point2="28.5,47"
+                    Point3="28.5,51" />
                   <mssgle:LineSegment
-                    End="10.5,61.5" />
+                    End="28.5,86.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="248,42"
+          Id="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA"
+          TopLeft="33,682" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\TBL_PF.Paths[INSERT]"
+          TopLeft="187.333333333333,557">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-30.3333333333333,125"
+              Start="0,0"
+              End="-30.3333333333333,117.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.6396588486141" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.6396588486141"
+                    Point2="0,50.6396588486141"
+                    Point3="-4,50.6396588486141" />
+                  <mssgle:LineSegment
+                    End="-26.3333333333333,50.6396588486141" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.3333333333333,50.6396588486141"
+                    Point2="-30.3333333333333,50.6396588486141"
+                    Point3="-30.3333333333333,54.6396588486141" />
+                  <mssgle:LineSegment
+                    End="-30.3333333333333,117.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.7569791666667,55.6396588486141,35.180625,9.5341796875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="252,42"
+          Id="Package\Contêiner da Sequência\TBL_PF\UPDATE PRODUTOS_FARMACIA"
+          TopLeft="386,679" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\TBL_PF.Paths[UPDATE]"
+          TopLeft="246.666666666667,557">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="265.333333333333,122"
+              Start="0,0"
+              End="265.333333333333,114.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.4243070362473" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.4243070362473"
+                    Point2="0,49.4243070362473"
+                    Point3="4,49.4243070362473" />
+                  <mssgle:LineSegment
+                    End="261.333333333333,49.4243070362473" />
+                  <mssgle:CubicBezierSegment
+                    Point1="261.333333333333,49.4243070362473"
+                    Point2="265.333333333333,49.4243070362473"
+                    Point3="265.333333333333,53.4243070362473" />
+                  <mssgle:LineSegment
+                    End="265.333333333333,114.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="114.004772135417,54.4243070362473,37.3237890625,9.421875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16991,7 +18377,7 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-33.8199348958333,79.6002265005663,37.3237890625,9.421875"
+              BoundingBox="-24.9952278645833,79.6002265005663,37.3237890625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -17190,6 +18576,19 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Contêiner da Sequência\TBL_PF\TBL_PV">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
