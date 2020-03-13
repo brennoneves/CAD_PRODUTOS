@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="114"
-  DTS:VersionGUID="{A1688F02-1FC0-48FE-B29A-5525F71DC239}">
+  DTS:VersionBuild="118"
+  DTS:VersionGUID="{426A9B06-E30F-4DA5-A273-619AC4B97800}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -8587,13 +8587,13 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]}) &amp;&amp; #{Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "N"</property>
+                          name="Expression">![ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]}) &amp;&amp; #{Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_PF) &amp;&amp; MUDAR == "N"</property>
+                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_PF) &amp;&amp; MUDAR == "S"</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -8679,7 +8679,7 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                       dataType="System.Int32"
                       description="Especifica o tipo de junção a ser executada."
                       name="JoinType"
-                      typeConverter="JoinType">2</property>
+                      typeConverter="JoinType">1</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica o número de colunas na chave de ordenação."
@@ -9273,13 +9273,13 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                               containsID="true"
                               dataType="System.String"
                               description="Expressão de Coluna Derivada"
-                              name="Expression">(DT_STR,1,1252)(#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]} == #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_PF]} ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA]} == #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]} ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA]} == #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]} ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]} == #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA_PF]} ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]} == #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF1]} ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA]} == #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA_PF]} ? "N" : "S"))))))</property>
+                              name="Expression">(DT_STR,1,1252)(#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]} == ([ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_PF]}) ? "N" : #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_PF]}) ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA]} == ([ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]}) ? "N" : #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]}) ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA]} == ([ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]}) ? "N" : #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]}) ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA]} == ([ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA_PF]}) ? "N" : #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[TIPO_RECEITA_PF]}) ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA]} == ([ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF1]}) ? "N" : #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF1]}) ? "N" : (#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA]} == ([ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA_PF]}) ? "N" : #{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA_PF]}) ? "N" : "S"))))))</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expressão Amigável de Coluna Derivada"
                               expressionType="Notify"
-                              name="FriendlyExpression">(DT_STR,1,1252)(REGISTRO_MS == REGISTRO_MS_PF ? "N" : (RETENCAO_RECEITA == RETENCAO_RECEITA_PF ? "N" : (VENDA_CONTROLADA == VENDA_CONTROLADA_PF ? "N" : (TIPO_RECEITA == TIPO_RECEITA_PF ? "N" : (CLASSE_TERAPEUTICA == CLASSE_TERAPEUTICA_PF1 ? "N" : (UNIDADE_FARMACOTECNICA == UNIDADE_FARMACOTECNICA_PF ? "N" : "S"))))))</property>
+                              name="FriendlyExpression">(DT_STR,1,1252)(REGISTRO_MS == (ISNULL(REGISTRO_MS_PF) ? "N" : REGISTRO_MS_PF) ? "N" : (RETENCAO_RECEITA == (ISNULL(RETENCAO_RECEITA_PF) ? "N" : RETENCAO_RECEITA_PF) ? "N" : (VENDA_CONTROLADA == (ISNULL(VENDA_CONTROLADA_PF) ? "N" : VENDA_CONTROLADA_PF) ? "N" : (TIPO_RECEITA == (ISNULL(TIPO_RECEITA_PF) ? "N" : TIPO_RECEITA_PF) ? "N" : (CLASSE_TERAPEUTICA == (ISNULL(CLASSE_TERAPEUTICA_PF1) ? "N" : CLASSE_TERAPEUTICA_PF1) ? "N" : (UNIDADE_FARMACOTECNICA == (ISNULL(UNIDADE_FARMACOTECNICA_PF) ? "N" : UNIDADE_FARMACOTECNICA_PF) ? "N" : "S"))))))</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
