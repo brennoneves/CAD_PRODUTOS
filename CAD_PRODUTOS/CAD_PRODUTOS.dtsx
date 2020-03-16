@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="119"
-  DTS:VersionGUID="{AB293B02-37F8-4C29-8A61-0B51EC0B9AFD}">
+  DTS:VersionBuild="141"
+  DTS:VersionGUID="{9A293B99-8273-43C1-8A52-19349FCA7A1C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -460,11 +460,12 @@
                           externalMetadataColumnId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[UNIDADE_MEDIDA_FATOR]"
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[UNIDADE_MEDIDA_FATOR]" />
                         <inputColumn
-                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[dcb]"
-                          cachedDataType="i4"
-                          cachedName="dcb"
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[DCB]"
+                          cachedDataType="numeric"
+                          cachedName="DCB"
+                          cachedPrecision="15"
                           externalMetadataColumnId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DCB]"
-                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[dcb]" />
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[DCB]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -852,6 +853,17 @@
                           cachedLength="1"
                           cachedName="VENDA_CONTROLADA_TF"
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[VENDA_CONTROLADA_TF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Inputs[Entrada de Coluna Derivada].Columns[dcb]"
+                          cachedDataType="i4"
+                          cachedName="dcb"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[dcb]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Inputs[Entrada de Coluna Derivada].Columns[dcb_tf]"
+                          cachedDataType="numeric"
+                          cachedName="dcb_tf"
+                          cachedPrecision="15"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[dcb_tf]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -1616,6 +1628,29 @@
                               name="FriendlyExpression">(DT_STR,3,1252)(RETENCAO_RECEITA_TF == "" ? "0" : (ISNULL(RETENCAO_RECEITA_TF) ? "0" : RETENCAO_RECEITA_TF))</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[DCB]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[DCB]"
+                          name="DCB"
+                          precision="15"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_NUMERIC,15,0)([ISNULL](#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[dcb_tf]}) ? 1 : (#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[dcb]} == 0 ? 1 : #{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[dcb_tf]}))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_NUMERIC,15,0)(ISNULL(dcb_tf) ? 1 : (dcb == 0 ? 1 : dcb_tf))</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -1761,6 +1796,11 @@
                           cachedDataType="i2"
                           cachedName="venda_controlado"
                           lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[venda_controlado]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[dcb]"
+                          cachedDataType="i4"
+                          cachedName="dcb"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[dcb]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -2162,6 +2202,27 @@
                               name="FastParse">false</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[dcb_tf]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[dcb_tf]"
+                          name="dcb_tf"
+                          precision="15"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO.Outputs[ADO NET Source Output].Columns[dcb]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -2210,7 +2271,7 @@ p.secao as sub_grupo_produto,ltrim(rtrim((CONCAT((SUBSTRING(p.cest,1,2)),'.',(SU
 LTRIM(RTRIM(UPPER(g.tipo_classe_terapeutica))) as classe_terapeutica,p.pmc , g.dcb
 FROM PARAISOIII.PRODUTO AS P 
 join PARAISOIII.produto_cod_barra as e on e.produto=p.codigo
-left join PARAISOIII.generico as g on g.codigo=p.generico order by p.codigo</property>
+left join PARAISOIII.generico as g on g.codigo=p.generico order by p.codigo;</property>
                     <property
                       dataType="System.Int32"
                       description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
@@ -8034,6 +8095,1002 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Contêiner da Sequência\TBL_DCB"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{A4E94756-EC2C-49F9-9300-CD0E47909BA8}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TBL_DCB"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="CAD_PRODUTOS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO,DCB FROM STG_CAD_PRODUTOS.DBO.CAD_PRODUTOS ORDER BY PRODUTO</property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Connections[OleDbConnection]"
+                      connectionManagerID="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[STG_CAD_PRODUTOS]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB]"
+                      isSorted="true"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[PRODUTO]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO]"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[PRODUTO]"
+                          name="PRODUTO"
+                          precision="15"
+                          sortKeyPosition="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[DCB]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[DCB]"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[DCB]"
+                          name="DCB"
+                          precision="15"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO]"
+                          dataType="numeric"
+                          name="PRODUTO"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[DCB]"
+                          dataType="numeric"
+                          name="DCB"
+                          precision="15" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO]"
+                          name="PRODUTO"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[DCB]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[DCB]"
+                          name="DCB"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Divisão Condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Encaminha colunas de dados para saídas diferentes, dependendo do conteúdo dos dados. Use condições (expressões do SSIS) para especificar quais linhas são encaminhadas. Por exemplo, separe os registros que precisam ser limpos daqueles que estão prontos para serem carregados ou encaminhe somente um subconjunto de registros."
+                  name="INSERT OU UPDATE"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional]"
+                      description="Entrada para a Transformação Divisão Condicional"
+                      name="Entrada de Divisão Condicional">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[PRODUTO]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[PRODUTO_DCB]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_DCB"
+                          cachedPrecision="15"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[MUDAR]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="MUDAR"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Outputs[INSERT]"
+                      description="Saída 1 da Transformação Divisão Condicional"
+                      errorOrTruncationOperation="Computação"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="INSERT"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
+                          name="Expression">![ISNULL](#{Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]}) &amp;&amp; #{Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
+                          expressionType="Notify"
+                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_DCB) &amp;&amp; MUDAR == "S"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Outputs[UPDATE]"
+                      description="Saída 2 da Transformação Divisão Condicional"
+                      errorOrTruncationOperation="Computação"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="UPDATE"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
+                          name="Expression">![ISNULL](#{Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]}) &amp;&amp; #{Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
+                          expressionType="Notify"
+                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_DCB) &amp;&amp; MUDAR == "S"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
+                          name="EvaluationOrder">1</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Outputs[Saída Padrão de Divisão Condicional]"
+                      description="Saída Padrão da Transformação Divisão Condicional"
+                      exclusionGroup="1"
+                      name="Saída Padrão de Divisão Condicional"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional]"
+                      description="Saída de Erro da Transformação Divisão Condicional"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Divisão Condicional"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="INSERT TBL_DCB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[TBL_DCB]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Connections[OleDbConnection]"
+                      connectionManagerID="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[STG_CAD_PRODUTOS]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB].Columns[MUDAR]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="MUDAR"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ATUALIZAR]"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB].Columns[PRODUTO]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO_DCB]"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB].Columns[DCB]"
+                          cachedDataType="numeric"
+                          cachedName="DCB"
+                          cachedPrecision="15"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DCB_DCB]"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO_DCB]"
+                          dataType="numeric"
+                          name="PRODUTO_DCB"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DCB_DCB]"
+                          dataType="numeric"
+                          name="DCB_DCB"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="ATUALIZAR" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN"
+                  componentClassID="Microsoft.MergeJoin"
+                  contactInfo="Junção de Mesclagem;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Combina dois fluxos de dados classificados em um usando a junção FULL, LEFT ou INNER. Essa transformação é recomendável quando os fluxos de dados podem ser classificados em suas fontes."
+                  name="LEFT JOIN"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de junção a ser executada."
+                      name="JoinType"
+                      typeConverter="JoinType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o número de colunas na chave de ordenação."
+                      name="NumKeyColumns">1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores nulos serão tratados como valores iguais."
+                      name="TreatNullsAsEqual">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Indica o máximo de buffers solicitados por entrada antes do bloqueio."
+                      name="MaxBuffersPerInput">5</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem]"
+                      hasSideEffects="true"
+                      name="Entrada Esquerda da Junção de Mesclagem">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[PRODUTO]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[PRODUTO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[DCB]"
+                          cachedDataType="numeric"
+                          cachedName="DCB"
+                          cachedPrecision="15"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[DCB]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem]"
+                      hasSideEffects="true"
+                      name="Entrada Direita da Junção de Mesclagem">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[PRODUTO_DCB]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_DCB"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_DCB]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[DCB_DCB]"
+                          cachedDataType="numeric"
+                          cachedName="DCB_DCB"
+                          cachedPrecision="15"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].Columns[DCB_DCB]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ATUALIZAR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="ATUALIZAR"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem]"
+                      isSorted="true"
+                      name="Saída da Junção de Mesclagem">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]"
+                          name="PRODUTO"
+                          precision="15"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[PRODUTO]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB]"
+                          name="DCB"
+                          precision="15">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[DCB]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]"
+                          name="PRODUTO_DCB"
+                          precision="15">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[PRODUTO_DCB]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB_DCB]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB_DCB]"
+                          name="DCB_DCB"
+                          precision="15">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[DCB_DCB]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]"
+                          name="ATUALIZAR">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ATUALIZAR]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_DCB\MUDAR"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Coluna Derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Cria novos valores de coluna aplicando expressões a colunas de entrada da transformação. Crie novas colunas ou substitua as existentes. Por exemplo, concatene os valores das colunas 'first name' e 'last name' para formar uma coluna 'full name'."
+                  name="MUDAR"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Inputs[Entrada de Coluna Derivada]"
+                      description="Entrada para a Transformação Coluna Derivada"
+                      name="Entrada de Coluna Derivada">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[DCB]"
+                          cachedDataType="numeric"
+                          cachedName="DCB"
+                          cachedPrecision="15"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[DCB_DCB]"
+                          cachedDataType="numeric"
+                          cachedName="DCB_DCB"
+                          cachedPrecision="15"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB_DCB]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada]"
+                      description="Saída Padrão da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      name="Saída de Coluna Derivada"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]"
+                          name="MUDAR"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,1,1252)(#{Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB]} == ([ISNULL](#{Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB_DCB]}) ? 1 : #{Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB_DCB]}) ? "N" : "S")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,1,1252)(DCB == (ISNULL(DCB_DCB) ? 1 : DCB_DCB) ? "N" : "S")</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Erro de Coluna Derivada]"
+                      description="Saída de Erro da Transformação Coluna Derivada"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Coluna Derivada"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Inputs[Entrada de Coluna Derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Erro de Coluna Derivada].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="TBL_DCB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[TBL_DCB]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO_DCB,DCB_DCB,ATUALIZAR FROM STG_CAD_PRODUTOS.DBO.TBL_DCB ORDER BY PRODUTO_DCB</property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Connections[OleDbConnection]"
+                      connectionManagerID="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[STG_CAD_PRODUTOS]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB]"
+                      isSorted="true"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_DCB]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO_DCB]"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_DCB]"
+                          name="PRODUTO_DCB"
+                          precision="15"
+                          sortKeyPosition="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].Columns[DCB_DCB]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].ExternalColumns[DCB_DCB]"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].Columns[DCB_DCB]"
+                          name="DCB_DCB"
+                          precision="15"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].ExternalColumns[ATUALIZAR]"
+                          length="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]"
+                          name="ATUALIZAR"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO_DCB]"
+                          dataType="numeric"
+                          name="PRODUTO_DCB"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].ExternalColumns[DCB_DCB]"
+                          dataType="numeric"
+                          name="DCB_DCB"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].ExternalColumns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="ATUALIZAR" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO_DCB]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO_DCB]"
+                          name="PRODUTO_DCB"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Erro de Origem OLE DB].Columns[DCB_DCB]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Erro de Origem OLE DB].Columns[DCB_DCB]"
+                          name="DCB_DCB"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Erro de Origem OLE DB].Columns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Erro de Origem OLE DB].Columns[ATUALIZAR]"
+                          name="ATUALIZAR" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="Comando OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;2"
+                  description="Executa uma instrução SQL para cada linha em um fluxo de dados. Por exemplo, chame um procedimento armazenado 'new employee setup' para cada linha da tabela 'new employees'. Observação: a execução de uma instrução SQL para cada linha de um fluxo de dados grande pode demorar."
+                  name="UPDATE TBL_DCB"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE STG_CAD_PRODUTOS.DBO.TBL_DCB SET DCB_DCB = ? , ATUALIZAR = ? WHERE PRODUTO_DCB = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Connections[OleDbConnection]"
+                      connectionManagerID="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[STG_CAD_PRODUTOS]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Comando OLE DB]"
+                      errorOrTruncationOperation="Execução de Comando"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Comando OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Comando OLE DB].Columns[DCB]"
+                          cachedDataType="numeric"
+                          cachedName="DCB"
+                          cachedPrecision="15"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Comando OLE DB].Columns[MUDAR]"
+                          cachedDataType="wstr"
+                          cachedLength="1"
+                          cachedName="MUDAR"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Comando OLE DB].Columns[PRODUTO]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                          dataType="numeric"
+                          name="Param_0"
+                          precision="15">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                          dataType="numeric"
+                          name="Param_2"
+                          precision="15">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Outputs[Saída de Comando OLE DB]"
+                      exclusionGroup="1"
+                      name="Saída de Comando OLE DB"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Comando OLE DB]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Outputs[Saída de Erro de Comando OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Comando OLE DB"
+                      synchronousInputId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Comando OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contêiner da Sequência\TBL_DCB.Paths[INSERT]"
+                  endId="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB]"
+                  name="INSERT"
+                  startId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Outputs[INSERT]" />
+                <path
+                  refId="Package\Contêiner da Sequência\TBL_DCB.Paths[Saída da Junção de Mesclagem]"
+                  endId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Inputs[Entrada de Coluna Derivada]"
+                  name="Saída da Junção de Mesclagem"
+                  startId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem]" />
+                <path
+                  refId="Package\Contêiner da Sequência\TBL_DCB.Paths[Saída de Coluna Derivada]"
+                  endId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional]"
+                  name="Saída de Coluna Derivada"
+                  startId="Package\Contêiner da Sequência\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada]" />
+                <path
+                  refId="Package\Contêiner da Sequência\TBL_DCB.Paths[Saída de Origem OLE DB]"
+                  endId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB]" />
+                <path
+                  refId="Package\Contêiner da Sequência\TBL_DCB.Paths[Saída de Origem OLE DB1]"
+                  endId="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB]" />
+                <path
+                  refId="Package\Contêiner da Sequência\TBL_DCB.Paths[UPDATE]"
+                  endId="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Comando OLE DB]"
+                  name="UPDATE"
+                  startId="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE.Outputs[UPDATE]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Contêiner da Sequência\TBL_PF"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Tarefa Fluxo de Dados"
@@ -11453,6 +12510,494 @@ ORDER BY PRODUTO</property>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{FB8F6A6C-2285-4C18-B349-B071AC2114AD}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TBL_REGISTRO_MS"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="CAD_PRODUTOS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO,REGISTRO_MS FROM STG_CAD_PRODUTOS.DBO.CAD_PRODUTOS ORDER BY PRODUTO</property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Connections[OleDbConnection]"
+                      connectionManagerID="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[STG_CAD_PRODUTOS]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB]"
+                      isSorted="true"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[PRODUTO]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO]"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[PRODUTO]"
+                          name="PRODUTO"
+                          precision="15"
+                          sortKeyPosition="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[REGISTRO_MS]"
+                          length="15"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS]"
+                          name="REGISTRO_MS"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO]"
+                          dataType="numeric"
+                          name="PRODUTO"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[REGISTRO_MS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="REGISTRO_MS" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO]"
+                          name="PRODUTO"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[REGISTRO_MS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[REGISTRO_MS]"
+                          name="REGISTRO_MS" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN"
+                  componentClassID="Microsoft.MergeJoin"
+                  contactInfo="Junção de Mesclagem;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Combina dois fluxos de dados classificados em um usando a junção FULL, LEFT ou INNER. Essa transformação é recomendável quando os fluxos de dados podem ser classificados em suas fontes."
+                  name="LEFT JOIN"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de junção a ser executada."
+                      name="JoinType"
+                      typeConverter="JoinType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o número de colunas na chave de ordenação."
+                      name="NumKeyColumns">1</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores nulos serão tratados como valores iguais."
+                      name="TreatNullsAsEqual">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Indica o máximo de buffers solicitados por entrada antes do bloqueio."
+                      name="MaxBuffersPerInput">5</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem]"
+                      hasSideEffects="true"
+                      name="Entrada Esquerda da Junção de Mesclagem">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[PRODUTO]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[PRODUTO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[REGISTRO_MS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="REGISTRO_MS"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem]"
+                      hasSideEffects="true"
+                      name="Entrada Direita da Junção de Mesclagem">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[PRODUTO_MS]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_MS"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_MS]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[REGISTRO_MS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="REGISTRO_MS"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ATUALIZAR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="ATUALIZAR"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem]"
+                      isSorted="true"
+                      name="Saída da Junção de Mesclagem">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]"
+                          name="PRODUTO"
+                          precision="15"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[PRODUTO]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]"
+                          name="REGISTRO_MS">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[REGISTRO_MS]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_MS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_MS]"
+                          name="REGISTRO_MS_MS">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[REGISTRO_MS]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_MS]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_MS]"
+                          name="PRODUTO_MS"
+                          precision="15">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[PRODUTO_MS]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]"
+                          name="ATUALIZAR">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ATUALIZAR]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="PRODUTOS_REGISTROS_MS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[CAD_PRODUTOS]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO_MS , REGISTRO_MS , ATUALIZAR  FROM STG_CAD_PRODUTOS.DBO.TBL_REGISTRO_MS</property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Connections[OleDbConnection]"
+                      connectionManagerID="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[STG_CAD_PRODUTOS]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB]"
+                      isSorted="true"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].ExternalColumns[REGISTRO_MS]"
+                          length="15"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS]"
+                          name="REGISTRO_MS"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_MS]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO_MS]"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_MS]"
+                          name="PRODUTO_MS"
+                          precision="15"
+                          sortKeyPosition="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].ExternalColumns[ATUALIZAR]"
+                          length="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]"
+                          name="ATUALIZAR"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].ExternalColumns[REGISTRO_MS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="13"
+                          name="REGISTRO_MS" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO_MS]"
+                          dataType="numeric"
+                          name="PRODUTO_MS"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB].ExternalColumns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="ATUALIZAR" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO_MS]"
+                          dataType="numeric"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO_MS]"
+                          name="PRODUTO_MS"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Erro de Origem OLE DB].Columns[REGISTRO_MS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="13"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Erro de Origem OLE DB].Columns[REGISTRO_MS]"
+                          name="REGISTRO_MS" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Erro de Origem OLE DB].Columns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Erro de Origem OLE DB].Columns[ATUALIZAR]"
+                          name="ATUALIZAR" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS.Paths[Saída de Origem OLE DB]"
+                  endId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB]" />
+                <path
+                  refId="Package\Contêiner da Sequência\TBL_REGISTRO_MS.Paths[Saída de Origem OLE DB1]"
+                  endId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS.Outputs[Saída de Origem OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
@@ -11487,6 +13032,22 @@ ORDER BY PRODUTO</property>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restrição 3"
           DTS:To="Package\Contêiner da Sequência\TBL_PF" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contêiner da Sequência.PrecedenceConstraints[Restrição 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{6FD4FEEA-23F9-4C88-8430-F1128F21AFBE}"
+          DTS:From="Package\Contêiner da Sequência\TBL_PF"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 4"
+          DTS:To="Package\Contêiner da Sequência\TBL_DCB" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contêiner da Sequência.PrecedenceConstraints[Restrição 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{F4E60CA5-8E51-489F-B394-E410B8D761B3}"
+          DTS:From="Package\Contêiner da Sequência\TBL_DCB"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 5"
+          DTS:To="Package\Contêiner da Sequência\TBL_REGISTRO_MS" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -16898,11 +18459,87 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Contêiner da Sequência\TBL_DCB"
+          TopLeft="37,487" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência.PrecedenceConstraints[Restrição 4]"
+          TopLeft="117.5,429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.5,58"
+              Start="0,0"
+              End="-16.5,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="-4,29" />
+                  <mssgle:LineSegment
+                    End="-12.5,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.5,29"
+                    Point2="-16.5,29"
+                    Point3="-16.5,33" />
+                  <mssgle:LineSegment
+                    End="-16.5,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Contêiner da Sequência\TBL_REGISTRO_MS"
+          TopLeft="20,604" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência.PrecedenceConstraints[Restrição 5]"
+          TopLeft="101,529">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.5,75"
+              Start="0,0"
+              End="11.5,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.5"
+                    Point2="0,37.5"
+                    Point3="4,37.5" />
+                  <mssgle:LineSegment
+                    End="7.5,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.5,37.5"
+                    Point2="11.5,37.5"
+                    Point3="11.5,41.5" />
+                  <mssgle:LineSegment
+                    End="11.5,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="276,484"
-          Size="276,527"
+          PanelSize="431,701"
+          Size="431,744"
           Id="Package\Contêiner da Sequência"
           TopLeft="30,51" />
         <NodeLayout
@@ -17005,33 +18642,33 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
           PanelSize="391,550"
           Size="391,593"
           Id="Package\PROCFIT PRODUTOS"
-          TopLeft="396,57" />
+          TopLeft="647,44" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
-          TopLeft="306,314.5">
+          TopLeft="461,423">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="90,39"
+              EndConnector="186,-82.5"
               Start="0,0"
-              End="82.5,39">
+              End="178.5,-82.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="41,0" />
+                    End="89,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="41,0"
-                    Point2="45,0"
-                    Point3="45,4" />
+                    Point1="89,0"
+                    Point2="93,0"
+                    Point3="93,-4" />
                   <mssgle:LineSegment
-                    End="45,35" />
+                    End="93,-78.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="45,35"
-                    Point2="45,39"
-                    Point3="49,39" />
+                    Point1="93,-78.5"
+                    Point2="93,-82.5"
+                    Point3="97,-82.5" />
                   <mssgle:LineSegment
-                    End="82.5,39" />
+                    End="178.5,-82.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17051,22 +18688,22 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
         <NodeLayout
           Size="176,42"
           Id="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Conversão de Dados"
-          TopLeft="113,190" />
+          TopLeft="113,200" />
         <NodeLayout
           Size="249,42"
           Id="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO"
-          TopLeft="30,39" />
+          TopLeft="37,76" />
         <NodeLayout
           Size="188,42"
           Id="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS"
-          TopLeft="380,458" />
+          TopLeft="380,468" />
         <NodeLayout
           Size="156,42"
           Id="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT\Coluna Derivada"
-          TopLeft="245,321" />
+          TopLeft="245,331" />
         <EdgeLayout
           Id="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT.Paths[Saída de Coluna Derivada]"
-          TopLeft="323,363">
+          TopLeft="323,373">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17100,30 +18737,30 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT.Paths[ADO NET Source Output]"
-          TopLeft="154.5,81">
+          TopLeft="161.5,118">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="46.5,109"
+              EndConnector="39.5,82"
               Start="0,0"
-              End="46.5,101.5">
+              End="39.5,74.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.5" />
+                    End="0,37" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,50.5"
-                    Point2="0,54.5"
-                    Point3="4,54.5" />
+                    Point1="0,37"
+                    Point2="0,41"
+                    Point3="4,41" />
                   <mssgle:LineSegment
-                    End="42.5,54.5" />
+                    End="35.5,41" />
                   <mssgle:CubicBezierSegment
-                    Point1="42.5,54.5"
-                    Point2="46.5,54.5"
-                    Point3="46.5,58.5" />
+                    Point1="35.5,41"
+                    Point2="39.5,41"
+                    Point3="39.5,45" />
                   <mssgle:LineSegment
-                    End="46.5,101.5" />
+                    End="39.5,74.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17134,7 +18771,7 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT.Paths[Saída de Conversão de Dados]"
-          TopLeft="201,232">
+          TopLeft="201,242">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -18618,6 +20255,393 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Contêiner da Sequência\TBL_PF\INSERT PRODUTOS_FARMACIA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Contêiner da Sequência\TBL_DCB">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS"
+          TopLeft="36,18" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB"
+          TopLeft="357,20" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Contêiner da Sequência\TBL_DCB\LEFT JOIN"
+          TopLeft="177,140" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\TBL_DCB.Paths[Saída de Origem OLE DB]"
+          TopLeft="121.5,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101.5,80"
+              Start="0,0"
+              End="101.5,72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.4336283185841" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.4336283185841"
+                    Point2="0,47.4336283185841"
+                    Point3="4,47.4336283185841" />
+                  <mssgle:LineSegment
+                    End="97.5,47.4336283185841" />
+                  <mssgle:CubicBezierSegment
+                    Point1="97.5,47.4336283185841"
+                    Point2="101.5,47.4336283185841"
+                    Point3="101.5,51.4336283185841" />
+                  <mssgle:LineSegment
+                    End="101.5,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\TBL_DCB.Paths[Saída de Origem OLE DB1]"
+          TopLeft="421,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-156,78"
+              Start="0,0"
+              End="-156,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.2477876106195" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.2477876106195"
+                    Point2="0,46.2477876106195"
+                    Point3="-4,46.2477876106195" />
+                  <mssgle:LineSegment
+                    End="-152,46.2477876106195" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-152,46.2477876106195"
+                    Point2="-156,46.2477876106195"
+                    Point3="-156,50.2477876106195" />
+                  <mssgle:LineSegment
+                    End="-156,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="119,42"
+          Id="Package\Contêiner da Sequência\TBL_DCB\MUDAR"
+          TopLeft="158,275" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\TBL_DCB.Paths[Saída da Junção de Mesclagem]"
+          TopLeft="244,182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.5,93"
+              Start="0,0"
+              End="-26.5,85.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.5"
+                    Point2="0,46.5"
+                    Point3="-4,46.5" />
+                  <mssgle:LineSegment
+                    End="-22.5,46.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,46.5"
+                    Point2="-26.5,46.5"
+                    Point3="-26.5,50.5" />
+                  <mssgle:LineSegment
+                    End="-26.5,85.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="186,44"
+          Id="Package\Contêiner da Sequência\TBL_DCB\INSERT OU UPDATE"
+          TopLeft="137,370" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\TBL_DCB.Paths[Saída de Coluna Derivada]"
+          TopLeft="217.5,317">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.5,53"
+              Start="0,0"
+              End="12.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="8.5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.5,26.5"
+                    Point2="12.5,26.5"
+                    Point3="12.5,30.5" />
+                  <mssgle:LineSegment
+                    End="12.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB"
+          TopLeft="57,496" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\TBL_DCB.Paths[INSERT]"
+          TopLeft="230,414">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87,82"
+              Start="0,0"
+              End="-87,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37"
+                    Point2="0,41"
+                    Point3="-4,41" />
+                  <mssgle:LineSegment
+                    End="-83,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83,41"
+                    Point2="-87,41"
+                    Point3="-87,45" />
+                  <mssgle:LineSegment
+                    End="-87,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-61.0903125,46,35.180625,9.5341796875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Contêiner da Sequência\TBL_DCB\UPDATE TBL_DCB"
+          TopLeft="313,503" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\TBL_DCB.Paths[UPDATE]"
+          TopLeft="259.666666666667,414">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="141.333333333333,89"
+              Start="0,0"
+              End="141.333333333333,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.0554371002132" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.0554371002132"
+                    Point2="0,36.0554371002132"
+                    Point3="4,36.0554371002132" />
+                  <mssgle:LineSegment
+                    End="137.333333333333,36.0554371002132" />
+                  <mssgle:CubicBezierSegment
+                    Point1="137.333333333333,36.0554371002132"
+                    Point2="141.333333333333,36.0554371002132"
+                    Point3="141.333333333333,40.0554371002132" />
+                  <mssgle:LineSegment
+                    End="141.333333333333,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="52.0047721354167,41.0554371002132,37.3237890625,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contêiner da Sequência\TBL_DCB\CAD_PRODUTOS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contêiner da Sequência\TBL_DCB\TBL_DCB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contêiner da Sequência\TBL_DCB\INSERT TBL_DCB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Contêiner da Sequência\TBL_REGISTRO_MS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS"
+          TopLeft="44,21" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS"
+          TopLeft="334,23" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Contêiner da Sequência\TBL_REGISTRO_MS\LEFT JOIN"
+          TopLeft="192,178" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\TBL_REGISTRO_MS.Paths[Saída de Origem OLE DB]"
+          TopLeft="129.5,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="129.5,115"
+              Start="0,0"
+              End="129.5,107.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,53.5"
+                    Point2="0,57.5"
+                    Point3="4,57.5" />
+                  <mssgle:LineSegment
+                    End="125.5,57.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="125.5,57.5"
+                    Point2="129.5,57.5"
+                    Point3="129.5,61.5" />
+                  <mssgle:LineSegment
+                    End="129.5,107.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência\TBL_REGISTRO_MS.Paths[Saída de Origem OLE DB1]"
+          TopLeft="451.5,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-171.5,113"
+              Start="0,0"
+              End="-171.5,105.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63"
+                    Point2="0,67"
+                    Point3="-4,67" />
+                  <mssgle:LineSegment
+                    End="-167.5,67" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-167.5,67"
+                    Point2="-171.5,67"
+                    Point3="-171.5,71" />
+                  <mssgle:LineSegment
+                    End="-171.5,105.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contêiner da Sequência\TBL_REGISTRO_MS\CAD_PRODUTOS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contêiner da Sequência\TBL_REGISTRO_MS\PRODUTOS_REGISTROS_MS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

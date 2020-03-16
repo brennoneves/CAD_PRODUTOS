@@ -8,7 +8,7 @@
       DTS:ConnectionString="Data Source=RIONOVO;User ID=SA;Initial Catalog=PBS_FARMACRO_DADOS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAAA9w8hUKqzcO4ImjgY0ay1vAAAAAASAAACgAAAAEAAAAA4uM549PGdjlsNketlGYR5wAAAArprhZpm6DsR1f9hKpghMY7H/gyBJReGtX8LT9aNklULsm8FINxXHfaNmF0fCsqIXuY165aa3JCS8ovkgVh55oVIHJa98Cd4+ctMnpHbZrinI8GVhXvphSJ/PPHI9HUL0vohzur8SFGb8cCSeHJ+ntxQAAABI1ol5ZgK4E0J/0dLHDv0xDSmweg==</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAACSa4T6Salot7mZFhV2Kn/7AAAAAASAAACgAAAAEAAAAOk+HOgFe/Teqw6I6sWn5thwAAAAYtsjYw2tWg15sQ7qGyyxaMf4WONa70ubyjZcTRmY0NTRnAAZFRCCAXK9dHREqzs1i/t5UDjli/BE1I6GPEWPlu+Eni+T8fEF7h0RbjRx2jTIIK29XcIQhGjhtHKMEULOcXZM+SpqM+N19oqQ78xXoxQAAAAJGdUUTJ7aQ2aM2vS6EcX0KiCPFw==</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
