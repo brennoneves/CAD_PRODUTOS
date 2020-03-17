@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="167"
-  DTS:VersionGUID="{99EE26DA-BC2F-4F87-BCE0-0F838B03E011}">
+  DTS:VersionBuild="172"
+  DTS:VersionGUID="{7A5CED03-E79A-4830-9A6E-FDF6C2C5B080}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -10685,6 +10685,14 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           cachedName="RETENCAO_RECEITA_TF"
                           externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\INSERT TBL_PF.Inputs[Entrada de Destino OLE DB].ExternalColumns[RETENCAO_RECEITA_PF]"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[RETENCAO_RECEITA_TF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT TBL_PF.Inputs[Entrada de Destino OLE DB].Columns[CONTROLE_RASTREABILIDADE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="CONTROLE_RASTREABILIDADE"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\INSERT TBL_PF.Inputs[Entrada de Destino OLE DB].ExternalColumns[CONTROLE_RASTREABILIDADE]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[CONTROLE_RASTREABILIDADE]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -10745,6 +10753,12 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           dataType="str"
                           length="1"
                           name="ATUALIZAR" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\INSERT TBL_PF.Inputs[Entrada de Destino OLE DB].ExternalColumns[CONTROLE_RASTREABILIDADE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="CONTROLE_RASTREABILIDADE" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -10825,13 +10839,13 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]}) &amp;&amp; #{Package\Contêiner da Sequência\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S"</property>
+                          name="Expression">![ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_PF) &amp;&amp; MUDAR == "S"</property>
+                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_PF)</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -12016,6 +12030,30 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                               name="FriendlyExpression">(DT_NUMERIC,5,0)((SUBSTRING(CLASSE_TERAPEUTICA,1,1)) == "1" ? 1 : ((SUBSTRING(CLASSE_TERAPEUTICA,1,1)) == "2" ? 2 : 440))</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[CONTROLE_RASTREABILIDADE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="1"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[CONTROLE_RASTREABILIDADE]"
+                          name="CONTROLE_RASTREABILIDADE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,1,1252)(#{Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[VENDA_CONTROLADA]} == "N" ? "N" : "S")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,1,1252)(VENDA_CONTROLADA == "N" ? "N" : "S")</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -12063,7 +12101,7 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                       expressionType="Notify"
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE STG_CAD_PRODUTOS.DBO.TBL_PF SET RETENCAO_RECEITA_PF = ? , VENDA_CONTROLADA_PF = ? , TIPO_RECEITA_PF = ? , CLASSE_TERAPEUTICA_PF2 = ? , 
-CLASSE_TERAPEUTICA_PF1 = ? , ATUALIZAR = ? , REGISTRO_MS_PF = ? , TIPO_PF =? , UNIDADE_FARMACOTECNICA_PF = ?  WHERE PRODUTO_PF= ?</property>
+CLASSE_TERAPEUTICA_PF1 = ? , ATUALIZAR = ? , REGISTRO_MS_PF = ? , TIPO_PF =? , UNIDADE_FARMACOTECNICA_PF = ?, CONTROLE_RASTREABILIDADE = ?  WHERE PRODUTO_PF= ?</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
@@ -12156,12 +12194,20 @@ CLASSE_TERAPEUTICA_PF1 = ? , ATUALIZAR = ? , REGISTRO_MS_PF = ? , TIPO_PF =? , U
                           externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE TBL_PF.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_8]"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA]" />
                         <inputColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE TBL_PF.Inputs[Entrada de Comando OLE DB].Columns[CONTROLE_RASTREABILIDADE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="CONTROLE_RASTREABILIDADE"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE TBL_PF.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_9]"
+                          lineageId="Package\Contêiner da Sequência\TBL_PF\TRANSFORMAR.Outputs[Saída de Coluna Derivada].Columns[CONTROLE_RASTREABILIDADE]" />
+                        <inputColumn
                           refId="Package\Contêiner da Sequência\TBL_PF\UPDATE TBL_PF.Inputs[Entrada de Comando OLE DB].Columns[PRODUTO]"
                           cachedDataType="numeric"
                           cachedName="PRODUTO"
                           cachedPrecision="15"
                           cachedSortKeyPosition="1"
-                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE TBL_PF.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_9]"
+                          externalMetadataColumnId="Package\Contêiner da Sequência\TBL_PF\UPDATE TBL_PF.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_10]"
                           lineageId="Package\Contêiner da Sequência\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -12283,8 +12329,21 @@ CLASSE_TERAPEUTICA_PF1 = ? , ATUALIZAR = ? , REGISTRO_MS_PF = ? , TIPO_PF =? , U
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Contêiner da Sequência\TBL_PF\UPDATE TBL_PF.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_9]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Param_9">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência\TBL_PF\UPDATE TBL_PF.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_10]"
                           dataType="numeric"
-                          name="Param_9"
+                          name="Param_10"
                           precision="15">
                           <properties>
                             <property
@@ -18756,7 +18815,7 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
                           cachedLength="1"
                           cachedName="CONTROLE_RASTREABILIDADE"
                           externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].ExternalColumns[CONTROLE_RASTREABILIDADE]"
-                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\739:invalid" />
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\742:invalid" />
                         <inputColumn
                           refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\INSERT PRODUTOS_FARMACIA.Inputs[Entrada de Destino OLE DB].Columns[CLASSE_TERAPEUTICA]"
                           cachedDataType="numeric"
