@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="203"
-  DTS:VersionGUID="{9153FBB8-9874-4E52-82B3-E93871480534}">
+  DTS:VersionBuild="215"
+  DTS:VersionGUID="{64E264D2-F266-455C-9541-B3F34E8C4C58}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -19487,6 +19487,1093 @@ NCM=? , FATOR_PRECO=? , GRUPO_TRIBUTARIO_ENTRADA=? , GRUPO_FISCAL=? , LISTA_PNU=
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{BC8DD8DF-9927-45BF-87F0-376FB6397792}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ALTERAR TBL PRODUTOS_EAN"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Divisão Condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Encaminha colunas de dados para saídas diferentes, dependendo do conteúdo dos dados. Use condições (expressões do SSIS) para especificar quais linhas são encaminhadas. Por exemplo, separe os registros que precisam ser limpos daqueles que estão prontos para serem carregados ou encaminhe somente um subconjunto de registros."
+                  name="INSERT OU UPDATE"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional]"
+                      description="Entrada para a Transformação Divisão Condicional"
+                      name="Entrada de Divisão Condicional">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[PRODUTO_EAN_EAN]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_EAN_EAN"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN_EAN]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[ATUALIZAR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="ATUALIZAR"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[PRODUTO]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO"
+                          cachedPrecision="15"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Outputs[INSERT]"
+                      description="Saída 1 da Transformação Divisão Condicional"
+                      errorOrTruncationOperation="Computação"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="INSERT"
+                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
+                          name="Expression">![ISNULL](#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN_EAN]}) &amp;&amp; [ISNULL](#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; #{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]} == "S"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
+                          expressionType="Notify"
+                          name="FriendlyExpression">!ISNULL(PRODUTO_EAN_EAN) &amp;&amp; ISNULL(PRODUTO) &amp;&amp; ATUALIZAR == "S"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Outputs[UPDATE]"
+                      description="Saída 2 da Transformação Divisão Condicional"
+                      errorOrTruncationOperation="Computação"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="UPDATE"
+                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
+                          name="Expression">![ISNULL](#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN_EAN]}) &amp;&amp; ![ISNULL](#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; #{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]} == "S"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
+                          expressionType="Notify"
+                          name="FriendlyExpression">!ISNULL(PRODUTO_EAN_EAN) &amp;&amp; !ISNULL(PRODUTO) &amp;&amp; ATUALIZAR == "S"</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
+                          name="EvaluationOrder">1</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Outputs[Saída Padrão de Divisão Condicional]"
+                      description="Saída Padrão da Transformação Divisão Condicional"
+                      exclusionGroup="1"
+                      name="Saída Padrão de Divisão Condicional"
+                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional]"
+                      description="Saída de Erro da Transformação Divisão Condicional"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Divisão Condicional"
+                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Outputs[Saída de Erro de Divisão Condicional].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="INSERT PRODUTOS_EAN"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[PRODUTOS_EAN]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Connections[OleDbConnection]"
+                      connectionManagerID="{14D67B3E-D612-4B0B-9F47-6937531077C0}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[VILAVELHA]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].Columns[PRODUTO_EAN_EAN]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_EAN_EAN"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN_EAN]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].Columns[EAN_EAN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="EAN_EAN"
+                          cachedSortKeyPosition="2"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].Columns[QUANTIDADE_EMBALAGEM_EAN]"
+                          cachedDataType="numeric"
+                          cachedName="QUANTIDADE_EMBALAGEM_EAN"
+                          cachedPrecision="4"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[QUANTIDADE_EMBALAGEM]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO_EAN]"
+                          dataType="numeric"
+                          name="PRODUTO_EAN"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[FORMULARIO_ORIGEM]"
+                          dataType="numeric"
+                          name="FORMULARIO_ORIGEM"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[TAB_MASTER_ORIGEM]"
+                          dataType="numeric"
+                          name="TAB_MASTER_ORIGEM"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[REG_MASTER_ORIGEM]"
+                          dataType="numeric"
+                          name="REG_MASTER_ORIGEM"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[REG_LOG_INCLUSAO]"
+                          dataType="numeric"
+                          name="REG_LOG_INCLUSAO"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO]"
+                          dataType="numeric"
+                          name="PRODUTO"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="EAN" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[QUANTIDADE_EMBALAGEM]"
+                          dataType="numeric"
+                          name="QUANTIDADE_EMBALAGEM"
+                          precision="4" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN_INTERNO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="EAN_INTERNO" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[ROWVERSION]"
+                          dataType="bytes"
+                          length="8"
+                          name="ROWVERSION" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN_PRINCIPAL]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="EAN_PRINCIPAL" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN"
+                  componentClassID="Microsoft.MergeJoin"
+                  contactInfo="Junção de Mesclagem;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Combina dois fluxos de dados classificados em um usando a junção FULL, LEFT ou INNER. Essa transformação é recomendável quando os fluxos de dados podem ser classificados em suas fontes."
+                  name="LEFT JOIN"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de junção a ser executada."
+                      name="JoinType"
+                      typeConverter="JoinType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o número de colunas na chave de ordenação."
+                      name="NumKeyColumns">2</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores nulos serão tratados como valores iguais."
+                      name="TreatNullsAsEqual">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Indica o máximo de buffers solicitados por entrada antes do bloqueio."
+                      name="MaxBuffersPerInput">5</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem]"
+                      hasSideEffects="true"
+                      name="Entrada Esquerda da Junção de Mesclagem">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[PRODUTO_EAN]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_EAN"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_EAN]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[EAN_EAN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="EAN_EAN"
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[EAN_EAN]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]"
+                          cachedDataType="numeric"
+                          cachedName="QUANTIDADE_EMBALAGEM_EAN"
+                          cachedPrecision="4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[QUANTIDADE_EMBALAGEM_EAN]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[ATUALIZAR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="ATUALIZAR"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem]"
+                      hasSideEffects="true"
+                      name="Entrada Direita da Junção de Mesclagem">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[PRODUTO]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].Columns[PRODUTO]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[EAN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="EAN"
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].Columns[EAN]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[PRODUTO_EAN]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_EAN"
+                          cachedPrecision="15"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_EAN]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM]"
+                          cachedDataType="numeric"
+                          cachedName="QUANTIDADE_EMBALAGEM"
+                          cachedPrecision="4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].Columns[QUANTIDADE_EMBALAGEM]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem]"
+                      isSorted="true"
+                      name="Saída da Junção de Mesclagem">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN_EAN]"
+                          dataType="numeric"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN_EAN]"
+                          name="PRODUTO_EAN_EAN"
+                          precision="15"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[PRODUTO_EAN]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]"
+                          name="EAN_EAN"
+                          sortKeyPosition="2">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[EAN_EAN]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]"
+                          dataType="numeric"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]"
+                          name="QUANTIDADE_EMBALAGEM_EAN"
+                          precision="4">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]"
+                          name="ATUALIZAR">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[ATUALIZAR]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]"
+                          dataType="numeric"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]"
+                          name="PRODUTO"
+                          precision="15">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[PRODUTO]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN]"
+                          name="EAN">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[EAN]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN]"
+                          dataType="numeric"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN]"
+                          name="PRODUTO_EAN"
+                          precision="15">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[PRODUTO_EAN]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM]"
+                          dataType="numeric"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM]"
+                          name="QUANTIDADE_EMBALAGEM"
+                          precision="4">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="A coluna de entrada associada a esta coluna de saída"
+                              name="InputColumnID">#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="PROCFIT PRODUTOS_EAN"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO, LTRIM(RTRIM(EAN)) AS EAN,PRODUTO_EAN, QUANTIDADE_EMBALAGEM  FROM PBS_FARMACRO_DADOS.DBO.PRODUTOS_EAN ORDER BY PRODUTO, EAN</property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Connections[OleDbConnection]"
+                      connectionManagerID="{14D67B3E-D612-4B0B-9F47-6937531077C0}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[VILAVELHA]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB]"
+                      isSorted="true"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].Columns[PRODUTO]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].Columns[PRODUTO]"
+                          name="PRODUTO"
+                          precision="15"
+                          sortKeyPosition="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].Columns[EAN]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[EAN]"
+                          length="20"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].Columns[EAN]"
+                          name="EAN"
+                          sortKeyPosition="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_EAN]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO_EAN]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_EAN]"
+                          name="PRODUTO_EAN"
+                          precision="15"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].Columns[QUANTIDADE_EMBALAGEM]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[QUANTIDADE_EMBALAGEM]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].Columns[QUANTIDADE_EMBALAGEM]"
+                          name="QUANTIDADE_EMBALAGEM"
+                          precision="4"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO]"
+                          dataType="numeric"
+                          name="PRODUTO"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[EAN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="EAN" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO_EAN]"
+                          dataType="numeric"
+                          name="PRODUTO_EAN"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[QUANTIDADE_EMBALAGEM]"
+                          dataType="numeric"
+                          name="QUANTIDADE_EMBALAGEM"
+                          precision="4" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO]"
+                          dataType="numeric"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO]"
+                          name="PRODUTO"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[EAN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[EAN]"
+                          name="EAN" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO_EAN]"
+                          dataType="numeric"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO_EAN]"
+                          name="PRODUTO_EAN"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[QUANTIDADE_EMBALAGEM]"
+                          dataType="numeric"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[QUANTIDADE_EMBALAGEM]"
+                          name="QUANTIDADE_EMBALAGEM"
+                          precision="4" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="TBL_EAN"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[TBL_EAN]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO_EAN, LTRIM(RTRIM(EAN_EAN)) AS EAN_EAN,QUANTIDADE_EMBALAGEM_EAN,ATUALIZAR FROM STG_CAD_PRODUTOS.DBO.TBL_EAN ORDER BY PRODUTO_EAN, EAN_EAN</property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Connections[OleDbConnection]"
+                      connectionManagerID="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[STG_CAD_PRODUTOS]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB]"
+                      isSorted="true"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_EAN]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO_EAN]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_EAN]"
+                          name="PRODUTO_EAN"
+                          precision="15"
+                          sortKeyPosition="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[EAN_EAN]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[EAN_EAN]"
+                          length="20"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[EAN_EAN]"
+                          name="EAN_EAN"
+                          sortKeyPosition="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[QUANTIDADE_EMBALAGEM_EAN]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[QUANTIDADE_EMBALAGEM_EAN]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[QUANTIDADE_EMBALAGEM_EAN]"
+                          name="QUANTIDADE_EMBALAGEM_EAN"
+                          precision="4"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[ATUALIZAR]"
+                          length="2"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]"
+                          name="ATUALIZAR"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO_EAN]"
+                          dataType="numeric"
+                          name="PRODUTO_EAN"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[EAN_EAN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="EAN_EAN" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[QUANTIDADE_EMBALAGEM_EAN]"
+                          dataType="numeric"
+                          name="QUANTIDADE_EMBALAGEM_EAN"
+                          precision="4" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].ExternalColumns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="ATUALIZAR" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO_EAN]"
+                          dataType="numeric"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO_EAN]"
+                          name="PRODUTO_EAN"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[EAN_EAN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[EAN_EAN]"
+                          name="EAN_EAN" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[QUANTIDADE_EMBALAGEM_EAN]"
+                          dataType="numeric"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[QUANTIDADE_EMBALAGEM_EAN]"
+                          name="QUANTIDADE_EMBALAGEM_EAN"
+                          precision="4" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[ATUALIZAR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[ATUALIZAR]"
+                          name="ATUALIZAR" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="Comando OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;2"
+                  description="Executa uma instrução SQL para cada linha em um fluxo de dados. Por exemplo, chame um procedimento armazenado 'new employee setup' para cada linha da tabela 'new employees'. Observação: a execução de uma instrução SQL para cada linha de um fluxo de dados grande pode demorar."
+                  name="UPDATE PRODUTOS_EAN"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE PBS_FARMACRO_DADOS.DBO.PRODUTOS_EAN SET EAN =? WHERE PRODUTO = ? AND PRODUTO_EAN = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Connections[OleDbConnection]"
+                      connectionManagerID="{14D67B3E-D612-4B0B-9F47-6937531077C0}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[VILAVELHA]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB]"
+                      errorOrTruncationOperation="Execução de Comando"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Comando OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB].Columns[EAN_EAN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="EAN_EAN"
+                          cachedSortKeyPosition="2"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB].Columns[PRODUTO_EAN_EAN]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_EAN_EAN"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN_EAN]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB].Columns[PRODUTO_EAN]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_EAN"
+                          cachedPrecision="15"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                          dataType="numeric"
+                          name="Param_1"
+                          precision="15">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                          dataType="numeric"
+                          name="Param_2"
+                          precision="15">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Outputs[Saída de Comando OLE DB]"
+                      exclusionGroup="1"
+                      name="Saída de Comando OLE DB"
+                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Outputs[Saída de Erro de Comando OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Comando OLE DB"
+                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[INSERT]"
+                  endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB]"
+                  name="INSERT"
+                  startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Outputs[INSERT]" />
+                <path
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída da Junção de Mesclagem]"
+                  endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional]"
+                  name="Saída da Junção de Mesclagem"
+                  startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem]" />
+                <path
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída de Origem OLE DB]"
+                  endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB]" />
+                <path
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída de Origem OLE DB1]"
+                  endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB]" />
+                <path
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[UPDATE]"
+                  endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB]"
+                  name="UPDATE"
+                  startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Outputs[UPDATE]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Tarefa Fluxo de Dados"
@@ -24104,6 +25191,14 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restrição 5"
           DTS:To="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_REGISTROS_MS" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{4CCB55CC-6EF4-4722-BEF2-F7DEC847D44A}"
+          DTS:From="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_REGISTROS_MS"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 6"
+          DTS:To="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -24128,7 +25223,7 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="207,42"
           Id="Package\Contêiner da Sequência\CAD_PRODUTOS_PROCFIT"
@@ -24397,45 +25492,33 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
         <NodeLayout
           Size="201,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS"
-          TopLeft="25,97" />
+          TopLeft="28,106" />
         <NodeLayout
           Size="246,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS"
-          TopLeft="12,286" />
+          TopLeft="22,300" />
         <NodeLayout
           Size="208,42"
           Id="Package\PROCFIT PRODUTOS\CARREGAR TBL TEMP_PHG"
-          TopLeft="25,191" />
+          TopLeft="32,205" />
         <NodeLayout
           Size="192,42"
           Id="Package\PROCFIT PRODUTOS\LIMPAR TBL TEMP_PHG"
-          TopLeft="21,9" />
+          TopLeft="36,9" />
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição]"
-          TopLeft="117,51">
+          TopLeft="130.25,51">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.5,46"
+              EndConnector="0,55"
               Start="0,0"
-              End="8.5,38.5">
+              End="0,47.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19"
-                    Point2="0,23"
-                    Point3="4,23" />
-                  <mssgle:LineSegment
-                    End="4.5,23" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.5,23"
-                    Point2="8.5,23"
-                    Point3="8.5,27" />
-                  <mssgle:LineSegment
-                    End="8.5,38.5" />
+                    End="0,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24446,18 +25529,18 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição 1]"
-          TopLeft="127.25,139">
+          TopLeft="132.25,148">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52"
+              EndConnector="0,57"
               Start="0,0"
-              End="0,44.5">
+              End="0,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.5" />
+                    End="0,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24468,18 +25551,30 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição 3]"
-          TopLeft="132,233">
+          TopLeft="136,247">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53"
+              EndConnector="9,53"
               Start="0,0"
-              End="0,45.5">
+              End="9,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.5" />
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5,26.5"
+                    Point2="9,26.5"
+                    Point3="9,30.5" />
+                  <mssgle:LineSegment
+                    End="9,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24491,33 +25586,33 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
         <NodeLayout
           Size="281,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA"
-          TopLeft="12,392" />
+          TopLeft="26,387" />
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição 2]"
-          TopLeft="135,328">
+          TopLeft="145,342">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="17.5,64"
+              EndConnector="21.5,45"
               Start="0,0"
-              End="17.5,56.5">
+              End="21.5,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28" />
+                    End="0,18.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28"
-                    Point2="0,32"
-                    Point3="4,32" />
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
                   <mssgle:LineSegment
-                    End="13.5,32" />
+                    End="17.5,22.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="13.5,32"
-                    Point2="17.5,32"
-                    Point3="17.5,36" />
+                    Point1="17.5,22.5"
+                    Point2="21.5,22.5"
+                    Point3="21.5,26.5" />
                   <mssgle:LineSegment
-                    End="17.5,56.5" />
+                    End="21.5,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24529,33 +25624,33 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
         <NodeLayout
           Size="247,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_DCB"
-          TopLeft="41,504" />
+          TopLeft="25,490" />
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição 4]"
-          TopLeft="152.5,434">
+          TopLeft="166.5,429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12,70"
+              EndConnector="-18,61"
               Start="0,0"
-              End="12,62.5">
+              End="-18,53.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31" />
+                    End="0,26.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31"
-                    Point2="0,35"
-                    Point3="4,35" />
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="-4,30.5" />
                   <mssgle:LineSegment
-                    End="8,35" />
+                    End="-14,30.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="8,35"
-                    Point2="12,35"
-                    Point3="12,39" />
+                    Point1="-14,30.5"
+                    Point2="-18,30.5"
+                    Point3="-18,34.5" />
                   <mssgle:LineSegment
-                    End="12,62.5" />
+                    End="-18,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24567,33 +25662,59 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
         <NodeLayout
           Size="312,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_REGISTROS_MS"
-          TopLeft="30,621" />
+          TopLeft="30,613" />
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição 5]"
-          TopLeft="164.5,546">
+          TopLeft="148.5,532">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="21.5,75"
+              EndConnector="37.5,81"
               Start="0,0"
-              End="21.5,67.5">
+              End="37.5,73.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5" />
+                    End="0,36.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.5"
-                    Point2="0,37.5"
-                    Point3="4,37.5" />
+                    Point1="0,36.5"
+                    Point2="0,40.5"
+                    Point3="4,40.5" />
                   <mssgle:LineSegment
-                    End="17.5,37.5" />
+                    End="33.5,40.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="17.5,37.5"
-                    Point2="21.5,37.5"
-                    Point3="21.5,41.5" />
+                    Point1="33.5,40.5"
+                    Point2="37.5,40.5"
+                    Point3="37.5,44.5" />
                   <mssgle:LineSegment
-                    End="21.5,67.5" />
+                    End="37.5,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="247,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN"
+          TopLeft="55,744" />
+        <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição 6]"
+          TopLeft="182.25,655">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89"
+              Start="0,0"
+              End="0,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24605,36 +25726,24 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="391,718"
-          Size="391,761"
+          PanelSize="391,841"
+          Size="391,884"
           Id="Package\PROCFIT PRODUTOS"
           TopLeft="647,44" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
-          TopLeft="461,483.5">
+          TopLeft="461,484.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="186,-59"
+              EndConnector="186,0"
               Start="0,0"
-              End="178.5,-59">
+              End="178.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="89,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="89,0"
-                    Point2="93,0"
-                    Point3="93,-4" />
-                  <mssgle:LineSegment
-                    End="93,-55" />
-                  <mssgle:CubicBezierSegment
-                    Point1="93,-55"
-                    Point2="93,-59"
-                    Point3="97,-59" />
-                  <mssgle:LineSegment
-                    End="178.5,-59" />
+                    End="178.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26950,7 +28059,7 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
         <NodeLayout
           Size="171,42"
           Id="Package\Contêiner da Sequência\TBL_EAN\INSERT TBL_EAN"
-          TopLeft="17,497" />
+          TopLeft="17,503" />
         <NodeLayout
           Size="175,42"
           Id="Package\Contêiner da Sequência\TBL_EAN\UPDATE TBL_EAN"
@@ -26997,33 +28106,33 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-130.833333333333,81"
+              EndConnector="-130.833333333333,87"
               Start="0,0"
-              End="-130.833333333333,73.5">
+              End="-130.833333333333,79.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.8144989339019" />
+                    End="0,31.2452025586354" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.8144989339019"
-                    Point2="0,32.8144989339019"
-                    Point3="-4,32.8144989339019" />
+                    Point1="0,31.2452025586354"
+                    Point2="0,35.2452025586354"
+                    Point3="-4,35.2452025586354" />
                   <mssgle:LineSegment
-                    End="-126.833333333333,32.8144989339019" />
+                    End="-126.833333333333,35.2452025586354" />
                   <mssgle:CubicBezierSegment
-                    Point1="-126.833333333333,32.8144989339019"
-                    Point2="-130.833333333333,32.8144989339019"
-                    Point3="-130.833333333333,36.8144989339019" />
+                    Point1="-126.833333333333,35.2452025586354"
+                    Point2="-130.833333333333,35.2452025586354"
+                    Point3="-130.833333333333,39.2452025586354" />
                   <mssgle:LineSegment
-                    End="-130.833333333333,73.5" />
+                    End="-130.833333333333,79.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-83.0069791666667,37.8144989339019,35.180625,9.5341796875"
+              BoundingBox="-83.0069791666667,40.2452025586354,35.180625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -27649,13 +28758,6 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <AnnotationLayout
-          Text="SEMPRE QUE REGISTRO_MS = 0 DEIXAR NULL"
-          ParentId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_REGISTROS_MS"
-          FontInfo="{assembly:Null}"
-          Size="274,60"
-          Id="1f0b5a88-acf9-44f5-b124-2a56d1aede6c"
-          TopLeft="435,286" />
         <NodeLayout
           Size="185,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_REGISTROS_MS\TBL_REGISTRO_MS"
@@ -27789,6 +28891,246 @@ ON T.PRODUTO=P.PRODUTO ORDER BY P.PRODUTO</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_REGISTROS_MS\PROCFIT PRODUTOS_REGISTROS_MS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="128,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN"
+          TopLeft="43,15" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN"
+          TopLeft="290,15" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN"
+          TopLeft="164,132" />
+        <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída de Origem OLE DB]"
+          TopLeft="107,57">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="103,75"
+              Start="0,0"
+              End="103,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.4690265486726" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.4690265486726"
+                    Point2="0,44.4690265486726"
+                    Point3="4,44.4690265486726" />
+                  <mssgle:LineSegment
+                    End="99,44.4690265486726" />
+                  <mssgle:CubicBezierSegment
+                    Point1="99,44.4690265486726"
+                    Point2="103,44.4690265486726"
+                    Point3="103,48.4690265486726" />
+                  <mssgle:LineSegment
+                    End="103,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída de Origem OLE DB1]"
+          TopLeft="400.5,57">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-148.5,75"
+              Start="0,0"
+              End="-148.5,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.4690265486726" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.4690265486726"
+                    Point2="0,44.4690265486726"
+                    Point3="-4,44.4690265486726" />
+                  <mssgle:LineSegment
+                    End="-144.5,44.4690265486726" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-144.5,44.4690265486726"
+                    Point2="-148.5,44.4690265486726"
+                    Point3="-148.5,48.4690265486726" />
+                  <mssgle:LineSegment
+                    End="-148.5,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="186,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE"
+          TopLeft="128,272" />
+        <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída da Junção de Mesclagem]"
+          TopLeft="231,174">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10,98"
+              Start="0,0"
+              End="-10,90.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45"
+                    Point2="0,49"
+                    Point3="-4,49" />
+                  <mssgle:LineSegment
+                    End="-6,49" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6,49"
+                    Point2="-10,49"
+                    Point3="-10,53" />
+                  <mssgle:LineSegment
+                    End="-10,90.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="213,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN"
+          TopLeft="48,403" />
+        <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[INSERT]"
+          TopLeft="191.333333333333,314">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-36.8333333333333,89"
+              Start="0,0"
+              End="-36.8333333333333,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.0554371002132" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.0554371002132"
+                    Point2="0,36.0554371002132"
+                    Point3="-4,36.0554371002132" />
+                  <mssgle:LineSegment
+                    End="-32.8333333333333,36.0554371002132" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-32.8333333333333,36.0554371002132"
+                    Point2="-36.8333333333333,36.0554371002132"
+                    Point3="-36.8333333333333,40.0554371002132" />
+                  <mssgle:LineSegment
+                    End="-36.8333333333333,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-36.0069791666667,41.0554371002132,35.180625,9.5341796875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="218,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN"
+          TopLeft="353,401" />
+        <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[UPDATE]"
+          TopLeft="250.666666666667,314">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="211.333333333333,87"
+              Start="0,0"
+              End="211.333333333333,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.2452025586354" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.2452025586354"
+                    Point2="0,35.2452025586354"
+                    Point3="4,35.2452025586354" />
+                  <mssgle:LineSegment
+                    End="207.333333333333,35.2452025586354" />
+                  <mssgle:CubicBezierSegment
+                    Point1="207.333333333333,35.2452025586354"
+                    Point2="211.333333333333,35.2452025586354"
+                    Point3="211.333333333333,39.2452025586354" />
+                  <mssgle:LineSegment
+                    End="211.333333333333,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="87.0047721354167,40.2452025586354,37.3237890625,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
