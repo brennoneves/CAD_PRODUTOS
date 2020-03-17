@@ -8,7 +8,7 @@
       DTS:ConnectionString="uid=root;Dsn=STG_CAD_PRODUTOS;">
       <DTS:Password
         DTS:Name="pwd"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAACRmm62K9lyHXRGb7rsaExtAAAAAASAAACgAAAAEAAAAF8yaFqKD9F246BK9PwT1AtwAAAA0jagXZ6YmmutSA8ib/OSun/SlrxQyAQKKX1bhWgL7WCKVoWnMRjqSc5ttz6wLKXM7BP4uF9v2HpQDQBKD4kbh8E9vT7eakrVeoBOy6kJVfNvbkaD595hptpmQ97CKf5L+m5RDgNvmju97dgwCfh9qxQAAAAb8YFw04Ahr79YyiI2feof8kWHVw==</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAADo4MqEVLPPHxKdp54rsgN9AAAAAASAAACgAAAAEAAAAEf7mlNJwnUCts7dkLihaaFwAAAAGfcNxL9N8ADNXdJLIdgPhTYhZURrjsrF1sLAx4OHV07M6wuuoNPywUDTvNLyf/0Lp9S5pneYFd/ZjrhBmZ/uriQtHNLfwE7sdfXi4ZiHD6rj6ud3fFYG2KV8UtdcmBIqtq8IeIvyXRuToL8dd8q0yhQAAAB3DZ+mnVpuqnGdXvriSVGNwvGLHw==</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
