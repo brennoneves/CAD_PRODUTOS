@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">VILAVELHA</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAADz0Rw1V+EABnHPLZYPpPehAAAAAASAAACgAAAAEAAAAB/FFvLmJgAIqzMRZEUk5GOIAAAAxqKWE2v+Izsw7XmREcVdWkjqVRzyXogzy7Tv2hS7ziLzV0JwiaQ8OFGskVYXeBWa8zpcX1G3bNcSn9T+DVKXfad+h8EoJRfAzDgy8L2ZG32oJGZym5zI0QVnQSrKvLxf6P0GUZwS7jdtZ7I32wfjJwr4iwoUHoJt/1ImoZn7/H8LEbKGmDOIEhQAAAC/1rWcFGT1ShVm9fiXhUS/U1QeZA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAAC7xxGnPm1cbesiWkqyN6NsAAAAAASAAACgAAAAEAAAAN7mSu6PROzouTOkf0FxXw+IAAAAgEVmXPkayjT31OLYHzwFY254Du8c88Wu/+eb1OJ0/VZyJ4EiFISqIBYz+YHEKCjCuMo3bjB8bb6hqAIvMnaAqLLBtlq5Q82ytaK4H3uIsxjASZIU2I1NfKZcKipsSZGQOjm6GZxUr7rmw/U+ywDvFiD0xj9M4Qkjq1N/ng+jPLWYaVpnI24NrhQAAADlC6A+OpUPOxaTTm4XBSpsDgLMlw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -507,16 +507,32 @@
                 <SSIS:Property SSIS:Name="Name">CAD_PRODUTOS</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">227</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">243</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{ADF24FA0-DE48-4FC5-AA7A-8E0EF870B723}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2CED054E-2DA7-40D0-B817-76680BAA3332}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
-              <SSIS:Parameters />
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="CM.LOG_STG.txt.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\LOG\PRODUTOS\LOG_STG.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>
