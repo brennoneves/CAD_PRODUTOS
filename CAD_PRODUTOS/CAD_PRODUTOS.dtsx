@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="249"
-  DTS:VersionGUID="{0CB33BBD-CF8B-4834-B5EB-0C2EF7DE0A45}">
+  DTS:VersionBuild="250"
+  DTS:VersionGUID="{9215E9EF-6D88-463A-98FD-945136AAE3E4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29258,7 +29258,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="63.8759765625,41.625386996904,170.748046875,12.1953125"
+              BoundingBox="55.18798828125,41.625386996904,188.1240234375,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
