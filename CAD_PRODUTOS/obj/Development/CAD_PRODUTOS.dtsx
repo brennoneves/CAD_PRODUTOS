@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="282"
-  DTS:VersionGUID="{BE913EC6-CD94-45C7-BF53-D6EF5B5D8DF9}">
+  DTS:VersionBuild="283"
+  DTS:VersionGUID="{CE8D1C8C-7A01-4E17-817F-870B46344CEC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -26804,7 +26804,7 @@ ORDER BY PRODUTO_PV</property>
           PanelSize="431.2,822.4"
           Size="431.2,865.6"
           Id="Package\CARGA STG E TBLs"
-          TopLeft="28.8571428376801,49.7764705710758" />
+          TopLeft="27.7142856753602,48.5529411421515" />
         <NodeLayout
           Size="200.8,41.6"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS"
@@ -27048,18 +27048,18 @@ ORDER BY PRODUTO_PV</property>
           TopLeft="647,44" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
-          TopLeft="460.05714283768,484.288235285538">
+          TopLeft="458.91428567536,483.676470571076">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="186.94285716232,0"
+              EndConnector="188.08571432464,0"
               Start="0,0"
-              End="179.44285716232,0">
+              End="180.58571432464,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="179.44285716232,0" />
+                    End="180.58571432464,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -27070,13 +27070,13 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição 1]"
-          TopLeft="926,928">
+          TopLeft="926.2,928">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-310,100"
+              EndConnector="-310.4,100"
               Start="0,0"
-              End="-310,92.5">
+              End="-310.4,92.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -27087,13 +27087,13 @@ ORDER BY PRODUTO_PV</property>
                     Point2="0,50"
                     Point3="-4,50" />
                   <mssgle:LineSegment
-                    End="-306,50" />
+                    End="-306.4,50" />
                   <mssgle:CubicBezierSegment
-                    Point1="-306,50"
-                    Point2="-310,50"
-                    Point3="-310,54" />
+                    Point1="-306.4,50"
+                    Point2="-310.4,50"
+                    Point3="-310.4,54" />
                   <mssgle:LineSegment
-                    End="-310,92.5" />
+                    End="-310.4,92.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
