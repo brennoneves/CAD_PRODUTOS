@@ -5,10 +5,10 @@
   DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="uid=root;Dsn=STG_CAD_PRODUTOS;">
+      DTS:ConnectionString="uid=root;Dsn=PHARMAGESTAO;">
       <DTS:Password
         DTS:Name="pwd"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAADWshCiHx+fLHg9R4zCIB23AAAAAASAAACgAAAAEAAAAIR7NvlM5/ZJwhS6Oc7q1ppwAAAAwB48E2TY6wBuk0HNeEzI+TMhlVb+fzYriQNFjknhxoeNuRtnsWnc4msYbIUSgCoKWYTiOWZ3ySdxCgZGMAkxdeq4WFu7Lyia9t4VdbVjKJxPK6PMOab3X/i0wwnq1ZFzTgl0Q7sXxk6E40f6a02GXhQAAAATJCGVHctUHEPIZX3p5P9kLcFlRA==</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARPm1v/0s806XSwypkrAHaQAAAAACAAAAAAADZgAAwAAAABAAAABhzmlYGpcAoMyVK07sM5UeAAAAAASAAACgAAAAEAAAADsXRscdts9IVUHUU0EQZoNwAAAAguJOZls4kfoctEUrtj9ZPxGOk187Q4kvj0WxPvrE0RfBzATerLSR54yuGohZVzuEW8Ate2DoYba8WQuPlZMuLGSOKW73CvPIxw77Wzv/vBWN5qiNrM1QK+9gLNcH2sVmbnLZYyLRbZ80wQauQKUDpRQAAAC7fx5rMpRVIeUmn8ERORBXhoJurA==</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
