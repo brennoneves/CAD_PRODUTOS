@@ -7,26 +7,14 @@
   DTS:CreatorName="PHARMAGESTAO\suporte"
   DTS:DTSID="{77683B5B-5B6B-42B3-9C6A-355C921925A1}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="250"
-  DTS:VersionGUID="{9215E9EF-6D88-463A-98FD-945136AAE3E4}">
+  DTS:VersionBuild="262"
+  DTS:VersionGUID="{E91CE35D-9D79-4547-9B21-2E255E95E3BB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LOG_STG.txt]"
-      DTS:CreationName="FILE"
-      DTS:DTSID="{19C87B5F-0441-4010-91B8-AC547E1F0255}"
-      DTS:ObjectName="LOG_STG.txt">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="C:\LOG\PRODUTOS\LOG_STG.txt" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:LogProviders>
     <DTS:LogProvider
       DTS:ConfigString="LOG_STG.txt"
@@ -155,14 +143,35 @@
           VSTAMinorVersion="0"
           Language="CSharp">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_1d8ac6c9d1fd43f0a8f115245733f7fc")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_1d8ac6c9d1fd43f0a8f115245733f7fc")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -586,35 +595,14 @@ namespace ST_1d8ac6c9d1fd43f0a8f115245733f7fc.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_1d8ac6c9d1fd43f0a8f115245733f7fc")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_1d8ac6c9d1fd43f0a8f115245733f7fc")]
-[assembly: AssemblyCopyright("Copyright @  2020")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1550,6 +1538,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           dataType="str"
                           length="1"
                           name="USO_CONTINUO" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[DESCRICAO_DCB]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="DESCRICAO_DCB" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -9296,6 +9290,17 @@ WHERE  EAN in ((SELECT MAX(EAN) from CAD_PRODUTOS group by PRODUTO having count(
                           dataType="str"
                           length="1"
                           name="ATUALIZAR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STG E TBLs\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID]"
+                          dataType="numeric"
+                          name="ID"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STG E TBLs\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DESCRICAO_DCB]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="DESCRICAO_DCB" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -10339,6 +10344,11 @@ WHERE  EAN in ((SELECT MAX(EAN) from CAD_PRODUTOS group by PRODUTO having count(
                           dataType="str"
                           length="2"
                           name="ATUALIZAR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STG E TBLs\TBL_EAN\INSERT TBL_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID]"
+                          dataType="numeric"
+                          name="ID"
+                          precision="15" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -11612,6 +11622,11 @@ WHERE  EAN in ((SELECT MAX(EAN) from CAD_PRODUTOS group by PRODUTO having count(
                           dataType="str"
                           length="1"
                           name="USO_CONTINUO" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STG E TBLs\TBL_PF\INSERT TBL_PF.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID]"
+                          dataType="numeric"
+                          name="ID"
+                          precision="15" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -11881,68 +11896,68 @@ WHERE  EAN in ((SELECT MAX(EAN) from CAD_PRODUTOS group by PRODUTO having count(
                           cachedName="PRODUTO_PF"
                           cachedPrecision="15"
                           cachedSortKeyPosition="1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_PF]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_PF]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[RETENCAO_RECEITA_PF]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
                           cachedName="RETENCAO_RECEITA_PF"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[RETENCAO_RECEITA_PF]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[RETENCAO_RECEITA_PF]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[VENDA_CONTROLADA_PF]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
                           cachedName="VENDA_CONTROLADA_PF"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[VENDA_CONTROLADA_PF]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[VENDA_CONTROLADA_PF]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[TIPO_PF]"
                           cachedDataType="numeric"
                           cachedName="TIPO_PF"
                           cachedPrecision="5"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[TIPO_PF]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[TIPO_PF]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[REGISTRO_MS_PF]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="20"
                           cachedName="REGISTRO_MS_PF"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS_PF]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS_PF]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ATUALIZAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="3"
                           cachedName="ATUALIZAR"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA_PF]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="3"
+                          cachedLength="15"
                           cachedName="UNIDADE_FARMACOTECNICA_PF"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[TIPO_RECEITA_PF]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="70"
                           cachedName="TIPO_RECEITA_PF"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[TIPO_RECEITA_PF]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[TIPO_RECEITA_PF]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF1]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="65"
                           cachedName="CLASSE_TERAPEUTICA_PF1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem].Columns[CLASSE_TERAPEUTICA_PF2]"
                           cachedDataType="numeric"
                           cachedName="CLASSE_TERAPEUTICA_PF2"
                           cachedPrecision="5"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -12151,7 +12166,7 @@ WHERE  EAN in ((SELECT MAX(EAN) from CAD_PRODUTOS group by PRODUTO having count(
                           refId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA_PF]"
                           codePage="1252"
                           dataType="str"
-                          length="3"
+                          length="15"
                           lineageId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA_PF]"
                           name="UNIDADE_FARMACOTECNICA_PF">
                           <properties>
@@ -12333,7 +12348,7 @@ WHERE  EAN in ((SELECT MAX(EAN) from CAD_PRODUTOS group by PRODUTO having count(
                           refId="Package\CARGA STG E TBLs\TBL_PF\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[UNIDADE_FARMACOTECNICA_PF]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="3"
+                          cachedLength="15"
                           cachedName="UNIDADE_FARMACOTECNICA_PF"
                           lineageId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[UNIDADE_FARMACOTECNICA_PF]" />
                         <inputColumn
@@ -12438,11 +12453,11 @@ WHERE  EAN in ((SELECT MAX(EAN) from CAD_PRODUTOS group by PRODUTO having count(
                   </outputs>
                 </component>
                 <component
-                  refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV"
+                  refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
                   description="Origem OLE DB"
-                  name="TBL_PV"
+                  name="TBL_PF"
                   usesDispositions="true"
                   version="7">
                   <properties>
@@ -12487,7 +12502,7 @@ WHERE  EAN in ((SELECT MAX(EAN) from CAD_PRODUTOS group by PRODUTO having count(
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Connections[OleDbConnection]"
+                      refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Connections[OleDbConnection]"
                       connectionManagerID="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}:external"
                       connectionManagerRefId="Project.ConnectionManagers[STG_CAD_PRODUTOS]"
                       description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
@@ -12495,115 +12510,115 @@ WHERE  EAN in ((SELECT MAX(EAN) from CAD_PRODUTOS group by PRODUTO having count(
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB]"
+                      refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB]"
                       isSorted="true"
                       name="Saída de Origem OLE DB">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_PF]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO_PF]"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_PF]"
+                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO_PF]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[PRODUTO_PF]"
                           name="PRODUTO_PF"
                           precision="15"
                           sortKeyPosition="1"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[RETENCAO_RECEITA_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[RETENCAO_RECEITA_PF]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[RETENCAO_RECEITA_PF]"
+                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[RETENCAO_RECEITA_PF]"
                           length="1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[RETENCAO_RECEITA_PF]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[RETENCAO_RECEITA_PF]"
                           name="RETENCAO_RECEITA_PF"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[VENDA_CONTROLADA_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[VENDA_CONTROLADA_PF]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[VENDA_CONTROLADA_PF]"
+                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[VENDA_CONTROLADA_PF]"
                           length="1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[VENDA_CONTROLADA_PF]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[VENDA_CONTROLADA_PF]"
                           name="VENDA_CONTROLADA_PF"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[TIPO_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[TIPO_PF]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO_PF]"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[TIPO_PF]"
+                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO_PF]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[TIPO_PF]"
                           name="TIPO_PF"
                           precision="5"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS_PF]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[REGISTRO_MS_PF]"
+                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[REGISTRO_MS_PF]"
                           length="20"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS_PF]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[REGISTRO_MS_PF]"
                           name="REGISTRO_MS_PF"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[ATUALIZAR]"
+                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[ATUALIZAR]"
                           length="3"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]"
                           name="ATUALIZAR"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[UNIDADE_FARMACOTECNICA_PF]"
-                          length="3"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]"
+                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[UNIDADE_FARMACOTECNICA_PF]"
+                          length="15"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]"
                           name="UNIDADE_FARMACOTECNICA_PF"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[TIPO_RECEITA_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[TIPO_RECEITA_PF]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO_RECEITA_PF]"
+                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO_RECEITA_PF]"
                           length="70"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[TIPO_RECEITA_PF]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[TIPO_RECEITA_PF]"
                           name="TIPO_RECEITA_PF"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF1]"
+                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF1]"
                           length="65"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]"
                           name="CLASSE_TERAPEUTICA_PF1"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF2]"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]"
+                          externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF2]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]"
                           name="CLASSE_TERAPEUTICA_PF2"
                           precision="5"
                           truncationRowDisposition="FailComponent" />
@@ -12611,146 +12626,146 @@ WHERE  EAN in ((SELECT MAX(EAN) from CAD_PRODUTOS group by PRODUTO having count(
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[PRODUTO_PF]"
                           dataType="numeric"
                           name="PRODUTO_PF"
                           precision="15" />
                         <externalMetadataColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[RETENCAO_RECEITA_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[RETENCAO_RECEITA_PF]"
                           codePage="1252"
                           dataType="str"
                           length="1"
                           name="RETENCAO_RECEITA_PF" />
                         <externalMetadataColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[VENDA_CONTROLADA_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[VENDA_CONTROLADA_PF]"
                           codePage="1252"
                           dataType="str"
                           length="1"
                           name="VENDA_CONTROLADA_PF" />
                         <externalMetadataColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO_PF]"
                           dataType="numeric"
                           name="TIPO_PF"
                           precision="5" />
                         <externalMetadataColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[REGISTRO_MS_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[REGISTRO_MS_PF]"
                           codePage="1252"
                           dataType="str"
                           length="20"
                           name="REGISTRO_MS_PF" />
                         <externalMetadataColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[ATUALIZAR]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[ATUALIZAR]"
                           codePage="1252"
                           dataType="str"
                           length="1"
                           name="ATUALIZAR" />
                         <externalMetadataColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[UNIDADE_FARMACOTECNICA_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[UNIDADE_FARMACOTECNICA_PF]"
                           codePage="1252"
                           dataType="str"
                           length="15"
                           name="UNIDADE_FARMACOTECNICA_PF" />
                         <externalMetadataColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO_RECEITA_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[TIPO_RECEITA_PF]"
                           codePage="1252"
                           dataType="str"
                           length="70"
                           name="TIPO_RECEITA_PF" />
                         <externalMetadataColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF1]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF1]"
                           codePage="1252"
                           dataType="str"
                           length="65"
                           name="CLASSE_TERAPEUTICA_PF1" />
                         <externalMetadataColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF2]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB].ExternalColumns[CLASSE_TERAPEUTICA_PF2]"
                           dataType="numeric"
                           name="CLASSE_TERAPEUTICA_PF2"
                           precision="5" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB]"
+                      refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB]"
                       isErrorOut="true"
                       name="Saída de Erro de Origem OLE DB">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO_PF]"
                           dataType="numeric"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO_PF]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[PRODUTO_PF]"
                           name="PRODUTO_PF"
                           precision="15" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[RETENCAO_RECEITA_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[RETENCAO_RECEITA_PF]"
                           codePage="1252"
                           dataType="str"
                           length="1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[RETENCAO_RECEITA_PF]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[RETENCAO_RECEITA_PF]"
                           name="RETENCAO_RECEITA_PF" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[VENDA_CONTROLADA_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[VENDA_CONTROLADA_PF]"
                           codePage="1252"
                           dataType="str"
                           length="1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[VENDA_CONTROLADA_PF]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[VENDA_CONTROLADA_PF]"
                           name="VENDA_CONTROLADA_PF" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO_PF]"
                           dataType="numeric"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO_PF]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO_PF]"
                           name="TIPO_PF"
                           precision="5" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]"
                           codePage="1252"
                           dataType="str"
                           length="65"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF1]"
                           name="CLASSE_TERAPEUTICA_PF1" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]"
                           dataType="numeric"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[CLASSE_TERAPEUTICA_PF2]"
                           name="CLASSE_TERAPEUTICA_PF2"
                           precision="5" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[REGISTRO_MS_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[REGISTRO_MS_PF]"
                           codePage="1252"
                           dataType="str"
                           length="20"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[REGISTRO_MS_PF]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[REGISTRO_MS_PF]"
                           name="REGISTRO_MS_PF" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[ATUALIZAR]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[ATUALIZAR]"
                           codePage="1252"
                           dataType="str"
                           length="1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[ATUALIZAR]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[ATUALIZAR]"
                           name="ATUALIZAR" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]"
                           codePage="1252"
                           dataType="str"
                           length="15"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[UNIDADE_FARMACOTECNICA_PF]"
                           name="UNIDADE_FARMACOTECNICA_PF" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO_RECEITA_PF]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO_RECEITA_PF]"
                           codePage="1252"
                           dataType="str"
                           length="70"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO_RECEITA_PF]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[TIPO_RECEITA_PF]"
                           name="TIPO_RECEITA_PF" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -13314,7 +13329,7 @@ CLASSE_TERAPEUTICA_PF1 = ? , ATUALIZAR = ? , REGISTRO_MS_PF = ? , TIPO_PF =? , U
                   refId="Package\CARGA STG E TBLs\TBL_PF.Paths[Saída de Origem OLE DB1]"
                   endId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Inputs[Entrada Direita da Junção de Mesclagem]"
                   name="Saída de Origem OLE DB"
-                  startId="Package\CARGA STG E TBLs\TBL_PF\TBL_PV.Outputs[Saída de Origem OLE DB]" />
+                  startId="Package\CARGA STG E TBLs\TBL_PF\TBL_PF.Outputs[Saída de Origem OLE DB]" />
                 <path
                   refId="Package\CARGA STG E TBLs\TBL_PF.Paths[UPDATE]"
                   endId="Package\CARGA STG E TBLs\TBL_PF\UPDATE TBL_PF.Inputs[Entrada de Comando OLE DB]"
@@ -13804,6 +13819,11 @@ ORDER BY PRODUTO</property>
                           dataType="str"
                           length="3"
                           name="ATUALIZAR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID]"
+                          dataType="numeric"
+                          name="ID"
+                          precision="15" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -15127,14 +15147,19 @@ ORDER BY PRODUTO</property>
                           refId="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\INSERT TBL_REGISTRO.Inputs[Entrada de Destino OLE DB].ExternalColumns[REGISTRO_MS]"
                           codePage="1252"
                           dataType="str"
-                          length="13"
+                          length="15"
                           name="REGISTRO_MS" />
                         <externalMetadataColumn
                           refId="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\INSERT TBL_REGISTRO.Inputs[Entrada de Destino OLE DB].ExternalColumns[ATUALIZAR]"
                           codePage="1252"
                           dataType="str"
-                          length="1"
+                          length="2"
                           name="ATUALIZAR" />
+                        <externalMetadataColumn
+                          refId="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\INSERT TBL_REGISTRO.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID]"
+                          dataType="numeric"
+                          name="ID"
+                          precision="15" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -16123,7 +16148,7 @@ ORDER BY PRODUTO;</property>
                           refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[ATUALIZAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="1"
+                          cachedLength="3"
                           cachedName="ATUALIZAR"
                           lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\JUNTAR AS 2 TABELAS LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]" />
                       </inputColumns>
@@ -17230,7 +17255,7 @@ SET IDENTITY_INSERT PBS_FARMACRO_DADOS.DBO.PRODUTOS OFF;</property>
                           refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\JUNTAR AS 2 TABELAS LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[ATUALIZAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="1"
+                          cachedLength="3"
                           cachedName="ATUALIZAR"
                           lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\TBL_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]" />
                       </inputColumns>
@@ -17757,7 +17782,7 @@ SET IDENTITY_INSERT PBS_FARMACRO_DADOS.DBO.PRODUTOS OFF;</property>
                           refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\JUNTAR AS 2 TABELAS LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]"
                           codePage="1252"
                           dataType="str"
-                          length="1"
+                          length="3"
                           lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\JUNTAR AS 2 TABELAS LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[ATUALIZAR]"
                           name="ATUALIZAR">
                           <properties>
@@ -18306,9 +18331,19 @@ SET IDENTITY_INSERT PBS_FARMACRO_DADOS.DBO.PRODUTOS OFF;</property>
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\TBL_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[ATUALIZAR]"
-                          length="1"
+                          length="3"
                           lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\TBL_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]"
                           name="ATUALIZAR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\TBL_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[ID]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\TBL_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[ID]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\TBL_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[ID]"
+                          name="ID"
+                          precision="15"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -18502,6 +18537,11 @@ SET IDENTITY_INSERT PBS_FARMACRO_DADOS.DBO.PRODUTOS OFF;</property>
                           dataType="str"
                           length="3"
                           name="ATUALIZAR" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\TBL_PRODUTOS.Outputs[Saída de Origem OLE DB].ExternalColumns[ID]"
+                          dataType="numeric"
+                          name="ID"
+                          precision="15" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -18509,6 +18549,12 @@ SET IDENTITY_INSERT PBS_FARMACRO_DADOS.DBO.PRODUTOS OFF;</property>
                       isErrorOut="true"
                       name="Saída de Erro de Origem OLE DB">
                       <outputColumns>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\TBL_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ID]"
+                          dataType="numeric"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\TBL_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[ID]"
+                          name="ID"
+                          precision="15" />
                         <outputColumn
                           refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\TBL_PRODUTOS.Outputs[Saída de Erro de Origem OLE DB].Columns[FORMULARIO_ORIGEM]"
                           dataType="numeric"
@@ -25830,65 +25876,53 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="130,42"
           Id="Package\BKP_LOG"
-          TopLeft="551,1028" />
+          TopLeft="976.5,1965.5" />
         <NodeLayout
           Size="207,42"
           Id="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT"
-          TopLeft="53.5,95" />
+          TopLeft="5.50000000000006,118.785714285714" />
         <NodeLayout
-          Size="187,42"
+          Size="207,42"
           Id="Package\CARGA STG E TBLs\LIMPAR CARGA STAGE"
-          TopLeft="11,0" />
+          TopLeft="5.50000000000006,5.5" />
         <NodeLayout
-          Size="164,42"
+          Size="207,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS"
-          TopLeft="50,196" />
+          TopLeft="5.50000000000006,232.071428571429" />
         <NodeLayout
-          Size="128,42"
+          Size="207,42"
           Id="Package\CARGA STG E TBLs\TBL_DCB"
-          TopLeft="37,487" />
+          TopLeft="5.50000000000006,571.928571428571" />
         <NodeLayout
-          Size="128,42"
+          Size="207,42"
           Id="Package\CARGA STG E TBLs\TBL_EAN"
-          TopLeft="21,725" />
+          TopLeft="5.50000000000006,798.5" />
         <NodeLayout
-          Size="119,42"
+          Size="207,42"
           Id="Package\CARGA STG E TBLs\TBL_PF"
-          TopLeft="58,387" />
+          TopLeft="5.50000000000006,458.642857142857" />
         <NodeLayout
-          Size="120,42"
+          Size="207,42"
           Id="Package\CARGA STG E TBLs\TBL_PV"
-          TopLeft="61,290" />
+          TopLeft="5.50000000000006,345.357142857143" />
         <NodeLayout
-          Size="185,42"
+          Size="207,42"
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS"
-          TopLeft="20,604" />
+          TopLeft="5.50000000000006,685.214285714286" />
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição]"
-          TopLeft="104.5,42">
+          TopLeft="109,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="52.5,53"
+              EndConnector="0,71.2857142857143"
               Start="0,0"
-              End="52.5,45.5">
+              End="0,63.7857142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.5"
-                    Point2="0,26.5"
-                    Point3="4,26.5" />
-                  <mssgle:LineSegment
-                    End="48.5,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="48.5,26.5"
-                    Point2="52.5,26.5"
-                    Point3="52.5,30.5" />
-                  <mssgle:LineSegment
-                    End="52.5,45.5" />
+                    End="0,63.7857142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25899,30 +25933,18 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 1]"
-          TopLeft="157,137">
+          TopLeft="109,160.785714285714">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-25,59"
+              EndConnector="0,71.2857142857143"
               Start="0,0"
-              End="-25,51.5">
+              End="0,63.7857142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.5"
-                    Point2="0,29.5"
-                    Point3="-4,29.5" />
-                  <mssgle:LineSegment
-                    End="-21,29.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-21,29.5"
-                    Point2="-25,29.5"
-                    Point3="-25,33.5" />
-                  <mssgle:LineSegment
-                    End="-25,51.5" />
+                    End="0,63.7857142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25933,30 +25955,18 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 2]"
-          TopLeft="132,238">
+          TopLeft="109,274.071428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-11,52"
+              EndConnector="0,71.2857142857143"
               Start="0,0"
-              End="-11,44.5">
+              End="0,63.7857142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="-4,26" />
-                  <mssgle:LineSegment
-                    End="-7,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7,26"
-                    Point2="-11,26"
-                    Point3="-11,30" />
-                  <mssgle:LineSegment
-                    End="-11,44.5" />
+                    End="0,63.7857142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25967,18 +25977,18 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 3]"
-          TopLeft="119.25,332">
+          TopLeft="109,387.357142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55"
+              EndConnector="0,71.2857142857143"
               Start="0,0"
-              End="0,47.5">
+              End="0,63.7857142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5" />
+                    End="0,63.7857142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25989,30 +25999,18 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 4]"
-          TopLeft="117.5,429">
+          TopLeft="109,500.642857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-16.5,58"
+              EndConnector="0,71.2857142857143"
               Start="0,0"
-              End="-16.5,50.5">
+              End="0,63.7857142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="-4,29" />
-                  <mssgle:LineSegment
-                    End="-12.5,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12.5,29"
-                    Point2="-16.5,29"
-                    Point3="-16.5,33" />
-                  <mssgle:LineSegment
-                    End="-16.5,50.5" />
+                    End="0,63.7857142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26023,30 +26021,18 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 5]"
-          TopLeft="101,529">
+          TopLeft="109,613.928571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="11.5,75"
+              EndConnector="0,71.2857142857143"
               Start="0,0"
-              End="11.5,67.5">
+              End="0,63.7857142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.5"
-                    Point2="0,37.5"
-                    Point3="4,37.5" />
-                  <mssgle:LineSegment
-                    End="7.5,37.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.5,37.5"
-                    Point2="11.5,37.5"
-                    Point3="11.5,41.5" />
-                  <mssgle:LineSegment
-                    End="11.5,67.5" />
+                    End="0,63.7857142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26057,30 +26043,18 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 6]"
-          TopLeft="112.5,646">
+          TopLeft="109,727.214285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-27.5,79"
+              EndConnector="0,71.2857142857143"
               Start="0,0"
-              End="-27.5,71.5">
+              End="0,63.7857142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.5"
-                    Point2="0,39.5"
-                    Point3="-4,39.5" />
-                  <mssgle:LineSegment
-                    End="-23.5,39.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-23.5,39.5"
-                    Point2="-27.5,39.5"
-                    Point3="-27.5,43.5" />
-                  <mssgle:LineSegment
-                    End="-27.5,71.5" />
+                    End="0,63.7857142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26089,59 +26063,94 @@ ORDER BY PRODUTO_PV</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="limpar a stage area, para receber nova carga de dados"
+          ParentId="Package\CARGA STG E TBLs"
+          FontInfo="{assembly:Null}"
+          Size="316,60"
+          Id="7c1008d4-c45e-4db9-99e9-04d6c7ac981d"
+          TopLeft="231,5.5" />
+        <AnnotationLayout
+          Text="Carga na tabela CAD_PRODUTOS com a massa total de dados"
+          ParentId="Package\CARGA STG E TBLs"
+          FontInfo="{assembly:Null}"
+          Size="356,60"
+          Id="23535adf-028b-4077-8577-2aad1cbddc26"
+          TopLeft="229,111" />
+        <AnnotationLayout
+          Text="Compara os dados da CARGA tbl CAD_PRODUTOS com a TBL_PRODUTOS&#xD;&#xA;para comparar o que precisa alterar ou o que precisa inserir. &#xD;&#xA;Controle do que mudou ou foi adicionado"
+          ParentId="Package\CARGA STG E TBLs"
+          FontInfo="{assembly:Null}"
+          Size="421,72"
+          Id="d364fce9-9914-4f62-ba92-4201928eede0"
+          TopLeft="220,217" />
+        <AnnotationLayout
+          Text="Compara os dados da CARGA tbl CAD_PRODUTOS com a tbl TBL_PV.&#xD;&#xA;Controle do que mudou ou foi adicionado, no Prosystem "
+          ParentId="Package\CARGA STG E TBLs"
+          FontInfo="{assembly:Null}"
+          Size="394,60"
+          Id="f61a83cb-59d2-4a50-8bd6-fe70d5a7132d"
+          TopLeft="222,335" />
+        <AnnotationLayout
+          Text="Compara os dados da CARGA tbl CAD_PRODUTOS com a tbl TBL_EAN.&#xA;Controle do que mudou ou foi adicionado, no Prosystem "
+          ParentId="Package\CARGA STG E TBLs"
+          FontInfo="{assembly:Null}"
+          Size="402,56"
+          Id="c775aa88-2b41-4e82-b928-cc5df6ba8bfb"
+          TopLeft="221.5,793.5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="431,822"
-          Size="431,865"
+          PanelSize="650,1012"
+          Size="650,1054"
           Id="Package\CARGA STG E TBLs"
-          TopLeft="30,51" />
+          TopLeft="22,5.5" />
         <NodeLayout
-          Size="201,42"
+          Size="312,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS"
-          TopLeft="28,106" />
+          TopLeft="5.50000000000011,117.5" />
         <NodeLayout
-          Size="247,42"
+          Size="312,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_DCB"
-          TopLeft="25,490" />
+          TopLeft="5.50000000000011,565.5" />
         <NodeLayout
-          Size="247,42"
+          Size="312,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN"
-          TopLeft="55,744" />
+          TopLeft="5.50000000000011,789.5" />
         <NodeLayout
-          Size="281,42"
+          Size="312,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA"
-          TopLeft="23,387" />
+          TopLeft="5.50000000000011,453.5" />
         <NodeLayout
           Size="312,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_REGISTROS_MS"
-          TopLeft="30,613" />
+          TopLeft="5.50000000000011,677.5" />
         <NodeLayout
-          Size="246,42"
+          Size="312,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS"
-          TopLeft="22,300" />
+          TopLeft="5.50000000000011,341.5" />
         <NodeLayout
-          Size="208,42"
+          Size="312,42"
           Id="Package\PROCFIT PRODUTOS\CARREGAR TBL TEMP_PHG"
-          TopLeft="32,205" />
+          TopLeft="5.50000000000011,229.5" />
         <NodeLayout
-          Size="192,42"
+          Size="312,42"
           Id="Package\PROCFIT PRODUTOS\LIMPAR TBL TEMP_PHG"
-          TopLeft="36,9" />
+          TopLeft="5.50000000000011,5.5" />
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição]"
-          TopLeft="130.25,51">
+          TopLeft="161.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55"
+              EndConnector="0,70"
               Start="0,0"
-              End="0,47.5">
+              End="0,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5" />
+                    End="0,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26152,18 +26161,18 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição 1]"
-          TopLeft="132.25,148">
+          TopLeft="161.5,159.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57"
+              EndConnector="0,70"
               Start="0,0"
-              End="0,49.5">
+              End="0,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.5" />
+                    End="0,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26174,30 +26183,18 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição 2]"
-          TopLeft="145,342">
+          TopLeft="161.5,383.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18.5,45"
+              EndConnector="0,70"
               Start="0,0"
-              End="18.5,37.5">
+              End="0,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="14.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.5,22.5"
-                    Point2="18.5,22.5"
-                    Point3="18.5,26.5" />
-                  <mssgle:LineSegment
-                    End="18.5,37.5" />
+                    End="0,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26208,30 +26205,18 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição 3]"
-          TopLeft="136,247">
+          TopLeft="161.5,271.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9,53"
+              EndConnector="0,70"
               Start="0,0"
-              End="9,45.5">
+              End="0,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.5"
-                    Point2="0,26.5"
-                    Point3="4,26.5" />
-                  <mssgle:LineSegment
-                    End="5,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5,26.5"
-                    Point2="9,26.5"
-                    Point3="9,30.5" />
-                  <mssgle:LineSegment
-                    End="9,45.5" />
+                    End="0,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26242,30 +26227,18 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição 4]"
-          TopLeft="163.5,429">
+          TopLeft="161.5,495.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-15,61"
+              EndConnector="0,70"
               Start="0,0"
-              End="-15,53.5">
+              End="0,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.5"
-                    Point2="0,30.5"
-                    Point3="-4,30.5" />
-                  <mssgle:LineSegment
-                    End="-11,30.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-11,30.5"
-                    Point2="-15,30.5"
-                    Point3="-15,34.5" />
-                  <mssgle:LineSegment
-                    End="-15,53.5" />
+                    End="0,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26276,30 +26249,18 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição 5]"
-          TopLeft="148.5,532">
+          TopLeft="161.5,607.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="37.5,81"
+              EndConnector="0,70"
               Start="0,0"
-              End="37.5,73.5">
+              End="0,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36.5"
-                    Point2="0,40.5"
-                    Point3="4,40.5" />
-                  <mssgle:LineSegment
-                    End="33.5,40.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="33.5,40.5"
-                    Point2="37.5,40.5"
-                    Point3="37.5,44.5" />
-                  <mssgle:LineSegment
-                    End="37.5,73.5" />
+                    End="0,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26310,18 +26271,18 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS.PrecedenceConstraints[Restrição 6]"
-          TopLeft="182.25,655">
+          TopLeft="161.5,719.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,89"
+              EndConnector="0,70"
               Start="0,0"
-              End="0,81.5">
+              End="0,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,81.5" />
+                    End="0,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26334,30 +26295,49 @@ ORDER BY PRODUTO_PV</property>
           Text="CONSERTAR  PRECISA INSERT E UPDATE"
           ParentId="Package\PROCFIT PRODUTOS"
           FontInfo="{assembly:Null}"
-          Size="244,60"
+          Size="244,40"
           Id="88da2ef9-96e8-4d3f-b4f1-71f31f3935c7"
-          TopLeft="309,378" />
+          TopLeft="337.5,449.5" />
+        <AnnotationLayout
+          Text="Limpar a TBL temporaria que mantem atualizado&#xD;&#xA;os grupos de precos de lojas.A medida de forem&#xD;&#xA;sendo inseridos novas lojas esses dados aumentam."
+          ParentId="Package\PROCFIT PRODUTOS"
+          FontInfo="{assembly:Null}"
+          Size="303,72"
+          Id="3b0cf1b3-bde6-4025-9506-c1f06ad00ecb"
+          TopLeft="320,5.5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="558,841"
-          Size="558,884"
+          PanelSize="636,886"
+          Size="636,929"
           Id="Package\PROCFIT PRODUTOS"
-          TopLeft="647,44" />
+          TopLeft="19,1161.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
-          TopLeft="461,484.75">
+          TopLeft="347,1059.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="186,0"
+              EndConnector="-10,102"
               Start="0,0"
-              End="178.5,0">
+              End="-10,94.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="178.5,0" />
+                    End="0,47" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47"
+                    Point2="0,51"
+                    Point3="-4,51" />
+                  <mssgle:LineSegment
+                    End="-6,51" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6,51"
+                    Point2="-10,51"
+                    Point3="-10,55" />
+                  <mssgle:LineSegment
+                    End="-10,94.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26368,30 +26348,30 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição 1]"
-          TopLeft="926,928">
+          TopLeft="655,1626">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-310,100"
+              EndConnector="321.5,360.5"
               Start="0,0"
-              End="-310,92.5">
+              End="314,360.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46" />
+                    End="156.75,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,46"
-                    Point2="0,50"
-                    Point3="-4,50" />
+                    Point1="156.75,0"
+                    Point2="160.75,0"
+                    Point3="160.75,4" />
                   <mssgle:LineSegment
-                    End="-306,50" />
+                    End="160.75,356.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-306,50"
-                    Point2="-310,50"
-                    Point3="-310,54" />
+                    Point1="160.75,356.5"
+                    Point2="160.75,360.5"
+                    Point3="164.75,360.5" />
                   <mssgle:LineSegment
-                    End="-310,92.5" />
+                    End="314,360.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26407,7 +26387,7 @@ ORDER BY PRODUTO_PV</property>
     design-time-name="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="249,42"
           Id="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\GERENCIAL_DADOS_PRODUTO"
@@ -26455,9 +26435,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26491,9 +26469,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26527,9 +26503,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -26656,9 +26630,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26692,9 +26664,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26728,9 +26698,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26764,9 +26732,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26942,9 +26908,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26978,9 +26942,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27014,9 +26976,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27050,9 +27010,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27228,9 +27186,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27264,9 +27220,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27300,9 +27254,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27336,9 +27288,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27431,8 +27381,8 @@ ORDER BY PRODUTO_PV</property>
           Id="Package\CARGA STG E TBLs\TBL_PF\UPDATE TBL_PF"
           TopLeft="386,679" />
         <NodeLayout
-          Size="120,42"
-          Id="Package\CARGA STG E TBLs\TBL_PF\TBL_PV"
+          Size="114,42"
+          Id="Package\CARGA STG E TBLs\TBL_PF\TBL_PF"
           TopLeft="330,10" />
         <NodeLayout
           Size="171,42"
@@ -27484,13 +27434,13 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_PF.Paths[Saída de Origem OLE DB1]"
-          TopLeft="390,52">
+          TopLeft="387,52">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-23.3333333333334,72"
+              EndConnector="-20.3333333333334,72"
               Start="0,0"
-              End="-23.3333333333334,64.5">
+              End="-20.3333333333334,64.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -27501,21 +27451,19 @@ ORDER BY PRODUTO_PV</property>
                     Point2="0,42.8373557187828"
                     Point3="-4,42.8373557187828" />
                   <mssgle:LineSegment
-                    End="-19.3333333333334,42.8373557187828" />
+                    End="-16.3333333333334,42.8373557187828" />
                   <mssgle:CubicBezierSegment
-                    Point1="-19.3333333333334,42.8373557187828"
-                    Point2="-23.3333333333334,42.8373557187828"
-                    Point3="-23.3333333333334,46.8373557187828" />
+                    Point1="-16.3333333333334,42.8373557187828"
+                    Point2="-20.3333333333334,42.8373557187828"
+                    Point3="-20.3333333333334,46.8373557187828" />
                   <mssgle:LineSegment
-                    End="-23.3333333333334,64.5" />
+                    End="-20.3333333333334,64.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27549,9 +27497,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27585,9 +27531,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27621,9 +27565,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27657,9 +27599,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27715,7 +27655,7 @@ ORDER BY PRODUTO_PV</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\CARGA STG E TBLs\TBL_PF\TBL_PV">
+    design-time-name="Package\CARGA STG E TBLs\TBL_PF\TBL_PF">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -27835,9 +27775,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27871,9 +27809,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27895,9 +27831,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27931,9 +27865,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28018,7 +27950,7 @@ ORDER BY PRODUTO_PV</property>
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\MUDAR"
           TopLeft="154,292" />
         <NodeLayout
-          Size="206,42"
+          Size="192,42"
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\INSERT TBL_REGISTRO"
           TopLeft="19,620" />
         <NodeLayout
@@ -28104,9 +28036,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28140,9 +28070,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28164,9 +28092,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28200,44 +28126,42 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS.Paths[INSERT]"
-          TopLeft="209,508">
+          TopLeft="179.333333333333,508">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-87,112"
+              EndConnector="-64.3333333333333,112"
               Start="0,0"
-              End="-87,104.5">
+              End="-64.3333333333333,104.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52" />
+                    End="0,41.3731343283582" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,52"
-                    Point2="0,56"
-                    Point3="-4,56" />
+                    Point1="0,41.3731343283582"
+                    Point2="0,45.3731343283582"
+                    Point3="-4,45.3731343283582" />
                   <mssgle:LineSegment
-                    End="-83,56" />
+                    End="-60.3333333333333,45.3731343283582" />
                   <mssgle:CubicBezierSegment
-                    Point1="-83,56"
-                    Point2="-87,56"
-                    Point3="-87,60" />
+                    Point1="-60.3333333333333,45.3731343283582"
+                    Point2="-64.3333333333333,45.3731343283582"
+                    Point3="-64.3333333333333,49.3731343283582" />
                   <mssgle:LineSegment
-                    End="-87,104.5" />
+                    End="-64.3333333333333,104.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-61.0903125,61,35.180625,9.5341796875"
+              BoundingBox="-49.7569791666667,50.3731343283582,35.180625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -28288,7 +28212,7 @@ ORDER BY PRODUTO_PV</property>
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\UPDATE PRODUTOS"
           TopLeft="358,509" />
         <NodeLayout
-          Size="168,42"
+          Size="157,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS\TBL_PRODUTOS"
           TopLeft="22,30" />
         <NodeLayout
@@ -28383,13 +28307,13 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS.Paths[Saída de Origem OLE DB]"
-          TopLeft="106,72">
+          TopLeft="100.5,72">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="236.666666666667,84"
+              EndConnector="242.166666666667,84"
               Start="0,0"
-              End="236.666666666667,76.5">
+              End="242.166666666667,76.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -28400,13 +28324,13 @@ ORDER BY PRODUTO_PV</property>
                     Point2="0,50.0905602455871"
                     Point3="4,50.0905602455871" />
                   <mssgle:LineSegment
-                    End="232.666666666667,50.0905602455871" />
+                    End="238.166666666667,50.0905602455871" />
                   <mssgle:CubicBezierSegment
-                    Point1="232.666666666667,50.0905602455871"
-                    Point2="236.666666666667,50.0905602455871"
-                    Point3="236.666666666667,54.0905602455871" />
+                    Point1="238.166666666667,50.0905602455871"
+                    Point2="242.166666666667,50.0905602455871"
+                    Point3="242.166666666667,54.0905602455871" />
                   <mssgle:LineSegment
-                    End="236.666666666667,76.5" />
+                    End="242.166666666667,76.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -29075,6 +28999,26 @@ ORDER BY PRODUTO_PV</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="230,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\TBL_PRODUTOS_FARMACIA"
+          TopLeft="53,15" />
+        <NodeLayout
+          Size="269,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\ADICIONAR COLUNAS QUE FALTAM"
+          TopLeft="34,150" />
+        <NodeLayout
+          Size="349,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\REMOVER DO FLUXO REGISTROS_MS JA CADASTRADOS"
+          TopLeft="17,274" />
+        <NodeLayout
+          Size="252,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\UPDATE PRODUTOS_FARMACIA"
+          TopLeft="443,564" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\REMOVER REGISTROS IGUAL 0"
+          TopLeft="448,407" />
+        <NodeLayout
           Size="272,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\REMOVER REGISTROS IGUAL ZERO"
           TopLeft="18,411" />
@@ -29082,51 +29026,63 @@ ORDER BY PRODUTO_PV</property>
           Size="248,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\INSERT PRODUTOS_FARMACIA"
           TopLeft="100,566" />
-        <NodeLayout
-          Size="230,42"
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\TBL_PRODUTOS_FARMACIA"
-          TopLeft="53,15" />
-        <NodeLayout
-          Size="386,42"
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\REMOVER DO FLUXO REGISTROS_MS JA CADASTRADOS"
-          TopLeft="17,274" />
-        <NodeLayout
-          Size="269,42"
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\ADICIONAR COLUNAS QUE FALTAM"
-          TopLeft="34,150" />
         <EdgeLayout
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA.Paths[Saída Sem Correspondência de Pesquisa]"
-          TopLeft="210,316">
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA.Paths[UPDATE]"
+          TopLeft="570.25,449">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-56,95"
+              EndConnector="0,115"
               Start="0,0"
-              End="-56,87.5">
+              End="0,107.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.5"
-                    Point2="0,47.5"
-                    Point3="-4,47.5" />
-                  <mssgle:LineSegment
-                    End="-52,47.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-52,47.5"
-                    Point2="-56,47.5"
-                    Point3="-56,51.5" />
-                  <mssgle:LineSegment
-                    End="-56,87.5" />
+                    End="0,107.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-126.28201171875,52.5,196.5640234375,16"
+              BoundingBox="-27.4866015625,45.75,54.973203125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA.Paths[Saída Sem Correspondência de Pesquisa]"
+          TopLeft="134.666666666667,316">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.3333333333333,95"
+              Start="0,0"
+              End="19.3333333333333,87.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.2601254991443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.2601254991443"
+                    Point2="0,38.2601254991443"
+                    Point3="4,38.2601254991443" />
+                  <mssgle:LineSegment
+                    End="15.3333333333333,38.2601254991443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.3333333333333,38.2601254991443"
+                    Point2="19.3333333333333,38.2601254991443"
+                    Point3="19.3333333333333,42.2601254991443" />
+                  <mssgle:LineSegment
+                    End="19.3333333333333,87.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-88.6153450520833,43.2601254991443,196.5640234375,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -29153,14 +29109,50 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA.Paths[Saída de Correspondência de Pesquisa]"
+          TopLeft="248.333333333333,316">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="323.166666666667,91"
+              Start="0,0"
+              End="323.166666666667,83.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.6491728465488" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.6491728465488"
+                    Point2="0,36.6491728465488"
+                    Point3="4,36.6491728465488" />
+                  <mssgle:LineSegment
+                    End="319.166666666667,36.6491728465488" />
+                  <mssgle:CubicBezierSegment
+                    Point1="319.166666666667,36.6491728465488"
+                    Point2="323.166666666667,36.6491728465488"
+                    Point3="323.166666666667,40.6491728465488" />
+                  <mssgle:LineSegment
+                    End="323.166666666667,83.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="67.5213216145833,41.6491728465488,188.1240234375,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA.Paths[Saída de Coluna Derivada]"
           TopLeft="168.5,192">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41.5,82"
+              EndConnector="23,82"
               Start="0,0"
-              End="41.5,74.5">
+              End="23,74.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -29171,13 +29163,13 @@ ORDER BY PRODUTO_PV</property>
                     Point2="0,41"
                     Point3="4,41" />
                   <mssgle:LineSegment
-                    End="37.5,41" />
+                    End="19,41" />
                   <mssgle:CubicBezierSegment
-                    Point1="37.5,41"
-                    Point2="41.5,41"
-                    Point3="41.5,45" />
+                    Point1="19,41"
+                    Point2="23,41"
+                    Point3="23,45" />
                   <mssgle:LineSegment
-                    End="41.5,74.5" />
+                    End="23,74.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -29222,77 +29214,17 @@ ORDER BY PRODUTO_PV</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="247,42"
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\REMOVER REGISTROS IGUAL 0"
-          TopLeft="448,407" />
-        <EdgeLayout
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA.Paths[Saída de Correspondência de Pesquisa]"
-          TopLeft="273,316">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="298.5,91"
-              Start="0,0"
-              End="298.5,83.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.625386996904" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.625386996904"
-                    Point2="0,36.625386996904"
-                    Point3="4,36.625386996904" />
-                  <mssgle:LineSegment
-                    End="294.5,36.625386996904" />
-                  <mssgle:CubicBezierSegment
-                    Point1="294.5,36.625386996904"
-                    Point2="298.5,36.625386996904"
-                    Point3="298.5,40.625386996904" />
-                  <mssgle:LineSegment
-                    End="298.5,83.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="55.18798828125,41.625386996904,188.1240234375,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="252,42"
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\UPDATE PRODUTOS_FARMACIA"
-          TopLeft="443,564" />
-        <EdgeLayout
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA.Paths[UPDATE]"
-          TopLeft="570.25,449">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,115"
-              Start="0,0"
-              End="0,107.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,107.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.4866015625,45.75,54.973203125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\TBL_PRODUTOS_FARMACIA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\REMOVER DO FLUXO REGISTROS_MS JA CADASTRADOS">
     <Properties>
@@ -29311,14 +29243,6 @@ ORDER BY PRODUTO_PV</property>
         <Value
           type="q4:int">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\TBL_PRODUTOS_FARMACIA">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -29576,6 +29500,26 @@ ORDER BY PRODUTO_PV</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="189,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\Junção de Mesclagem"
+          TopLeft="369,440" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\LEFT JOIN"
+          TopLeft="231,156" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\REG_MASTER_ORIGEM"
+          TopLeft="517,536" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\PRODUTOS_VENDAS PROCFIT"
+          TopLeft="333,26" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\TBL_PV"
+          TopLeft="70,23" />
+        <NodeLayout
           Size="151,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\TEMP_PHG"
           TopLeft="451,313" />
@@ -29587,70 +29531,32 @@ ORDER BY PRODUTO_PV</property>
           Size="236,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\INSERT PRODUTOS_VENDAS"
           TopLeft="494,637" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\TBL_PV"
-          TopLeft="70,23" />
-        <NodeLayout
-          Size="223,42"
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\PRODUTOS_VENDAS PROCFIT"
-          TopLeft="333,26" />
-        <NodeLayout
-          Size="205,42"
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\REG_MASTER_ORIGEM"
-          TopLeft="517,536" />
         <EdgeLayout
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS.Paths[Saída de Coluna Derivada]"
-          TopLeft="615.75,578">
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS.Paths[Saída de Origem OLE DB2]"
+          TopLeft="526.5,355">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59"
+              EndConnector="-32.8333333333334,85"
               Start="0,0"
-              End="0,51.5">
+              End="-32.8333333333334,77.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="134,42"
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\LEFT JOIN"
-          TopLeft="231,156" />
-        <EdgeLayout
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS.Paths[Saída de Origem OLE DB]"
-          TopLeft="130,65">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="147,91"
-              Start="0,0"
-              End="147,83.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.9557522123894" />
+                    End="0,46.5718782791186" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,49.9557522123894"
-                    Point2="0,53.9557522123894"
-                    Point3="4,53.9557522123894" />
+                    Point1="0,46.5718782791186"
+                    Point2="0,50.5718782791186"
+                    Point3="-4,50.5718782791186" />
                   <mssgle:LineSegment
-                    End="143,53.9557522123894" />
+                    End="-28.8333333333334,50.5718782791186" />
                   <mssgle:CubicBezierSegment
-                    Point1="143,53.9557522123894"
-                    Point2="147,53.9557522123894"
-                    Point3="147,57.9557522123894" />
+                    Point1="-28.8333333333334,50.5718782791186"
+                    Point2="-32.8333333333334,50.5718782791186"
+                    Point3="-32.8333333333334,54.5718782791186" />
                   <mssgle:LineSegment
-                    End="147,83.5" />
+                    End="-32.8333333333334,77.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -29694,31 +29600,31 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS.Paths[Saída da Junção de Mesclagem]"
-          TopLeft="298,198">
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS.Paths[Saída de Origem OLE DB]"
+          TopLeft="130,65">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-46,118"
+              EndConnector="147,91"
               Start="0,0"
-              End="-46,110.5">
+              End="147,83.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,55" />
+                    End="0,49.9557522123894" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,55"
-                    Point2="0,59"
-                    Point3="-4,59" />
+                    Point1="0,49.9557522123894"
+                    Point2="0,53.9557522123894"
+                    Point3="4,53.9557522123894" />
                   <mssgle:LineSegment
-                    End="-42,59" />
+                    End="143,53.9557522123894" />
                   <mssgle:CubicBezierSegment
-                    Point1="-42,59"
-                    Point2="-46,59"
-                    Point3="-46,63" />
+                    Point1="143,53.9557522123894"
+                    Point2="147,53.9557522123894"
+                    Point3="147,57.9557522123894" />
                   <mssgle:LineSegment
-                    End="-46,110.5" />
+                    End="147,83.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -29727,72 +29633,20 @@ ORDER BY PRODUTO_PV</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="189,42"
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\Junção de Mesclagem"
-          TopLeft="369,440" />
         <EdgeLayout
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS.Paths[INSERT]"
-          TopLeft="281.666666666667,358">
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS.Paths[Saída de Coluna Derivada]"
+          TopLeft="615.75,578">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="151.666666666667,82"
+              EndConnector="0,59"
               Start="0,0"
-              End="151.666666666667,74.5">
+              End="0,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.0068516042781" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.0068516042781"
-                    Point2="0,41.0068516042781"
-                    Point3="4,41.0068516042781" />
-                  <mssgle:LineSegment
-                    End="147.666666666667,41.0068516042781" />
-                  <mssgle:CubicBezierSegment
-                    Point1="147.666666666667,41.0068516042781"
-                    Point2="151.666666666667,41.0068516042781"
-                    Point3="151.666666666667,45.0068516042781" />
-                  <mssgle:LineSegment
-                    End="151.666666666667,74.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="58.2430208333333,46.0068516042781,35.180625,9.5341796875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS.Paths[Saída de Origem OLE DB2]"
-          TopLeft="526.5,355">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-32.8333333333334,85"
-              Start="0,0"
-              End="-32.8333333333334,77.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.5718782791186" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,46.5718782791186"
-                    Point2="0,50.5718782791186"
-                    Point3="-4,50.5718782791186" />
-                  <mssgle:LineSegment
-                    End="-28.8333333333334,50.5718782791186" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-28.8333333333334,50.5718782791186"
-                    Point2="-32.8333333333334,50.5718782791186"
-                    Point3="-32.8333333333334,54.5718782791186" />
-                  <mssgle:LineSegment
-                    End="-32.8333333333334,77.5" />
+                    End="0,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -29835,9 +29689,95 @@ ORDER BY PRODUTO_PV</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS.Paths[Saída da Junção de Mesclagem]"
+          TopLeft="298,198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-46,118"
+              Start="0,0"
+              End="-46,110.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55"
+                    Point2="0,59"
+                    Point3="-4,59" />
+                  <mssgle:LineSegment
+                    End="-42,59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-42,59"
+                    Point2="-46,59"
+                    Point3="-46,63" />
+                  <mssgle:LineSegment
+                    End="-46,110.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS.Paths[INSERT]"
+          TopLeft="281.666666666667,358">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="151.666666666667,82"
+              Start="0,0"
+              End="151.666666666667,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.0068516042781" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.0068516042781"
+                    Point2="0,41.0068516042781"
+                    Point3="4,41.0068516042781" />
+                  <mssgle:LineSegment
+                    End="147.666666666667,41.0068516042781" />
+                  <mssgle:CubicBezierSegment
+                    Point1="147.666666666667,41.0068516042781"
+                    Point2="151.666666666667,41.0068516042781"
+                    Point3="151.666666666667,45.0068516042781" />
+                  <mssgle:LineSegment
+                    End="151.666666666667,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="58.2430208333333,46.0068516042781,35.180625,9.5341796875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\PRODUTOS_VENDAS PROCFIT">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\TBL_PV">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\TEMP_PHG">
     <Properties>
@@ -29861,22 +29801,6 @@ ORDER BY PRODUTO_PV</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\TBL_PV">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_VENDAS\PRODUTOS_VENDAS PROCFIT">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
