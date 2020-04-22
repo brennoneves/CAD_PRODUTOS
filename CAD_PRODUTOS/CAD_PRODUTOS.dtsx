@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="389"
-  DTS:VersionGUID="{073D5C5A-5264-4914-8AB9-CDD4DC86E866}">
+  DTS:VersionBuild="390"
+  DTS:VersionGUID="{9E8C82C9-6628-4314-80FC-BFF7D16AD647}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -30040,7 +30040,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="207,42"
           Id="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT"
-          TopLeft="5.50000000000006,118.785714285714" />
+          TopLeft="3.50000000000006,83.785714285714" />
         <NodeLayout
           Size="207,42"
           Id="Package\CARGA STG E TBLs\LIMPAR CARGA STAGE"
@@ -30048,11 +30048,11 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="176,42"
           Id="Package\CARGA STG E TBLs\Tarefa Executar SQL"
-          TopLeft="174.5,295.5" />
+          TopLeft="9.5,270.5" />
         <NodeLayout
           Size="154,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS"
-          TopLeft="5.50000000000006,232.071428571429" />
+          TopLeft="18.5000000000001,179.071428571429" />
         <NodeLayout
           Size="123,42"
           Id="Package\CARGA STG E TBLs\TBL_DCB"
@@ -30060,7 +30060,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="122,42"
           Id="Package\CARGA STG E TBLs\TBL_EAN"
-          TopLeft="5.50000000000006,798.5" />
+          TopLeft="19.5000000000001,958.5" />
         <NodeLayout
           Size="114,42"
           Id="Package\CARGA STG E TBLs\TBL_PF"
@@ -30068,25 +30068,25 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="115,42"
           Id="Package\CARGA STG E TBLs\TBL_PV"
-          TopLeft="7.50000000000006,355.357142857143" />
+          TopLeft="20.5000000000001,363.357142857143" />
         <NodeLayout
           Size="173,42"
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS"
-          TopLeft="5.50000000000006,685.214285714286" />
+          TopLeft="10.5000000000001,790.214285714286" />
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição]"
-          TopLeft="109,47.5">
+          TopLeft="108,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71.285714285714"
+              EndConnector="0,36.285714285714"
               Start="0,0"
-              End="0,63.785714285714">
+              End="0,28.785714285714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.785714285714" />
+                    End="0,28.785714285714" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -30097,30 +30097,30 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 1]"
-          TopLeft="109,160.785714285714">
+          TopLeft="107,125.785714285714">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-26.5,71.285714285715"
+              EndConnector="-11.5,53.285714285715"
               Start="0,0"
-              End="-26.5,63.785714285715">
+              End="-11.5,45.785714285715">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.6428571428575" />
+                    End="0,22.6428571428575" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.6428571428575"
-                    Point2="0,35.6428571428575"
-                    Point3="-4,35.6428571428575" />
+                    Point1="0,22.6428571428575"
+                    Point2="0,26.6428571428575"
+                    Point3="-4,26.6428571428575" />
                   <mssgle:LineSegment
-                    End="-22.5,35.6428571428575" />
+                    End="-7.5,26.6428571428575" />
                   <mssgle:CubicBezierSegment
-                    Point1="-22.5,35.6428571428575"
-                    Point2="-26.5,35.6428571428575"
-                    Point3="-26.5,39.6428571428575" />
+                    Point1="-7.5,26.6428571428575"
+                    Point2="-11.5,26.6428571428575"
+                    Point3="-11.5,30.6428571428575" />
                   <mssgle:LineSegment
-                    End="-26.5,63.785714285715" />
+                    End="-11.5,45.785714285715" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -30131,18 +30131,30 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 3]"
-          TopLeft="63.7500000000001,397.357142857143">
+          TopLeft="78.0000000000001,405.357142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61.285714285714"
+              EndConnector="-15.5,53.285714285714"
               Start="0,0"
-              End="0,53.785714285714">
+              End="-15.5,45.785714285714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.785714285714" />
+                    End="0,22.642857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.642857142857"
+                    Point2="0,26.642857142857"
+                    Point3="-4,26.642857142857" />
+                  <mssgle:LineSegment
+                    End="-11.5,26.642857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.5,26.642857142857"
+                    Point2="-15.5,26.642857142857"
+                    Point3="-15.5,30.642857142857" />
+                  <mssgle:LineSegment
+                    End="-15.5,45.785714285714" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -30179,26 +30191,26 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="25,71.285714285715"
+              EndConnector="30,176.285714285715"
               Start="0,0"
-              End="25,63.785714285715">
+              End="30,168.785714285715">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.6428571428575" />
+                    End="0,84.1428571428575" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.6428571428575"
-                    Point2="0,35.6428571428575"
-                    Point3="4,35.6428571428575" />
+                    Point1="0,84.1428571428575"
+                    Point2="0,88.1428571428575"
+                    Point3="4,88.1428571428575" />
                   <mssgle:LineSegment
-                    End="21,35.6428571428575" />
+                    End="26,88.1428571428575" />
                   <mssgle:CubicBezierSegment
-                    Point1="21,35.6428571428575"
-                    Point2="25,35.6428571428575"
-                    Point3="25,39.6428571428575" />
+                    Point1="26,88.1428571428575"
+                    Point2="30,88.1428571428575"
+                    Point3="30,92.1428571428575" />
                   <mssgle:LineSegment
-                    End="25,63.785714285715" />
+                    End="30,168.785714285715" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -30209,30 +30221,30 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 6]"
-          TopLeft="92.0000000000001,727.214285714286">
+          TopLeft="97.0000000000001,832.214285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-25.5,71.285714285714"
+              EndConnector="-16.5,126.285714285714"
               Start="0,0"
-              End="-25.5,63.785714285714">
+              End="-16.5,118.785714285714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.642857142857" />
+                    End="0,59.142857142857" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.642857142857"
-                    Point2="0,35.642857142857"
-                    Point3="-4,35.642857142857" />
+                    Point1="0,59.142857142857"
+                    Point2="0,63.142857142857"
+                    Point3="-4,63.142857142857" />
                   <mssgle:LineSegment
-                    End="-21.5,35.642857142857" />
+                    End="-12.5,63.142857142857" />
                   <mssgle:CubicBezierSegment
-                    Point1="-21.5,35.642857142857"
-                    Point2="-25.5,35.642857142857"
-                    Point3="-25.5,39.642857142857" />
+                    Point1="-12.5,63.142857142857"
+                    Point2="-16.5,63.142857142857"
+                    Point3="-16.5,67.142857142857" />
                   <mssgle:LineSegment
-                    End="-25.5,63.785714285714" />
+                    End="-16.5,118.785714285714" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -30254,21 +30266,21 @@ ORDER BY PRODUTO_PV</property>
           FontInfo="{assembly:Null}"
           Size="356,40"
           Id="23535adf-028b-4077-8577-2aad1cbddc26"
-          TopLeft="229,111" />
+          TopLeft="218,86" />
         <AnnotationLayout
           Text="Compara os dados da CARGA tbl CAD_PRODUTOS com a TBL_PRODUTOS&#xA;para comparar o que precisa alterar ou o que precisa inserir. &#xA;Controle do que mudou ou foi adicionado"
           ParentId="Package\CARGA STG E TBLs"
           FontInfo="{assembly:Null}"
           Size="421,72"
           Id="d364fce9-9914-4f62-ba92-4201928eede0"
-          TopLeft="220,217" />
+          TopLeft="194,160" />
         <AnnotationLayout
           Text="Compara os dados da CARGA tbl CAD_PRODUTOS com a tbl TBL_PV.&#xA;Controle do que mudou ou foi adicionado, no Prosystem "
           ParentId="Package\CARGA STG E TBLs"
           FontInfo="{assembly:Null}"
           Size="394,56"
           Id="f61a83cb-59d2-4a50-8bd6-fe70d5a7132d"
-          TopLeft="222,335" />
+          TopLeft="157,355" />
         <AnnotationLayout
           Text="Compara os dados da CARGA tbl CAD_PRODUTOS com a tbl TBL_EAN.&#xA;Controle do que mudou ou foi adicionado, no Prosystem "
           ParentId="Package\CARGA STG E TBLs"
@@ -30278,24 +30290,18 @@ ORDER BY PRODUTO_PV</property>
           TopLeft="145.5,791.5" />
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 2]"
-          TopLeft="159.5,253.071428571429">
+          TopLeft="96.5,221.071428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="103,42.428571428571"
+              EndConnector="0,49.428571428571"
               Start="0,0"
-              End="103,34.928571428571">
+              End="0,41.928571428571">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="98.9999999999999,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="98.9999999999999,0"
-                    Point2="103,0"
-                    Point3="103,4" />
-                  <mssgle:LineSegment
-                    End="103,34.928571428571" />
+                    End="0,41.928571428571" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -30306,30 +30312,30 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 7]"
-          TopLeft="174.5,316.5">
+          TopLeft="97.5,312.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-51.9999999999999,59.857142857143"
+              EndConnector="-19.4999999999999,50.857142857143"
               Start="0,0"
-              End="-44.4999999999999,59.857142857143">
+              End="-19.4999999999999,43.357142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-22,0" />
+                    End="0,21.4285714285715" />
                   <mssgle:CubicBezierSegment
-                    Point1="-22,0"
-                    Point2="-26,0"
-                    Point3="-26,4" />
+                    Point1="0,21.4285714285715"
+                    Point2="0,25.4285714285715"
+                    Point3="-4,25.4285714285715" />
                   <mssgle:LineSegment
-                    End="-26,55.857142857143" />
+                    End="-15.4999999999999,25.4285714285715" />
                   <mssgle:CubicBezierSegment
-                    Point1="-26,55.857142857143"
-                    Point2="-26,59.857142857143"
-                    Point3="-30,59.857142857143" />
+                    Point1="-15.4999999999999,25.4285714285715"
+                    Point2="-19.4999999999999,25.4285714285715"
+                    Point3="-19.4999999999999,29.4285714285715" />
                   <mssgle:LineSegment
-                    End="-44.4999999999999,59.857142857143" />
+                    End="-19.4999999999999,43.357142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -30338,11 +30344,18 @@ ORDER BY PRODUTO_PV</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="EXECUTAR OS UPDATES E LIMPAR AS TBLs TEMP E MUDAR"
+          ParentId="Package\CARGA STG E TBLs"
+          FontInfo="{assembly:Null}"
+          Size="344,60"
+          Id="3a53979d-f741-4de5-b254-18e81b935236"
+          TopLeft="193,266" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="650,1012"
-          Size="650,1055"
+          PanelSize="650,1074"
+          Size="650,1117"
           Id="Package\CARGA STG E TBLs"
           TopLeft="33,5.5" />
         <NodeLayout
@@ -30613,33 +30626,33 @@ ORDER BY PRODUTO_PV</property>
           PanelSize="636,1009"
           Size="636,1052"
           Id="Package\PROCFIT PRODUTOS"
-          TopLeft="30,1161.5" />
+          TopLeft="29,1625.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
-          TopLeft="358,1060.5">
+          TopLeft="358,1122.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10,101"
+              EndConnector="-11,503"
               Start="0,0"
-              End="-10,93.5">
+              End="-11,495.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.5" />
+                    End="0,247.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,46.5"
-                    Point2="0,50.5"
-                    Point3="-4,50.5" />
+                    Point1="0,247.5"
+                    Point2="0,251.5"
+                    Point3="-4,251.5" />
                   <mssgle:LineSegment
-                    End="-6,50.5" />
+                    End="-7,251.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-6,50.5"
-                    Point2="-10,50.5"
-                    Point3="-10,54.5" />
+                    Point1="-7,251.5"
+                    Point2="-11,251.5"
+                    Point3="-11,255.5" />
                   <mssgle:LineSegment
-                    End="-10,93.5" />
+                    End="-11,495.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -30650,30 +30663,30 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição 1]"
-          TopLeft="666,1687.5">
+          TopLeft="665,2151.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="321.5,299"
+              EndConnector="322.5,-165"
               Start="0,0"
-              End="314,299">
+              End="315,-165">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="156.75,0" />
+                    End="157.25,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="156.75,0"
-                    Point2="160.75,0"
-                    Point3="160.75,4" />
+                    Point1="157.25,0"
+                    Point2="161.25,0"
+                    Point3="161.25,-4" />
                   <mssgle:LineSegment
-                    End="160.75,295" />
+                    End="161.25,-161" />
                   <mssgle:CubicBezierSegment
-                    Point1="160.75,295"
-                    Point2="160.75,299"
-                    Point3="164.75,299" />
+                    Point1="161.25,-161"
+                    Point2="161.25,-165"
+                    Point3="165.25,-165" />
                   <mssgle:LineSegment
-                    End="314,299" />
+                    End="315,-165" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
