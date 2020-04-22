@@ -11,10 +11,112 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="322"
-  DTS:VersionGUID="{B55AC9DD-5556-49F0-8642-A875EB0C0329}">
+  DTS:VersionBuild="344"
+  DTS:VersionGUID="{63421BEE-23BF-4A5F-94B7-33A6387401DA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TESTE]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B4ECEBB7-0620-4E9A-8D4A-644000282864}"
+      DTS:ObjectName="TESTE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\TESTE\teste.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="15"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRODUTO_EAN_EAN"
+              DTS:DTSID="{ED3E3F0C-4264-4369-BA0F-17E849B4BA62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EAN_EAN"
+              DTS:DTSID="{71A84A84-4467-4180-ADC8-F0FE2298958F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QUANTIDADE_EMBALAGEM_EAN"
+              DTS:DTSID="{127F59E1-753B-4172-8F0D-F30ED44214C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ATUALIZAR"
+              DTS:DTSID="{A1D8B24F-EC22-4394-8D6A-AC6B84B5163D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="15"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRODUTO"
+              DTS:DTSID="{57FFB9B3-B3AC-4CEA-8E06-146CD01BBBDB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EAN"
+              DTS:DTSID="{B0D18ED1-D772-45D3-94AA-944A2193556D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="15"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRODUTO_EAN"
+              DTS:DTSID="{497BFD74-5B6D-45F8-942E-79CB5B5ECAB5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="QUANTIDADE_EMBALAGEM"
+              DTS:DTSID="{649E7D42-F2DA-41E0-9140-42B0D098DC96}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="15"
+              DTS:TextQualified="True"
+              DTS:ObjectName="REG_MASTER_ORIGEM"
+              DTS:DTSID="{5C537C55-C010-4921-899E-2F250693A2F6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:LogProviders>
     <DTS:LogProvider
       DTS:ConfigString="LOG_STG.txt"
@@ -904,12 +1006,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                       name="Entrada de Destino OLE DB">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[PRODUTO]"
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[PRODUTO_TF]"
                           cachedDataType="numeric"
-                          cachedName="PRODUTO"
+                          cachedName="PRODUTO_TF"
                           cachedPrecision="15"
                           externalMetadataColumnId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO]"
-                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRODUTO]" />
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRODUTO_TF]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[DESCRICAO]"
                           cachedCodepage="1252"
@@ -949,21 +1051,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           externalMetadataColumnId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRECO_FABRICA]"
                           lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRECO_FABRICA]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[REGISTRO_MS]"
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[REGISTRO_MS_TF]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="13"
-                          cachedName="REGISTRO_MS"
+                          cachedName="REGISTRO_MS_TF"
                           externalMetadataColumnId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[REGISTRO_MS]"
-                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[REGISTRO_MS]" />
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[REGISTRO_MS_TF]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[PRECO_MAXIMO]"
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[PRECO_MAXIMO_TF]"
                           cachedDataType="numeric"
-                          cachedName="PRECO_MAXIMO"
+                          cachedName="PRECO_MAXIMO_TF"
                           cachedPrecision="15"
                           cachedScale="2"
                           externalMetadataColumnId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRECO_MAXIMO]"
-                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRECO_MAXIMO]" />
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRECO_MAXIMO_TF]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[PRECO_VENDA]"
                           cachedDataType="numeric"
@@ -987,21 +1089,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           externalMetadataColumnId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[SUBGRUPO_PRODUTO]"
                           lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[SUBGRUPO_PRODUTO]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[EAN]"
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[EAN_TF]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="20"
-                          cachedName="EAN"
+                          cachedName="EAN_TF"
                           externalMetadataColumnId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN]"
-                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EAN]" />
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EAN_TF]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[EMBALAGEM]"
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[EMBALAGEM_TF]"
                           cachedDataType="numeric"
-                          cachedName="EMBALAGEM"
+                          cachedName="EMBALAGEM_TF"
                           cachedPrecision="7"
                           cachedScale="2"
                           externalMetadataColumnId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].ExternalColumns[EMBALAGEM]"
-                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EMBALAGEM]" />
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EMBALAGEM_TF]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\CAD_PRODUTOS.Inputs[Entrada de Destino OLE DB].Columns[MARCA]"
                           cachedDataType="numeric"
@@ -1688,6 +1790,40 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedLength="255"
                           cachedName="descricao_dcb_tf"
                           lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[descricao_dcb_tf]" />
+                        <inputColumn
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Inputs[Entrada de Coluna Derivada].Columns[EAN_TF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="EAN_TF"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EAN_TF]" />
+                        <inputColumn
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Inputs[Entrada de Coluna Derivada].Columns[EMBALAGEM_TF]"
+                          cachedDataType="numeric"
+                          cachedName="EMBALAGEM_TF"
+                          cachedPrecision="7"
+                          cachedScale="2"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EMBALAGEM_TF]" />
+                        <inputColumn
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Inputs[Entrada de Coluna Derivada].Columns[REGISTRO_MS_TF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="13"
+                          cachedName="REGISTRO_MS_TF"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[REGISTRO_MS_TF]" />
+                        <inputColumn
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Inputs[Entrada de Coluna Derivada].Columns[PRODUTO_TF]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_TF"
+                          cachedPrecision="15"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRODUTO_TF]" />
+                        <inputColumn
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Inputs[Entrada de Coluna Derivada].Columns[PRECO_MAXIMO_TF]"
+                          cachedDataType="numeric"
+                          cachedName="PRECO_MAXIMO_TF"
+                          cachedPrecision="15"
+                          cachedScale="2"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRECO_MAXIMO_TF]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -2524,6 +2660,125 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                               name="FriendlyExpression">(DT_STR,255,1252)descricao_dcb_tf</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[EAN]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="20"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[EAN]"
+                          name="EAN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,20,1252)([ISNULL](#{Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EAN_TF]}) ? "0000000000000" : (#{Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EAN_TF]} == "" ? "0000000000000" : #{Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EAN_TF]}))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,20,1252)(ISNULL(EAN_TF) ? "0000000000000" : (EAN_TF == "" ? "0000000000000" : EAN_TF))</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[EMBALAGEM]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[EMBALAGEM]"
+                          name="EMBALAGEM"
+                          precision="7"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_NUMERIC,7,2)([ISNULL](#{Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EMBALAGEM_TF]}) ? 0.00 : #{Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EMBALAGEM_TF]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_NUMERIC,7,2)(ISNULL(EMBALAGEM_TF) ? 0.00 : EMBALAGEM_TF)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[REGISTRO_MS]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          length="13"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[REGISTRO_MS]"
+                          name="REGISTRO_MS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_STR,13,1252)([ISNULL](#{Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[REGISTRO_MS_TF]}) ? "" : #{Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[REGISTRO_MS_TF]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,13,1252)(ISNULL(REGISTRO_MS_TF) ? "" : REGISTRO_MS_TF)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[PRODUTO]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[PRODUTO]"
+                          name="PRODUTO"
+                          precision="15"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_NUMERIC,15,0)([ISNULL](#{Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRODUTO_TF]}) ? 0 : #{Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRODUTO_TF]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_NUMERIC,15,0)(ISNULL(PRODUTO_TF) ? 0 : PRODUTO_TF)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[PRECO_MAXIMO]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Computação"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Coluna Derivada.Outputs[Saída de Coluna Derivada].Columns[PRECO_MAXIMO]"
+                          name="PRECO_MAXIMO"
+                          precision="15"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão de Coluna Derivada"
+                              name="Expression">(DT_NUMERIC,15,2)([ISNULL](#{Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRECO_MAXIMO_TF]}) ? 0.00 : #{Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRECO_MAXIMO_TF]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expressão Amigável de Coluna Derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_NUMERIC,15,2)(ISNULL(PRECO_MAXIMO_TF) ? 0.00 : PRECO_MAXIMO_TF)</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -2682,12 +2937,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                       synchronousInputId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRODUTO]"
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRODUTO_TF]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRODUTO]"
-                          name="PRODUTO"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRODUTO_TF]"
+                          name="PRODUTO_TF"
                           precision="15"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -2811,14 +3066,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[REGISTRO_MS]"
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[REGISTRO_MS_TF]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
                           length="13"
-                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[REGISTRO_MS]"
-                          name="REGISTRO_MS"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[REGISTRO_MS_TF]"
+                          name="REGISTRO_MS_TF"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -2833,12 +3088,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRECO_MAXIMO]"
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRECO_MAXIMO_TF]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRECO_MAXIMO]"
-                          name="PRECO_MAXIMO"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PRECO_MAXIMO_TF]"
+                          name="PRECO_MAXIMO_TF"
                           precision="15"
                           scale="2"
                           truncationRowDisposition="FailComponent">
@@ -2963,14 +3218,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EAN]"
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EAN_TF]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
                           length="20"
-                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EAN]"
-                          name="EAN"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EAN_TF]"
+                          name="EAN_TF"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -2985,12 +3240,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EMBALAGEM]"
+                          refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EMBALAGEM_TF]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversão"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EMBALAGEM]"
-                          name="EMBALAGEM"
+                          lineageId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[EMBALAGEM_TF]"
+                          name="EMBALAGEM_TF"
                           precision="7"
                           scale="2"
                           truncationRowDisposition="FailComponent">
@@ -10922,13 +11177,13 @@ WHERE  EAN in ((SELECT MAX(EAN) from CAD_PRODUTOS group by PRODUTO having count(
                               containsID="true"
                               dataType="System.String"
                               description="Expressão de Coluna Derivada"
-                              name="Expression">(DT_STR,2,1252)(#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN]} == ([ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]}) ? "0" : #{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]}) ? "N" : (#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EMBALAGEM]} == ([ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]}) ? 0 : #{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]}) ? "N" : "S"))</property>
+                              name="Expression">(DT_STR,2,1252)(#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN]} == #{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]} ? "N" : (#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EMBALAGEM]} == #{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]} ? "N" : "S"))</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expressão Amigável de Coluna Derivada"
                               expressionType="Notify"
-                              name="FriendlyExpression">(DT_STR,2,1252)(EAN == (ISNULL(EAN_EAN) ? "0" : EAN_EAN) ? "N" : (EMBALAGEM == (ISNULL(QUANTIDADE_EMBALAGEM_EAN) ? 0 : QUANTIDADE_EMBALAGEM_EAN) ? "N" : "S"))</property>
+                              name="FriendlyExpression">(DT_STR,2,1252)(EAN == EAN_EAN ? "N" : (EMBALAGEM == QUANTIDADE_EMBALAGEM_EAN ? "N" : "S"))</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -13866,13 +14121,13 @@ ORDER BY PRODUTO</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]})</property>
+                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PV\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_PV)</property>
+                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_PV) &amp;&amp; MUDAR == "S"</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -14027,35 +14282,37 @@ ORDER BY PRODUTO</property>
                           externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].ExternalColumns[ATUALIZAR]"
                           lineageId="Package\CARGA STG E TBLs\TBL_PV\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].Columns[PRODUTO_PV]"
+                          refId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].Columns[PRODUTO]"
                           cachedDataType="numeric"
-                          cachedName="PRODUTO_PV"
+                          cachedName="PRODUTO"
                           cachedPrecision="15"
+                          cachedSortKeyPosition="1"
                           externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO_PV]"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].Columns[PRECO_MAXIMO_PV]"
+                          refId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].Columns[PRECO_MAXIMO]"
                           cachedDataType="numeric"
-                          cachedName="PRECO_MAXIMO_PV"
+                          cachedName="PRECO_MAXIMO"
                           cachedPrecision="15"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRECO_MAXIMO_PV]"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_MAXIMO_PV]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_MAXIMO]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].Columns[PRECO_FABRICA_PV]"
+                          refId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].Columns[PRECO_FABRICA]"
                           cachedDataType="numeric"
-                          cachedName="PRECO_FABRICA_PV"
+                          cachedName="PRECO_FABRICA"
                           cachedPrecision="15"
                           cachedScale="2"
                           externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRECO_FABRICA_PV]"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_FABRICA_PV]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_FABRICA]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].Columns[PRECO_VENDA_PV]"
+                          refId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].Columns[PRECO_VENDA]"
                           cachedDataType="numeric"
-                          cachedName="PRECO_VENDA_PV"
+                          cachedName="PRECO_VENDA"
                           cachedPrecision="15"
                           cachedScale="2"
                           externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRECO_VENDA_PV]"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_VENDA_PV]" />
+                          lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_VENDA]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -14388,13 +14645,6 @@ ORDER BY PRODUTO</property>
                       name="Entrada de Coluna Derivada">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PV\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[PRODUTO]"
-                          cachedDataType="numeric"
-                          cachedName="PRODUTO"
-                          cachedPrecision="15"
-                          cachedSortKeyPosition="1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]" />
-                        <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_PV\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[PRECO_MAXIMO]"
                           cachedDataType="numeric"
                           cachedName="PRECO_MAXIMO"
@@ -14409,12 +14659,6 @@ ORDER BY PRODUTO</property>
                           cachedScale="2"
                           lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_VENDA]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PV\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[PRODUTO_PV]"
-                          cachedDataType="numeric"
-                          cachedName="PRODUTO_PV"
-                          cachedPrecision="15"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]" />
-                        <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_PV\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[PRECO_MAXIMO_PV]"
                           cachedDataType="numeric"
                           cachedName="PRECO_MAXIMO_PV"
@@ -14427,6 +14671,20 @@ ORDER BY PRODUTO</property>
                           cachedPrecision="15"
                           cachedScale="2"
                           lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_VENDA_PV]" />
+                        <inputColumn
+                          refId="Package\CARGA STG E TBLs\TBL_PV\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[PRECO_FABRICA]"
+                          cachedDataType="numeric"
+                          cachedName="PRECO_FABRICA"
+                          cachedPrecision="15"
+                          cachedScale="2"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_FABRICA]" />
+                        <inputColumn
+                          refId="Package\CARGA STG E TBLs\TBL_PV\MUDAR.Inputs[Entrada de Coluna Derivada].Columns[PRECO_FABRICA_PV]"
+                          cachedDataType="numeric"
+                          cachedName="PRECO_FABRICA_PV"
+                          cachedPrecision="15"
+                          cachedScale="2"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_FABRICA_PV]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -14454,13 +14712,13 @@ ORDER BY PRODUTO</property>
                               containsID="true"
                               dataType="System.String"
                               description="Expressão de Coluna Derivada"
-                              name="Expression">(DT_STR,3,1252)(#{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]} == ([ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]}) ? 0 : #{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]}) ? "N" : (#{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_MAXIMO]} == ([ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_MAXIMO_PV]}) ? 0 : #{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_MAXIMO_PV]}) ? "N" : (#{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_VENDA]} == ([ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_VENDA_PV]}) ? 0 : #{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_VENDA_PV]}) ? "N" : "S")))</property>
+                              name="Expression">(DT_STR,3,1252)((![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_MAXIMO_PV]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_MAXIMO]} == #{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_MAXIMO_PV]}) ? "N" : ((![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_VENDA_PV]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_VENDA]} == #{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_VENDA_PV]}) ? "N" : ((![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_FABRICA_PV]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_FABRICA]} == #{Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRECO_FABRICA_PV]}) ? "N" : "S")))</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expressão Amigável de Coluna Derivada"
                               expressionType="Notify"
-                              name="FriendlyExpression">(DT_STR,3,1252)(PRODUTO == (ISNULL(PRODUTO_PV) ? 0 : PRODUTO_PV) ? "N" : (PRECO_MAXIMO == (ISNULL(PRECO_MAXIMO_PV) ? 0 : PRECO_MAXIMO_PV) ? "N" : (PRECO_VENDA == (ISNULL(PRECO_VENDA_PV) ? 0 : PRECO_VENDA_PV) ? "N" : "S")))</property>
+                              name="FriendlyExpression">(DT_STR,3,1252)((!ISNULL(PRECO_MAXIMO_PV) &amp;&amp; PRECO_MAXIMO == PRECO_MAXIMO_PV) ? "N" : ((!ISNULL(PRECO_VENDA_PV) &amp;&amp; PRECO_VENDA == PRECO_VENDA_PV) ? "N" : ((!ISNULL(PRECO_FABRICA_PV) &amp;&amp; PRECO_FABRICA == PRECO_FABRICA_PV) ? "N" : "S")))</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -22440,11 +22698,11 @@ where [refTable].[CODIGO_DCB] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN"
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
                   description="Destino OLE DB"
-                  name="INSERT PRODUTOS_EAN"
+                  name="INSERT TBL PRODUTOS_EAN"
                   usesDispositions="true"
                   version="4">
                   <properties>
@@ -22497,7 +22755,7 @@ where [refTable].[CODIGO_DCB] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Connections[OleDbConnection]"
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Connections[OleDbConnection]"
                       connectionManagerID="{14D67B3E-D612-4B0B-9F47-6937531077C0}:external"
                       connectionManagerRefId="Project.ConnectionManagers[VILAVELHA]"
                       description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
@@ -22505,100 +22763,100 @@ where [refTable].[CODIGO_DCB] = ?</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB]"
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB]"
                       errorOrTruncationOperation="Inserir"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="Entrada de Destino OLE DB">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].Columns[PRODUTO_EAN_EAN]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].Columns[REG_MASTER_ORIGEM]"
+                          cachedDataType="numeric"
+                          cachedName="REG_MASTER_ORIGEM"
+                          cachedPrecision="15"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[REG_MASTER_ORIGEM]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\reg_master_origem.Outputs[Saída de Coluna Derivada].Columns[REG_MASTER_ORIGEM]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].Columns[PRODUTO_EAN_EAN]"
                           cachedDataType="numeric"
                           cachedName="PRODUTO_EAN_EAN"
                           cachedPrecision="15"
                           cachedSortKeyPosition="1"
-                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO]"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO]"
                           lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN_EAN]" />
                         <inputColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].Columns[EAN_EAN]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].Columns[EAN_EAN]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="20"
                           cachedName="EAN_EAN"
                           cachedSortKeyPosition="2"
-                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN]"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN]"
                           lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]" />
                         <inputColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].Columns[QUANTIDADE_EMBALAGEM_EAN]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].Columns[QUANTIDADE_EMBALAGEM_EAN]"
                           cachedDataType="numeric"
                           cachedName="QUANTIDADE_EMBALAGEM_EAN"
                           cachedPrecision="4"
-                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[QUANTIDADE_EMBALAGEM]"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[QUANTIDADE_EMBALAGEM]"
                           lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]" />
-                        <inputColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].Columns[REG_MASTER_ORIGEM]"
-                          cachedDataType="numeric"
-                          cachedName="REG_MASTER_ORIGEM"
-                          cachedPrecision="15"
-                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[REG_MASTER_ORIGEM]"
-                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\reg_master_origem.Outputs[Saída de Coluna Derivada].Columns[REG_MASTER_ORIGEM]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO_EAN]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO_EAN]"
                           dataType="numeric"
                           name="PRODUTO_EAN"
                           precision="15" />
                         <externalMetadataColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[FORMULARIO_ORIGEM]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[FORMULARIO_ORIGEM]"
                           dataType="numeric"
                           name="FORMULARIO_ORIGEM"
                           precision="6" />
                         <externalMetadataColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[TAB_MASTER_ORIGEM]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[TAB_MASTER_ORIGEM]"
                           dataType="numeric"
                           name="TAB_MASTER_ORIGEM"
                           precision="6" />
                         <externalMetadataColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[REG_MASTER_ORIGEM]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[REG_MASTER_ORIGEM]"
                           dataType="numeric"
                           name="REG_MASTER_ORIGEM"
                           precision="15" />
                         <externalMetadataColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[REG_LOG_INCLUSAO]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[REG_LOG_INCLUSAO]"
                           dataType="numeric"
                           name="REG_LOG_INCLUSAO"
                           precision="15" />
                         <externalMetadataColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO]"
                           dataType="numeric"
                           name="PRODUTO"
                           precision="15" />
                         <externalMetadataColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN]"
                           codePage="1252"
                           dataType="str"
                           length="20"
                           name="EAN" />
                         <externalMetadataColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[QUANTIDADE_EMBALAGEM]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[QUANTIDADE_EMBALAGEM]"
                           dataType="numeric"
                           name="QUANTIDADE_EMBALAGEM"
                           precision="4" />
                         <externalMetadataColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN_INTERNO]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN_INTERNO]"
                           codePage="1252"
                           dataType="str"
                           length="1"
                           name="EAN_INTERNO" />
                         <externalMetadataColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[ROWVERSION]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[ROWVERSION]"
                           dataType="bytes"
                           length="8"
                           name="ROWVERSION" />
                         <externalMetadataColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN_PRINCIPAL]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN_PRINCIPAL]"
                           codePage="1252"
                           dataType="str"
                           length="1"
@@ -22608,22 +22866,22 @@ where [refTable].[CODIGO_DCB] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB]"
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Saída de Erro de Destino OLE DB"
-                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB]">
+                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -23120,168 +23378,6 @@ where [refTable].[CODIGO_DCB] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT"
-                  componentClassID="Microsoft.Lookup"
-                  contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
-                  description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
-                  name="REMOVER OS EAN QUE JA EXISTEM NO PROCFIT"
-                  usesDispositions="true"
-                  version="6">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Especifica a instrução SQL que gera a tabela de pesquisa."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO, EAN FROM PRODUTOS_EAN ORDER BY PRODUTO</property>
-                    <property
-                      dataType="System.String"
-                      description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
-                      expressionType="Notify"
-                      name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PRODUTO, EAN FROM PRODUTOS_EAN ORDER BY PRODUTO) [refTable]
-where [refTable].[EAN] = ?</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
-                      name="ConnectionType"
-                      typeConverter="LookupConnectionType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Especifica o tipo de cache da tabela de pesquisa."
-                      name="CacheType"
-                      typeConverter="CacheType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
-                      name="NoMatchBehavior"
-                      typeConverter="LookupNoMatchBehavior">1</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
-                      name="NoMatchCachePercentage">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
-                      name="MaxMemoryUsage">25</property>
-                    <property
-                      dataType="System.Int64"
-                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
-                      name="MaxMemoryUsage64">25</property>
-                    <property
-                      dataType="System.String"
-                      description="Indica se os metadados de referência em um formato XML devem ser referenciados."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PRODUTO" dataType="DT_NUMERIC" length="0" precision="15" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EAN" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
-                      name="ParameterMap">#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]};</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
-                      name="TreatDuplicateKeysAsError">false</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Connections[OleDbConnection]"
-                      connectionManagerID="{14D67B3E-D612-4B0B-9F47-6937531077C0}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[VILAVELHA]"
-                      description="O gerenciador de conexões usado para acessar dados de pesquisa."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Inputs[Entrada de Pesquisa]"
-                      name="Entrada de Pesquisa">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Inputs[Entrada de Pesquisa].Columns[EAN_EAN]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="20"
-                          cachedName="EAN_EAN"
-                          cachedSortKeyPosition="2"
-                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Especifica a coluna na tabela de referência que uma coluna une."
-                              name="JoinToReferenceColumn">EAN</property>
-                            <property
-                              dataType="System.Null"
-                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Outputs[Saída de Correspondência de Pesquisa]"
-                      errorOrTruncationOperation="Pesquisa"
-                      exclusionGroup="1"
-                      name="Saída de Correspondência de Pesquisa"
-                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Inputs[Entrada de Pesquisa]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Outputs[Saída de Correspondência de Pesquisa].Columns[EAN_PBS]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Copiar Coluna"
-                          length="20"
-                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Outputs[Saída de Correspondência de Pesquisa].Columns[EAN_PBS]"
-                          name="EAN_PBS"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
-                              name="CopyFromReferenceColumn">EAN</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Outputs[Saída Sem Correspondência de Pesquisa]"
-                      description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
-                      exclusionGroup="1"
-                      name="Saída Sem Correspondência de Pesquisa"
-                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Inputs[Entrada de Pesquisa]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Outputs[Saída de Erro de Pesquisa]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Saída de Erro de Pesquisa"
-                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Inputs[Entrada de Pesquisa]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
@@ -23480,7 +23576,7 @@ where [refTable].[EAN] = ?</property>
                       description="O comando SQL a ser executado."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE PBS_FARMACRO_DADOS.DBO.PRODUTOS_EAN SET EAN =? , REG_MASTER_ORIGEM=? WHERE PRODUTO = ? AND PRODUTO_EAN = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE PBS_FARMACRO_DADOS.DBO.PRODUTOS_EAN SET EAN =? , REG_MASTER_ORIGEM=? WHERE PRODUTO = ? AND PRODUTO_EAN=?</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
@@ -23620,11 +23716,172 @@ where [refTable].[EAN] = ?</property>
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+                  description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+                  name="VERIFICAR  SE JA EXISTE EAN CADASTRADO"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO,EAN FROM PRODUTOS_EAN ORDER BY PRODUTO, EAN</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PRODUTO,EAN FROM PRODUTOS_EAN ORDER BY PRODUTO, EAN) [refTable]
+where [refTable].[EAN] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de cache da tabela de pesquisa."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PRODUTO" dataType="DT_NUMERIC" length="0" precision="15" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EAN" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                      name="ParameterMap">#{Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Connections[OleDbConnection]"
+                      connectionManagerID="{14D67B3E-D612-4B0B-9F47-6937531077C0}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[VILAVELHA]"
+                      description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Inputs[Entrada de Pesquisa]"
+                      name="Entrada de Pesquisa">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Inputs[Entrada de Pesquisa].Columns[EAN_EAN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="EAN_EAN"
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência que uma coluna une."
+                              name="JoinToReferenceColumn">EAN</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída de Correspondência de Pesquisa]"
+                      errorOrTruncationOperation="Pesquisa"
+                      exclusionGroup="1"
+                      name="Saída de Correspondência de Pesquisa"
+                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída de Correspondência de Pesquisa].Columns[PRODUTO_PBS]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Copiar Coluna"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída de Correspondência de Pesquisa].Columns[PRODUTO_PBS]"
+                          name="PRODUTO_PBS"
+                          precision="15"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn">PRODUTO</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída Sem Correspondência de Pesquisa]"
+                      description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                      exclusionGroup="1"
+                      name="Saída Sem Correspondência de Pesquisa"
+                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída de Erro de Pesquisa]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Pesquisa"
+                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
                   refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[INSERT]"
-                  endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Inputs[Entrada de Pesquisa]"
+                  endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Inputs[Entrada de Pesquisa]"
                   name="INSERT"
                   startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE.Outputs[INSERT]" />
                 <path
@@ -23649,9 +23906,9 @@ where [refTable].[EAN] = ?</property>
                   startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB]" />
                 <path
                   refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída Sem Correspondência de Pesquisa]"
-                  endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB]"
+                  endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB]"
                   name="Saída Sem Correspondência de Pesquisa"
-                  startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT.Outputs[Saída Sem Correspondência de Pesquisa]" />
+                  startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída Sem Correspondência de Pesquisa]" />
                 <path
                   refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[UPDATE]"
                   endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Comando OLE DB]"
@@ -27983,7 +28240,7 @@ ORDER BY PRODUTO_PV</property>
           Id="Package\CARGA STG E TBLs\TBL_DCB"
           TopLeft="5.50000000000006,571.928571428571" />
         <NodeLayout
-          Size="207,42"
+          Size="122,42"
           Id="Package\CARGA STG E TBLs\TBL_EAN"
           TopLeft="5.50000000000006,798.5" />
         <NodeLayout
@@ -27991,7 +28248,7 @@ ORDER BY PRODUTO_PV</property>
           Id="Package\CARGA STG E TBLs\TBL_PF"
           TopLeft="5.50000000000006,458.642857142857" />
         <NodeLayout
-          Size="207,42"
+          Size="115,42"
           Id="Package\CARGA STG E TBLs\TBL_PV"
           TopLeft="5.50000000000006,345.357142857143" />
         <NodeLayout
@@ -28060,9 +28317,9 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="26.5,71.285714285714"
+              EndConnector="-19.5,71.285714285714"
               Start="0,0"
-              End="26.5,63.785714285714">
+              End="-19.5,63.785714285714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -28071,15 +28328,15 @@ ORDER BY PRODUTO_PV</property>
                   <mssgle:CubicBezierSegment
                     Point1="0,31.642857142857"
                     Point2="0,35.642857142857"
-                    Point3="4,35.642857142857" />
+                    Point3="-4,35.642857142857" />
                   <mssgle:LineSegment
-                    End="22.5,35.642857142857" />
+                    End="-15.5,35.642857142857" />
                   <mssgle:CubicBezierSegment
-                    Point1="22.5,35.642857142857"
-                    Point2="26.5,35.642857142857"
-                    Point3="26.5,39.642857142857" />
+                    Point1="-15.5,35.642857142857"
+                    Point2="-19.5,35.642857142857"
+                    Point3="-19.5,39.642857142857" />
                   <mssgle:LineSegment
-                    End="26.5,63.785714285714" />
+                    End="-19.5,63.785714285714" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -28090,18 +28347,30 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 3]"
-          TopLeft="109,387.357142857143">
+          TopLeft="63.0000000000001,387.357142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71.2857142857143"
+              EndConnector="46,71.285714285714"
               Start="0,0"
-              End="0,63.7857142857143">
+              End="46,63.785714285714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.7857142857143" />
+                    End="0,31.642857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.642857142857"
+                    Point2="0,35.642857142857"
+                    Point3="4,35.642857142857" />
+                  <mssgle:LineSegment
+                    End="42,35.642857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42,35.642857142857"
+                    Point2="46,35.642857142857"
+                    Point3="46,39.642857142857" />
+                  <mssgle:LineSegment
+                    End="46,63.785714285714" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -28184,9 +28453,9 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="17,71.285714285714"
+              EndConnector="-25.5,71.285714285714"
               Start="0,0"
-              End="17,63.785714285714">
+              End="-25.5,63.785714285714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -28195,15 +28464,15 @@ ORDER BY PRODUTO_PV</property>
                   <mssgle:CubicBezierSegment
                     Point1="0,31.642857142857"
                     Point2="0,35.642857142857"
-                    Point3="4,35.642857142857" />
+                    Point3="-4,35.642857142857" />
                   <mssgle:LineSegment
-                    End="13,35.642857142857" />
+                    End="-21.5,35.642857142857" />
                   <mssgle:CubicBezierSegment
-                    Point1="13,35.642857142857"
-                    Point2="17,35.642857142857"
-                    Point3="17,39.642857142857" />
+                    Point1="-21.5,35.642857142857"
+                    Point2="-25.5,35.642857142857"
+                    Point3="-25.5,39.642857142857" />
                   <mssgle:LineSegment
-                    End="17,63.785714285714" />
+                    End="-25.5,63.785714285714" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -28247,6 +28516,13 @@ ORDER BY PRODUTO_PV</property>
           Size="402,56"
           Id="c775aa88-2b41-4e82-b928-cc5df6ba8bfb"
           TopLeft="221.5,793.5" />
+        <AnnotationLayout
+          Text="VERIFICAR SE STATUS MUDAR ESTÁ FUNCIONANDO SIM OU NAO"
+          ParentId="Package\CARGA STG E TBLs"
+          FontInfo="{assembly:Null}"
+          Size="382,40"
+          Id="ec23d762-cf58-4e70-8295-40d952534443"
+          TopLeft="171,880" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -29231,7 +29507,7 @@ ORDER BY PRODUTO_PV</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="119,42"
+          Size="114,42"
           Id="Package\CARGA STG E TBLs\TBL_EAN\MUDAR"
           TopLeft="267.5,209.5" />
         <NodeLayout
@@ -29364,7 +29640,7 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_EAN.Paths[Saída de Coluna Derivada]"
-          TopLeft="327,251.5">
+          TopLeft="325.75,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -29386,7 +29662,7 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_EAN.Paths[Saída da Junção de Mesclagem]"
-          TopLeft="327,149.5">
+          TopLeft="325.75,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -29760,9 +30036,9 @@ ORDER BY PRODUTO_PV</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="163,42"
+          Size="154,42"
           Id="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV"
-          TopLeft="233.5,413.5" />
+          TopLeft="258.5,433.5" />
         <NodeLayout
           Size="186,42"
           Id="Package\CARGA STG E TBLs\TBL_PV\INSERT OU UPDATE"
@@ -29910,7 +30186,9 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -29932,7 +30210,9 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -29941,33 +30221,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-29.6666666666667,60"
+              EndConnector="-9.16666666666669,80"
               Start="0,0"
-              End="-29.6666666666667,52.5">
+              End="-9.16666666666669,72.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.3070362473348" />
+                    End="0,28.409381663113" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.3070362473348"
-                    Point2="0,24.3070362473348"
-                    Point3="-4,24.3070362473348" />
+                    Point1="0,28.409381663113"
+                    Point2="0,32.409381663113"
+                    Point3="-4,32.409381663113" />
                   <mssgle:LineSegment
-                    End="-25.6666666666667,24.3070362473348" />
+                    End="-5.16666666666669,32.409381663113" />
                   <mssgle:CubicBezierSegment
-                    Point1="-25.6666666666667,24.3070362473348"
-                    Point2="-29.6666666666667,24.3070362473348"
-                    Point3="-29.6666666666667,28.3070362473348" />
+                    Point1="-5.16666666666669,32.409381663113"
+                    Point2="-9.16666666666669,32.409381663113"
+                    Point3="-9.16666666666669,36.409381663113" />
                   <mssgle:LineSegment
-                    End="-29.6666666666667,52.5" />
+                    End="-9.16666666666669,72.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-32.4236458333333,29.3070362473348,35.180625,9.5341796875"
+              BoundingBox="-22.1736458333333,37.409381663113,35.180625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -30758,14 +31038,6 @@ ORDER BY PRODUTO_PV</property>
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN"
           TopLeft="5.50000000000006,413.5" />
         <NodeLayout
-          Size="343,42"
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT"
-          TopLeft="424,405.5" />
-        <NodeLayout
-          Size="198,42"
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN"
-          TopLeft="607,522.5" />
-        <NodeLayout
           Size="186,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE"
           TopLeft="362.5,311.5" />
@@ -30806,42 +31078,6 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-174.328561197917,29.3070362473348,37.3237890625,9.421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída Sem Correspondência de Pesquisa]"
-          TopLeft="595.5,447.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="110.5,75"
-              Start="0,0"
-              End="110.5,67.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.5"
-                    Point2="0,37.5"
-                    Point3="4,37.5" />
-                  <mssgle:LineSegment
-                    End="106.5,37.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="106.5,37.5"
-                    Point2="110.5,37.5"
-                    Point3="110.5,41.5" />
-                  <mssgle:LineSegment
-                    End="110.5,67.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-34.3440234375,42.5,179.188046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -30913,42 +31149,6 @@ ORDER BY PRODUTO_PV</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[INSERT]"
-          TopLeft="485.166666666667,353.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="110.333333333333,52"
-              Start="0,0"
-              End="110.333333333333,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.0660980810235" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.0660980810235"
-                    Point2="0,21.0660980810235"
-                    Point3="4,21.0660980810235" />
-                  <mssgle:LineSegment
-                    End="106.333333333333,21.0660980810235" />
-                  <mssgle:CubicBezierSegment
-                    Point1="106.333333333333,21.0660980810235"
-                    Point2="110.333333333333,21.0660980810235"
-                    Point3="110.333333333333,25.0660980810235" />
-                  <mssgle:LineSegment
-                    End="110.333333333333,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="37.5763541666667,26.0660980810235,35.180625,9.5341796875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="171,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\reg_master_origem"
@@ -30997,6 +31197,86 @@ ORDER BY PRODUTO_PV</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="294,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO"
+          TopLeft="606,424" />
+        <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[INSERT]"
+          TopLeft="485.166666666667,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="267.833333333333,70.5"
+              Start="0,0"
+              End="267.833333333333,63">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5607675906183" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5607675906183"
+                    Point2="0,28.5607675906183"
+                    Point3="4,28.5607675906183" />
+                  <mssgle:LineSegment
+                    End="263.833333333333,28.5607675906183" />
+                  <mssgle:CubicBezierSegment
+                    Point1="263.833333333333,28.5607675906183"
+                    Point2="267.833333333333,28.5607675906183"
+                    Point3="267.833333333333,32.5607675906183" />
+                  <mssgle:LineSegment
+                    End="267.833333333333,63" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="116.326354166667,33.5607675906183,35.180625,9.5341796875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="219,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN"
+          TopLeft="679,567" />
+        <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída Sem Correspondência de Pesquisa]"
+          TopLeft="753,466">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35.5,101"
+              Start="0,0"
+              End="35.5,93.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.5"
+                    Point2="0,50.5"
+                    Point3="4,50.5" />
+                  <mssgle:LineSegment
+                    End="31.5,50.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.5,50.5"
+                    Point2="35.5,50.5"
+                    Point3="35.5,54.5" />
+                  <mssgle:LineSegment
+                    End="35.5,93.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-71.8440234375,55.5,179.188046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -31018,42 +31298,6 @@ ORDER BY PRODUTO_PV</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\REMOVER OS EAN QUE JA EXISTEM NO PROCFIT">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT PRODUTOS_EAN">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -32215,6 +32459,42 @@ ORDER BY PRODUTO_PV</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_DCB\INSERT TBL PRODUTOS_DCB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
