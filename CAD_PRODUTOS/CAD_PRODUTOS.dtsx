@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="344"
-  DTS:VersionGUID="{63421BEE-23BF-4A5F-94B7-33A6387401DA}">
+  DTS:VersionBuild="348"
+  DTS:VersionGUID="{F5F4DE5B-4FC1-488B-8AC1-E0B762BD0AB9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -11177,13 +11177,13 @@ WHERE  EAN in ((SELECT MAX(EAN) from CAD_PRODUTOS group by PRODUTO having count(
                               containsID="true"
                               dataType="System.String"
                               description="Expressão de Coluna Derivada"
-                              name="Expression">(DT_STR,2,1252)(#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN]} == #{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]} ? "N" : (#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EMBALAGEM]} == #{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]} ? "N" : "S"))</property>
+                              name="Expression">(DT_STR,2,1252)((![ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN]} == #{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]}) ? "N" : ((![ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EMBALAGEM]} == #{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]}) ? "N" : "S"))</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Expressão Amigável de Coluna Derivada"
                               expressionType="Notify"
-                              name="FriendlyExpression">(DT_STR,2,1252)(EAN == EAN_EAN ? "N" : (EMBALAGEM == QUANTIDADE_EMBALAGEM_EAN ? "N" : "S"))</property>
+                              name="FriendlyExpression">(DT_STR,2,1252)((!ISNULL(EAN_EAN) &amp;&amp; EAN == EAN_EAN) ? "N" : ((!ISNULL(QUANTIDADE_EMBALAGEM_EAN) &amp;&amp; EMBALAGEM == QUANTIDADE_EMBALAGEM_EAN) ? "N" : "S"))</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -28515,14 +28515,7 @@ ORDER BY PRODUTO_PV</property>
           FontInfo="{assembly:Null}"
           Size="402,56"
           Id="c775aa88-2b41-4e82-b928-cc5df6ba8bfb"
-          TopLeft="221.5,793.5" />
-        <AnnotationLayout
-          Text="VERIFICAR SE STATUS MUDAR ESTÁ FUNCIONANDO SIM OU NAO"
-          ParentId="Package\CARGA STG E TBLs"
-          FontInfo="{assembly:Null}"
-          Size="382,40"
-          Id="ec23d762-cf58-4e70-8295-40d952534443"
-          TopLeft="171,880" />
+          TopLeft="145.5,791.5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -29527,7 +29520,7 @@ ORDER BY PRODUTO_PV</property>
           Id="Package\CARGA STG E TBLs\TBL_EAN\UPDATE TBL_EAN"
           TopLeft="5.50000000000006,413.5" />
         <NodeLayout
-          Size="171,42"
+          Size="159,42"
           Id="Package\CARGA STG E TBLs\TBL_EAN\CAD_PRODUTOS"
           TopLeft="241.5,5.5" />
         <NodeLayout
@@ -29606,13 +29599,13 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_EAN.Paths[Saída de Origem OLE DB]"
-          TopLeft="327,47.5">
+          TopLeft="321,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="21,60"
+              EndConnector="27,60"
               Start="0,0"
-              End="21,52.5">
+              End="27,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -29623,13 +29616,13 @@ ORDER BY PRODUTO_PV</property>
                     Point2="0,35.5752212389381"
                     Point3="4,35.5752212389381" />
                   <mssgle:LineSegment
-                    End="17,35.5752212389381" />
+                    End="23,35.5752212389381" />
                   <mssgle:CubicBezierSegment
-                    Point1="17,35.5752212389381"
-                    Point2="21,35.5752212389381"
-                    Point3="21,39.5752212389381" />
+                    Point1="23,35.5752212389381"
+                    Point2="27,35.5752212389381"
+                    Point3="27,39.5752212389381" />
                   <mssgle:LineSegment
-                    End="21,52.5" />
+                    End="27,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -29657,7 +29650,9 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -29679,7 +29674,9 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,18.25,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -29714,7 +29711,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-32.4236458333333,29.3070362473348,35.180625,9.5341796875"
+              BoundingBox="-41.1506966145833,29.3070362473348,52.6347265625,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -30186,9 +30183,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,18.25,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -30210,9 +30205,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,18.25,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
