@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="456"
-  DTS:VersionGUID="{5CE84EC2-F326-405E-8E64-D140AF9368A7}">
+  DTS:VersionBuild="460"
+  DTS:VersionGUID="{FC9FCEA6-BC86-4614-90D1-13D3988CA6CE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -10140,14 +10140,14 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                   startId="Package\CARGA STG E TBLs\TBL PRODUTOS\MUDAR.Outputs[Saída de Coluna Derivada]" />
                 <path
                   refId="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[Saída de Origem OLE DB]"
-                  endId="Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Inputs[Entrada Esquerda da Junção de Mesclagem]"
-                  name="Saída de Origem OLE DB"
-                  startId="Package\CARGA STG E TBLs\TBL PRODUTOS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB]" />
-                <path
-                  refId="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[Saída de Origem OLE DB1]"
                   endId="Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Inputs[Entrada Direita da Junção de Mesclagem]"
                   name="Saída de Origem OLE DB"
                   startId="Package\CARGA STG E TBLs\TBL PRODUTOS\TBL_PRODUTOS.Outputs[Saída de Origem OLE DB]" />
+                <path
+                  refId="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[Saída de Origem OLE DB1]"
+                  endId="Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Inputs[Entrada Esquerda da Junção de Mesclagem]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\CARGA STG E TBLs\TBL PRODUTOS\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB]" />
                 <path
                   refId="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[Saída Sem Correspondência de Pesquisa]"
                   endId="Package\CARGA STG E TBLs\TBL PRODUTOS\UPDATE STATUS MUDAR.Inputs[Entrada de Destino OLE DB]"
@@ -10340,7 +10340,7 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                       description="O comando SQL a ser executado."
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO,DCB, DESCRICAO_DCB FROM STG_CAD_PRODUTOS.DBO.CAD_PRODUTOS 
-WHERE  EAN in ((SELECT MAX(EAN) from CAD_PRODUTOS group by PRODUTO having count(*)&gt;=1)) ORDER BY PRODUTO</property>
+ ORDER BY PRODUTO</property>
                     <property
                       dataType="System.String"
                       description="A variável que contém o comando SQL a ser executado."
@@ -19586,7 +19586,7 @@ where [refTable].[PRODUTO_MS] = ? and [refTable].[ATUALIZAR] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
-                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\883:invalid};#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\884:invalid};</property>
+                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\885:invalid};#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\886:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
@@ -33007,7 +33007,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="303,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\VERIFICAR SE HOUVE MUDANCA NOS CAMPOS"
-          TopLeft="192.5,258.5" />
+          TopLeft="146.5,289.5" />
         <NodeLayout
           Size="190,48"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\UPDATE_TABELA TEMP"
@@ -33019,7 +33019,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="188,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS"
-          TopLeft="218.5,146.5" />
+          TopLeft="178.5,177.5" />
         <NodeLayout
           Size="198,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\UPDATE STATUS MUDAR"
@@ -33109,82 +33109,14 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[Saída de Origem OLE DB1]"
-          TopLeft="163,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="119.5,99"
-              Start="0,0"
-              End="119.5,91.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.8987341772152" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,54.8987341772152"
-                    Point2="0,58.8987341772152"
-                    Point3="4,58.8987341772152" />
-                  <mssgle:LineSegment
-                    End="115.5,58.8987341772152" />
-                  <mssgle:CubicBezierSegment
-                    Point1="115.5,58.8987341772152"
-                    Point2="119.5,58.8987341772152"
-                    Point3="119.5,62.8987341772152" />
-                  <mssgle:LineSegment
-                    End="119.5,91.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[Saída de Origem OLE DB]"
-          TopLeft="393,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-50.5,99"
-              Start="0,0"
-              End="-50.5,91.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.8987341772152" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,54.8987341772152"
-                    Point2="0,58.8987341772152"
-                    Point3="-4,58.8987341772152" />
-                  <mssgle:LineSegment
-                    End="-46.5,58.8987341772152" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-46.5,58.8987341772152"
-                    Point2="-50.5,58.8987341772152"
-                    Point3="-50.5,62.8987341772152" />
-                  <mssgle:LineSegment
-                    End="-50.5,91.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[Saída da Junção de Mesclagem]"
-          TopLeft="312.5,188.5">
+          TopLeft="272.5,219.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="31.5,70"
+              EndConnector="25.5,70"
               Start="0,0"
-              End="31.5,62.5">
+              End="25.5,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -33195,13 +33127,13 @@ ORDER BY PRODUTO_PV</property>
                     Point2="0,35"
                     Point3="4,35" />
                   <mssgle:LineSegment
-                    End="27.5,35" />
+                    End="21.5,35" />
                   <mssgle:CubicBezierSegment
-                    Point1="27.5,35"
-                    Point2="31.5,35"
-                    Point3="31.5,39" />
+                    Point1="21.5,35"
+                    Point2="25.5,35"
+                    Point3="25.5,39" />
                   <mssgle:LineSegment
-                    End="31.5,62.5" />
+                    End="25.5,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -33288,30 +33220,30 @@ ORDER BY PRODUTO_PV</property>
           TopLeft="278,356" />
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[Saída de Coluna Derivada]"
-          TopLeft="344,300.5">
+          TopLeft="298,331.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9,55.5"
+              EndConnector="37,24.5"
               Start="0,0"
-              End="-9,48">
+              End="37,17">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.75" />
+                    End="0,8.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.75"
-                    Point2="0,27.75"
-                    Point3="-4,27.75" />
+                    Point1="0,8.25"
+                    Point2="0,12.25"
+                    Point3="4,12.25" />
                   <mssgle:LineSegment
-                    End="-5,27.75" />
+                    End="33,12.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="-5,27.75"
-                    Point2="-9,27.75"
-                    Point3="-9,31.75" />
+                    Point1="33,12.25"
+                    Point2="37,12.25"
+                    Point3="37,16.25" />
                   <mssgle:LineSegment
-                    End="-9,48" />
+                    End="37,17" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -33346,6 +33278,74 @@ ORDER BY PRODUTO_PV</property>
                     Point3="40,35.25" />
                   <mssgle:LineSegment
                     End="40,55" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[Saída de Origem OLE DB]"
+          TopLeft="163,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79.5,130"
+              Start="0,0"
+              End="79.5,122.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.3417721518987" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,73.3417721518987"
+                    Point2="0,77.3417721518987"
+                    Point3="4,77.3417721518987" />
+                  <mssgle:LineSegment
+                    End="75.5,77.3417721518987" />
+                  <mssgle:CubicBezierSegment
+                    Point1="75.5,77.3417721518987"
+                    Point2="79.5,77.3417721518987"
+                    Point3="79.5,81.3417721518987" />
+                  <mssgle:LineSegment
+                    End="79.5,122.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[Saída de Origem OLE DB1]"
+          TopLeft="393,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-90.5,130"
+              Start="0,0"
+              End="-90.5,122.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.3417721518987" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,73.3417721518987"
+                    Point2="0,77.3417721518987"
+                    Point3="-4,77.3417721518987" />
+                  <mssgle:LineSegment
+                    End="-86.5,77.3417721518987" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-86.5,77.3417721518987"
+                    Point2="-90.5,77.3417721518987"
+                    Point3="-90.5,81.3417721518987" />
+                  <mssgle:LineSegment
+                    End="-90.5,122.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -33466,7 +33466,7 @@ ORDER BY PRODUTO_PV</property>
           Id="Package\CARGA STG E TBLs\TBL_DCB\TBL_DCB"
           TopLeft="54.5,5.5" />
         <NodeLayout
-          Size="171,42"
+          Size="159,42"
           Id="Package\CARGA STG E TBLs\TBL_DCB\CAD_PRODUTOS"
           TopLeft="243,5.5" />
         <NodeLayout
@@ -33509,13 +33509,13 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_DCB.Paths[Saída de Origem OLE DB]"
-          TopLeft="328.5,47.5">
+          TopLeft="322.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="21,60"
+              EndConnector="27,60"
               Start="0,0"
-              End="21,52.5">
+              End="27,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -33526,13 +33526,13 @@ ORDER BY PRODUTO_PV</property>
                     Point2="0,35.5752212389381"
                     Point3="4,35.5752212389381" />
                   <mssgle:LineSegment
-                    End="17,35.5752212389381" />
+                    End="23,35.5752212389381" />
                   <mssgle:CubicBezierSegment
-                    Point1="17,35.5752212389381"
-                    Point2="21,35.5752212389381"
-                    Point3="21,39.5752212389381" />
+                    Point1="23,35.5752212389381"
+                    Point2="27,35.5752212389381"
+                    Point3="27,39.5752212389381" />
                   <mssgle:LineSegment
-                    End="21,52.5" />
+                    End="27,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -34267,7 +34267,7 @@ ORDER BY PRODUTO_PV</property>
           Id="Package\CARGA STG E TBLs\TBL_PF\TBL_PF"
           TopLeft="55,5.5" />
         <NodeLayout
-          Size="171,42"
+          Size="159,42"
           Id="Package\CARGA STG E TBLs\TBL_PF\CAD_PRODUTOS"
           TopLeft="229.5,5.5" />
         <NodeLayout
@@ -34310,13 +34310,13 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_PF.Paths[Saída de Origem OLE DB]"
-          TopLeft="315,47.5">
+          TopLeft="309,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="30.1666666666666,60"
+              EndConnector="36.1666666666666,60"
               Start="0,0"
-              End="30.1666666666666,52.5">
+              End="36.1666666666666,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -34327,13 +34327,13 @@ ORDER BY PRODUTO_PV</property>
                     Point2="0,35.697796432319"
                     Point3="4,35.697796432319" />
                   <mssgle:LineSegment
-                    End="26.1666666666666,35.697796432319" />
+                    End="32.1666666666666,35.697796432319" />
                   <mssgle:CubicBezierSegment
-                    Point1="26.1666666666666,35.697796432319"
-                    Point2="30.1666666666666,35.697796432319"
-                    Point3="30.1666666666666,39.697796432319" />
+                    Point1="32.1666666666666,35.697796432319"
+                    Point2="36.1666666666666,35.697796432319"
+                    Point3="36.1666666666666,39.697796432319" />
                   <mssgle:LineSegment
-                    End="30.1666666666666,52.5" />
+                    End="36.1666666666666,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35322,9 +35322,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="11.5,64.5,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
