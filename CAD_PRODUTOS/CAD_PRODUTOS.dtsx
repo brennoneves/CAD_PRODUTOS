@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="478"
-  DTS:VersionGUID="{F3931D70-648F-46F3-BA97-9C1C2B3B8876}">
+  DTS:VersionBuild="503"
+  DTS:VersionGUID="{3FFB4BE9-109B-42BA-B317-973896F221BC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -818,7 +818,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{55F3698B-1F8F-4D73-94BE-7252EA5388E1}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -3979,7 +3978,6 @@ left join PARAISOIII.generico as g on g.codigo=p.generico order by p.codigo;</pr
           DTS:refId="Package\CARGA STG E TBLs\LIMPAR CARGA STAGE"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarefa Executar SQL"
-          DTS:Disabled="True"
           DTS:DTSID="{632EA1DD-370C-4D0C-AC4B-4D5E47E1AA08}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -8281,12 +8279,12 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           cachedPrecision="15"
                           lineageId="Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL PRODUTOS\UPDATE INSERT.Inputs[Entrada de Divisão Condicional].Columns[MUDAR1]"
+                          refId="Package\CARGA STG E TBLs\TBL PRODUTOS\UPDATE INSERT.Inputs[Entrada de Divisão Condicional].Columns[MUDAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
-                          cachedName="MUDAR1"
-                          lineageId="Package\CARGA STG E TBLs\TBL PRODUTOS\VERIFICAR SE HOUVE MUDANCA NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]" />
+                          cachedName="MUDAR"
+                          lineageId="Package\CARGA STG E TBLs\TBL PRODUTOS\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -8306,7 +8304,7 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_STG]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL PRODUTOS\VERIFICAR SE HOUVE MUDANCA NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "S")</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_STG]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL PRODUTOS\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -8334,7 +8332,7 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_STG]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL PRODUTOS\VERIFICAR SE HOUVE MUDANCA NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "S")</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_STG]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL PRODUTOS\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -8362,7 +8360,7 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_STG]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL PRODUTOS\VERIFICAR SE HOUVE MUDANCA NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "N")</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_STG]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL PRODUTOS\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "N")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -10504,12 +10502,12 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           cachedPrecision="15"
                           lineageId="Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_DCB\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[MUDAR1]"
+                          refId="Package\CARGA STG E TBLs\TBL_DCB\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[MUDAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
-                          cachedName="MUDAR1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_DCB\VERIFICAR ALTERACAO NOX CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]" />
+                          cachedName="MUDAR"
+                          lineageId="Package\CARGA STG E TBLs\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -10529,13 +10527,13 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_DCB\VERIFICAR ALTERACAO NOX CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "S"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_DCB) &amp;&amp; MUDAR == "S"</property>
+                          name="FriendlyExpression">(!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_DCB) &amp;&amp; MUDAR == "S")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -10557,13 +10555,13 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_DCB\VERIFICAR ALTERACAO NOX CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "S"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_DCB) &amp;&amp; MUDAR == "S"</property>
+                          name="FriendlyExpression">(!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_DCB) &amp;&amp; MUDAR == "S")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -10585,13 +10583,13 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_DCB\VERIFICAR ALTERACAO NOX CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "N"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "N")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_DCB) &amp;&amp; MUDAR == "N"</property>
+                          name="FriendlyExpression">(!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_DCB) &amp;&amp; MUDAR == "N")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -11202,6 +11200,24 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[DCB_DCB] = ? and [refTable].[
                           </properties>
                         </inputColumn>
                         <inputColumn
+                          refId="Package\CARGA STG E TBLs\TBL_DCB\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[MUDAR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="MUDAR"
+                          lineageId="Package\CARGA STG E TBLs\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência que uma coluna une."
+                              name="JoinToReferenceColumn">ATUALIZAR</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_DCB\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[DCB]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -11214,24 +11230,6 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[DCB_DCB] = ? and [refTable].[
                               dataType="System.String"
                               description="Especifica a coluna na tabela de referência que uma coluna une."
                               name="JoinToReferenceColumn">DCB_DCB</property>
-                            <property
-                              dataType="System.Null"
-                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_DCB\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[MUDAR]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="1"
-                          cachedName="MUDAR"
-                          lineageId="Package\CARGA STG E TBLs\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Especifica a coluna na tabela de referência que uma coluna une."
-                              name="JoinToReferenceColumn">ATUALIZAR</property>
                             <property
                               dataType="System.Null"
                               description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
@@ -12188,12 +12186,12 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[DCB_DCB] = ? and [refTable].[
                           cachedPrecision="15"
                           lineageId="Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_EAN\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[MUDAR1]"
+                          refId="Package\CARGA STG E TBLs\TBL_EAN\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[MUDAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
-                          cachedName="MUDAR1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_EAN\VERIFICAR ALTERACAO CAMPO.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]" />
+                          cachedName="MUDAR"
+                          lineageId="Package\CARGA STG E TBLs\TBL_EAN\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -12213,13 +12211,13 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[DCB_DCB] = ? and [refTable].[
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_EAN\VERIFICAR ALTERACAO CAMPO.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "S"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_EAN\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_EAN) &amp;&amp; MUDAR == "S"</property>
+                          name="FriendlyExpression">(!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_EAN) &amp;&amp; MUDAR == "S")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -12241,13 +12239,13 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[DCB_DCB] = ? and [refTable].[
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_EAN\VERIFICAR ALTERACAO CAMPO.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "S"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_EAN\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_EAN) &amp;&amp; MUDAR == "S"</property>
+                          name="FriendlyExpression">(!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_EAN) &amp;&amp; MUDAR == "S")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -12269,13 +12267,13 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[DCB_DCB] = ? and [refTable].[
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_EAN\VERIFICAR ALTERACAO CAMPO.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "N"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_EAN\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "N")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_EAN) &amp;&amp; MUDAR == "N"</property>
+                          name="FriendlyExpression">(!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_EAN) &amp;&amp; MUDAR == "N")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -14239,12 +14237,12 @@ where [refTable].[PRODUTO_EAN] = ? and [refTable].[ATUALIZAR] = ?</property>
                           cachedPrecision="15"
                           lineageId="Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\ISNERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[MUDAR1]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\ISNERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[MUDAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
-                          cachedName="MUDAR1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\VERIRFICAR MUDANCA NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]" />
+                          cachedName="MUDAR"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -14264,13 +14262,13 @@ where [refTable].[PRODUTO_EAN] = ? and [refTable].[ATUALIZAR] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PF\VERIRFICAR MUDANCA NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "S"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_PF) &amp;&amp; MUDAR == "S"</property>
+                          name="FriendlyExpression">(!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_PF) &amp;&amp; MUDAR == "S")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -14292,13 +14290,13 @@ where [refTable].[PRODUTO_EAN] = ? and [refTable].[ATUALIZAR] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PF\VERIRFICAR MUDANCA NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "S"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_PF) &amp;&amp; MUDAR == "S"</property>
+                          name="FriendlyExpression">(!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_PF) &amp;&amp; MUDAR == "S")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -14320,13 +14318,13 @@ where [refTable].[PRODUTO_EAN] = ? and [refTable].[ATUALIZAR] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PF\VERIRFICAR MUDANCA NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "N"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PF]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "N")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_PF) &amp;&amp; MUDAR == "N"</property>
+                          name="FriendlyExpression">(!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_PF) &amp;&amp; MUDAR == "N")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -16850,12 +16848,12 @@ ORDER BY PRODUTO</property>
                           cachedPrecision="15"
                           lineageId="Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]" />
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PV\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[MUDAR1]"
+                          refId="Package\CARGA STG E TBLs\TBL_PV\INSERT OU UPDATE.Inputs[Entrada de Divisão Condicional].Columns[MUDAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
-                          cachedName="MUDAR1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PV\VERIFICAR MUDANCAS NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]" />
+                          cachedName="MUDAR"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PV\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -16875,13 +16873,13 @@ ORDER BY PRODUTO</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PV\VERIFICAR MUDANCAS NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "S"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PV\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_PV) &amp;&amp; MUDAR == "S"</property>
+                          name="FriendlyExpression">(!ISNULL(PRODUTO) &amp;&amp; ISNULL(PRODUTO_PV) &amp;&amp; MUDAR == "S")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -16903,13 +16901,13 @@ ORDER BY PRODUTO</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PV\VERIFICAR MUDANCAS NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "S"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PV\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_PV) &amp;&amp; MUDAR == "S"</property>
+                          name="FriendlyExpression">(!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_PV) &amp;&amp; MUDAR == "S")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -16931,13 +16929,13 @@ ORDER BY PRODUTO</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PV\VERIFICAR MUDANCAS NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]} == "N"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_PV\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "N")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_PV) &amp;&amp; MUDAR == "N"</property>
+                          name="FriendlyExpression">(!ISNULL(PRODUTO) &amp;&amp; !ISNULL(PRODUTO_PV) &amp;&amp; MUDAR == "N")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -18748,13 +18746,13 @@ ORDER BY PRODUTO</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_MS]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\VERIFICAR ALTERACAO CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]}) &amp;&amp; [ISNULL](#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_MS]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\VERIFICAR ALTERACAO CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(REGISTRO_MS) &amp;&amp; ISNULL(REGISTRO_MS_MS) &amp;&amp; MUDAR == "S"</property>
+                          name="FriendlyExpression">(!ISNULL(REGISTRO_MS) &amp;&amp; ISNULL(REGISTRO_MS_MS) &amp;&amp; MUDAR == "S")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -18776,13 +18774,13 @@ ORDER BY PRODUTO</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_MS]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\VERIFICAR ALTERACAO CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_MS]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\VERIFICAR ALTERACAO CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "S")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(REGISTRO_MS) &amp;&amp; !ISNULL(REGISTRO_MS_MS) &amp;&amp; MUDAR == "S"</property>
+                          name="FriendlyExpression">(!ISNULL(REGISTRO_MS) &amp;&amp; !ISNULL(REGISTRO_MS_MS) &amp;&amp; MUDAR == "S")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -18804,13 +18802,13 @@ ORDER BY PRODUTO</property>
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a expressão. Essa versão da expressão usa identificadores de linhagem, em vez de nomes de colunas."
-                          name="Expression">![ISNULL](#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_MS]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\VERIFICAR ALTERACAO CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "N"</property>
+                          name="Expression">(![ISNULL](#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS]}) &amp;&amp; ![ISNULL](#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[REGISTRO_MS_MS]}) &amp;&amp; #{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\VERIFICAR ALTERACAO CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR]} == "N")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Especifica a versão amigável da expressão. Essa versão de expressão usa nomes de colunas."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(REGISTRO_MS) &amp;&amp; !ISNULL(REGISTRO_MS_MS) &amp;&amp; MUDAR == "N"</property>
+                          name="FriendlyExpression">(!ISNULL(REGISTRO_MS) &amp;&amp; !ISNULL(REGISTRO_MS_MS) &amp;&amp; MUDAR == "N")</property>
                         <property
                           dataType="System.Int32"
                           description="Especifica a posição da condição na lista de condições que a transformação avalia. A ordem de avaliação é do menor para o maior valor."
@@ -33712,7 +33710,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-111.28689453125,28.1754221388368,37.3237890625,9.421875"
+              BoundingBox="-120.1116015625,28.1754221388368,54.973203125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -33752,7 +33750,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-83.8440234375,51,179.188046875,12.1953125"
+              BoundingBox="-92.53201171875,51,196.5640234375,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -33825,7 +33823,9 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-35.5,61.75,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -34741,7 +34741,7 @@ ORDER BY PRODUTO_PV</property>
           Id="Package\CARGA STG E TBLs\TBL_PV\VERIFICAR MUDANCAS NOS CAMPOS"
           TopLeft="255.5,216.5" />
         <NodeLayout
-          Size="186,42"
+          Size="175,42"
           Id="Package\CARGA STG E TBLs\TBL_PV\INSERT OU UPDATE"
           TopLeft="223,483.5" />
         <NodeLayout
@@ -34750,73 +34750,73 @@ ORDER BY PRODUTO_PV</property>
           TopLeft="407.5,0.5" />
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_PV.Paths[N_MUDAR]"
-          TopLeft="360.5,525.5">
+          TopLeft="352.25,525.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="261.5,78.5"
+              EndConnector="269.75,78.5"
               Start="0,0"
-              End="261.5,71">
+              End="269.75,71">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.9063604240282" />
+                    End="0,22.9521575984991" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.9063604240282"
-                    Point2="0,26.9063604240282"
-                    Point3="4,26.9063604240282" />
+                    Point1="0,22.9521575984991"
+                    Point2="0,26.9521575984991"
+                    Point3="4,26.9521575984991" />
                   <mssgle:LineSegment
-                    End="257.5,26.9063604240282" />
+                    End="265.75,26.9521575984991" />
                   <mssgle:CubicBezierSegment
-                    Point1="257.5,26.9063604240282"
-                    Point2="261.5,26.9063604240282"
-                    Point3="261.5,30.9063604240282" />
+                    Point1="265.75,26.9521575984991"
+                    Point2="269.75,26.9521575984991"
+                    Point3="269.75,30.9521575984991" />
                   <mssgle:LineSegment
-                    End="261.5,71" />
+                    End="269.75,71" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="107.34505859375,31.9063604240282,46.8098828125,10.7353515625"
+              BoundingBox="111.47005859375,31.9521575984991,46.8098828125,10.7353515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_PV.Paths[INSERT]"
-          TopLeft="345.666666666667,525.5">
+          TopLeft="310.5,525.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9.16666666666669,80"
+              EndConnector="26,80"
               Start="0,0"
-              End="-9.16666666666669,72.5">
+              End="26,72.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.409381663113" />
+                    End="0,36" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.409381663113"
-                    Point2="0,32.409381663113"
-                    Point3="-4,32.409381663113" />
+                    Point1="0,36"
+                    Point2="0,40"
+                    Point3="4,40" />
                   <mssgle:LineSegment
-                    End="-5.16666666666669,32.409381663113" />
+                    End="22,40" />
                   <mssgle:CubicBezierSegment
-                    Point1="-5.16666666666669,32.409381663113"
-                    Point2="-9.16666666666669,32.409381663113"
-                    Point3="-9.16666666666669,36.409381663113" />
+                    Point1="22,40"
+                    Point2="26,40"
+                    Point3="26,44" />
                   <mssgle:LineSegment
-                    End="-9.16666666666669,72.5" />
+                    End="26,72.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-22.1736458333333,37.409381663113,35.180625,9.5341796875"
+              BoundingBox="-4.5903125,45,35.180625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -34962,37 +34962,37 @@ ORDER BY PRODUTO_PV</property>
           TopLeft="36,604" />
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_PV.Paths[UPDATE]"
-          TopLeft="271.5,525.5">
+          TopLeft="268.75,525.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-141,78.5"
+              EndConnector="-138.25,78.5"
               Start="0,0"
-              End="-141,71">
+              End="-138.25,71">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.9063604240282" />
+                    End="0,22.9521575984991" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.9063604240282"
-                    Point2="0,26.9063604240282"
-                    Point3="-4,26.9063604240282" />
+                    Point1="0,22.9521575984991"
+                    Point2="0,26.9521575984991"
+                    Point3="-4,26.9521575984991" />
                   <mssgle:LineSegment
-                    End="-137,26.9063604240282" />
+                    End="-134.25,26.9521575984991" />
                   <mssgle:CubicBezierSegment
-                    Point1="-137,26.9063604240282"
-                    Point2="-141,26.9063604240282"
-                    Point3="-141,30.9063604240282" />
+                    Point1="-134.25,26.9521575984991"
+                    Point2="-138.25,26.9521575984991"
+                    Point3="-138.25,30.9521575984991" />
                   <mssgle:LineSegment
-                    End="-141,71" />
+                    End="-138.25,71" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-89.16189453125,31.9063604240282,37.3237890625,9.421875"
+              BoundingBox="-87.78689453125,31.9521575984991,37.3237890625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -35080,9 +35080,9 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="17,83.5"
+              EndConnector="11.5,83.5"
               Start="0,0"
-              End="17,76">
+              End="11.5,76">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -35093,13 +35093,13 @@ ORDER BY PRODUTO_PV</property>
                     Point2="0,41.75"
                     Point3="4,41.75" />
                   <mssgle:LineSegment
-                    End="13,41.75" />
+                    End="7.5,41.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="13,41.75"
-                    Point2="17,41.75"
-                    Point3="17,45.75" />
+                    Point1="7.5,41.75"
+                    Point2="11.5,41.75"
+                    Point3="11.5,45.75" />
                   <mssgle:LineSegment
-                    End="17,76" />
+                    End="11.5,76" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
