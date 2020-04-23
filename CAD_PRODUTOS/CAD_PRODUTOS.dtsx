@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="470"
-  DTS:VersionGUID="{568D5CA7-66F4-4885-B11B-05A59E9BA2AA}">
+  DTS:VersionBuild="478"
+  DTS:VersionGUID="{F3931D70-648F-46F3-BA97-9C1C2B3B8876}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -818,6 +818,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{55F3698B-1F8F-4D73-94BE-7252EA5388E1}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -3978,6 +3979,7 @@ left join PARAISOIII.generico as g on g.codigo=p.generico order by p.codigo;</pr
           DTS:refId="Package\CARGA STG E TBLs\LIMPAR CARGA STAGE"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarefa Executar SQL"
+          DTS:Disabled="True"
           DTS:DTSID="{632EA1DD-370C-4D0C-AC4B-4D5E47E1AA08}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -7293,7 +7295,7 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
-                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]};#{Package\CARGA STG E TBLs\TBL PRODUTOS\VERIFICAR SE HOUVE MUDANCA NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]};</property>
+                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]};#{Package\CARGA STG E TBLs\TBL PRODUTOS\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]};</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
@@ -7334,12 +7336,12 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL PRODUTOS\REMOVER DU FLUXO OS QUE JA ESTOA COMO NAO MUDAR.Inputs[Entrada de Pesquisa].Columns[MUDAR1]"
+                          refId="Package\CARGA STG E TBLs\TBL PRODUTOS\REMOVER DU FLUXO OS QUE JA ESTOA COMO NAO MUDAR.Inputs[Entrada de Pesquisa].Columns[MUDAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
-                          cachedName="MUDAR1"
-                          lineageId="Package\CARGA STG E TBLs\TBL PRODUTOS\VERIFICAR SE HOUVE MUDANCA NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]">
+                          cachedName="MUDAR"
+                          lineageId="Package\CARGA STG E TBLs\TBL PRODUTOS\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -11115,14 +11117,14 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                       description="Especifica a instrução SQL que gera a tabela de pesquisa."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO_DCB,ATUALIZAR FROM TBL_DCB ORDER BY PRODUTO_DCB</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO_DCB,DCB_DCB,ATUALIZAR FROM TBL_DCB ORDER BY PRODUTO_DCB,DCB_DCB</property>
                     <property
                       dataType="System.String"
                       description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PRODUTO_DCB,ATUALIZAR FROM TBL_DCB ORDER BY PRODUTO_DCB) [refTable]
-where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PRODUTO_DCB,DCB_DCB,ATUALIZAR FROM TBL_DCB ORDER BY PRODUTO_DCB,DCB_DCB) [refTable]
+where [refTable].[PRODUTO_DCB] = ? and [refTable].[DCB_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
@@ -11153,12 +11155,12 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indica se os metadados de referência em um formato XML devem ser referenciados."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PRODUTO_DCB" dataType="DT_NUMERIC" length="0" precision="15" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ATUALIZAR" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PRODUTO_DCB" dataType="DT_NUMERIC" length="0" precision="15" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DCB_DCB" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ATUALIZAR" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
-                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]};#{Package\CARGA STG E TBLs\TBL_DCB\VERIFICAR ALTERACAO NOX CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]};</property>
+                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]};#{Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB]};#{Package\CARGA STG E TBLs\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]};</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
@@ -11182,11 +11184,12 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                       name="Entrada de Pesquisa">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_DCB\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[PRODUTO_DCB]"
+                          refId="Package\CARGA STG E TBLs\TBL_DCB\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[PRODUTO]"
                           cachedDataType="numeric"
-                          cachedName="PRODUTO_DCB"
+                          cachedName="PRODUTO"
                           cachedPrecision="15"
-                          lineageId="Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_DCB]">
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -11199,12 +11202,31 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_DCB\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[MUDAR1]"
+                          refId="Package\CARGA STG E TBLs\TBL_DCB\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[DCB]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="DCB"
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência que uma coluna une."
+                              name="JoinToReferenceColumn">DCB_DCB</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\CARGA STG E TBLs\TBL_DCB\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[MUDAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
-                          cachedName="MUDAR1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_DCB\VERIFICAR ALTERACAO NOX CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]">
+                          cachedName="MUDAR"
+                          lineageId="Package\CARGA STG E TBLs\TBL_DCB\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -12819,7 +12841,7 @@ where [refTable].[PRODUTO_EAN] = ? and [refTable].[ATUALIZAR] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
-                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN]};#{Package\CARGA STG E TBLs\TBL_EAN\VERIFICAR ALTERACAO CAMPO.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]};</property>
+                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]};#{Package\CARGA STG E TBLs\TBL_EAN\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]};</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
@@ -12843,11 +12865,12 @@ where [refTable].[PRODUTO_EAN] = ? and [refTable].[ATUALIZAR] = ?</property>
                       name="Entrada de Pesquisa">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_EAN\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[PRODUTO_EAN]"
+                          refId="Package\CARGA STG E TBLs\TBL_EAN\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[PRODUTO]"
                           cachedDataType="numeric"
-                          cachedName="PRODUTO_EAN"
+                          cachedName="PRODUTO"
                           cachedPrecision="15"
-                          lineageId="Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN]">
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -12860,12 +12883,12 @@ where [refTable].[PRODUTO_EAN] = ? and [refTable].[ATUALIZAR] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_EAN\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[MUDAR1]"
+                          refId="Package\CARGA STG E TBLs\TBL_EAN\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[MUDAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
-                          cachedName="MUDAR1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_EAN\VERIFICAR ALTERACAO CAMPO.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]">
+                          cachedName="MUDAR"
+                          lineageId="Package\CARGA STG E TBLs\TBL_EAN\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -14993,7 +15016,7 @@ where [refTable].[PRODUTO_PF] = ? and [refTable].[ATUALIZAR] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
-                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]};#{Package\CARGA STG E TBLs\TBL_PF\VERIRFICAR MUDANCA NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]};</property>
+                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL_PF\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]};#{Package\CARGA STG E TBLs\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]};</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
@@ -15035,12 +15058,12 @@ where [refTable].[PRODUTO_PF] = ? and [refTable].[ATUALIZAR] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PF\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[MUDAR1]"
+                          refId="Package\CARGA STG E TBLs\TBL_PF\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[MUDAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
-                          cachedName="MUDAR1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PF\VERIRFICAR MUDANCA NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]">
+                          cachedName="MUDAR"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PF\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -17546,7 +17569,7 @@ where [refTable].[PRODUTO_PV] = ? and [refTable].[ATUALIZAR] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
-                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]};#{Package\CARGA STG E TBLs\TBL_PV\VERIFICAR MUDANCAS NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]};</property>
+                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]};#{Package\CARGA STG E TBLs\TBL_PV\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]};</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
@@ -17570,11 +17593,12 @@ where [refTable].[PRODUTO_PV] = ? and [refTable].[ATUALIZAR] = ?</property>
                       name="Entrada de Pesquisa">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PV\REMOVER REGISTROS STATUS MUDAR NAO.Inputs[Entrada de Pesquisa].Columns[PRODUTO_PV]"
+                          refId="Package\CARGA STG E TBLs\TBL_PV\REMOVER REGISTROS STATUS MUDAR NAO.Inputs[Entrada de Pesquisa].Columns[PRODUTO]"
                           cachedDataType="numeric"
-                          cachedName="PRODUTO_PV"
+                          cachedName="PRODUTO"
                           cachedPrecision="15"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_PV]">
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PV\Junção de Mesclagem.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -17587,12 +17611,12 @@ where [refTable].[PRODUTO_PV] = ? and [refTable].[ATUALIZAR] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_PV\REMOVER REGISTROS STATUS MUDAR NAO.Inputs[Entrada de Pesquisa].Columns[MUDAR1]"
+                          refId="Package\CARGA STG E TBLs\TBL_PV\REMOVER REGISTROS STATUS MUDAR NAO.Inputs[Entrada de Pesquisa].Columns[MUDAR]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="1"
-                          cachedName="MUDAR1"
-                          lineageId="Package\CARGA STG E TBLs\TBL_PV\VERIFICAR MUDANCAS NOS CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR1]">
+                          cachedName="MUDAR"
+                          lineageId="Package\CARGA STG E TBLs\TBL_PV\MUDAR.Outputs[Saída de Coluna Derivada].Columns[MUDAR]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -19602,7 +19626,7 @@ where [refTable].[PRODUTO_MS] = ? and [refTable].[ATUALIZAR] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
-                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\104:invalid};#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\113:invalid};</property>
+                      name="ParameterMap">#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]};#{Package\CARGA STG E TBLs\TBL_REGISTRO_MS\VERIFICAR ALTERACAO CAMPOS.Outputs[Saída de Coluna Derivada].Columns[MUDAR]};</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
@@ -19626,11 +19650,12 @@ where [refTable].[PRODUTO_MS] = ? and [refTable].[ATUALIZAR] = ?</property>
                       name="Entrada de Pesquisa">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[PRODUTO_MS]"
+                          refId="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\REMOVER STATUS MUDAR N.Inputs[Entrada de Pesquisa].Columns[PRODUTO]"
                           cachedDataType="numeric"
-                          cachedName="PRODUTO_MS"
+                          cachedName="PRODUTO"
                           cachedPrecision="15"
-                          lineageId="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_MS]">
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -33405,7 +33430,7 @@ ORDER BY PRODUTO_PV</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -33415,7 +33440,7 @@ ORDER BY PRODUTO_PV</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -33825,7 +33850,7 @@ ORDER BY PRODUTO_PV</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -33835,7 +33860,7 @@ ORDER BY PRODUTO_PV</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -34635,7 +34660,7 @@ ORDER BY PRODUTO_PV</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -34645,7 +34670,7 @@ ORDER BY PRODUTO_PV</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -35100,7 +35125,7 @@ ORDER BY PRODUTO_PV</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -35110,7 +35135,7 @@ ORDER BY PRODUTO_PV</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -35545,7 +35570,7 @@ ORDER BY PRODUTO_PV</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
