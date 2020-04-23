@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="460"
-  DTS:VersionGUID="{FC9FCEA6-BC86-4614-90D1-13D3988CA6CE}">
+  DTS:VersionBuild="470"
+  DTS:VersionGUID="{568D5CA7-66F4-4885-B11B-05A59E9BA2AA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -10340,7 +10340,7 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                       description="O comando SQL a ser executado."
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO,DCB, DESCRICAO_DCB FROM STG_CAD_PRODUTOS.DBO.CAD_PRODUTOS 
- ORDER BY PRODUTO</property>
+ ORDER BY PRODUTO,DCB</property>
                     <property
                       dataType="System.String"
                       description="A variável que contém o comando SQL a ser executado."
@@ -10398,6 +10398,7 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           length="10"
                           lineageId="Package\CARGA STG E TBLs\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[DCB]"
                           name="DCB"
+                          sortKeyPosition="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CARGA STG E TBLs\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[DESCRICAO_DCB]"
@@ -10720,6 +10721,7 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           cachedDataType="str"
                           cachedLength="10"
                           cachedName="DCB"
+                          cachedSortKeyPosition="2"
                           externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_DCB\INSERT TBL_DCB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DCB_DCB]"
                           lineageId="Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB]" />
                         <inputColumn
@@ -10813,7 +10815,7 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica o número de colunas na chave de ordenação."
-                      name="NumKeyColumns">1</property>
+                      name="NumKeyColumns">2</property>
                     <property
                       dataType="System.Boolean"
                       description="Indica se os valores nulos serão tratados como valores iguais."
@@ -10842,6 +10844,7 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           cachedDataType="str"
                           cachedLength="10"
                           cachedName="DCB"
+                          cachedSortKeyPosition="2"
                           lineageId="Package\CARGA STG E TBLs\TBL_DCB\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[DCB]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[DESCRICAO_DCB]"
@@ -10871,6 +10874,7 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           cachedDataType="str"
                           cachedLength="10"
                           cachedName="DCB_DCB"
+                          cachedSortKeyPosition="2"
                           lineageId="Package\CARGA STG E TBLs\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].Columns[DCB_DCB]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[ATUALIZAR]"
@@ -10917,7 +10921,8 @@ where [refTable].[PRODUTO] = ? and [refTable].[ATUALIZAR] = ?</property>
                           dataType="str"
                           length="10"
                           lineageId="Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB]"
-                          name="DCB">
+                          name="DCB"
+                          sortKeyPosition="2">
                           <properties>
                             <property
                               containsID="true"
@@ -11281,7 +11286,7 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                       dataType="System.String"
                       description="O comando SQL a ser executado."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM STG_CAD_PRODUTOS.DBO.TBL_DCB ORDER BY PRODUTO_DCB</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM STG_CAD_PRODUTOS.DBO.TBL_DCB ORDER BY PRODUTO_DCB, DCB_DCB</property>
                     <property
                       dataType="System.String"
                       description="A variável que contém o comando SQL a ser executado."
@@ -11339,6 +11344,7 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                           length="10"
                           lineageId="Package\CARGA STG E TBLs\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].Columns[DCB_DCB]"
                           name="DCB_DCB"
+                          sortKeyPosition="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CARGA STG E TBLs\TBL_DCB\TBL_DCB.Outputs[Saída de Origem OLE DB].Columns[ATUALIZAR]"
@@ -11546,6 +11552,7 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                           cachedDataType="str"
                           cachedLength="10"
                           cachedName="DCB"
+                          cachedSortKeyPosition="2"
                           externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_DCB\UPDATE TBL_DCB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DCB_DCB]"
                           lineageId="Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB]" />
                         <inputColumn
@@ -11642,6 +11649,7 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                           cachedDataType="str"
                           cachedLength="10"
                           cachedName="DCB"
+                          cachedSortKeyPosition="2"
                           lineageId="Package\CARGA STG E TBLs\TBL_DCB\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[DCB]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_DCB\VERIFICAR ALTERACAO NOX CAMPOS.Inputs[Entrada de Coluna Derivada].Columns[DCB_DCB]"
@@ -11996,7 +12004,7 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                       dataType="System.String"
                       description="O comando SQL a ser executado."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select PRODUTO, EAN, EMBALAGEM from STG_CAD_PRODUTOS.DBO.CAD_PRODUTOS order by PRODUTO</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select PRODUTO, EAN, EMBALAGEM from STG_CAD_PRODUTOS.DBO.CAD_PRODUTOS order by PRODUTO,EAN</property>
                     <property
                       dataType="System.String"
                       description="A variável que contém o comando SQL a ser executado."
@@ -12054,6 +12062,7 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                           length="20"
                           lineageId="Package\CARGA STG E TBLs\TBL_EAN\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[EAN]"
                           name="EAN"
+                          sortKeyPosition="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CARGA STG E TBLs\TBL_EAN\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[EMBALAGEM]"
@@ -12376,6 +12385,7 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                           cachedDataType="str"
                           cachedLength="20"
                           cachedName="EAN"
+                          cachedSortKeyPosition="2"
                           externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_EAN\INSERT TBL_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN_EAN]"
                           lineageId="Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN]" />
                         <inputColumn
@@ -12468,7 +12478,7 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica o número de colunas na chave de ordenação."
-                      name="NumKeyColumns">1</property>
+                      name="NumKeyColumns">2</property>
                     <property
                       dataType="System.Boolean"
                       description="Indica se os valores nulos serão tratados como valores iguais."
@@ -12497,6 +12507,7 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                           cachedDataType="str"
                           cachedLength="20"
                           cachedName="EAN"
+                          cachedSortKeyPosition="2"
                           lineageId="Package\CARGA STG E TBLs\TBL_EAN\CAD_PRODUTOS.Outputs[Saída de Origem OLE DB].Columns[EAN]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem].Columns[EMBALAGEM]"
@@ -12526,6 +12537,7 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                           cachedDataType="str"
                           cachedLength="20"
                           cachedName="EAN_EAN"
+                          cachedSortKeyPosition="2"
                           lineageId="Package\CARGA STG E TBLs\TBL_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[EAN_EAN]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Inputs[Entrada Direita da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]"
@@ -12571,7 +12583,8 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[ATUALIZAR] = ?</property>
                           dataType="str"
                           length="20"
                           lineageId="Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN]"
-                          name="EAN">
+                          name="EAN"
+                          sortKeyPosition="2">
                           <properties>
                             <property
                               containsID="true"
@@ -12934,7 +12947,7 @@ where [refTable].[PRODUTO_EAN] = ? and [refTable].[ATUALIZAR] = ?</property>
                       dataType="System.String"
                       description="O comando SQL a ser executado."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO_EAN,EAN_EAN,QUANTIDADE_EMBALAGEM_EAN, ATUALIZAR FROM STG_CAD_PRODUTOS.DBO.TBL_EAN ORDER BY PRODUTO_EAN</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO_EAN,EAN_EAN,QUANTIDADE_EMBALAGEM_EAN, ATUALIZAR FROM STG_CAD_PRODUTOS.DBO.TBL_EAN ORDER BY PRODUTO_EAN,EAN_EAN</property>
                     <property
                       dataType="System.String"
                       description="A variável que contém o comando SQL a ser executado."
@@ -12992,6 +13005,7 @@ where [refTable].[PRODUTO_EAN] = ? and [refTable].[ATUALIZAR] = ?</property>
                           length="20"
                           lineageId="Package\CARGA STG E TBLs\TBL_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[EAN_EAN]"
                           name="EAN_EAN"
+                          sortKeyPosition="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\CARGA STG E TBLs\TBL_EAN\TBL_EAN.Outputs[Saída de Origem OLE DB].Columns[QUANTIDADE_EMBALAGEM_EAN]"
@@ -13175,6 +13189,7 @@ where [refTable].[PRODUTO_EAN] = ? and [refTable].[ATUALIZAR] = ?</property>
                           cachedDataType="str"
                           cachedLength="20"
                           cachedName="EAN"
+                          cachedSortKeyPosition="2"
                           externalMetadataColumnId="Package\CARGA STG E TBLs\TBL_EAN\UPDATE TBL_EAN.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN_EAN]"
                           lineageId="Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN]" />
                         <inputColumn
@@ -13270,6 +13285,7 @@ where [refTable].[PRODUTO_EAN] = ? and [refTable].[ATUALIZAR] = ?</property>
                           cachedDataType="str"
                           cachedLength="20"
                           cachedName="EAN"
+                          cachedSortKeyPosition="2"
                           lineageId="Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN]" />
                         <inputColumn
                           refId="Package\CARGA STG E TBLs\TBL_EAN\VERIFICAR ALTERACAO CAMPO.Inputs[Entrada de Coluna Derivada].Columns[EMBALAGEM]"
@@ -20030,7 +20046,7 @@ where [refTable].[PRODUTO_MS] = ? and [refTable].[ATUALIZAR] = ?</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição]"
           DTS:CreationName=""
-          DTS:DTSID="{FD41A353-9E49-4693-9321-EF8881ADABF3}"
+          DTS:DTSID="{16DCC7B7-6ADC-49D1-934B-216C3B44F3D5}"
           DTS:From="Package\CARGA STG E TBLs\LIMPAR CARGA STAGE"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restrição"
@@ -20038,7 +20054,7 @@ where [refTable].[PRODUTO_MS] = ? and [refTable].[ATUALIZAR] = ?</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 1]"
           DTS:CreationName=""
-          DTS:DTSID="{9D80553C-E135-4494-A8CE-9ECECEF2CE88}"
+          DTS:DTSID="{79EAA81C-8771-4074-921B-A9883A0B4133}"
           DTS:From="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restrição 1"
@@ -31997,74 +32013,6 @@ ORDER BY PRODUTO_PV</property>
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS"
           TopLeft="5.5,950.214285714286" />
         <EdgeLayout
-          Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição]"
-          TopLeft="99.0000000000001,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="8,36.285714285714"
-              Start="0,0"
-              End="8,28.785714285714">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.142857142857" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.142857142857"
-                    Point2="0,18.142857142857"
-                    Point3="4,18.142857142857" />
-                  <mssgle:LineSegment
-                    End="4,18.142857142857" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4,18.142857142857"
-                    Point2="8,18.142857142857"
-                    Point3="8,22.142857142857" />
-                  <mssgle:LineSegment
-                    End="8,28.785714285714" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 1]"
-          TopLeft="107,125.785714285714">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-11.5,53.285714285715"
-              Start="0,0"
-              End="-11.5,45.785714285715">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.6428571428575" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.6428571428575"
-                    Point2="0,26.6428571428575"
-                    Point3="-4,26.6428571428575" />
-                  <mssgle:LineSegment
-                    End="-7.49999999999996,26.6428571428575" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7.49999999999996,26.6428571428575"
-                    Point2="-11.5,26.6428571428575"
-                    Point3="-11.5,30.6428571428575" />
-                  <mssgle:LineSegment
-                    End="-11.5,45.785714285715" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 2]"
           TopLeft="95.5000000000001,221.071428571429">
           <EdgeLayout.Curve>
@@ -32525,6 +32473,74 @@ ORDER BY PRODUTO_PV</property>
           Size="114,42"
           Id="Package\CARGA STG E TBLs\TBL_PF"
           TopLeft="6.50000000000006,537.642857142857" />
+        <EdgeLayout
+          Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição]"
+          TopLeft="99.0000000000001,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8,36.285714285714"
+              Start="0,0"
+              End="8,28.785714285714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.142857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.142857142857"
+                    Point2="0,18.142857142857"
+                    Point3="4,18.142857142857" />
+                  <mssgle:LineSegment
+                    End="4,18.142857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,18.142857142857"
+                    Point2="8,18.142857142857"
+                    Point3="8,22.142857142857" />
+                  <mssgle:LineSegment
+                    End="8,28.785714285714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA STG E TBLs.PrecedenceConstraints[Restrição 1]"
+          TopLeft="107,125.785714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.5,53.285714285715"
+              Start="0,0"
+              End="-11.5,45.785714285715">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.6428571428575" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.6428571428575"
+                    Point2="0,26.6428571428575"
+                    Point3="-4,26.6428571428575" />
+                  <mssgle:LineSegment
+                    End="-7.49999999999996,26.6428571428575" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.49999999999996,26.6428571428575"
+                    Point2="-11.5,26.6428571428575"
+                    Point3="-11.5,30.6428571428575" />
+                  <mssgle:LineSegment
+                    End="-11.5,45.785714285715" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
