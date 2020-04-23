@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="502"
-  DTS:VersionGUID="{C3444085-9DD6-4A9E-A144-349D780395B0}">
+  DTS:VersionBuild="504"
+  DTS:VersionGUID="{43BC3541-88BB-40AA-B59F-A990E2E45557}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -818,7 +818,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{55F3698B-1F8F-4D73-94BE-7252EA5388E1}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -3979,7 +3978,6 @@ left join PARAISOIII.generico as g on g.codigo=p.generico order by p.codigo;</pr
           DTS:refId="Package\CARGA STG E TBLs\LIMPAR CARGA STAGE"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarefa Executar SQL"
-          DTS:Disabled="True"
           DTS:DTSID="{632EA1DD-370C-4D0C-AC4B-4D5E47E1AA08}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -33712,7 +33710,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-120.1116015625,28.1754221388368,54.973203125,16"
+              BoundingBox="-111.28689453125,28.1754221388368,37.3237890625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -33825,9 +33823,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-35.5,61.75,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="503"
-  DTS:VersionGUID="{3FFB4BE9-109B-42BA-B317-973896F221BC}">
+  DTS:VersionBuild="505"
+  DTS:VersionGUID="{989A0B0D-99DF-45E1-AAFF-1E75C92A51D2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -33710,7 +33710,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-120.1116015625,28.1754221388368,54.973203125,16"
+              BoundingBox="-111.28689453125,28.1754221388368,37.3237890625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -33750,7 +33750,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-92.53201171875,51,196.5640234375,16"
+              BoundingBox="-83.8440234375,51,179.188046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -33823,9 +33823,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-35.5,61.75,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
