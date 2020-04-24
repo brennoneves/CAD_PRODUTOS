@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="PROCFIT"
-  DTS:DTSID="{A81EDA8E-8256-4120-87C1-8B8B00644152}"
+  DTS:DTSID="{41DA4A12-EA7E-404F-8E25-B7B267901AD0}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectionString="Data Source=RIONOVO;User ID=SA;Initial Catalog=PBS_FARMACRO_DADOS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAACAzqkxEOmXsnH1Q97yjnTuAAAAAASAAACgAAAAEAAAAFvg871e5O3bt6YztfXRt9FwAAAAk3Sb9PtjqwhepdWR8xSh3Ngi+R1IuoT9Bf4/7ziLVdpA5oU+dd2/wAsuUergnb7HCLvHoLOjL7AR3nlofaAGKySvxKWjlm2UmmYukZIAp/9UGYBkC8AnnQeP4+UcSN8FhafmIaFPodXMdl5crBo4vRQAAABg9mOKkUzO5n9OKLajUs56mTCEwA==</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAADZJMXtLc2GEMkFyXvOElJgAAAAAASAAACgAAAAEAAAAPFgODpKCSgqSiIgYK09bkpwAAAAmNd8t4yRlkyaZ8TRNuWVUktkP2PwD8LWADnZ+Xr8iYczdc5LsTfm1c361JlwBu0hbaUDr6DL3iRfibDMwfCO8JZn51oFqxxR+pfA5+8ksHBnlwAR3BFFb04tY3dXFV9audhGZ6dtKXUtdFXv7Az2VRQAAADyFcwm4hEovj6Jvs6daGNzW/vDew==</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
