@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="609"
-  DTS:VersionGUID="{296C9B9E-D95F-4391-A491-0D33F94F672A}">
+  DTS:VersionBuild="618"
+  DTS:VersionGUID="{DE4B1093-65F3-4C37-ADF4-5A64FD6B71E0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -20933,7 +20933,7 @@ where [refTable].[DESCRICAO] = ? and [refTable].[CODIGO_DCB] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
-                      name="ParameterMap">#{Package\PROCFIT PRODUTOS\ALTERAR TBL DCB_MEDICAMENTOS\944:invalid};#{Package\PROCFIT PRODUTOS\ALTERAR TBL DCB_MEDICAMENTOS\945:invalid};</property>
+                      name="ParameterMap">#{Package\PROCFIT PRODUTOS\ALTERAR TBL DCB_MEDICAMENTOS\960:invalid};#{Package\PROCFIT PRODUTOS\ALTERAR TBL DCB_MEDICAMENTOS\961:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
@@ -31179,6 +31179,217 @@ where [refTable].[PRODUTO] = ? and [refTable].[EAN] = ? and [refTable].[QUANTIDA
                   </outputs>
                 </component>
                 <component
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[PRODUTOS_EAN_INSERT_TEMP]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Connections[OleDbConnection]"
+                      connectionManagerID="{85B93F16-A370-4F44-8E1F-537D8CC030AE}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[STG_CAD_PRODUTOS_VILAVELHA]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].Columns[PRODUTO_EAN_EAN]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_EAN_EAN"
+                          cachedPrecision="15"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[PRODUTO_EAN_EAN]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].Columns[EAN_EAN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="EAN_EAN"
+                          cachedSortKeyPosition="2"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[EAN_EAN]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].Columns[QUANTIDADE_EMBALAGEM_EAN]"
+                          cachedDataType="numeric"
+                          cachedName="QUANTIDADE_EMBALAGEM_EAN"
+                          cachedPrecision="4"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[QUANTIDADE_EMBALAGEM]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Outputs[Saída da Junção de Mesclagem].Columns[QUANTIDADE_EMBALAGEM_EAN]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].Columns[PRODUTO_EAN_PBS]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_EAN_PBS"
+                          cachedPrecision="15"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO_EAN]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída de Correspondência de Pesquisa].Columns[PRODUTO_EAN_PBS]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].Columns[REG_MASTER_ORIGEM]"
+                          cachedDataType="numeric"
+                          cachedName="REG_MASTER_ORIGEM"
+                          cachedPrecision="15"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[REG_MASTER_ORIGEM]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\reg_master_origem.Outputs[Saída de Coluna Derivada].Columns[REG_MASTER_ORIGEM]" />
+                        <inputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].Columns[PRODUTO_PBS]"
+                          cachedDataType="numeric"
+                          cachedName="PRODUTO_PBS"
+                          cachedPrecision="15"
+                          externalMetadataColumnId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO_ERRADO]"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída de Correspondência de Pesquisa].Columns[PRODUTO_PBS]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO_EAN]"
+                          dataType="numeric"
+                          name="PRODUTO_EAN"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[FORMULARIO_ORIGEM]"
+                          dataType="numeric"
+                          name="FORMULARIO_ORIGEM"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[TAB_MASTER_ORIGEM]"
+                          dataType="numeric"
+                          name="TAB_MASTER_ORIGEM"
+                          precision="6" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[REG_MASTER_ORIGEM]"
+                          dataType="numeric"
+                          name="REG_MASTER_ORIGEM"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[REG_LOG_INCLUSAO]"
+                          dataType="numeric"
+                          name="REG_LOG_INCLUSAO"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO]"
+                          dataType="numeric"
+                          name="PRODUTO"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="EAN" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[QUANTIDADE_EMBALAGEM]"
+                          dataType="numeric"
+                          name="QUANTIDADE_EMBALAGEM"
+                          precision="4" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN_INTERNO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="EAN_INTERNO" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[ROWVERSION]"
+                          dataType="bytes"
+                          length="8"
+                          name="ROWVERSION" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[EAN_PRINCIPAL]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="EAN_PRINCIPAL" />
+                        <externalMetadataColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB].ExternalColumns[PRODUTO_ERRADO]"
+                          dataType="numeric"
+                          name="PRODUTO_ERRADO"
+                          precision="15" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
@@ -31391,13 +31602,13 @@ where [refTable].[PRODUTO] = ? and [refTable].[EAN] = ? and [refTable].[QUANTIDA
                       description="Especifica a instrução SQL que gera a tabela de pesquisa."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO,EAN FROM PRODUTOS_EAN ORDER BY PRODUTO, EAN</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PRODUTO_EAN,PRODUTO,EAN FROM PRODUTOS_EAN ORDER BY PRODUTO, EAN</property>
                     <property
                       dataType="System.String"
                       description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PRODUTO,EAN FROM PRODUTOS_EAN ORDER BY PRODUTO, EAN) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PRODUTO_EAN,PRODUTO,EAN FROM PRODUTOS_EAN ORDER BY PRODUTO, EAN) [refTable]
 where [refTable].[EAN] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -31429,7 +31640,7 @@ where [refTable].[EAN] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indica se os metadados de referência em um formato XML devem ser referenciados."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PRODUTO" dataType="DT_NUMERIC" length="0" precision="15" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EAN" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PRODUTO_EAN" dataType="DT_NUMERIC" length="0" precision="15" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PRODUTO" dataType="DT_NUMERIC" length="0" precision="15" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EAN" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -31503,6 +31714,21 @@ where [refTable].[EAN] = ?</property>
                               name="CopyFromReferenceColumn">PRODUTO</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída de Correspondência de Pesquisa].Columns[PRODUTO_EAN_PBS]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Copiar Coluna"
+                          lineageId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída de Correspondência de Pesquisa].Columns[PRODUTO_EAN_PBS]"
+                          name="PRODUTO_EAN_PBS"
+                          precision="15"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn">PRODUTO_EAN</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -31556,6 +31782,11 @@ where [refTable].[EAN] = ?</property>
                   name="Saída de Coluna Derivada"
                   startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\reg_master_origem.Outputs[Saída de Coluna Derivada]" />
                 <path
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída de Correspondência de Pesquisa]"
+                  endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Correspondência de Pesquisa"
+                  startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída de Correspondência de Pesquisa]" />
+                <path
                   refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída de Origem OLE DB]"
                   endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\LEFT JOIN.Inputs[Entrada Esquerda da Junção de Mesclagem]"
                   name="Saída de Origem OLE DB"
@@ -31567,14 +31798,14 @@ where [refTable].[EAN] = ?</property>
                   startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\PROCFIT PRODUTOS_EAN.Outputs[Saída de Origem OLE DB]" />
                 <path
                   refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída Sem Correspondência de Pesquisa]"
-                  endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB]"
-                  name="Saída Sem Correspondência de Pesquisa"
-                  startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída Sem Correspondência de Pesquisa]" />
-                <path
-                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída Sem Correspondência de Pesquisa1]"
                   endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\UPDATE PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB]"
                   name="Saída Sem Correspondência de Pesquisa"
                   startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\Pesquisa.Outputs[Saída Sem Correspondência de Pesquisa]" />
+                <path
+                  refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída Sem Correspondência de Pesquisa1]"
+                  endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída Sem Correspondência de Pesquisa"
+                  startId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO.Outputs[Saída Sem Correspondência de Pesquisa]" />
                 <path
                   refId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[UPDATE]"
                   endId="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\Pesquisa.Inputs[Entrada de Pesquisa]"
@@ -36639,7 +36870,7 @@ ORDER BY PRODUTO_PV</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="LIMPAR TBL TEMP_PHG"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -36658,12 +36889,12 @@ ORDER BY PRODUTO_PV</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Tarefa Executar SQL"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{85B93F16-A370-4F44-8E1F-537D8CC030AE}"
-              SQLTask:SqlStatementSource="TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.DCB_MEDICAMENTOS_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_DCB_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_EAN_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_FARMACIA_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_REGISTROS_MS_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_VENDAS_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_INSERT_TEMP;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.DCB_MEDICAMENTOS_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_DCB_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_EAN_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_FARMACIA_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_REGISTROS_MS_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_VENDAS_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_INSERT_TEMP;&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_EAN_INSERT_TEMP;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -36695,7 +36926,7 @@ ORDER BY PRODUTO_PV</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{14D67B3E-D612-4B0B-9F47-6937531077C0}"
-              SQLTask:SqlStatementSource="UPDATE PBS_FARMACRO_DADOS.DBO.PRODUTOS_EAN &#xA;SET&#x9;&#xA;&#x9;REG_MASTER_ORIGEM=Y.REG_MASTER_ORIGEM,&#xA;&#x9;EAN=Y.EAN,&#xA;&#x9;QUANTIDADE_EMBALAGEM=Y.QUANTIDADE_EMBALAGEM&#xA;FROM PBS_FARMACRO_DADOS.DBO.PRODUTOS_EAN AS X&#xA;&#x9; JOIN STG_CAD_PRODUTOS.DBO.PRODUTOS_EAN_TEMP AS Y ON Y.PRODUTO=X.PRODUTO AND Y.PRODUTO_EAN=X.PRODUTO_EAN&#xA;GO&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_EAN_TEMP;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="UPDATE PBS_FARMACRO_DADOS.DBO.PRODUTOS_EAN &#xA;SET&#x9;&#xA;&#x9;REG_MASTER_ORIGEM=Y.REG_MASTER_ORIGEM,&#xA;&#x9;EAN=Y.EAN,&#xA;&#x9;QUANTIDADE_EMBALAGEM=Y.QUANTIDADE_EMBALAGEM&#xA;FROM PBS_FARMACRO_DADOS.DBO.PRODUTOS_EAN AS X&#xA;&#x9; JOIN STG_CAD_PRODUTOS.DBO.PRODUTOS_EAN_TEMP AS Y ON Y.PRODUTO=X.PRODUTO AND Y.PRODUTO_EAN=X.PRODUTO_EAN&#xA;GO&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_EAN_TEMP;&#xA;GO&#xA;DELETE FROM PBS_FARMACRO_DADOS.DBO.PRODUTOS_EAN WHERE PRODUTO_EAN IN (SELECT PRODUTO_EAN FROM STG_CAD_PRODUTOS.DBO.PRODUTOS_EAN_INSERT_TEMP );&#xA;GO&#xA;INSERT INTO PBS_FARMACRO_DADOS.DBO.PRODUTOS_EAN (REG_MASTER_ORIGEM,PRODUTO,EAN,QUANTIDADE_EMBALAGEM)&#xA;SELECT REG_MASTER_ORIGEM,PRODUTO,PRODUTO_EAN,QUANTIDADE_EMBALAGEM FROM STG_CAD_PRODUTOS.DBO.PRODUTOS_EAN_INSERT_TEMP&#xA;GO&#xA;TRUNCATE TABLE STG_CAD_PRODUTOS.DBO.PRODUTOS_EAN_INSERT_TEMP" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -42212,7 +42443,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="128,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TBL_EAN"
-          TopLeft="156.5,5.5" />
+          TopLeft="108.5,13.5" />
         <NodeLayout
           Size="171,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\reg_master_origem"
@@ -42220,7 +42451,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="219,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT TBL PRODUTOS_EAN"
-          TopLeft="679,567" />
+          TopLeft="1033,680" />
         <NodeLayout
           Size="186,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\INSERT OU UPDATE"
@@ -42232,43 +42463,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="294,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\VERIFICAR  SE JA EXISTE EAN CADASTRADO"
-          TopLeft="606,424" />
-        <EdgeLayout
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída Sem Correspondência de Pesquisa]"
-          TopLeft="753,466">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="35.5,101"
-              Start="0,0"
-              End="35.5,93.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,46.5"
-                    Point2="0,50.5"
-                    Point3="4,50.5" />
-                  <mssgle:LineSegment
-                    End="31.5,50.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="31.5,50.5"
-                    Point2="35.5,50.5"
-                    Point3="35.5,54.5" />
-                  <mssgle:LineSegment
-                    End="35.5,93.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-71.8440234375,55.5,179.188046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="607,469" />
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída de Origem OLE DB1]"
           TopLeft="455.5,47.5">
@@ -42305,30 +42500,30 @@ ORDER BY PRODUTO_PV</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída de Origem OLE DB]"
-          TopLeft="220.5,47.5">
+          TopLeft="172.5,55.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="214,60"
+              EndConnector="262,52"
               Start="0,0"
-              End="214,52.5">
+              End="262,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5752212389381" />
+                    End="0,26.8318584070796" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.5752212389381"
-                    Point2="0,35.5752212389381"
-                    Point3="4,35.5752212389381" />
+                    Point1="0,26.8318584070796"
+                    Point2="0,30.8318584070796"
+                    Point3="4,30.8318584070796" />
                   <mssgle:LineSegment
-                    End="210,35.5752212389381" />
+                    End="258,30.8318584070796" />
                   <mssgle:CubicBezierSegment
-                    Point1="210,35.5752212389381"
-                    Point2="214,35.5752212389381"
-                    Point3="214,39.5752212389381" />
+                    Point1="258,30.8318584070796"
+                    Point2="262,30.8318584070796"
+                    Point3="262,34.8318584070797" />
                   <mssgle:LineSegment
-                    End="214,52.5" />
+                    End="262,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -42387,33 +42582,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="267.833333333333,70.5"
+              EndConnector="268.833333333333,115.5"
               Start="0,0"
-              End="267.833333333333,63">
+              End="268.833333333333,108">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5607675906183" />
+                    End="0,42.7910447761194" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.5607675906183"
-                    Point2="0,28.5607675906183"
-                    Point3="4,28.5607675906183" />
+                    Point1="0,42.7910447761194"
+                    Point2="0,46.7910447761194"
+                    Point3="4,46.7910447761194" />
                   <mssgle:LineSegment
-                    End="263.833333333333,28.5607675906183" />
+                    End="264.833333333333,46.7910447761194" />
                   <mssgle:CubicBezierSegment
-                    Point1="263.833333333333,28.5607675906183"
-                    Point2="267.833333333333,28.5607675906183"
-                    Point3="267.833333333333,32.5607675906183" />
+                    Point1="264.833333333333,46.7910447761194"
+                    Point2="268.833333333333,46.7910447761194"
+                    Point3="268.833333333333,50.7910447761194" />
                   <mssgle:LineSegment
-                    End="267.833333333333,63" />
+                    End="268.833333333333,108" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="116.326354166666,33.5607675906183,35.180625,9.5341796875"
+              BoundingBox="116.826354166667,51.7910447761194,35.180625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -42462,7 +42657,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída Sem Correspondência de Pesquisa1]"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída Sem Correspondência de Pesquisa]"
           TopLeft="167,486">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -42494,6 +42689,82 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-95.3440234375,57.5,179.188046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída Sem Correspondência de Pesquisa1]"
+          TopLeft="801.666666666667,511">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="340.833333333333,169"
+              Start="0,0"
+              End="340.833333333333,161.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.148849797023" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,64.148849797023"
+                    Point2="0,68.148849797023"
+                    Point3="4,68.148849797023" />
+                  <mssgle:LineSegment
+                    End="336.833333333333,68.148849797023" />
+                  <mssgle:CubicBezierSegment
+                    Point1="336.833333333333,68.148849797023"
+                    Point2="340.833333333333,68.148849797023"
+                    Point3="340.833333333333,72.148849797023" />
+                  <mssgle:LineSegment
+                    End="340.833333333333,161.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="80.8226432291667,73.148849797023,179.188046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="383,42"
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO"
+          TopLeft="460,684" />
+        <EdgeLayout
+          Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN.Paths[Saída de Correspondência de Pesquisa]"
+          TopLeft="706.333333333333,511">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-54.8333333333334,173"
+              Start="0,0"
+              End="-54.8333333333334,165.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.7618403247632" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,65.7618403247632"
+                    Point2="0,69.7618403247632"
+                    Point3="-4,69.7618403247632" />
+                  <mssgle:LineSegment
+                    End="-50.8333333333334,69.7618403247632" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-50.8333333333334,69.7618403247632"
+                    Point2="-54.8333333333334,69.7618403247632"
+                    Point3="-54.8333333333334,73.7618403247632" />
+                  <mssgle:LineSegment
+                    End="-54.8333333333334,165.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-112.790690104167,74.7618403247632,170.748046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -42550,7 +42821,7 @@ ORDER BY PRODUTO_PV</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -43664,6 +43935,19 @@ ORDER BY PRODUTO_PV</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_EAN\TRATAR OS EAN QUE JA SE ENCONTRAM EM OUTRO PRODUTO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
