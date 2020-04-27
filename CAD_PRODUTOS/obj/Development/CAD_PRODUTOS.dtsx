@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="618"
-  DTS:VersionGUID="{DE4B1093-65F3-4C37-ADF4-5A64FD6B71E0}">
+  DTS:VersionBuild="628"
+  DTS:VersionGUID="{571CAC4E-6695-4C05-8D5C-5393D6E8FEB9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -33,7 +33,7 @@
     DTS:LoggingMode="1">
     <DTS:Property
       DTS:DataType="8"
-      DTS:Name="EventFilter">5,7,OnError,13,OnPostExecute,12,OnPreExecute,12,OnTaskFailed,9,OnWarning</DTS:Property>
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,12,OnPreExecute,13,OnQueryCancel,12,OnTaskFailed,9,OnWarning</DTS:Property>
     <DTS:Property
       DTS:EventName="OnError"
       DTS:Name="ColumnFilter">
@@ -89,6 +89,24 @@
         DTS:Name="DataBytes">-1</DTS:Property>
     </DTS:Property>
     <DTS:Property
+      DTS:EventName="OnQueryCancel"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
       DTS:EventName="OnTaskFailed"
       DTS:Name="ColumnFilter">
       <DTS:Property
@@ -124,18 +142,26 @@
       <DTS:Property
         DTS:Name="DataBytes">-1</DTS:Property>
     </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{1C18DB05-C741-45AD-BAA7-29DE3E3A6687}" />
+    </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\BKP_LOG"
       DTS:CreationName="Microsoft.ScriptTask"
       DTS:Description="Tarefa Script"
+      DTS:Disabled="True"
       DTS:DTSID="{EF5AFB9B-0958-4D79-B7F2-531214590404}"
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="BKP_LOG"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
       <DTS:ObjectData>
         <ScriptProject
           Name="ST_1d8ac6c9d1fd43f0a8f115245733f7fc"
@@ -488,10 +514,10 @@ namespace ST_1d8ac6c9d1fd43f0a8f115245733f7fc
                     if (!(arquivo.Contains(".processada")))
                     {
 
-
-                        File.Copy(arquivo, Path.Combine(diretorioDestino, Path.GetFileName(arquivo)));
                         mudarNome = arquivo;
-                        mudarNome = mudarNome.Replace(".txt", ".processada");
+                        mudarNome = mudarNome.Replace(".txt", ".processada_"+DateTime.Today);
+                        File.Copy(arquivo, Path.Combine(diretorioDestino, Path.GetFileName(arquivo)));
+
                         if (File.Exists(mudarNome))
                         {
                             File.Delete(mudarNome);
@@ -532,7 +558,7 @@ namespace ST_1d8ac6c9d1fd43f0a8f115245733f7fc
     <msb:CodeName>ST_1d8ac6c9d1fd43f0a8f115245733f7fc</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_1d8ac6c9d1fd43f0a8f115245733f7fc</msb:DisplayName>
-    <msb:ProjectId>{41507CD8-A98C-4D06-844D-7D2B3C9F6A6A}</msb:ProjectId>
+    <msb:ProjectId>{E1E2F7FB-14DF-41A5-8B31-DCB8453E1CFA}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_1d8ac6c9d1fd43f0a8f115245733f7fc.csproj" />
@@ -674,104 +700,104 @@ namespace ST_1d8ac6c9d1fd43f0a8f115245733f7fc.Properties {
           <BinaryItem
             Name="ST_1d8ac6c9d1fd43f0a8f115245733f7fc.dll">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
-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
+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
-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
+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
-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
+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
-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
+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
-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
-BYEFVQABAAQAAAEQALkFgQVpAAMACAADAQAA2wUAAE0ABAALABEA/gPqABEAIwHuABEAhQDyAAYG
-KQD2AFaAywX5AFaAAwH5AFAgAAAAAJYAsAX9AAEArCAAAAAAhgAQBAYABAC8IQAAAACGGM8EBgAE
-AMQhAAAAAIMYzwQGAAQAzCEAAAAAkwitBAkBBAD4IQAAAACTCAsBDgEEAP8hAAAAAJMIFwETAQQA
-ByIAAAAAlgj3BRkBBQAOIgAAAACGGM8EBgAFABYiAAAAAJEY1QQeAQUAAAABAFUDAAACAIcEAAAD
-AF4EAAABACQDCQDPBAEAEQDPBAYAGQDPBAoAKQDPBBAAMQDPBBAAOQDPBBAAQQDPBBAASQDPBBAA
-UQDPBBAAWQDPBBAAYQDPBBAAaQDPBAYAoQDPBAYAyQDPBBUA2QDPBAYA4QByBSkADADPBAYA4QCw
-BTUA6QAeBj4ADACVAFIADAB5AG0ADADBBHMAFAASBoIA+QDCBYcAAQHeAIwAAQHqAJEACQE7BpcA
-+QB9AJ0ACQHpBaMACQGEAagACQEqA5cAFAAlBq0AEQFnAQYAcQDTBbEAGQEDBgEAcQDPBAYAqQDP
-BAYAIQHHALcAIQEuBsAAsQDPBMYA0QDPBAYACAAUAOAACAAYAOUAKQBzAFkBLgALADEBLgATADoB
-LgAbAFkBLgAjAGIBLgArAIsBLgAzAIsBLgA7AIsBLgBDAGIBLgBLAJEBLgBTAIsBLgBbAKgBQwBj
-AOUASQBzAFkBYQB7AOUAYwBrAOUAGwBcAAMAAQAEAAMAAACxBCIBAAArAScBAAD7BSwBAgAFAAMA
-AgAGAAUAAQAHAAUAAgAIAAcALwB8AASAAAABAAAA1hxpTQAAAAAAADoAAAAEAAAAAAAAAAAAAADO
-ADEAAAAAAA4AAAAAAAAAAAAAANcAWgMAAAAABAAAAAAAAAAAAAAAzgDyAwAAAAAEAAAAAAAAAAAA
-AADOAPcAAAAAAAAAAAABAAAAIAUAAAUAAgAnAE4AAAAASUVudW1lcmFibGVgMQBMaXN0YDEAPE1v
-ZHVsZT4AU3lzdGVtLklPAHZhbHVlX18AbXNjb3JsaWIAU1RfMWQ4YWM2YzlkMWZkNDNmMGE4ZjEx
-NTI0NTczM2Y3ZmMAU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMAQWRkAFJlcGxhY2UAZGVmYXVs
-dEluc3RhbmNlAEFkZFJhbmdlAEVudW1lcmFibGUASURpc3Bvc2FibGUAUnVudGltZVR5cGVIYW5k
-bGUAR2V0VHlwZUZyb21IYW5kbGUARmlsZQBHZXRGaWxlTmFtZQBDb21iaW5lAFR5cGUAU3lzdGVt
-LkNvcmUARmFpbHVyZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAVlNU
-QVJUU2NyaXB0T2JqZWN0TW9kZWxCYXNlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAERpc3Bvc2UA
-RWRpdG9yQnJvd3NhYmxlU3RhdGUARGVsZXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERl
-YnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93
-c2FibGVBdHRyaWJ1dGUAQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0
-dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0
-cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9u
-c0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRy
-aWJ1dGUAU1NJU1NjcmlwdFRhc2tFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0
-dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQB2YWx1ZQBNb3ZlAFN5c3RlbS5S
-dW50aW1lLlZlcnNpb25pbmcAU3RyaW5nAFBhdGgAcGF0aABNaWNyb3NvZnQuU3FsU2VydmVyLlNj
-cmlwdFRhc2sATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBTY3JpcHRP
-YmplY3RNb2RlbABTeXN0ZW0uQ29tcG9uZW50TW9kZWwAU1RfMWQ4YWM2YzlkMWZkNDNmMGE4ZjEx
-NTI0NTczM2Y3ZmMuZGxsAFN5c3RlbQBFbnVtAHJlc291cmNlTWFuAFNjcmlwdE1haW4AU3lzdGVt
-LkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24AU2Vh
-cmNoT3B0aW9uAHNlYXJjaE9wdGlvbgBVbmF1dGhvcml6ZWRBY2Nlc3NFeGNlcHRpb24Ac2VhcmNo
-UGF0dGVybgBDdWx0dXJlSW5mbwBTeXN0ZW0uTGlucQBnZXRfUmVzb3VyY2VNYW5hZ2VyAEdldEVu
-dW1lcmF0b3IALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5D
-b21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfMWQ4YWM2YzlkMWZkNDNmMGE4ZjEx
-NTI0NTczM2Y3ZmMuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERlYnVnZ2luZ01vZGVz
-AEdldERpcmVjdG9yaWVzAFNUXzFkOGFjNmM5ZDFmZDQzZjBhOGYxMTUyNDU3MzNmN2ZjLlByb3Bl
-cnRpZXMAR2V0RmlsZXMAU2V0dGluZ3MAQ29udGFpbnMAU3VjY2VzcwBnZXRfRHRzAFNjcmlwdFJl
-c3VsdHMARXhpc3RzAE9iamVjdABnZXRfRGVmYXVsdABzZXRfVGFza1Jlc3VsdABnZXRfQ3VycmVu
-dABUb0xpc3QATW92ZU5leHQAZ2V0X0Fzc2VtYmx5AENvcHkARGlyZWN0b3J5AAAAAAsqAC4AdAB4
-AHQAAElcAFwAMQA5ADIALgAxADYAOAAuADEAMAAuADIAMABcAGIAawBwAF8AbABvAGcAXwBjAGEA
-ZABfAHAAcgBvAGQAdQB0AG8AcwAAAQAnXABcADEAOQAyAC4AMQA2ADgALgAxADAALgAyADAAXABs
-AG8AZwAAFy4AcAByAG8AYwBlAHMAcwBhAGQAYQAACS4AdAB4AHQAAHFTAFQAXwAxAGQAOABhAGMA
-NgBjADkAZAAxAGYAZAA0ADMAZgAwAGEAOABmADEAMQA1ADIANAA1ADcAMwAzAGYANwBmAGMALgBQ
-AHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAAAJ/9MAAVWoRPqgYDcnRK
-PEsABCABAQgDIAABBSABARERBCABAQ4FIAEBEWENBwUdDhUSPQEOHQ4IDgUAAR0ODgUVEj0BDggA
-Ax0ODg4RQQ8QAQEVEj0BHgAVEnkBHgADCgEOCSABARUSeQETABAHBg4ODhURSQEOFRFJAQ4OBSAB
-ARMACCAAFRFJARMABRURSQEOBCAAEwAEIAECDgQAAQ4OBQACDg4OBQACAQ4OBSACDg4OBAABAg4E
-AAEBDgMgAAIFIAASgI0IAAESgJERgJUFIAASgJkHIAIBDhKAmQi3elxWGTTgiQiJhF3NgIDMkQQA
-AAAABAEAAAADBhJZAwYSXQMGEhACBggDBhEUCwADFRI9AQ4ODhFBBAAAElkEAAASXQUAAQESXQQA
-ABIQAwAAAQQIABJZBAgAEl0ECAASEAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRo
-cm93cwEIAQACAAAAAAAoAQAjU1RfMWQ4YWM2YzlkMWZkNDNmMGE4ZjExNTI0NTczM2Y3ZmMAAAUB
-AAAAABYBABFDb3B5cmlnaHQgQCAgMjAyMAAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC41
-AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjUAALQAAADOyu++AQAA
-AJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249
-NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5
-I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQA
-AABQMQAAAAAAAAAAAABqMQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXDEAAAAAAAAAAAAAAABf
-Q29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+GzAEAPYAAAACAAARcgEAAHAKcg0AAHALclcAAHAMcxEAAAolclkAAHBvFQAACm8WAAAKDTigAAAA
+EgMoFwAACgYXKAEAAAZvFgAAChMEK3ASBCgXAAAKEwURBXKBAABwbxgAAAotWREFDAhymQAAcHKj
+AABwKBkAAAqMIAAAASgaAAAKbxsAAAoMEQUHEQUoHAAACigdAAAKKB4AAAoIKB8AAAosBggoIAAA
+ChEFCCghAAAKCCggAAAKclcAAHAMEgQoIgAACi2H3g4SBP4WAgAAG28jAAAK3BIDKCIAAAo6VP//
+/94OEgP+FgIAABtvIwAACtwCKCQAAAoWbyUAAAoqAAABHAAAAgBCAH2/AA4AAAAAAgAoALPbAA4A
+AAAAHgIoJgAACioeAignAAAKKq5+AQAABC0ecr0AAHDQAwAAAigoAAAKbykAAApzKgAACoABAAAE
+fgEAAAQqGn4CAAAEKh4CgAIAAAQqGn4DAAAEKh4CKCsAAAoqLnMJAAAGgAMAAAQqAABCU0pCAQAB
+AAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAACMBAAAI34AAPgEAABkBgAAI1N0cmluZ3MAAAAA
+XAsAADABAAAjVVMAjAwAABAAAAAjR1VJRAAAAJwMAAAAAgAAI0Jsb2IAAAAAAAAAAgAAAVcdogkJ
+CwAAAPoBMwAWAAABAAAAJwAAAAUAAAAGAAAACgAAAAQAAAArAAAAAgAAABAAAAACAAAAAgAAAAMA
+AAAEAAAAAgAAAAEAAAAEAAAAAQAAAAEAAAABAAAAAADTAwEAAAAAAAYAgAL4BAYADwP4BAYAzAHl
+BA8AbAUAAAYA+QFIBAYAYwJIBAYARAJIBAYA9gJIBAYAoAJIBAYAuQJIBAYAEAJIBAYAKwI4AwoA
+1AKCAwoAPAGCAwYADwBeAAYAWgQfAAYAdAT7Az8AzQQAAAYAAgT7AwYArwHlBAYAAAb7AwYAugQY
+BQYAngQzBA4AeAG9Aw4A4AG9Aw4AWAEeBAYAlAH4BAYAWgYfABIAngCqBAYAAQBeAAYAUgP7AwYA
+6gD7AwYAWQMfAAYA2QAfAAYAqQD7AwoAqwOCAwYA+wD7AwYAtQD7AwYATAZIBAAAAAAWAAAAAAAB
+AAEAAQAQABMEOgA5AAEAAQAAABAAHwWKBVUAAQAEAAABEADCBYoFaQADAAgAAwEAAOQFAABNAAQA
+CwARAAcE9gARACwB+gARAIUA/gAGBikAAgFWgNQFBQFWgAwBBQFQIAAAAACWALkFCQEBAKwgAAAA
+AIYAGQQGAAQAzCEAAAAAhhjYBAYABADUIQAAAACDGNgEBgAEANwhAAAAAJMItgQVAQQACCIAAAAA
+kwgUARoBBAAPIgAAAACTCCABHwEEABciAAAAAJYIBwYlAQUAHiIAAAAAhhjYBAYABQAmIgAAAACR
+GN4EKgEFAAAAAQBeAwAAAgCQBAAAAwBnBAAAAQAtAwkA2AQBABEA2AQGABkA2AQKACkA2AQQADEA
+2AQQADkA2AQQAEEA2AQQAEkA2AQQAFEA2AQQAFkA2AQQAGEA2AQQAGkA2AQGAKEA2AQGAMkA2AQV
+ANkA2AQGAOEAewUpAAwA2AQGAOEAuQU1AOkALgY+AAwAlQBSAAwAeQBtAAwAygRzABQAIgaCAPkA
+ywWHAAEBPgaMAPkA+QWSAPkAfQCYAAkB3gCeAAkB8wCjABEBVQapABEB8gWvABEBjQG0ABEBMwOp
+ABQANQa5ABkBcAEGAHEA3AW9ACEBEwYBAHEA2AQGAKkA2AQGACkBxwDDACkBSAbMALEA2ATSANEA
+2AQGAAgAFADsAAgAGADxACkAcwBlAS4ACwA9AS4AEwBGAS4AGwBlAS4AIwBuAS4AKwCXAS4AMwCX
+AS4AOwCXAS4AQwBuAS4ASwCdAS4AUwCXAS4AWwC0AUMAYwDxAEkAcwBlAWEAewDxAGMAawDxABsA
+XAADAAEABAADAAAAugQuAQAANAEzAQAACwY4AQIABQADAAIABgAFAAEABwAFAAIACAAHAC8AfAAE
+gAAAAQAAAP4ciTwAAAAAAAA6AAAABAAAAAAAAAAAAAAA2gAxAAAAAAAOAAAAAAAAAAAAAADjAGMD
+AAAAAAQAAAAAAAAAAAAAANoA+wMAAAAABAAAAAAAAAAAAAAA2gAAAQAAAAAAAAAAAQAAACkFAAAF
+AAIAJwBOAAAAAAAASUVudW1lcmFibGVgMQBMaXN0YDEAPE1vZHVsZT4AU3lzdGVtLklPAHZhbHVl
+X18AbXNjb3JsaWIAU1RfMWQ4YWM2YzlkMWZkNDNmMGE4ZjExNTI0NTczM2Y3ZmMAU3lzdGVtLkNv
+bGxlY3Rpb25zLkdlbmVyaWMAQWRkAFJlcGxhY2UAZGVmYXVsdEluc3RhbmNlAEFkZFJhbmdlAEVu
+dW1lcmFibGUASURpc3Bvc2FibGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUA
+RmlsZQBHZXRGaWxlTmFtZQBEYXRlVGltZQBDb21iaW5lAFR5cGUAU3lzdGVtLkNvcmUARmFpbHVy
+ZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAVlNUQVJUU2NyaXB0T2Jq
+ZWN0TW9kZWxCYXNlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAERpc3Bvc2UARWRpdG9yQnJvd3Nh
+YmxlU3RhdGUARGVsZXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNl
+ckNvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1
+dGUAQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJn
+ZXRGcmFtZXdvcmtBdHRyaWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFzc2Vt
+Ymx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBB
+c3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1Nj
+cmlwdFRhc2tFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBSdW50
+aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQB2YWx1ZQBNb3ZlAFN5c3RlbS5SdW50aW1lLlZlcnNp
+b25pbmcAU3RyaW5nAFBhdGgAcGF0aABNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRhc2sATWlj
+cm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBTY3JpcHRPYmplY3RNb2RlbABT
+eXN0ZW0uQ29tcG9uZW50TW9kZWwAU1RfMWQ4YWM2YzlkMWZkNDNmMGE4ZjExNTI0NTczM2Y3ZmMu
+ZGxsAFN5c3RlbQBFbnVtAHJlc291cmNlTWFuAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRp
+b24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24AU2VhcmNoT3B0aW9uAHNl
+YXJjaE9wdGlvbgBVbmF1dGhvcml6ZWRBY2Nlc3NFeGNlcHRpb24Ac2VhcmNoUGF0dGVybgBDdWx0
+dXJlSW5mbwBTeXN0ZW0uTGlucQBnZXRfUmVzb3VyY2VNYW5hZ2VyAEdldEVudW1lcmF0b3IALmN0
+b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZp
+Y2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfMWQ4YWM2YzlkMWZkNDNmMGE4ZjExNTI0NTczM2Y3ZmMu
+UHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAEdldERpcmVjdG9y
+aWVzAFNUXzFkOGFjNmM5ZDFmZDQzZjBhOGYxMTUyNDU3MzNmN2ZjLlByb3BlcnRpZXMAR2V0Rmls
+ZXMAU2V0dGluZ3MAQ29udGFpbnMAU3VjY2VzcwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMARXhpc3Rz
+AENvbmNhdABPYmplY3QAZ2V0X0RlZmF1bHQAc2V0X1Rhc2tSZXN1bHQAZ2V0X0N1cnJlbnQAVG9M
+aXN0AE1vdmVOZXh0AGdldF9Ub2RheQBnZXRfQXNzZW1ibHkAQ29weQBEaXJlY3RvcnkAAAsqAC4A
+dAB4AHQAAElcAFwAMQA5ADIALgAxADYAOAAuADEAMAAuADIAMABcAGIAawBwAF8AbABvAGcAXwBj
+AGEAZABfAHAAcgBvAGQAdQB0AG8AcwAAAQAnXABcADEAOQAyAC4AMQA2ADgALgAxADAALgAyADAA
+XABsAG8AZwAAFy4AcAByAG8AYwBlAHMAcwBhAGQAYQAACS4AdAB4AHQAABkuAHAAcgBvAGMAZQBz
+AHMAYQBkAGEAXwAAcVMAVABfADEAZAA4AGEAYwA2AGMAOQBkADEAZgBkADQAMwBmADAAYQA4AGYA
+MQAxADUAMgA0ADUANwAzADMAZgA3AGYAYwAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBv
+AHUAcgBjAGUAcwAAAMGitLPy1cRGujoayqYSAhYABCABAQgDIAABBSABARERBCABAQ4FIAEBEWEN
+BwUdDhUSPQEOHQ4IDgUAAR0ODgUVEj0BDggAAx0ODg4RQQ8QAQEVEj0BHgAVEnkBHgADCgEOCSAB
+ARUSeQETABAHBg4ODhURSQEOFRFJAQ4OBSABARMACCAAFRFJARMABRURSQEOBCAAEwAEIAECDgUA
+ABGAgQUAAg4cHAUgAg4ODgQAAQ4OBQACDg4OBQACAQ4OBAABAg4EAAEBDgMgAAIFIAASgJEIAAES
+gJURgJkFIAASgJ0HIAIBDhKAnQi3elxWGTTgiQiJhF3NgIDMkQQAAAAABAEAAAADBhJZAwYSXQMG
+EhACBggDBhEUCwADFRI9AQ4ODhFBBAAAElkEAAASXQUAAQESXQQAABIQAwAAAQQIABJZBAgAEl0E
+CAASEAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAj
+U1RfMWQ4YWM2YzlkMWZkNDNmMGE4ZjExNTI0NTczM2Y3ZmMAAAUBAAAAABYBABFDb3B5cmlnaHQg
+QCAgMjAyMAAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC41AQBUDhRGcmFtZXdvcmtEaXNw
+bGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjUAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291
+cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1u
+ZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMu
+UnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAACwMQAAAAAAAAAAAADKMQAA
+ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvDEAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVl
+LmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
 AEgAAABYQAAAGgQAAAAAAAAAAAAAGgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
-AAAAAL0E7/4AAAEAAAABAGlN1hwAAAEAaU3WHD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAL0E7/4AAAEAAAABAIk8/hwAAAEAiTz+HD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
 AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
 bgAAAAAAAACwBHoDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAFYDAAABADAAMAAw
 ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEA
 bgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAA
 AAAAUwBUAF8AMQBkADgAYQBjADYAYwA5AGQAMQBmAGQANAAzAGYAMABhADgAZgAxADEANQAyADQA
 NQA3ADMAMwBmADcAZgBjAAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
-ADcAMwA4ADIALgAxADkAOAAxADcAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAA
+ADcANAAyADIALgAxADUANAA5ADcAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAA
 UwBUAF8AMQBkADgAYQBjADYAYwA5AGQAMQBmAGQANAAzAGYAMABhADgAZgAxADEANQAyADQANQA3
 ADMAMwBmADcAZgBjAC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQA
 AABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAgADIAMAAyADAAAAAqAAEAAQBMAGUAZwBhAGwAVABy
@@ -780,15 +806,15 @@ YQBtAGUAAABTAFQAXwAxAGQAOABhAGMANgBjADkAZAAxAGYAZAA0ADMAZgAwAGEAOABmADEAMQA1
 ADIANAA1ADcAMwAzAGYANwBmAGMALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0A
 ZQAAAAAAUwBUAF8AMQBkADgAYQBjADYAYwA5AGQAMQBmAGQANAAzAGYAMABhADgAZgAxADEANQAy
 ADQANQA3ADMAMwBmADcAZgBjAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAA
-MQAuADAALgA3ADMAOAAyAC4AMQA5ADgAMQA3AAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABW
-AGUAcgBzAGkAbwBuAAAAMQAuADAALgA3ADMAOAAyAC4AMQA5ADgAMQA3AAAAAAAAAAAAAAAAAAAA
+MQAuADAALgA3ADQAMgAyAC4AMQA1ADQAOQA3AAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABW
+AGUAcgBzAGkAbwBuAAAAMQAuADAALgA3ADQAMgAyAC4AMQA1ADQAOQA3AAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAHwxAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAANwxAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -812,7 +838,105 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <DTS:Variables />
       <DTS:LoggingOptions
         DTS:FilterKind="0"
-        DTS:LoggingMode="1" />
+        DTS:LoggingMode="1">
+        <DTS:Property
+          DTS:DataType="8"
+          DTS:Name="EventFilter">5,7,OnError,13,OnPostExecute,12,OnPreExecute,13,OnQueryCancel,12,OnTaskFailed</DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnError"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPostExecute"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPreExecute"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnQueryCancel"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnTaskFailed"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:SelectedLogProviders>
+          <DTS:SelectedLogProvider
+            DTS:InstanceID="{1C18DB05-C741-45AD-BAA7-29DE3E3A6687}" />
+        </DTS:SelectedLogProviders>
+      </DTS:LoggingOptions>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\CARGA STG E TBLs\CAD_PRODUTOS_PROCFIT"
@@ -11841,6 +11965,9 @@ where [refTable].[PRODUTO_DCB] = ? and [refTable].[DCB_DCB] = ? and [refTable].[
           DTS:ObjectName="TBL_DCB_TEMP_MUDAR"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}"
@@ -13479,6 +13606,9 @@ where [refTable].[PRODUTO_EAN] = ? and [refTable].[ATUALIZAR] = ?</property>
           DTS:ObjectName="TBL_EAN_TEMP_MUDAR"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}"
@@ -16294,6 +16424,9 @@ where [refTable].[PRODUTO_PF] = ? and [refTable].[ATUALIZAR] = ?</property>
           DTS:ObjectName="TBL_PF_TEMP_MUDAR"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}"
@@ -16310,6 +16443,9 @@ where [refTable].[PRODUTO_PF] = ? and [refTable].[ATUALIZAR] = ?</property>
           DTS:ObjectName="TBL_PRODUTOS_TEMP_MUDAR"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}"
@@ -18295,6 +18431,9 @@ where [refTable].[PRODUTO_PV] = ? and [refTable].[ATUALIZAR] = ?</property>
           DTS:ObjectName="TBL_PV_TEMP_MUDAR"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}"
@@ -20066,6 +20205,9 @@ where [refTable].[PRODUTO_MS] = ? and [refTable].[ATUALIZAR] = ?</property>
           DTS:ObjectName="TBL_REGISTRO_MS_TEMP_MUDAR"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{01A5D5CC-4E3D-4E9A-B049-918EC25CBBCD}"
@@ -20285,6 +20427,10 @@ where [refTable].[PRODUTO_MS] = ? and [refTable].[ATUALIZAR] = ?</property>
           <DTS:Property
             DTS:Name="DataBytes">-1</DTS:Property>
         </DTS:Property>
+        <DTS:SelectedLogProviders>
+          <DTS:SelectedLogProvider
+            DTS:InstanceID="{1C18DB05-C741-45AD-BAA7-29DE3E3A6687}" />
+        </DTS:SelectedLogProviders>
       </DTS:LoggingOptions>
       <DTS:Executables>
         <DTS:Executable
@@ -20933,7 +21079,7 @@ where [refTable].[DESCRICAO] = ? and [refTable].[CODIGO_DCB] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
-                      name="ParameterMap">#{Package\PROCFIT PRODUTOS\ALTERAR TBL DCB_MEDICAMENTOS\960:invalid};#{Package\PROCFIT PRODUTOS\ALTERAR TBL DCB_MEDICAMENTOS\961:invalid};</property>
+                      name="ParameterMap">#{Package\PROCFIT PRODUTOS\ALTERAR TBL DCB_MEDICAMENTOS\976:invalid};#{Package\PROCFIT PRODUTOS\ALTERAR TBL DCB_MEDICAMENTOS\977:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
@@ -28420,6 +28566,9 @@ ORDER BY PRODUTO;</property>
           DTS:ObjectName="ALTERAR TBL PRODUTOS_DCB"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -36891,6 +37040,9 @@ ORDER BY PRODUTO_PV</property>
           DTS:ObjectName="Tarefa Executar SQL"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{85B93F16-A370-4F44-8E1F-537D8CC030AE}"
@@ -36907,6 +37059,9 @@ ORDER BY PRODUTO_PV</property>
           DTS:ObjectName="UPDATE PRODUTOS_DCB"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{14D67B3E-D612-4B0B-9F47-6937531077C0}"
@@ -36923,6 +37078,9 @@ ORDER BY PRODUTO_PV</property>
           DTS:ObjectName="UPDATE PRODUTOS_EAN"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{14D67B3E-D612-4B0B-9F47-6937531077C0}"
@@ -36939,6 +37097,9 @@ ORDER BY PRODUTO_PV</property>
           DTS:ObjectName="UPDATE PRODUTOS_REGISTROS_MS"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{14D67B3E-D612-4B0B-9F47-6937531077C0}"
@@ -36955,6 +37116,9 @@ ORDER BY PRODUTO_PV</property>
           DTS:ObjectName="UPDATE TBL DCB_MEDICAMENTOS"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{14D67B3E-D612-4B0B-9F47-6937531077C0}"
@@ -36971,6 +37135,9 @@ ORDER BY PRODUTO_PV</property>
           DTS:ObjectName="UPDATE TBL PRODUTOS"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{14D67B3E-D612-4B0B-9F47-6937531077C0}"
@@ -36987,6 +37154,9 @@ ORDER BY PRODUTO_PV</property>
           DTS:ObjectName="UPDATE TBL PRODUTOS_FARMACIA"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{14D67B3E-D612-4B0B-9F47-6937531077C0}"
@@ -37149,7 +37319,7 @@ ORDER BY PRODUTO_PV</property>
       <GraphLayout
         Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="130,42"
+          Size="123,42"
           Id="Package\BKP_LOG"
           TopLeft="1032.5,2350.5" />
         <NodeLayout
@@ -38505,15 +38675,15 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="190,48"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\UPDATE_TABELA TEMP"
-          TopLeft="331,611" />
+          TopLeft="335,771" />
         <NodeLayout
           Size="366,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\REMOVER DO FLUXO OS QUE JA ESTAO COMO NAO MUDAR"
-          TopLeft="591,610" />
+          TopLeft="600,777" />
         <NodeLayout
           Size="114,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\MUDAR"
-          TopLeft="278,356" />
+          TopLeft="277,468" />
         <NodeLayout
           Size="188,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\JUNTAR AS 2 TABELAS"
@@ -38521,11 +38691,11 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="211,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\INSERT TBL_PRODUTOS"
-          TopLeft="2.50000000000006,609.5" />
+          TopLeft="19.5000000000001,778.5" />
         <NodeLayout
           Size="198,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\UPDATE STATUS MUDAR"
-          TopLeft="651,738" />
+          TopLeft="671,931" />
         <NodeLayout
           Size="168,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\TBL_PRODUTOS"
@@ -38537,148 +38707,148 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="157,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\UPDATE INSERT"
-          TopLeft="296.5,460.5" />
+          TopLeft="301.5,617.5" />
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[N_MUDAR]"
-          TopLeft="412.25,502.5">
+          TopLeft="417.25,659.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="361.75,107.5"
+              EndConnector="365.75,117.5"
               Start="0,0"
-              End="361.75,100">
+              End="365.75,110">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.0302713987474" />
+                    End="0,36.4749478079332" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.0302713987474"
-                    Point2="0,37.0302713987474"
-                    Point3="4,37.0302713987474" />
+                    Point1="0,36.4749478079332"
+                    Point2="0,40.4749478079332"
+                    Point3="4,40.4749478079332" />
                   <mssgle:LineSegment
-                    End="357.75,37.0302713987474" />
+                    End="361.75,40.4749478079332" />
                   <mssgle:CubicBezierSegment
-                    Point1="357.75,37.0302713987474"
-                    Point2="361.75,37.0302713987474"
-                    Point3="361.75,41.0302713987474" />
+                    Point1="361.75,40.4749478079332"
+                    Point2="365.75,40.4749478079332"
+                    Point3="365.75,44.4749478079332" />
                   <mssgle:LineSegment
-                    End="361.75,100" />
+                    End="365.75,110" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="157.47005859375,42.0302713987474,46.8098828125,10.7353515625"
+              BoundingBox="159.47005859375,45.4749478079332,46.8098828125,10.7353515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[INSERT]"
-          TopLeft="337.75,502.5">
+          TopLeft="342.75,659.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-229.75,107"
+              EndConnector="-217.75,119"
               Start="0,0"
-              End="-229.75,99.5">
+              End="-217.75,111.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.8580375782881" />
+                    End="0,36.9916492693111" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,32.8580375782881"
-                    Point2="0,36.8580375782881"
-                    Point3="-4,36.8580375782881" />
+                    Point1="0,36.9916492693111"
+                    Point2="0,40.9916492693111"
+                    Point3="-4,40.9916492693111" />
                   <mssgle:LineSegment
-                    End="-225.75,36.8580375782881" />
+                    End="-213.75,40.9916492693111" />
                   <mssgle:CubicBezierSegment
-                    Point1="-225.75,36.8580375782881"
-                    Point2="-229.75,36.8580375782881"
-                    Point3="-229.75,40.8580375782881" />
+                    Point1="-213.75,40.9916492693111"
+                    Point2="-217.75,40.9916492693111"
+                    Point3="-217.75,44.9916492693111" />
                   <mssgle:LineSegment
-                    End="-229.75,99.5" />
+                    End="-217.75,111.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-132.4653125,41.8580375782881,35.180625,9.5341796875"
+              BoundingBox="-126.4653125,45.9916492693111,35.180625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[UPDATE]"
-          TopLeft="375,502.5">
+          TopLeft="380,659.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="51,108.5"
+              EndConnector="50,111.5"
               Start="0,0"
-              End="51,101">
+              End="50,104">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.25" />
+                    End="0,51.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,50.25"
-                    Point2="0,54.25"
-                    Point3="4,54.25" />
+                    Point1="0,51.75"
+                    Point2="0,55.75"
+                    Point3="4,55.75" />
                   <mssgle:LineSegment
-                    End="47,54.25" />
+                    End="46,55.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="47,54.25"
-                    Point2="51,54.25"
-                    Point3="51,58.25" />
+                    Point1="46,55.75"
+                    Point2="50,55.75"
+                    Point3="50,59.75" />
                   <mssgle:LineSegment
-                    End="51,101" />
+                    End="50,104" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="6.83810546875,59.25,37.3237890625,9.421875"
+              BoundingBox="6.33810546875,60.75,37.3237890625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[Saída Sem Correspondência de Pesquisa]"
-          TopLeft="774,652">
+          TopLeft="783,819">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-24,86"
+              EndConnector="-13,112"
               Start="0,0"
-              End="-24,78.5">
+              End="-13,104.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39" />
+                    End="0,52" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39"
-                    Point2="0,43"
-                    Point3="-4,43" />
+                    Point1="0,52"
+                    Point2="0,56"
+                    Point3="-4,56" />
                   <mssgle:LineSegment
-                    End="-20,43" />
+                    End="-9,56" />
                   <mssgle:CubicBezierSegment
-                    Point1="-20,43"
-                    Point2="-24,43"
-                    Point3="-24,47" />
+                    Point1="-9,56"
+                    Point2="-13,56"
+                    Point3="-13,60" />
                   <mssgle:LineSegment
-                    End="-24,78.5" />
+                    End="-13,104.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-101.5940234375,48,179.188046875,12.1953125"
+              BoundingBox="-96.0940234375,61,179.188046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -38713,9 +38883,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -38749,45 +38917,41 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS.Paths[Saída de Coluna Derivada1]"
-          TopLeft="335,398">
+          TopLeft="334,510">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40,62.5"
+              EndConnector="46,107.5"
               Start="0,0"
-              End="40,55">
+              End="46,100">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.25" />
+                    End="0,49.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.25"
-                    Point2="0,31.25"
-                    Point3="4,31.25" />
+                    Point1="0,49.75"
+                    Point2="0,53.75"
+                    Point3="4,53.75" />
                   <mssgle:LineSegment
-                    End="36,31.25" />
+                    End="42,53.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="36,31.25"
-                    Point2="40,31.25"
-                    Point3="40,35.25" />
+                    Point1="42,53.75"
+                    Point2="46,53.75"
+                    Point3="46,57.75" />
                   <mssgle:LineSegment
-                    End="40,55" />
+                    End="46,100" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -38796,34 +38960,32 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="37,24.5"
+              EndConnector="36,136.5"
               Start="0,0"
-              End="37,17">
+              End="36,129">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.25" />
+                    End="0,64.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.25"
-                    Point2="0,12.25"
-                    Point3="4,12.25" />
+                    Point1="0,64.25"
+                    Point2="0,68.25"
+                    Point3="4,68.25" />
                   <mssgle:LineSegment
-                    End="33,12.25" />
+                    End="32,68.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="33,12.25"
-                    Point2="37,12.25"
-                    Point3="37,16.25" />
+                    Point1="32,68.25"
+                    Point2="36,68.25"
+                    Point3="36,72.25" />
                   <mssgle:LineSegment
-                    End="37,17" />
+                    End="36,129" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -38857,46 +39019,44 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="TRAZ A CARGA DA STAGE E DA TBL_PRODUTOS PARA PODER COMPARAR  E VERIFICAR O QUE PRECISAR &#xA;SER INSERIDO OU ALTERADO NA TBL_PRODUTOS ( ESSA TBL ARMAZENARA OS DADOS PARA SEREM INSERIDOS NA TBL PRODUTOS DO PROCFIT)"
           ParentId="Package\CARGA STG E TBLs\TBL PRODUTOS"
           FontInfo="{assembly:Null}"
-          Size="811,NaN"
+          Size="811,56"
           Id="158843d8-8d58-4bb6-9850-d16834933d6a"
           TopLeft="527,12" />
         <AnnotationLayout
           Text="LET JOIN DA TABALE STAGE DE CARGA COM O CADASTRO DE DADOS SALVOS NA TBL_PRODUTOS"
           ParentId="Package\CARGA STG E TBLs\TBL PRODUTOS"
           FontInfo="{assembly:Null}"
-          Size="558,NaN"
+          Size="558,40"
           Id="c168f852-b3a8-416f-b6db-9bf15933e234"
           TopLeft="410,172" />
         <AnnotationLayout
           Text="VERIFICAR SE ALGUM DOS  DADOS DA TBL_PRODUTOS SOFREU ALGUMA ALTERAÇÃO EM COMPARAÇÃO COM A NOVA CARGA DA STAGE DE PRODUTOS"
           ParentId="Package\CARGA STG E TBLs\TBL PRODUTOS"
           FontInfo="{assembly:Null}"
-          Size="855,NaN"
+          Size="855,40"
           Id="9a47e199-a0fa-493d-86a7-cff65df1d0a2"
           TopLeft="462,279" />
         <AnnotationLayout
           Text="GRAVAR VARIAVEL MUDAR O QUE FOI ALTERADO E O QUE NAO FOI COM &quot;S&quot; OU &quot;N&quot;"
           ParentId="Package\CARGA STG E TBLs\TBL PRODUTOS"
           FontInfo="{assembly:Null}"
-          Size="488,NaN"
+          Size="488,40"
           Id="87137842-377f-40af-b7b3-d0b47b7d6b95"
-          TopLeft="405,351" />
+          TopLeft="404,471" />
         <AnnotationLayout
           Text="COMPARA SE OS DADOS EXISTEM NA CARGA E NA TBL_PRODUTOS SE NÃO EXISTIR NA TBL_PRODUTOS VAI PARA SAIDA INSERT SE JÁ TEM&#xA;VAI PARA UPDATE  CASO O STATUS MUDAR SEJA IGUAL &quot;S&quot;"
           ParentId="Package\CARGA STG E TBLs\TBL PRODUTOS"
           FontInfo="{assembly:Null}"
-          Size="778,NaN"
+          Size="778,56"
           Id="73b0f070-2e06-48b5-bebd-c026ae0e3095"
-          TopLeft="464,444" />
+          TopLeft="476,615" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -39155,9 +39315,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39191,9 +39349,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39227,9 +39383,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39263,9 +39417,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39299,9 +39451,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40054,9 +40204,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40078,9 +40226,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40114,9 +40260,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40150,9 +40294,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40186,9 +40328,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40222,16 +40362,14 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="VERIFICAR SE O A LINHA DE DADOS MUDOU &quot;S&quot; OU &quot;N&quot;"
           ParentId="Package\CARGA STG E TBLs\TBL_PF"
           FontInfo="{assembly:Null}"
-          Size="331,NaN"
+          Size="331,40"
           Id="325428f0-31f2-4873-9018-9629bf7a2936"
           TopLeft="423,466" />
       </GraphLayout>
@@ -40892,9 +41030,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40988,9 +41124,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41024,9 +41158,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41060,9 +41192,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41096,9 +41226,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41169,7 +41297,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-32.4236458333333,29.3070362473347,35.180625,9.5341796875"
+              BoundingBox="-32.4236458333334,29.3070362473347,35.180625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -41204,9 +41332,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
