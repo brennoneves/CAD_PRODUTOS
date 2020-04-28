@@ -8,7 +8,7 @@
       DTS:ConnectionString="Data Source=VILAVELHA;User ID=SA;Initial Catalog=STG_CAD_PRODUTOS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAADvR2/a5xtSIptWI+UPudqfAAAAAASAAACgAAAAEAAAALJj7FeGLVVQoZkwk2iX6ntwAAAA8L9K2nPkW6smsO67KEdEivcCvD7vS7uCk3PJqpKzZKQukKv2j/0FrR1eyYsCRLyGymR89vYilQPTTlkhLWnuhhz2HI1Q2Fmn8iJkBaq5TDvaPX6alAf2mvt9bi4HgnnQyCCYL5PE0/2Hp5X4laQdvRQAAADgrD20tG5B+QCcb61CC7PMQ9efuw==</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAADnMOaB7JXhtWKYzZf5JAR9AAAAAASAAACgAAAAEAAAAHf3Agt0CO5ydpKZG4WWzO9wAAAA/lUm53HpewDte+1vi5fLOPKEtIT9sGrkwV53+WpH7qaTDYyAjp/JJks/Ejna5AeGtrv8P6Q2+Wa51BP5nXr2HmMaPJHBAJIq4gqCsfRm5PbO4At1bG7ZQHbhEn0YvvVnFoVuF6V/sdd6wibPv4TWyxQAAABUH2hUKiwwVr2JvSLpJMTpIwugUw==</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
