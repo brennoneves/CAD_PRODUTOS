@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CAD_PRODUTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="648"
-  DTS:VersionGUID="{98B14994-C411-4A18-BB2E-15BE711515BF}">
+  DTS:VersionBuild="653"
+  DTS:VersionGUID="{4A24A024-62D0-4CFB-A802-7EF51C9A73BA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:LogProviders>
@@ -33,9 +33,207 @@
     DTS:LoggingMode="1">
     <DTS:Property
       DTS:DataType="8"
-      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,12,OnPreExecute,13,OnQueryCancel,12,OnTaskFailed,9,OnWarning</DTS:Property>
+      DTS:Name="EventFilter">21,7,OnError,19,OnExecStatusChanged,13,OnInformation,27,OnPipelinePostComponentCall,25,OnPipelinePostEndOfRowset,25,OnPipelinePostPrimeOutput,26,OnPipelinePreComponentCall,24,OnPipelinePreEndOfRowset,24,OnPipelinePrePrimeOutput,18,OnPipelineRowsSent,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,10,OnProgress,13,OnQueryCancel,12,OnTaskFailed,22,OnVariableValueChanged,9,OnWarning,10,Diagnostic,12,DiagnosticEx</DTS:Property>
+    <DTS:Property
+      DTS:EventName="Diagnostic"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="DiagnosticEx"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
     <DTS:Property
       DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnExecStatusChanged"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnInformation"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostComponentCall"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreComponentCall"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
       DTS:Name="ColumnFilter">
       <DTS:Property
         DTS:Name="Computer">-1</DTS:Property>
@@ -71,7 +269,61 @@
         DTS:Name="DataBytes">-1</DTS:Property>
     </DTS:Property>
     <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
       DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnProgress"
       DTS:Name="ColumnFilter">
       <DTS:Property
         DTS:Name="Computer">-1</DTS:Property>
@@ -108,6 +360,24 @@
     </DTS:Property>
     <DTS:Property
       DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnVariableValueChanged"
       DTS:Name="ColumnFilter">
       <DTS:Property
         DTS:Name="Computer">-1</DTS:Property>
@@ -841,9 +1111,171 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         DTS:LoggingMode="1">
         <DTS:Property
           DTS:DataType="8"
-          DTS:Name="EventFilter">5,7,OnError,13,OnPostExecute,12,OnPreExecute,13,OnQueryCancel,12,OnTaskFailed</DTS:Property>
+          DTS:Name="EventFilter">19,7,OnError,19,OnExecStatusChanged,13,OnInformation,27,OnPipelinePostComponentCall,25,OnPipelinePostEndOfRowset,25,OnPipelinePostPrimeOutput,26,OnPipelinePreComponentCall,24,OnPipelinePreEndOfRowset,24,OnPipelinePrePrimeOutput,18,OnPipelineRowsSent,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,10,OnProgress,13,OnQueryCancel,12,OnTaskFailed,22,OnVariableValueChanged,9,OnWarning</DTS:Property>
         <DTS:Property
           DTS:EventName="OnError"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnExecStatusChanged"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnInformation"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelinePostComponentCall"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelinePostEndOfRowset"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelinePostPrimeOutput"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelinePreComponentCall"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelinePreEndOfRowset"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelinePrePrimeOutput"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelineRowsSent"
           DTS:Name="ColumnFilter">
           <DTS:Property
             DTS:Name="Computer">-1</DTS:Property>
@@ -879,7 +1311,61 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             DTS:Name="DataBytes">-1</DTS:Property>
         </DTS:Property>
         <DTS:Property
+          DTS:EventName="OnPostValidate"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
           DTS:EventName="OnPreExecute"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPreValidate"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnProgress"
           DTS:Name="ColumnFilter">
           <DTS:Property
             DTS:Name="Computer">-1</DTS:Property>
@@ -916,6 +1402,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </DTS:Property>
         <DTS:Property
           DTS:EventName="OnTaskFailed"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnVariableValueChanged"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnWarning"
           DTS:Name="ColumnFilter">
           <DTS:Property
             DTS:Name="Computer">-1</DTS:Property>
@@ -3420,9 +3942,9 @@ p.fabricante as marca,LTRIM(RTRIM(UPPER(p.lista))) as lista_pnu,p.generico produ
 LTRIM(RTRIM(UPPER(p.tipo_item))) as grupo_contabil,p.classe as classe_produto,LTRIM(RTRIM(UPPER(p.tipo_unidade_medida))) as pf_unidade_farmacotecnica,ltrim(rtrim((CONCAT((SUBSTRING(p.ncm,1,4)),'.',(SUBSTRING(p.ncm,5,2)),'.',(SUBSTRING(p.ncm,7,2)))))) as ncm,
 p.secao as sub_grupo_produto,ltrim(rtrim((CONCAT((SUBSTRING(p.cest,1,2)),'.',(SUBSTRING(p.cest,3,3)),'.',(SUBSTRING(p.cest,6,2)))))) as cest,ltrim(rtrim(e.cod_barra)) as cod_barra,e.embalagem,g.controlado as retencao_receita,g.controlado as venda_controlado,LTRIM(RTRIM(UPPER(g.receita))) as tipo_receita,ltrim(rtrim(g.lista_controlado)) as lista_controlado,
 LTRIM(RTRIM(UPPER(g.tipo_classe_terapeutica))) as classe_terapeutica,p.pmc , g.dcb, g.descricao as descricao_dcb , p.uso_continuo_intervalo as uso_continuo
-FROM PARAISOIII.PRODUTO AS P 
-join PARAISOIII.produto_cod_barra as e on e.produto=p.codigo
-left join PARAISOIII.generico as g on g.codigo=p.generico order by p.codigo;</property>
+FROM pharmagestao.PRODUTO AS P 
+join pharmagestao.produto_cod_barra as e on e.produto=p.codigo
+left join pharmagestao.generico as g on g.codigo=p.generico order by p.codigo;</property>
                     <property
                       dataType="System.Int32"
                       description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
@@ -20572,9 +21094,171 @@ where [refTable].[PRODUTO_MS] = ? and [refTable].[ATUALIZAR] = ?</property>
         DTS:LoggingMode="1">
         <DTS:Property
           DTS:DataType="8"
-          DTS:Name="EventFilter">5,7,OnError,13,OnPostExecute,12,OnPreExecute,13,OnQueryCancel,12,OnTaskFailed</DTS:Property>
+          DTS:Name="EventFilter">19,7,OnError,19,OnExecStatusChanged,13,OnInformation,27,OnPipelinePostComponentCall,25,OnPipelinePostEndOfRowset,25,OnPipelinePostPrimeOutput,26,OnPipelinePreComponentCall,24,OnPipelinePreEndOfRowset,24,OnPipelinePrePrimeOutput,18,OnPipelineRowsSent,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,10,OnProgress,13,OnQueryCancel,12,OnTaskFailed,22,OnVariableValueChanged,9,OnWarning</DTS:Property>
         <DTS:Property
           DTS:EventName="OnError"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnExecStatusChanged"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnInformation"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelinePostComponentCall"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelinePostEndOfRowset"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelinePostPrimeOutput"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelinePreComponentCall"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelinePreEndOfRowset"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelinePrePrimeOutput"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPipelineRowsSent"
           DTS:Name="ColumnFilter">
           <DTS:Property
             DTS:Name="Computer">-1</DTS:Property>
@@ -20610,7 +21294,61 @@ where [refTable].[PRODUTO_MS] = ? and [refTable].[ATUALIZAR] = ?</property>
             DTS:Name="DataBytes">-1</DTS:Property>
         </DTS:Property>
         <DTS:Property
+          DTS:EventName="OnPostValidate"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
           DTS:EventName="OnPreExecute"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnPreValidate"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnProgress"
           DTS:Name="ColumnFilter">
           <DTS:Property
             DTS:Name="Computer">-1</DTS:Property>
@@ -20647,6 +21385,42 @@ where [refTable].[PRODUTO_MS] = ? and [refTable].[ATUALIZAR] = ?</property>
         </DTS:Property>
         <DTS:Property
           DTS:EventName="OnTaskFailed"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnVariableValueChanged"
+          DTS:Name="ColumnFilter">
+          <DTS:Property
+            DTS:Name="Computer">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="Operator">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceName">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="SourceID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="ExecutionID">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="MessageText">-1</DTS:Property>
+          <DTS:Property
+            DTS:Name="DataBytes">-1</DTS:Property>
+        </DTS:Property>
+        <DTS:Property
+          DTS:EventName="OnWarning"
           DTS:Name="ColumnFilter">
           <DTS:Property
             DTS:Name="Computer">-1</DTS:Property>
@@ -46620,7 +47394,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="190,48"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\UPDATE_TABELA TEMP"
-          TopLeft="335,771" />
+          TopLeft="357,861" />
         <NodeLayout
           Size="366,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\REMOVER DO FLUXO OS QUE JA ESTAO COMO NAO MUDAR"
@@ -46636,7 +47410,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="211,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\INSERT TBL_PRODUTOS"
-          TopLeft="19.5000000000001,778.5" />
+          TopLeft="13.5000000000001,860.5" />
         <NodeLayout
           Size="198,42"
           Id="Package\CARGA STG E TBLs\TBL PRODUTOS\UPDATE STATUS MUDAR"
@@ -46695,33 +47469,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-217.75,119"
+              EndConnector="-223.75,201"
               Start="0,0"
-              End="-217.75,111.5">
+              End="-223.75,193.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.9916492693111" />
+                    End="0,65.2379958246347" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36.9916492693111"
-                    Point2="0,40.9916492693111"
-                    Point3="-4,40.9916492693111" />
+                    Point1="0,65.2379958246347"
+                    Point2="0,69.2379958246347"
+                    Point3="-4,69.2379958246347" />
                   <mssgle:LineSegment
-                    End="-213.75,40.9916492693111" />
+                    End="-219.75,69.2379958246347" />
                   <mssgle:CubicBezierSegment
-                    Point1="-213.75,40.9916492693111"
-                    Point2="-217.75,40.9916492693111"
-                    Point3="-217.75,44.9916492693111" />
+                    Point1="-219.75,69.2379958246347"
+                    Point2="-223.75,69.2379958246347"
+                    Point3="-223.75,73.2379958246347" />
                   <mssgle:LineSegment
-                    End="-217.75,111.5" />
+                    End="-223.75,193.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-126.4653125,45.9916492693111,35.180625,9.5341796875"
+              BoundingBox="-129.4653125,74.2379958246347,35.180625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -46731,33 +47505,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="50,111.5"
+              EndConnector="72,201.5"
               Start="0,0"
-              End="50,104">
+              End="72,194">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.75" />
+                    End="0,96.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,51.75"
-                    Point2="0,55.75"
-                    Point3="4,55.75" />
+                    Point1="0,96.75"
+                    Point2="0,100.75"
+                    Point3="4,100.75" />
                   <mssgle:LineSegment
-                    End="46,55.75" />
+                    End="68,100.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="46,55.75"
-                    Point2="50,55.75"
-                    Point3="50,59.75" />
+                    Point1="68,100.75"
+                    Point2="72,100.75"
+                    Point3="72,104.75" />
                   <mssgle:LineSegment
-                    End="50,104" />
+                    End="72,194" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="6.33810546875,60.75,37.3237890625,9.421875"
+              BoundingBox="17.33810546875,105.75,37.3237890625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -46828,9 +47602,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46864,9 +47636,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46900,9 +47670,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46936,9 +47704,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -46972,44 +47738,42 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="TRAZ A CARGA DA STAGE E DA TBL_PRODUTOS PARA PODER COMPARAR  E VERIFICAR O QUE PRECISAR &#xA;SER INSERIDO OU ALTERADO NA TBL_PRODUTOS ( ESSA TBL ARMAZENARA OS DADOS PARA SEREM INSERIDOS NA TBL PRODUTOS DO PROCFIT)"
           ParentId="Package\CARGA STG E TBLs\TBL PRODUTOS"
           FontInfo="{assembly:Null}"
-          Size="811,NaN"
+          Size="811,56"
           Id="158843d8-8d58-4bb6-9850-d16834933d6a"
           TopLeft="527,12" />
         <AnnotationLayout
           Text="LET JOIN DA TABALE STAGE DE CARGA COM O CADASTRO DE DADOS SALVOS NA TBL_PRODUTOS"
           ParentId="Package\CARGA STG E TBLs\TBL PRODUTOS"
           FontInfo="{assembly:Null}"
-          Size="558,NaN"
+          Size="558,40"
           Id="c168f852-b3a8-416f-b6db-9bf15933e234"
           TopLeft="410,172" />
         <AnnotationLayout
           Text="VERIFICAR SE ALGUM DOS  DADOS DA TBL_PRODUTOS SOFREU ALGUMA ALTERAÇÃO EM COMPARAÇÃO COM A NOVA CARGA DA STAGE DE PRODUTOS"
           ParentId="Package\CARGA STG E TBLs\TBL PRODUTOS"
           FontInfo="{assembly:Null}"
-          Size="855,NaN"
+          Size="855,40"
           Id="9a47e199-a0fa-493d-86a7-cff65df1d0a2"
           TopLeft="462,279" />
         <AnnotationLayout
           Text="GRAVAR VARIAVEL MUDAR O QUE FOI ALTERADO E O QUE NAO FOI COM &quot;S&quot; OU &quot;N&quot;"
           ParentId="Package\CARGA STG E TBLs\TBL PRODUTOS"
           FontInfo="{assembly:Null}"
-          Size="488,NaN"
+          Size="488,40"
           Id="87137842-377f-40af-b7b3-d0b47b7d6b95"
           TopLeft="404,471" />
         <AnnotationLayout
           Text="COMPARA SE OS DADOS EXISTEM NA CARGA E NA TBL_PRODUTOS SE NÃO EXISTIR NA TBL_PRODUTOS VAI PARA SAIDA INSERT SE JÁ TEM&#xA;VAI PARA UPDATE  CASO O STATUS MUDAR SEJA IGUAL &quot;S&quot;"
           ParentId="Package\CARGA STG E TBLs\TBL PRODUTOS"
           FontInfo="{assembly:Null}"
-          Size="778,NaN"
+          Size="778,56"
           Id="73b0f070-2e06-48b5-bebd-c026ae0e3095"
           TopLeft="476,615" />
       </GraphLayout>
@@ -47110,7 +47874,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="202,42"
           Id="Package\CARGA STG E TBLs\TBL_DCB\ALTERAR STATUS MUDAR"
-          TopLeft="518,795" />
+          TopLeft="523,900" />
         <NodeLayout
           Size="128,42"
           Id="Package\CARGA STG E TBLs\TBL_DCB\TBL_DCB"
@@ -47122,7 +47886,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="165,42"
           Id="Package\CARGA STG E TBLs\TBL_DCB\UPDATE TBL_DCB"
-          TopLeft="5.5,669" />
+          TopLeft="6.5,778" />
         <NodeLayout
           Size="159,42"
           Id="Package\CARGA STG E TBLs\TBL_DCB\CAD_PRODUTOS"
@@ -47138,32 +47902,44 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="172,42"
           Id="Package\CARGA STG E TBLs\TBL_DCB\INSERT TBL_DCB"
-          TopLeft="234.5,663.5" />
+          TopLeft="248.5,779.5" />
         <NodeLayout
           Size="217,42"
           Id="Package\CARGA STG E TBLs\TBL_DCB\REMOVER STATUS MUDAR N"
-          TopLeft="499,661" />
+          TopLeft="514,730" />
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_DCB.Paths[INSERT]"
-          TopLeft="317.75,601.5">
+          TopLeft="315,601.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,62"
+              EndConnector="19.5,178"
               Start="0,0"
-              End="0,54.5">
+              End="19.5,170.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.5" />
+                    End="0,85" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,85"
+                    Point2="0,89"
+                    Point3="4,89" />
+                  <mssgle:LineSegment
+                    End="15.5,89" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.5,89"
+                    Point2="19.5,89"
+                    Point3="19.5,93" />
+                  <mssgle:LineSegment
+                    End="19.5,170.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.5903125,22.48291015625,35.180625,9.5341796875"
+              BoundingBox="-7.8403125,94,35.180625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -47173,69 +47949,57 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-185.25,67.5"
+              EndConnector="-184.25,176.5"
               Start="0,0"
-              End="-185.25,60">
+              End="-184.25,169">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.1754221388368" />
+                    End="0,56.5994371482176" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.1754221388368"
-                    Point2="0,23.1754221388368"
-                    Point3="-4,23.1754221388368" />
+                    Point1="0,56.5994371482176"
+                    Point2="0,60.5994371482176"
+                    Point3="-4,60.5994371482176" />
                   <mssgle:LineSegment
-                    End="-181.25,23.1754221388368" />
+                    End="-180.25,60.5994371482176" />
                   <mssgle:CubicBezierSegment
-                    Point1="-181.25,23.1754221388368"
-                    Point2="-185.25,23.1754221388368"
-                    Point3="-185.25,27.1754221388368" />
+                    Point1="-180.25,60.5994371482176"
+                    Point2="-184.25,60.5994371482176"
+                    Point3="-184.25,64.5994371482176" />
                   <mssgle:LineSegment
-                    End="-185.25,60" />
+                    End="-184.25,169" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-111.28689453125,28.1754221388368,37.3237890625,9.421875"
+              BoundingBox="-110.78689453125,65.5994371482176,37.3237890625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_DCB.Paths[Saída Sem Correspondência de Pesquisa]"
-          TopLeft="607.5,703">
+          TopLeft="623.25,772">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="11.5,92"
+              EndConnector="0,128"
               Start="0,0"
-              End="11.5,84.5">
+              End="0,120.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,42"
-                    Point2="0,46"
-                    Point3="4,46" />
-                  <mssgle:LineSegment
-                    End="7.5,46" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.5,46"
-                    Point2="11.5,46"
-                    Point3="11.5,50" />
-                  <mssgle:LineSegment
-                    End="11.5,84.5" />
+                    End="0,120.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-83.8440234375,51,179.188046875,12.1953125"
+              BoundingBox="-89.5940234375,54.15234375,179.188046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -47270,9 +48034,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47306,9 +48068,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47342,9 +48102,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47378,9 +48136,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47414,9 +48170,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47425,33 +48179,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="250.75,59.5"
+              EndConnector="265.75,128.5"
               Start="0,0"
-              End="250.75,52">
+              End="265.75,121">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.4287054409006" />
+                    End="0,40.1191369606004" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.4287054409006"
-                    Point2="0,20.4287054409006"
-                    Point3="4,20.4287054409006" />
+                    Point1="0,40.1191369606004"
+                    Point2="0,44.1191369606004"
+                    Point3="4,44.1191369606004" />
                   <mssgle:LineSegment
-                    End="246.75,20.4287054409006" />
+                    End="261.75,44.1191369606004" />
                   <mssgle:CubicBezierSegment
-                    Point1="246.75,20.4287054409006"
-                    Point2="250.75,20.4287054409006"
-                    Point3="250.75,24.4287054409006" />
+                    Point1="261.75,44.1191369606004"
+                    Point2="265.75,44.1191369606004"
+                    Point3="265.75,48.1191369606004" />
                   <mssgle:LineSegment
-                    End="250.75,52" />
+                    End="265.75,121" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="101.97005859375,25.4287054409006,46.8098828125,10.7353515625"
+              BoundingBox="109.47005859375,49.1191369606004,46.8098828125,10.7353515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -47557,7 +48311,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="202,42"
           Id="Package\CARGA STG E TBLs\TBL_EAN\ALTERAR STATUS MUDAR"
-          TopLeft="578,732" />
+          TopLeft="657,821" />
         <NodeLayout
           Size="134,42"
           Id="Package\CARGA STG E TBLs\TBL_EAN\LEFT JOIN"
@@ -47577,15 +48331,15 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="164,42"
           Id="Package\CARGA STG E TBLs\TBL_EAN\UPDATE TBL_EAN"
-          TopLeft="15,603" />
+          TopLeft="6,705" />
         <NodeLayout
           Size="171,42"
           Id="Package\CARGA STG E TBLs\TBL_EAN\INSERT TBL_EAN"
-          TopLeft="230.5,597.5" />
+          TopLeft="283.5,697.5" />
         <NodeLayout
           Size="217,42"
           Id="Package\CARGA STG E TBLs\TBL_EAN\REMOVER STATUS MUDAR N"
-          TopLeft="550,598" />
+          TopLeft="548,691" />
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_EAN.Paths[Saída de Origem OLE DB1]"
           TopLeft="117,47.5">
@@ -47617,9 +48371,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47653,9 +48405,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47677,9 +48427,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47713,9 +48461,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47749,9 +48495,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -47760,57 +48504,69 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="306.25,60.5"
+              EndConnector="304.25,153.5"
               Start="0,0"
-              End="306.25,53">
+              End="304.25,146">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.7720450281426" />
+                    End="0,48.702626641651" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.7720450281426"
-                    Point2="0,20.7720450281426"
-                    Point3="4,20.7720450281426" />
+                    Point1="0,48.702626641651"
+                    Point2="0,52.702626641651"
+                    Point3="4,52.702626641651" />
                   <mssgle:LineSegment
-                    End="302.25,20.7720450281426" />
+                    End="300.25,52.702626641651" />
                   <mssgle:CubicBezierSegment
-                    Point1="302.25,20.7720450281426"
-                    Point2="306.25,20.7720450281426"
-                    Point3="306.25,24.7720450281426" />
+                    Point1="300.25,52.702626641651"
+                    Point2="304.25,52.702626641651"
+                    Point3="304.25,56.702626641651" />
                   <mssgle:LineSegment
-                    End="306.25,53" />
+                    End="304.25,146" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="129.72005859375,25.7720450281426,46.8098828125,10.7353515625"
+              BoundingBox="128.72005859375,57.702626641651,46.8098828125,10.7353515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_EAN.Paths[INSERT]"
-          TopLeft="313.25,537.5">
+          TopLeft="310.5,537.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="58.5,160"
               Start="0,0"
-              End="0,52.5">
+              End="58.5,152.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,76" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,76"
+                    Point2="0,80"
+                    Point3="4,80" />
+                  <mssgle:LineSegment
+                    End="54.5,80" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54.5,80"
+                    Point2="58.5,80"
+                    Point3="58.5,84" />
+                  <mssgle:LineSegment
+                    End="58.5,152.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.5903125,21.48291015625,35.180625,9.5341796875"
+              BoundingBox="11.6596875,85,35.180625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -47820,69 +48576,69 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-171.75,65.5"
+              EndConnector="-180.75,167.5"
               Start="0,0"
-              End="-171.75,58">
+              End="-180.75,160">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.4887429643527" />
+                    End="0,53.5093808630394" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.4887429643527"
-                    Point2="0,22.4887429643527"
-                    Point3="-4,22.4887429643527" />
+                    Point1="0,53.5093808630394"
+                    Point2="0,57.5093808630394"
+                    Point3="-4,57.5093808630394" />
                   <mssgle:LineSegment
-                    End="-167.75,22.4887429643527" />
+                    End="-176.75,57.5093808630394" />
                   <mssgle:CubicBezierSegment
-                    Point1="-167.75,22.4887429643527"
-                    Point2="-171.75,22.4887429643527"
-                    Point3="-171.75,26.4887429643527" />
+                    Point1="-176.75,57.5093808630394"
+                    Point2="-180.75,57.5093808630394"
+                    Point3="-180.75,61.5093808630394" />
                   <mssgle:LineSegment
-                    End="-171.75,58" />
+                    End="-180.75,160" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-104.53689453125,27.4887429643527,37.3237890625,9.421875"
+              BoundingBox="-109.03689453125,62.5093808630394,37.3237890625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_EAN.Paths[Saída Sem Correspondência de Pesquisa]"
-          TopLeft="658.5,640">
+          TopLeft="656.5,733">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="20.5,92"
+              EndConnector="101.5,88"
               Start="0,0"
-              End="20.5,84.5">
+              End="101.5,80.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42" />
+                    End="0,40" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,42"
-                    Point2="0,46"
-                    Point3="4,46" />
+                    Point1="0,40"
+                    Point2="0,44"
+                    Point3="4,44" />
                   <mssgle:LineSegment
-                    End="16.5,46" />
+                    End="97.5,44" />
                   <mssgle:CubicBezierSegment
-                    Point1="16.5,46"
-                    Point2="20.5,46"
-                    Point3="20.5,50" />
+                    Point1="97.5,44"
+                    Point2="101.5,44"
+                    Point3="101.5,48" />
                   <mssgle:LineSegment
-                    End="20.5,84.5" />
+                    End="101.5,80.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-79.3440234375,51,179.188046875,12.1953125"
+              BoundingBox="-38.8440234375,49,179.188046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -47975,7 +48731,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="163,42"
           Id="Package\CARGA STG E TBLs\TBL_PF\INSERT TBL_PF"
-          TopLeft="238.5,758.5" />
+          TopLeft="288.5,938.5" />
         <NodeLayout
           Size="129,42"
           Id="Package\CARGA STG E TBLs\TBL_PF\LEFT JOIN"
@@ -47999,7 +48755,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="188,42"
           Id="Package\CARGA STG E TBLs\TBL_PF\UPDATE TBL_PF_TEMP"
-          TopLeft="21,765.5" />
+          TopLeft="7,934.5" />
         <NodeLayout
           Size="257,42"
           Id="Package\CARGA STG E TBLs\TBL_PF\VERIRFICAR MUDANCA NOS CAMPOS"
@@ -48011,68 +48767,80 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="202,42"
           Id="Package\CARGA STG E TBLs\TBL_PF\ALTERAR STATUS MUDAR"
-          TopLeft="563,861" />
+          TopLeft="786,1052" />
         <NodeLayout
           Size="217,42"
           Id="Package\CARGA STG E TBLs\TBL_PF\REMOVER STATUS MUDAR N"
-          TopLeft="527,750" />
+          TopLeft="571,920" />
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_PF.Paths[N_MUDAR]"
           TopLeft="356.25,698.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="279.25,51.5"
+              EndConnector="323.25,221.5"
               Start="0,0"
-              End="279.25,44">
+              End="323.25,214">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.6819887429644" />
+                    End="0,72.0497185741088" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.6819887429644"
-                    Point2="0,17.6819887429644"
-                    Point3="4,17.6819887429644" />
+                    Point1="0,72.0497185741088"
+                    Point2="0,76.0497185741088"
+                    Point3="4,76.0497185741088" />
                   <mssgle:LineSegment
-                    End="275.25,17.6819887429644" />
+                    End="319.25,76.0497185741088" />
                   <mssgle:CubicBezierSegment
-                    Point1="275.25,17.6819887429644"
-                    Point2="279.25,17.6819887429644"
-                    Point3="279.25,21.6819887429644" />
+                    Point1="319.25,76.0497185741088"
+                    Point2="323.25,76.0497185741088"
+                    Point3="323.25,80.0497185741088" />
                   <mssgle:LineSegment
-                    End="279.25,44" />
+                    End="323.25,214" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="116.22005859375,22.6819887429644,46.8098828125,10.7353515625"
+              BoundingBox="138.22005859375,81.0497185741088,46.8098828125,10.7353515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_PF.Paths[INSERT]"
-          TopLeft="317.25,698.5">
+          TopLeft="314.5,698.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="55.5,240"
               Start="0,0"
-              End="0,52.5">
+              End="55.5,232.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,116" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,116"
+                    Point2="0,120"
+                    Point3="4,120" />
+                  <mssgle:LineSegment
+                    End="51.5,120" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.5,120"
+                    Point2="55.5,120"
+                    Point3="55.5,124" />
+                  <mssgle:LineSegment
+                    End="55.5,232.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.5903125,21.48291015625,35.180625,9.5341796875"
+              BoundingBox="10.1596875,125,35.180625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -48082,69 +48850,69 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-157.75,67"
+              EndConnector="-171.75,236"
               Start="0,0"
-              End="-157.75,59.5">
+              End="-171.75,228.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.0037523452158" />
+                    End="0,77.0281425891182" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.0037523452158"
-                    Point2="0,23.0037523452158"
-                    Point3="-4,23.0037523452158" />
+                    Point1="0,77.0281425891182"
+                    Point2="0,81.0281425891182"
+                    Point3="-4,81.0281425891182" />
                   <mssgle:LineSegment
-                    End="-153.75,23.0037523452158" />
+                    End="-167.75,81.0281425891182" />
                   <mssgle:CubicBezierSegment
-                    Point1="-153.75,23.0037523452158"
-                    Point2="-157.75,23.0037523452158"
-                    Point3="-157.75,27.0037523452158" />
+                    Point1="-167.75,81.0281425891182"
+                    Point2="-171.75,81.0281425891182"
+                    Point3="-171.75,85.0281425891182" />
                   <mssgle:LineSegment
-                    End="-157.75,59.5" />
+                    End="-171.75,228.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-97.53689453125,28.0037523452158,37.3237890625,9.421875"
+              BoundingBox="-104.53689453125,86.0281425891182,37.3237890625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_PF.Paths[Saída Sem Correspondência de Pesquisa]"
-          TopLeft="635.5,792">
+          TopLeft="679.5,962">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="28.5,69"
+              EndConnector="207.5,90"
               Start="0,0"
-              End="28.5,61.5">
+              End="207.5,82.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,41" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.5"
-                    Point2="0,34.5"
-                    Point3="4,34.5" />
+                    Point1="0,41"
+                    Point2="0,45"
+                    Point3="4,45" />
                   <mssgle:LineSegment
-                    End="24.5,34.5" />
+                    End="203.5,45" />
                   <mssgle:CubicBezierSegment
-                    Point1="24.5,34.5"
-                    Point2="28.5,34.5"
-                    Point3="28.5,38.5" />
+                    Point1="203.5,45"
+                    Point2="207.5,45"
+                    Point3="207.5,49" />
                   <mssgle:LineSegment
-                    End="28.5,61.5" />
+                    End="207.5,82.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-75.3440234375,39.5,179.188046875,12.1953125"
+              BoundingBox="14.1559765625,50,179.188046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -48179,9 +48947,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48203,9 +48969,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48239,9 +49003,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48275,9 +49037,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48311,9 +49071,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48347,16 +49105,14 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="VERIFICAR SE O A LINHA DE DADOS MUDOU &quot;S&quot; OU &quot;N&quot;"
           ParentId="Package\CARGA STG E TBLs\TBL_PF"
           FontInfo="{assembly:Null}"
-          Size="331,NaN"
+          Size="331,40"
           Id="325428f0-31f2-4873-9018-9629bf7a2936"
           TopLeft="423,466" />
       </GraphLayout>
@@ -48457,7 +49213,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="154,42"
           Id="Package\CARGA STG E TBLs\TBL_PV\INSERT TBL_PV"
-          TopLeft="259.5,605.5" />
+          TopLeft="270.5,655.5" />
         <NodeLayout
           Size="114,42"
           Id="Package\CARGA STG E TBLs\TBL_PV\MUDAR"
@@ -48477,7 +49233,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="290,42"
           Id="Package\CARGA STG E TBLs\TBL_PV\REMOVER REGISTROS STATUS MUDAR NAO"
-          TopLeft="477,604" />
+          TopLeft="525,661" />
         <NodeLayout
           Size="129,42"
           Id="Package\CARGA STG E TBLs\TBL_PV\LEFT JOIN"
@@ -48485,48 +49241,48 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="202,42"
           Id="Package\CARGA STG E TBLs\TBL_PV\ALTERAR STATUS MUDAR"
-          TopLeft="561,721" />
+          TopLeft="603,818" />
         <NodeLayout
           Size="189,42"
           Id="Package\CARGA STG E TBLs\TBL_PV\UPDATE TBL_PV_TEMP"
-          TopLeft="36,604" />
+          TopLeft="7,670" />
         <NodeLayout
           Size="126,42"
           Id="Package\CARGA STG E TBLs\TBL_PV\Classificar"
           TopLeft="467,90" />
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_PV.Paths[Saída Sem Correspondência de Pesquisa]"
-          TopLeft="622,646">
+          TopLeft="670,703">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40,75"
+              EndConnector="34,115"
               Start="0,0"
-              End="40,67.5">
+              End="34,107.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5" />
+                    End="0,53.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.5"
-                    Point2="0,37.5"
-                    Point3="4,37.5" />
+                    Point1="0,53.5"
+                    Point2="0,57.5"
+                    Point3="4,57.5" />
                   <mssgle:LineSegment
-                    End="36,37.5" />
+                    End="30,57.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="36,37.5"
-                    Point2="40,37.5"
-                    Point3="40,41.5" />
+                    Point1="30,57.5"
+                    Point2="34,57.5"
+                    Point3="34,61.5" />
                   <mssgle:LineSegment
-                    End="40,67.5" />
+                    End="34,107.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-69.5940234375,42.5,179.188046875,12.1953125"
+              BoundingBox="-72.5940234375,62.5,179.188046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -48561,9 +49317,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48597,9 +49351,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48633,9 +49385,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48669,9 +49419,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48705,9 +49453,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48716,33 +49462,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="269.75,78.5"
+              EndConnector="317.75,135.5"
               Start="0,0"
-              End="269.75,71">
+              End="317.75,128">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.9521575984991" />
+                    End="0,42.5225140712946" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.9521575984991"
-                    Point2="0,26.9521575984991"
-                    Point3="4,26.9521575984991" />
+                    Point1="0,42.5225140712946"
+                    Point2="0,46.5225140712946"
+                    Point3="4,46.5225140712946" />
                   <mssgle:LineSegment
-                    End="265.75,26.9521575984991" />
+                    End="313.75,46.5225140712946" />
                   <mssgle:CubicBezierSegment
-                    Point1="265.75,26.9521575984991"
-                    Point2="269.75,26.9521575984991"
-                    Point3="269.75,30.9521575984991" />
+                    Point1="313.75,46.5225140712946"
+                    Point2="317.75,46.5225140712946"
+                    Point3="317.75,50.5225140712946" />
                   <mssgle:LineSegment
-                    End="269.75,71" />
+                    End="317.75,128" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="111.47005859375,31.9521575984991,46.8098828125,10.7353515625"
+              BoundingBox="135.47005859375,51.5225140712946,46.8098828125,10.7353515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -48752,33 +49498,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="26,80"
+              EndConnector="37,130"
               Start="0,0"
-              End="26,72.5">
+              End="37,122.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36" />
+                    End="0,61" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36"
-                    Point2="0,40"
-                    Point3="4,40" />
+                    Point1="0,61"
+                    Point2="0,65"
+                    Point3="4,65" />
                   <mssgle:LineSegment
-                    End="22,40" />
+                    End="33,65" />
                   <mssgle:CubicBezierSegment
-                    Point1="22,40"
-                    Point2="26,40"
-                    Point3="26,44" />
+                    Point1="33,65"
+                    Point2="37,65"
+                    Point3="37,69" />
                   <mssgle:LineSegment
-                    End="26,72.5" />
+                    End="37,122.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-4.5903125,45,35.180625,9.5341796875"
+              BoundingBox="0.909687499999997,70,35.180625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -48813,9 +49559,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -48824,33 +49568,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-138.25,78.5"
+              EndConnector="-167.25,144.5"
               Start="0,0"
-              End="-138.25,71">
+              End="-167.25,137">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.9521575984991" />
+                    End="0,45.6125703564728" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.9521575984991"
-                    Point2="0,26.9521575984991"
-                    Point3="-4,26.9521575984991" />
+                    Point1="0,45.6125703564728"
+                    Point2="0,49.6125703564728"
+                    Point3="-4,49.6125703564728" />
                   <mssgle:LineSegment
-                    End="-134.25,26.9521575984991" />
+                    End="-163.25,49.6125703564728" />
                   <mssgle:CubicBezierSegment
-                    Point1="-134.25,26.9521575984991"
-                    Point2="-138.25,26.9521575984991"
-                    Point3="-138.25,30.9521575984991" />
+                    Point1="-163.25,49.6125703564728"
+                    Point2="-167.25,49.6125703564728"
+                    Point3="-167.25,53.6125703564728" />
                   <mssgle:LineSegment
-                    End="-138.25,71" />
+                    End="-167.25,137" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-87.78689453125,31.9521575984991,37.3237890625,9.421875"
+              BoundingBox="-102.28689453125,54.6125703564728,37.3237890625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -48858,14 +49602,14 @@ ORDER BY PRODUTO_PV</property>
           Text="REMOVER OS PRODUTOS DUPLICADOS E ORDENAR POR PRODUTOS."
           ParentId="Package\CARGA STG E TBLs\TBL_PV"
           FontInfo="{assembly:Null}"
-          Size="401,NaN"
+          Size="401,40"
           Id="d8ab2a1b-3313-4715-a00a-645660b301da"
           TopLeft="613,86" />
         <AnnotationLayout
           Text="ALTERAR O STATUS DO MUDAR QUE VAI ATUALIZAR O CAMPO ATUALIZAR DA TBL_PV"
           ParentId="Package\CARGA STG E TBLs\TBL_PV"
           FontInfo="{assembly:Null}"
-          Size="494,NaN"
+          Size="494,40"
           Id="e6c5667a-54fa-4a9c-ac7c-4e3973b764c7"
           TopLeft="363,353" />
       </GraphLayout>
@@ -48957,7 +49701,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="192,42"
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\INSERT TBL_REGISTRO"
-          TopLeft="299,685.5" />
+          TopLeft="300,763.5" />
         <NodeLayout
           Size="142,42"
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\ORDERNAR 2"
@@ -48981,7 +49725,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="227,42"
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\UPDATE TBL_REGISTRO_TEMP"
-          TopLeft="19.5,692" />
+          TopLeft="19.5,767" />
         <NodeLayout
           Size="159,42"
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\CAD_PRODUTOS"
@@ -48993,11 +49737,11 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="217,42"
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\REMOVER STATUS MUDAR N"
-          TopLeft="587,682" />
+          TopLeft="582,761" />
         <NodeLayout
           Size="202,42"
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS\ALTERAR STATUS MUDAR"
-          TopLeft="605,858" />
+          TopLeft="607,911" />
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS.Paths[Classificar Saída]"
           TopLeft="447,156">
@@ -49038,69 +49782,69 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-208.5,137.5"
+              EndConnector="-208.5,212.5"
               Start="0,0"
-              End="-208.5,130">
+              End="-208.5,205">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.1289752650177" />
+                    End="0,68.8356890459364" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,43.1289752650177"
-                    Point2="0,47.1289752650177"
-                    Point3="-4,47.1289752650177" />
+                    Point1="0,68.8356890459364"
+                    Point2="0,72.8356890459364"
+                    Point3="-4,72.8356890459364" />
                   <mssgle:LineSegment
-                    End="-204.5,47.1289752650177" />
+                    End="-204.5,72.8356890459364" />
                   <mssgle:CubicBezierSegment
-                    Point1="-204.5,47.1289752650177"
-                    Point2="-208.5,47.1289752650177"
-                    Point3="-208.5,51.1289752650177" />
+                    Point1="-204.5,72.8356890459364"
+                    Point2="-208.5,72.8356890459364"
+                    Point3="-208.5,76.8356890459364" />
                   <mssgle:LineSegment
-                    End="-208.5,130" />
+                    End="-208.5,205" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-122.91189453125,52.1289752650177,37.3237890625,9.421875"
+              BoundingBox="-122.91189453125,77.8356890459364,37.3237890625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CARGA STG E TBLs\TBL_REGISTRO_MS.Paths[Saída Sem Correspondência de Pesquisa]"
-          TopLeft="695.5,724">
+          TopLeft="690.5,803">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.5,134"
+              EndConnector="17.5,108"
               Start="0,0"
-              End="10.5,126.5">
+              End="17.5,100.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63" />
+                    End="0,50" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,63"
-                    Point2="0,67"
-                    Point3="4,67" />
+                    Point1="0,50"
+                    Point2="0,54"
+                    Point3="4,54" />
                   <mssgle:LineSegment
-                    End="6.5,67" />
+                    End="13.5,54" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.5,67"
-                    Point2="10.5,67"
-                    Point3="10.5,71" />
+                    Point1="13.5,54"
+                    Point2="17.5,54"
+                    Point3="17.5,58" />
                   <mssgle:LineSegment
-                    End="10.5,126.5" />
+                    End="17.5,100.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-84.3440234375,72,179.188046875,12.1953125"
+              BoundingBox="-80.8440234375,59,179.188046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -49246,33 +49990,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="265,127.5"
+              EndConnector="260,206.5"
               Start="0,0"
-              End="265,120">
+              End="260,199">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.7014134275618" />
+                    End="0,66.7791519434629" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.7014134275618"
-                    Point2="0,43.7014134275618"
-                    Point3="4,43.7014134275618" />
+                    Point1="0,66.7791519434629"
+                    Point2="0,70.7791519434629"
+                    Point3="4,70.7791519434629" />
                   <mssgle:LineSegment
-                    End="261,43.7014134275618" />
+                    End="256,70.7791519434629" />
                   <mssgle:CubicBezierSegment
-                    Point1="261,43.7014134275618"
-                    Point2="265,43.7014134275618"
-                    Point3="265,47.7014134275618" />
+                    Point1="256,70.7791519434629"
+                    Point2="260,70.7791519434629"
+                    Point3="260,74.7791519434629" />
                   <mssgle:LineSegment
-                    End="265,120" />
+                    End="260,199" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="109.09505859375,48.7014134275618,46.8098828125,10.7353515625"
+              BoundingBox="106.59505859375,75.7791519434629,46.8098828125,10.7353515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -49282,33 +50026,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9,131"
+              EndConnector="10,209"
               Start="0,0"
-              End="9,123.5">
+              End="10,201.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.5" />
+                    End="0,100.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,61.5"
-                    Point2="0,65.5"
-                    Point3="4,65.5" />
+                    Point1="0,100.5"
+                    Point2="0,104.5"
+                    Point3="4,104.5" />
                   <mssgle:LineSegment
-                    End="5,65.5" />
+                    End="6,104.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="5,65.5"
-                    Point2="9,65.5"
-                    Point3="9,69.5" />
+                    Point1="6,104.5"
+                    Point2="10,104.5"
+                    Point3="10,108.5" />
                   <mssgle:LineSegment
-                    End="9,123.5" />
+                    End="10,201.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-13.0903125,70.5,35.180625,9.5341796875"
+              BoundingBox="-12.5903125,109.5,35.180625,9.5341796875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -49444,7 +50188,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="226,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL DCB_MEDICAMENTOS\UPDATE DCB_MEDICAMENTOS"
-          TopLeft="492.5,698" />
+          TopLeft="516.5,752" />
         <NodeLayout
           Size="129,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL DCB_MEDICAMENTOS\LEFT JOIN"
@@ -49472,7 +50216,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="223,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL DCB_MEDICAMENTOS\INSERT DCB_MEDICAMENTOS"
-          TopLeft="61,304" />
+          TopLeft="28,361" />
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL DCB_MEDICAMENTOS.Paths[Saída de Origem OLE DB1]"
           TopLeft="659.5,205">
@@ -49675,69 +50419,69 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-95.5,96"
+              EndConnector="-71.5,150"
               Start="0,0"
-              End="-95.5,88.5">
+              End="-71.5,142.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44" />
+                    End="0,71" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,44"
-                    Point2="0,48"
-                    Point3="-4,48" />
+                    Point1="0,71"
+                    Point2="0,75"
+                    Point3="-4,75" />
                   <mssgle:LineSegment
-                    End="-91.5,48" />
+                    End="-67.5,75" />
                   <mssgle:CubicBezierSegment
-                    Point1="-91.5,48"
-                    Point2="-95.5,48"
-                    Point3="-95.5,52" />
+                    Point1="-67.5,75"
+                    Point2="-71.5,75"
+                    Point3="-71.5,79" />
                   <mssgle:LineSegment
-                    End="-95.5,88.5" />
+                    End="-71.5,142.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-137.3440234375,53,179.188046875,12.1953125"
+              BoundingBox="-134.03201171875,80,196.5640234375,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL DCB_MEDICAMENTOS.Paths[Saída Sem Correspondência de Pesquisa]"
-          TopLeft="278.5,206">
+          TopLeft="228.333333333333,206">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-106,98"
+              EndConnector="-88.8333333333333,155"
               Start="0,0"
-              End="-106,90.5">
+              End="-88.8333333333333,147.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45" />
+                    End="0,58.4790727623953" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,45"
-                    Point2="0,49"
-                    Point3="-4,49" />
+                    Point1="0,58.4790727623953"
+                    Point2="0,62.4790727623953"
+                    Point3="-4,62.4790727623953" />
                   <mssgle:LineSegment
-                    End="-102,49" />
+                    End="-84.8333333333333,62.4790727623953" />
                   <mssgle:CubicBezierSegment
-                    Point1="-102,49"
-                    Point2="-106,49"
-                    Point3="-106,53" />
+                    Point1="-84.8333333333333,62.4790727623953"
+                    Point2="-88.8333333333333,62.4790727623953"
+                    Point3="-88.8333333333333,66.4790727623953" />
                   <mssgle:LineSegment
-                    End="-106,90.5" />
+                    End="-88.8333333333333,147.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-142.5940234375,54,179.188046875,12.1953125"
+              BoundingBox="-142.698678385417,67.4790727623953,196.5640234375,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -50048,7 +50792,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="117.921438802083,46.5571913929785,37.3237890625,9.421875"
+              BoundingBox="117.921438802084,46.5571913929785,37.3237890625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -50157,7 +50901,9 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-36,58.5,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -50265,7 +51011,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="201,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_DCB\UPDATE PRODUTOS_DCB"
-          TopLeft="711,676" />
+          TopLeft="706,716" />
         <NodeLayout
           Size="123,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_DCB\TBL_DCB"
@@ -50285,7 +51031,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="219,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_DCB\INSERT TBL PRODUTOS_DCB"
-          TopLeft="169,637" />
+          TopLeft="99,703" />
         <NodeLayout
           Size="175,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_DCB\INSERT OU UPDATE"
@@ -50330,7 +51076,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="61.9593098958333,51.9705549263873,170.748046875,12.1953125"
+              BoundingBox="61.9593098958335,51.9705549263873,170.748046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -50340,33 +51086,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-74,61"
+              EndConnector="-144,127"
               Start="0,0"
-              End="-74,53.5">
+              End="-144,119.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,59.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.5"
-                    Point2="0,30.5"
-                    Point3="-4,30.5" />
+                    Point1="0,59.5"
+                    Point2="0,63.5"
+                    Point3="-4,63.5" />
                   <mssgle:LineSegment
-                    End="-70,30.5" />
+                    End="-140,63.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-70,30.5"
-                    Point2="-74,30.5"
-                    Point3="-74,34.5" />
+                    Point1="-140,63.5"
+                    Point2="-144,63.5"
+                    Point3="-144,67.5" />
                   <mssgle:LineSegment
-                    End="-74,53.5" />
+                    End="-144,119.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-80,68.5,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -50401,9 +51147,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -50484,33 +51228,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40.5,88"
+              EndConnector="35.5,128"
               Start="0,0"
-              End="40.5,80.5">
+              End="35.5,120.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40" />
+                    End="0,60" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40"
-                    Point2="0,44"
-                    Point3="4,44" />
+                    Point1="0,60"
+                    Point2="0,64"
+                    Point3="4,64" />
                   <mssgle:LineSegment
-                    End="36.5,44" />
+                    End="31.5,64" />
                   <mssgle:CubicBezierSegment
-                    Point1="36.5,44"
-                    Point2="40.5,44"
-                    Point3="40.5,48" />
+                    Point1="31.5,64"
+                    Point2="35.5,64"
+                    Point3="35.5,68" />
                   <mssgle:LineSegment
-                    End="40.5,80.5" />
+                    End="35.5,120.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-69.3440234375,49,179.188046875,12.1953125"
+              BoundingBox="-80.53201171875,69,196.5640234375,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -50545,9 +51289,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -50581,9 +51323,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -50977,7 +51717,9 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-38.25,60.75,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -51051,7 +51793,9 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="3.5,64.125,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
@@ -51113,7 +51857,9 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,39.75,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -51241,7 +51987,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="231,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\UPDATE PRODUTOS_FARMACIA"
-          TopLeft="675.5,591.5" />
+          TopLeft="688.5,634.5" />
         <NodeLayout
           Size="230,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\TBL_PRODUTOS_FARMACIA"
@@ -51257,7 +52003,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="228,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\INSERT PRODUTOS_FARMACIA"
-          TopLeft="17.5000000000001,413.5" />
+          TopLeft="22.5000000000001,482.5" />
         <NodeLayout
           Size="272,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA\REMOVER REGISTROS IGUAL ZERO"
@@ -51304,33 +52050,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="73,106.5"
+              EndConnector="86,149.5"
               Start="0,0"
-              End="73,99">
+              End="86,142">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.25" />
+                    End="0,70.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,49.25"
-                    Point2="0,53.25"
-                    Point3="4,53.25" />
+                    Point1="0,70.75"
+                    Point2="0,74.75"
+                    Point3="4,74.75" />
                   <mssgle:LineSegment
-                    End="69,53.25" />
+                    End="82,74.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="69,53.25"
-                    Point2="73,53.25"
-                    Point3="73,57.25" />
+                    Point1="82,74.75"
+                    Point2="86,74.75"
+                    Point3="86,78.75" />
                   <mssgle:LineSegment
-                    End="73,99" />
+                    End="86,142" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-53.0940234375,58.25,179.188046875,12.1953125"
+              BoundingBox="-55.28201171875,79.75,196.5640234375,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -51366,7 +52112,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-221.177356770833,29.1642897889333,179.188046875,12.1953125"
+              BoundingBox="-221.177356770834,29.1642897889333,179.188046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -51389,9 +52135,7 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -51426,7 +52170,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-59.0406901041666,29.1642897889333,170.748046875,12.1953125"
+              BoundingBox="-59.0406901041667,29.1642897889333,170.748046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -51449,44 +52193,30 @@ ORDER BY PRODUTO_PV</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_FARMACIA.Paths[INSERT]"
-          TopLeft="141.5,353.5">
+          TopLeft="139,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9.99999999999994,60"
+              EndConnector="0,129"
               Start="0,0"
-              End="-9.99999999999994,52.5">
+              End="0,121.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="-4,30" />
-                  <mssgle:LineSegment
-                    End="-5.99999999999994,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.99999999999994,30"
-                    Point2="-9.99999999999994,30"
-                    Point3="-9.99999999999994,34" />
-                  <mssgle:LineSegment
-                    End="-9.99999999999994,52.5" />
+                    End="0,121.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-22.5903125,35,35.180625,9.5341796875"
+              BoundingBox="-26.31736328125,52.75,52.6347265625,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -51593,7 +52323,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="257,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_REGISTROS_MS\UPDATE PRODUTOS_REGISTROS_MS"
-          TopLeft="24.5,521.5" />
+          TopLeft="17.5,584.5" />
         <NodeLayout
           Size="260,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_REGISTROS_MS\PROCFIT PRODUTOS_REGISTROS_MS"
@@ -51605,7 +52335,7 @@ ORDER BY PRODUTO_PV</property>
         <NodeLayout
           Size="254,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_REGISTROS_MS\INSERT PRODUTOS_REGISTROS_MS"
-          TopLeft="638,548.5" />
+          TopLeft="645,587.5" />
         <NodeLayout
           Size="175,42"
           Id="Package\PROCFIT PRODUTOS\ALTERAR TBL PRODUTOS_REGISTROS_MS\INSERT OU UPDATE"
@@ -51642,7 +52372,7 @@ ORDER BY PRODUTO_PV</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-78.2452278645833,29.9343148357871,37.3237890625,9.421875"
+              BoundingBox="-78.2452278645835,29.9343148357871,37.3237890625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -51652,33 +52382,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-150,64.5"
+              EndConnector="-157,127.5"
               Start="0,0"
-              End="-150,57">
+              End="-157,120">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.25" />
+                    End="0,59.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.25"
-                    Point2="0,32.25"
-                    Point3="-4,32.25" />
+                    Point1="0,59.75"
+                    Point2="0,63.75"
+                    Point3="-4,63.75" />
                   <mssgle:LineSegment
-                    End="-146,32.25" />
+                    End="-153,63.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="-146,32.25"
-                    Point2="-150,32.25"
-                    Point3="-150,36.25" />
+                    Point1="-153,63.75"
+                    Point2="-157,63.75"
+                    Point3="-157,67.75" />
                   <mssgle:LineSegment
-                    End="-150,57" />
+                    End="-157,120" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-164.5940234375,37.25,179.188046875,12.1953125"
+              BoundingBox="-176.78201171875,68.75,196.5640234375,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -51800,33 +52530,33 @@ ORDER BY PRODUTO_PV</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="287.166666666667,195"
+              EndConnector="294.166666666667,234"
               Start="0,0"
-              End="287.166666666667,187.5">
+              End="294.166666666667,226.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,75.0600226500566" />
+                    End="0,90.872027180068" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,75.0600226500566"
-                    Point2="0,79.0600226500566"
-                    Point3="4,79.0600226500566" />
+                    Point1="0,90.872027180068"
+                    Point2="0,94.872027180068"
+                    Point3="4,94.872027180068" />
                   <mssgle:LineSegment
-                    End="283.166666666667,79.0600226500566" />
+                    End="290.166666666667,94.872027180068" />
                   <mssgle:CubicBezierSegment
-                    Point1="283.166666666667,79.0600226500566"
-                    Point2="287.166666666667,79.0600226500566"
-                    Point3="287.166666666667,83.0600226500566" />
+                    Point1="290.166666666667,94.872027180068"
+                    Point2="294.166666666667,94.872027180068"
+                    Point3="294.166666666667,98.872027180068" />
                   <mssgle:LineSegment
-                    End="287.166666666667,187.5" />
+                    End="294.166666666667,226.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="125.993020833334,84.0600226500566,35.180625,9.5341796875"
+              BoundingBox="120.765970052083,99.872027180068,52.6347265625,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
