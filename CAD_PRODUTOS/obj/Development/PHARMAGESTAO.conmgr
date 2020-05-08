@@ -2,13 +2,4 @@
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="PHARMAGESTAO"
   DTS:DTSID="{C4876621-B826-41AB-819D-C2B8F8FAE37D}"
-  DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-  <DTS:ObjectData>
-    <DTS:ConnectionManager
-      DTS:ConnectionString="uid=root;Dsn=PARAISOIII;">
-      <DTS:Password
-        DTS:Name="pwd"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAAD7/2qYWc8sMuV8xwpm69ENAAAAAASAAACgAAAAEAAAALDsQvUC9FmctXBNdXckfpBwAAAAOK9ZtLBup1oUEb8ibZJmgmP4KoI8akcS5L0f1uH9VT8NFWcYBPSJv3BV51TDdOn5kfFqH9x6O/YQnz9DuFM9mQzahBl+kyB8W179cs4OuY2GXzZAl1Y2rrOT/2bI4iRbfyXc6l+hy8Gvd8HuBlfyzRQAAADXzPo/x3oROMFlGP50P2H64d+E/Q==</DTS:Password>
-    </DTS:ConnectionManager>
-  </DTS:ObjectData>
-</DTS:ConnectionManager>
+  DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAAB4lKdhRx6aMk8SCqZxHtcRAAAAAASAAACgAAAAEAAAALLFiRcmRKyN1SK4ly9twqv4AQAAR+o7xVZWT8YMLA+2UmDCLdzT21Rsxom/jIjPa9l2jyUHFz2XLbzQnksT0lw+Si0L52LoyfkoJng+fuRsN9HmQ4BkbY23/4MksusZxl86BZI3Hl6+96u/t5BAkRqxIaahBnYc5pepkNKWRFobA/4N9plV2+IwLAD9mLKkYlHDB8Q4e7N1wtQJxcdNCIGBD+50DBMGADB5nJsw+7k+F1S+Eh+75NP8gbLdarbnL8lZfHNlgQ4DiOHwKOEkHSrr2eUNJFf68EB5CyU8YbfxiQGt3ZnCJeBEKflA8QyLc8txlGA9aH2/JW9h3dvKhAbSmvxrAhE8PNIn8q7F09x4kKR3ibO2UAnlEbhxit3ivGvN7ghuFBTXyK42Vi6rObP71/k0fwyPSPP3lMBWT3lBiesdCu2I7x3mfSMNhLGxgfNK6l1NcpsuR1eXFOiAmXE6snw5YYOOwnGaoIT2Ud6QdY+eTyE3CV1byXSNgn2HaFRj3dTqicgmElxW0TQSqsCXElCaJ4kMwO/tLQxnHvxp8ClGOVWn9HcrcLGRiceiXB5E62RyyJqSr8sxZSoDimfBMSnkuoNdqBV3IGPMTxKN53RilomIME265CT1Iu4lsi/tNjUdRCBVPG3eH98B9LcBVg6p2C2jMw/zb23gJLPtDVsZB7t69++nwLLeFAAAAL5oh7tDn82XLJy4nB+qTQ4PaGTd</DTS:ConnectionManager>

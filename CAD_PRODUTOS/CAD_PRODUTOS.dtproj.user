@@ -4,6 +4,9 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
+        <ServerName>GUARAPARI\SQLEXPRESS</ServerName>
+        <PathOnServer>/SSISDB/INTEGRACAO_PROSYSTEM_PROCFIT/CAD_PRODUTOS</PathOnServer>
+        <StartObjectID>CAD_PRODUTOS.dtsx</StartObjectID>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>

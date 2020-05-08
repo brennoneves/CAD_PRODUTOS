@@ -2,14 +2,14 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>CAD_PRODUTOS</Name>
-    <LastWriteTime>2020-04-24T14:05:38.7115132Z</LastWriteTime>
-    <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    <LastWriteTime>2020-05-08T12:47:51.5091912Z</LastWriteTime>
+    <LastKnownProtectionLevel>EncryptAllWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>CAD_PRODUTOS.dtsx</Name>
-      <LastWriteTime>2020-04-30T20:15:56.8151145Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+      <LastWriteTime>2020-05-08T13:18:27.2746385Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptAllWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
 </BuildLog>

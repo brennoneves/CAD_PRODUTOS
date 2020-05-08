@@ -2,13 +2,4 @@
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="STG_CAD_PRODUTOS_VILAVELHA"
   DTS:DTSID="{85B93F16-A370-4F44-8E1F-537D8CC030AE}"
-  DTS:CreationName="OLEDB">
-  <DTS:ObjectData>
-    <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=VILAVELHA;User ID=SA;Initial Catalog=STG_CAD_PRODUTOS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-      <DTS:Password
-        DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAACfQYvRK+1QVXM0kiPvQ1mYAAAAAASAAACgAAAAEAAAAPhC8O62W6dmJiMHiNgMc1VwAAAAtAFdcLq6BYybak7/I8ZAipu4vO+XUln82WANObqO7wtmMdna1uhWSPkHJn3yQAjpJIZEYd2Ob4xYZ9Y7zxYR1npkc+wZ2HOL1/VHCjhnafS63y4vXnvMWjUdOBKkONmCM0jxgZJfWdHY1mzQ8/RWChQAAABOlWuOSozHR+1WpclL+1Iy92LONw==</DTS:Password>
-    </DTS:ConnectionManager>
-  </DTS:ObjectData>
-</DTS:ConnectionManager>
+  DTS:CreationName="OLEDB">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAANJrfHxbf0GDq+dda/Sp7gAAAAACAAAAAAADZgAAwAAAABAAAADLnlztgUBVhsEtly8k5nHRAAAAAASAAACgAAAAEAAAAE8Vut38d2qP/U26EolNIA8IAgAA9UfyqybTR1PpH5Su9aeW1gJS87R1JyQPr6Bj4zSdX0wA1fbS6Jb+m0Vl1TjXvVrxQ9dcM8RuDrrhELXaLVqkwEtE0lo7pUNcM7X3ENOHEz0BX9xwK2RHNXc/YOrybdk9s+vUVwvfZUX0DzAyi/pLrkc5mcDXVsJr/xUKd4jYUpYbHQTwVvmwAa/afb0DRGifAWRNrcZhej1Gra8McPh/4TBbiDuKf2SC/RdMswJDgFaTw1cdIQNc1QdAa8+unciGPmLSnaL67PbUeehhOElQYzaQ5ZQVXBNHRFNekQrE/Qdxl4kdyLKrhmRULZc591Im73lMO9WGXAbPoNTsQENnE4TMa7hb0/V9sImFe7gF6/jiKmhoH1shkdq6R7trYkI9MhCczWOoDtqqO7XC+Xf3p5M/DWCKUD8YoGuS58DUNE2aNQhpOy7MQpbuPI28AzQ+y1qXUtkrcOyrk84snROFLXZLocZc0q4tYVkPk3bQBBvvm/QpwBCJPjxXqDJusnRzyTplBUrS/Pj0918g6MfAGxrx94iy4uLcJl/zrQt1JTJScP4Q08B4dIpEuLfRZnkyRdCSydskjy9WdijNFaO7AwhzdTVX2iOFPxHw+l3GWPvjJcjQ7tKyAycr3tpPYK4f54wZZLnsvhKhkOmGBWnuDgmcMjcE7IABsWjHv/nUXbO53kfZpUbBXhQAAACtf/ws/M0rwTxE/NbVxSdtFuPsFA==</DTS:ConnectionManager>
